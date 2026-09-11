@@ -17,3 +17,4 @@ C:\Users\Scelo Thobani\source\repos\apex_management_sys\apex_management_sys\obj\
 C:\Users\Scelo Thobani\source\repos\apex_management_sys\apex_management_sys\obj\Debug\net10.0-windows\ref\apex_management_sys.dll
 C:\Users\Scelo Thobani\source\repos\apex_management_sys\apex_management_sys\obj\Debug\net10.0-windows\apex_man.85FD5942.Up2Date
 C:\Users\Scelo Thobani\source\repos\apex_management_sys\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.home.resources
+C:\Users\Scelo Thobani\source\repos\apex_management_sys\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.sourcelink.json

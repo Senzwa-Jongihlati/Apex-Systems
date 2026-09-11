@@ -46,21 +46,21 @@
             label1 = new Label();
             label2 = new Label();
             panel4 = new Panel();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
             panel5 = new Panel();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
             panel6 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel7 = new Panel();
             panel9 = new Panel();
             panel8 = new Panel();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
             label15 = new Label();
+            label14 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -249,6 +249,34 @@
             panel4.Size = new Size(200, 100);
             panel4.TabIndex = 4;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(64, 54);
+            label9.Name = "label9";
+            label9.Size = new Size(82, 15);
+            label9.TabIndex = 2;
+            label9.Text = "Total Patients";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(60, 14);
+            label8.Name = "label8";
+            label8.Size = new Size(37, 30);
+            label8.TabIndex = 1;
+            label8.Text = "16";
+            // 
+            // label7
+            // 
+            label7.Image = Properties.Resources.users_avatar;
+            label7.Location = new Point(3, 25);
+            label7.Name = "label7";
+            label7.Size = new Size(48, 40);
+            label7.TabIndex = 0;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(192, 255, 192);
@@ -260,6 +288,44 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 100);
             panel5.TabIndex = 5;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(69, 14);
+            label13.Name = "label13";
+            label13.Size = new Size(25, 30);
+            label13.TabIndex = 3;
+            label13.Text = "4";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(55, 61);
+            label12.Name = "label12";
+            label12.Size = new Size(86, 15);
+            label12.TabIndex = 2;
+            label12.Text = "Appointments";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(55, 46);
+            label11.Name = "label11";
+            label11.Size = new Size(50, 15);
+            label11.TabIndex = 1;
+            label11.Text = "Today's ";
+            // 
+            // label10
+            // 
+            label10.Image = Properties.Resources.calendar;
+            label10.Location = new Point(3, 21);
+            label10.Name = "label10";
+            label10.Size = new Size(46, 44);
+            label10.TabIndex = 0;
             // 
             // panel6
             // 
@@ -304,80 +370,6 @@
             panel8.Size = new Size(519, 43);
             panel8.TabIndex = 0;
             // 
-            // label7
-            // 
-            label7.Image = Properties.Resources.users_avatar;
-            label7.Location = new Point(3, 25);
-            label7.Name = "label7";
-            label7.Size = new Size(48, 40);
-            label7.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(60, 14);
-            label8.Name = "label8";
-            label8.Size = new Size(37, 30);
-            label8.TabIndex = 1;
-            label8.Text = "16";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(64, 54);
-            label9.Name = "label9";
-            label9.Size = new Size(82, 15);
-            label9.TabIndex = 2;
-            label9.Text = "Total Patients";
-            // 
-            // label10
-            // 
-            label10.Image = Properties.Resources.calendar;
-            label10.Location = new Point(3, 21);
-            label10.Name = "label10";
-            label10.Size = new Size(46, 44);
-            label10.TabIndex = 0;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(55, 46);
-            label11.Name = "label11";
-            label11.Size = new Size(50, 15);
-            label11.TabIndex = 1;
-            label11.Text = "Today's ";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(55, 61);
-            label12.Name = "label12";
-            label12.Size = new Size(86, 15);
-            label12.TabIndex = 2;
-            label12.Text = "Appointments";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(69, 14);
-            label13.Name = "label13";
-            label13.Size = new Size(25, 30);
-            label13.TabIndex = 3;
-            label13.Text = "4";
-            // 
-            // label14
-            // 
-            label14.Image = Properties.Resources.notification;
-            label14.Location = new Point(3, 3);
-            label14.Name = "label14";
-            label14.Size = new Size(55, 35);
-            label14.TabIndex = 0;
-            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -387,6 +379,14 @@
             label15.Size = new Size(162, 20);
             label15.TabIndex = 1;
             label15.Text = "Recent Appointments";
+            // 
+            // label14
+            // 
+            label14.Image = Properties.Resources.notification;
+            label14.Location = new Point(3, 3);
+            label14.Name = "label14";
+            label14.Size = new Size(55, 35);
+            label14.TabIndex = 0;
             // 
             // home
             // 

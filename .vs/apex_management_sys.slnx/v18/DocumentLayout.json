@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|c:\\users\\scelo thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|solutionrelative:apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|solutionrelative:apex_management_sys\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|c:\\users\\scelo thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|solutionrelative:apex_management_sys\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|c:\\users\\scelo thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|solutionrelative:apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|c:\\users\\scelo thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|solutionrelative:apex_management_sys\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|c:\\users\\scelo thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{66FAAB7E-401C-1598-1058-BF9D0E6C9589}|apex_management_sys\\apex_management_sys.csproj|solutionrelative:apex_management_sys\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -59,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "home.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\home.cs",
               "RelativeDocumentMoniker": "apex_management_sys\\home.cs",
@@ -71,13 +71,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\Form1.cs",
               "RelativeDocumentMoniker": "apex_management_sys\\Form1.cs",
               "ToolTip": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\Form1.cs",
               "RelativeToolTip": "apex_management_sys\\Form1.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAABgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-10T22:10:57.154Z",
               "EditorCaption": ""
