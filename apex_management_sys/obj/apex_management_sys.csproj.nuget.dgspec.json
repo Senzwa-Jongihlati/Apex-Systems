@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\apex_management_sys.csproj": {}
+    "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\apex_management_sys.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\apex_management_sys.csproj": {
+    "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\apex_management_sys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\apex_management_sys.csproj",
+        "projectUniqueName": "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\apex_management_sys.csproj",
         "projectName": "apex_management_sys",
-        "projectPath": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\apex_management_sys.csproj",
-        "packagesPath": "C:\\Users\\Scelo Thobani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Scelo Thobani\\source\\repos\\apex_management_sys\\apex_management_sys\\obj\\",
+        "projectPath": "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\apex_management_sys.csproj",
+        "packagesPath": "C:\\Users\\Senzwa4\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Scelo Thobani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Senzwa4\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -70,7 +70,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
