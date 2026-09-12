@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apex_management_sys")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b79935369f4abc3a1936d28316abe55e4e8e7ce2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f55e68e6dfeaacd84c1884518e0b98283324b9dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("apex_management_sys")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apex_management_sys")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
