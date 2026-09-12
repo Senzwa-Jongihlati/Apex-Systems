@@ -38,3 +38,6 @@ C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\ob
 C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.pdb
 C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.genruntimeconfig.cache
 C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\obj\Debug\net10.0-windows\ref\apex_management_sys.dll
+C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.Registration.resources
+C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.Form3.resources
+C:\Users\lisam\Downloads\GITHUB\Apex Systems\Apex-Systems\apex_management_sys\obj\Debug\net10.0-windows\apex_management_sys.ReceptionistDashboard.resources
