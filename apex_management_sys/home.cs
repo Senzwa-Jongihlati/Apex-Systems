@@ -17,7 +17,7 @@ namespace apex_management_sys
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            Login f = new Login();
             f.Show();
         }
 

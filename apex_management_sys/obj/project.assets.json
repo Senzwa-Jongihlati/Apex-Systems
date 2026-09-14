@@ -1,30 +1,30 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
-    "net10.0-windows7.0": {}
+    "net10.0-windows": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net10.0-windows7.0": []
+    "net10.0-windows": []
   },
   "packageFolders": {
-    "C:\\Users\\lisam\\.nuget\\packages\\": {},
+    "C:\\Users\\Senzwa4\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lisam\\Downloads\\GITHUB\\Apex Systems\\Apex-Systems\\apex_management_sys\\apex_management_sys.csproj",
+      "projectUniqueName": "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\apex_management_sys.csproj",
       "projectName": "apex_management_sys",
-      "projectPath": "C:\\Users\\lisam\\Downloads\\GITHUB\\Apex Systems\\Apex-Systems\\apex_management_sys\\apex_management_sys.csproj",
-      "packagesPath": "C:\\Users\\lisam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lisam\\Downloads\\GITHUB\\Apex Systems\\Apex-Systems\\apex_management_sys\\obj\\",
+      "projectPath": "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\apex_management_sys.csproj",
+      "packagesPath": "C:\\Users\\Senzwa4\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Senzwa4\\Apex Systems\\apex_management_sys\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\lisam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Senzwa4\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,11 +33,10 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net10.0-windows7.0": {
+        "net10.0-windows": {
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {}
@@ -53,10 +52,10 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
-      "net10.0-windows7.0": {
+      "net10.0-windows": {
         "framework": "net10.0-windows7.0",
         "targetAlias": "net10.0-windows",
         "imports": [
@@ -78,7 +77,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

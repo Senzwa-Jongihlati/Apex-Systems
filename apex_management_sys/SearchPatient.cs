@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace apex_management_sys
 {
-    public partial class ReceptionistDashboard : Form
+    public partial class SearchPatient : Form
     {
-        public ReceptionistDashboard()
+        public SearchPatient()
         {
             InitializeComponent();
         }
