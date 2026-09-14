@@ -1,6 +1,6 @@
 ﻿namespace apex_management_sys
 {
-    partial class ReceptionDashboard: Form
+    partial class RP_ReceptionDashboard: Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             label2 = new Label();
-            btnRegisterPatient = new Button();
-            btnManageQueue = new Button();
-            btnSearchPatient = new Button();
             lblWelcome = new Label();
             label3 = new Label();
             label5 = new Label();
@@ -43,25 +40,24 @@
             Priority = new DataGridViewTextBoxColumn();
             Background = new PictureBox();
             Components = new Panel();
-            pictureBox2 = new PictureBox();
-            panel1 = new Panel();
-            label6 = new Label();
-            label7 = new Label();
-            button1 = new Button();
-            panel2 = new Panel();
-            button5 = new Button();
             dataGridView2 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            button7 = new Button();
+            button6 = new Button();
+            button3 = new Button();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Background).BeginInit();
             Components.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -73,36 +69,6 @@
             label2.Size = new Size(153, 20);
             label2.TabIndex = 1;
             label2.Text = "Reception Dashboard";
-            // 
-            // btnRegisterPatient
-            // 
-            btnRegisterPatient.Location = new Point(9, 336);
-            btnRegisterPatient.Margin = new Padding(2, 2, 2, 2);
-            btnRegisterPatient.Name = "btnRegisterPatient";
-            btnRegisterPatient.Size = new Size(162, 51);
-            btnRegisterPatient.TabIndex = 3;
-            btnRegisterPatient.Text = "Register Patient";
-            btnRegisterPatient.UseVisualStyleBackColor = true;
-            // 
-            // btnManageQueue
-            // 
-            btnManageQueue.Location = new Point(9, 391);
-            btnManageQueue.Margin = new Padding(2, 2, 2, 2);
-            btnManageQueue.Name = "btnManageQueue";
-            btnManageQueue.Size = new Size(162, 51);
-            btnManageQueue.TabIndex = 4;
-            btnManageQueue.Text = "Manage Queue";
-            btnManageQueue.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchPatient
-            // 
-            btnSearchPatient.Location = new Point(11, 446);
-            btnSearchPatient.Margin = new Padding(2, 2, 2, 2);
-            btnSearchPatient.Name = "btnSearchPatient";
-            btnSearchPatient.Size = new Size(162, 51);
-            btnSearchPatient.TabIndex = 5;
-            btnSearchPatient.Text = "Search Patient";
-            btnSearchPatient.UseVisualStyleBackColor = true;
             // 
             // lblWelcome
             // 
@@ -117,7 +83,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(85, 410);
+            label3.Location = new Point(311, 387);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(60, 20);
@@ -127,7 +93,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(85, 155);
+            label5.Location = new Point(311, 143);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(54, 20);
@@ -138,8 +104,8 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { QueueNumber, PatientName, ArrivalTime, Status, Priority });
-            dataGridView1.Location = new Point(85, 446);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(311, 426);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(814, 59);
@@ -184,9 +150,9 @@
             // 
             Background.Dock = DockStyle.Fill;
             Background.Image = Properties.Resources.Screenshot_2026_09_10_232332;
-            Background.Location = new Point(199, 0);
+            Background.Location = new Point(0, 0);
             Background.Name = "Background";
-            Background.Size = new Size(1054, 695);
+            Background.Size = new Size(1188, 658);
             Background.SizeMode = PictureBoxSizeMode.StretchImage;
             Background.TabIndex = 13;
             Background.TabStop = false;
@@ -201,99 +167,18 @@
             Components.Controls.Add(label5);
             Components.Controls.Add(lblWelcome);
             Components.Controls.Add(label3);
+            Components.Controls.Add(tableLayoutPanel1);
             Components.Dock = DockStyle.Fill;
-            Components.Location = new Point(199, 0);
+            Components.Location = new Point(0, 0);
             Components.Name = "Components";
-            Components.Size = new Size(1054, 695);
+            Components.Size = new Size(1188, 658);
             Components.TabIndex = 0;
-            Components.Paint += this.Components_Paint;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.apex_logo;
-            pictureBox2.Location = new Point(9, 11);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(114, 112);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(25, 35, 126);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(btnSearchPatient);
-            panel1.Controls.Add(btnManageQueue);
-            panel1.Controls.Add(btnRegisterPatient);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(199, 695);
-            panel1.TabIndex = 13;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label6.ForeColor = SystemColors.ControlLight;
-            label6.Location = new Point(16, 292);
-            label6.Name = "label6";
-            label6.Size = new Size(137, 28);
-            label6.TabIndex = 8;
-            label6.Text = "Management";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.ControlLight;
-            label7.Location = new Point(9, 175);
-            label7.Name = "label7";
-            label7.Size = new Size(57, 28);
-            label7.TabIndex = 7;
-            label7.Text = "Main";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(9, 608);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 51);
-            button1.TabIndex = 6;
-            button1.Text = "log out";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(206, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(834, 79);
-            panel2.TabIndex = 1;
-            // 
-            // button5
-            // 
-            button5.ForeColor = SystemColors.ActiveCaptionText;
-            button5.Location = new Point(9, 207);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(162, 51);
-            button5.TabIndex = 3;
-            button5.Text = "Deshboard";
-            button5.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            dataGridView2.Location = new Point(85, 193);
+            dataGridView2.Location = new Point(311, 206);
             dataGridView2.Margin = new Padding(2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
@@ -335,35 +220,113 @@
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.Width = 150;
             // 
-            // ReceptionDashboard
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(25, 35, 126);
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(button7, 0, 7);
+            tableLayoutPanel1.Controls.Add(button6, 0, 6);
+            tableLayoutPanel1.Controls.Add(button3, 0, 4);
+            tableLayoutPanel1.Controls.Add(label4, 0, 3);
+            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Left;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 8;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(280, 658);
+            tableLayoutPanel1.TabIndex = 14;
+            // 
+            // button7
+            // 
+            button7.Dock = DockStyle.Bottom;
+            button7.Location = new Point(3, 603);
+            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Name = "button7";
+            button7.Size = new Size(274, 51);
+            button7.TabIndex = 14;
+            button7.Text = "Log Out";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Dock = DockStyle.Top;
+            button6.Location = new Point(2, 203);
+            button6.Margin = new Padding(2, 2, 2, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(276, 51);
+            button6.TabIndex = 13;
+            button6.Text = "Search Patient";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Dock = DockStyle.Top;
+            button3.Location = new Point(2, 150);
+            button3.Margin = new Padding(2, 2, 2, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(276, 51);
+            button3.TabIndex = 11;
+            button3.Text = "Register Patient";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Top;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ControlLight;
+            label4.Location = new Point(3, 120);
+            label4.Name = "label4";
+            label4.Size = new Size(274, 28);
+            label4.TabIndex = 10;
+            label4.Text = "Management";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Image = Properties.Resources.apex_logo;
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(274, 112);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // RP_ReceptionDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1253, 695);
+            ClientSize = new Size(1188, 658);
             Controls.Add(Components);
             Controls.Add(label2);
             Controls.Add(Background);
-            Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
-            Name = "ReceptionDashboard";
+            Margin = new Padding(2);
+            Name = "RP_ReceptionDashboard";
             Text = "Reception Dashboard";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Background).EndInit();
             Components.ResumeLayout(false);
             Components.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Label label2;
-        private Button btnRegisterPatient;
-        private Button btnManageQueue;
-        private Button btnSearchPatient;
         private Label lblWelcome;
         private Label label3;
         private Label label5;
@@ -375,18 +338,17 @@
         private DataGridViewTextBoxColumn Priority;
         private PictureBox Background;
         private Panel Components;
-        private PictureBox pictureBox2;
-        private Panel panel1;
-        private Label label6;
-        private Label label7;
-        private Button button1;
-        private Panel panel2;
         private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private Button button5;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button button7;
+        private Button button6;
+        private Button button3;
+        private Label label4;
+        private PictureBox pictureBox1;
     }
 }

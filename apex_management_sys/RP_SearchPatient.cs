@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace apex_management_sys
 {
-    public partial class SearchPatient : Form
+    public partial class RP_SearchPatient : Form
     {
-        public SearchPatient()
+        public RP_SearchPatient()
         {
             InitializeComponent();
         }
