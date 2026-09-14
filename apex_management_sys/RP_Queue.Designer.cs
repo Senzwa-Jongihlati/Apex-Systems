@@ -242,7 +242,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(280, 658);
+            tableLayoutPanel1.Size = new Size(218, 658);
             tableLayoutPanel1.TabIndex = 14;
             // 
             // button7
@@ -251,11 +251,11 @@
             button7.Location = new Point(3, 603);
             button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
-            button7.Size = new Size(274, 51);
+            button7.Size = new Size(212, 51);
             button7.TabIndex = 14;
             button7.Text = "Log Out";
             button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -263,11 +263,11 @@
             button6.Location = new Point(2, 203);
             button6.Margin = new Padding(2, 2, 2, 0);
             button6.Name = "button6";
-            button6.Size = new Size(276, 51);
+            button6.Size = new Size(214, 51);
             button6.TabIndex = 13;
             button6.Text = "Search Patient";
             button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.Click += button6_Click;
             // 
             // button3
             // 
@@ -275,11 +275,11 @@
             button3.Location = new Point(2, 150);
             button3.Margin = new Padding(2, 2, 2, 0);
             button3.Name = "button3";
-            button3.Size = new Size(276, 51);
+            button3.Size = new Size(214, 51);
             button3.TabIndex = 11;
             button3.Text = "Register Patient";
             button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Click += button3_Click;
             // 
             // label4
             // 
@@ -289,7 +289,7 @@
             label4.ForeColor = SystemColors.ControlLight;
             label4.Location = new Point(3, 120);
             label4.Name = "label4";
-            label4.Size = new Size(274, 28);
+            label4.Size = new Size(212, 28);
             label4.TabIndex = 10;
             label4.Text = "Management";
             // 
@@ -300,7 +300,7 @@
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(274, 112);
+            pictureBox1.Size = new Size(212, 112);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;

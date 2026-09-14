@@ -441,9 +441,11 @@
             Controls.Add(Background);
             ForeColor = SystemColors.ActiveCaptionText;
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "home";
+            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

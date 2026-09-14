@@ -222,7 +222,7 @@
             Background.Image = Properties.Resources.Screenshot_2026_09_10_232332;
             Background.Location = new Point(0, 0);
             Background.Name = "Background";
-            Background.Size = new Size(946, 708);
+            Background.Size = new Size(1238, 708);
             Background.SizeMode = PictureBoxSizeMode.StretchImage;
             Background.TabIndex = 18;
             Background.TabStop = false;
@@ -262,7 +262,7 @@
             button7.TabIndex = 14;
             button7.Text = "Log Out";
             button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -274,7 +274,7 @@
             button6.TabIndex = 13;
             button6.Text = "Search Patient";
             button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.Click += button6_Click;
             // 
             // button4
             // 
@@ -286,7 +286,7 @@
             button4.TabIndex = 12;
             button4.Text = "Manage Queue";
             button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.Click += button4_Click;
             // 
             // label4
             // 
@@ -316,7 +316,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 708);
+            ClientSize = new Size(1238, 708);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(txtAddress);
             Controls.Add(label2);
