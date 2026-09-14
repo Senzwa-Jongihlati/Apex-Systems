@@ -79,7 +79,7 @@
             Controls.Add(lbl2IDNo);
             Controls.Add(label1);
             Name = "Form3";
-            Text = "Returning Patient";
+            Text = "Form3";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,6 +1,6 @@
 ﻿namespace apex_management_sys
 {
-    partial class Registration
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -189,7 +189,7 @@
             txtAddress.Size = new Size(150, 31);
             txtAddress.TabIndex = 17;
             // 
-            // Registration
+            // Form2
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -212,9 +212,8 @@
             Controls.Add(lblSurname);
             Controls.Add(lblName);
             Controls.Add(label1);
-            Name = "Registration";
-            Text = "Patient Registration";
-            Load += Form2_Load;
+            Name = "Form2";
+            Text = "Form2";
             ResumeLayout(false);
             PerformLayout();
         }
