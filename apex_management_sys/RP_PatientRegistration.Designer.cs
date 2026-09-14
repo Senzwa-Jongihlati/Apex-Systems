@@ -262,6 +262,7 @@
             button7.TabIndex = 14;
             button7.Text = "Log Out";
             button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -273,6 +274,7 @@
             button6.TabIndex = 13;
             button6.Text = "Search Patient";
             button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button4
             // 
@@ -284,6 +286,7 @@
             button4.TabIndex = 12;
             button4.Text = "Manage Queue";
             button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label4
             // 

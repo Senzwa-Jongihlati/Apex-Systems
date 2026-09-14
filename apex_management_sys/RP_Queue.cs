@@ -8,37 +8,25 @@ using System.Windows.Forms;
 
 namespace apex_management_sys
 {
-    public partial class Registration : Form
+    public partial class RP_Queue : Form
     {
-        public Registration()
+        public RP_Queue()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            RP_Queue Queue = new RP_Queue();
-            Queue.Show();
+            Registration Regst = new Registration();
+            Regst.Show();
             this.Close();
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             RP_SearchPatient Search = new RP_SearchPatient();
             Search.Show();
             this.Close();
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             Login login = new Login();

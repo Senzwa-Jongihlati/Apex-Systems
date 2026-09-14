@@ -1,6 +1,6 @@
 ﻿namespace apex_management_sys
 {
-    partial class RP_ReceptionDashboard: Form
+    partial class RP_Queue: Form
     {
         /// <summary>
         /// Required designer variable.
@@ -255,6 +255,7 @@
             button7.TabIndex = 14;
             button7.Text = "Log Out";
             button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -266,6 +267,7 @@
             button6.TabIndex = 13;
             button6.Text = "Search Patient";
             button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -277,6 +279,7 @@
             button3.TabIndex = 11;
             button3.Text = "Register Patient";
             button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -302,16 +305,16 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // RP_ReceptionDashboard
+            // RP_Queue
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1188, 658);
-            Controls.Add(Components);
             Controls.Add(label2);
+            Controls.Add(Components);
             Controls.Add(Background);
             Margin = new Padding(2);
-            Name = "RP_ReceptionDashboard";
+            Name = "RP_Queue";
             Text = "Reception Dashboard";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Background).EndInit();
