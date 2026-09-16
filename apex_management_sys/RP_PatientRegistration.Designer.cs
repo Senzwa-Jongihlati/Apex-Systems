@@ -45,14 +45,12 @@
             btnClear = new Button();
             label2 = new Label();
             txtAddress = new TextBox();
-            Background = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button7 = new Button();
-            button6 = new Button();
             button4 = new Button();
+            button6 = new Button();
+            button7 = new Button();
             label4 = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)Background).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -216,20 +214,9 @@
             txtAddress.Size = new Size(121, 27);
             txtAddress.TabIndex = 17;
             // 
-            // Background
-            // 
-            Background.Dock = DockStyle.Fill;
-            Background.Image = Properties.Resources.Screenshot_2026_09_10_232332;
-            Background.Location = new Point(0, 0);
-            Background.Name = "Background";
-            Background.Size = new Size(1238, 708);
-            Background.SizeMode = PictureBoxSizeMode.StretchImage;
-            Background.TabIndex = 18;
-            Background.TabStop = false;
-            // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(25, 35, 126);
+            tableLayoutPanel1.BackColor = Color.FromArgb(59, 130, 246);
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(button4, 0, 2);
@@ -250,21 +237,29 @@
             tableLayoutPanel1.Size = new Size(280, 708);
             tableLayoutPanel1.TabIndex = 19;
             // 
-            // button7
+            // button4
             // 
-            button7.Dock = DockStyle.Bottom;
-            button7.Location = new Point(3, 653);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(274, 51);
-            button7.TabIndex = 14;
-            button7.Text = "Log Out";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            button4.Cursor = Cursors.Hand;
+            button4.Dock = DockStyle.Top;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.Control;
+            button4.Location = new Point(2, 150);
+            button4.Margin = new Padding(2, 2, 2, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(276, 51);
+            button4.TabIndex = 12;
+            button4.Text = "Manage Queue";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button6
             // 
+            button6.Cursor = Cursors.Hand;
             button6.Dock = DockStyle.Top;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = SystemColors.Control;
             button6.Location = new Point(2, 203);
             button6.Margin = new Padding(2, 2, 2, 0);
             button6.Name = "button6";
@@ -274,17 +269,21 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // button4
+            // button7
             // 
-            button4.Dock = DockStyle.Top;
-            button4.Location = new Point(2, 150);
-            button4.Margin = new Padding(2, 2, 2, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(276, 51);
-            button4.TabIndex = 12;
-            button4.Text = "Manage Queue";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button7.Cursor = Cursors.Hand;
+            button7.Dock = DockStyle.Bottom;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = SystemColors.Control;
+            button7.Location = new Point(3, 653);
+            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Name = "button7";
+            button7.Size = new Size(274, 51);
+            button7.TabIndex = 14;
+            button7.Text = "Log Out";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // label4
             // 
@@ -333,12 +332,10 @@
             Controls.Add(lblSurname);
             Controls.Add(lblName);
             Controls.Add(label1);
-            Controls.Add(Background);
             Margin = new Padding(2);
             Name = "Registration";
             Text = "Patient Registration";
             Load += Form2_Load;
-            ((System.ComponentModel.ISupportInitialize)Background).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -365,7 +362,6 @@
         private Button btnClear;
         private Label label2;
         private TextBox txtAddress;
-        private PictureBox Background;
         private TableLayoutPanel tableLayoutPanel1;
         private Button button7;
         private Button button6;

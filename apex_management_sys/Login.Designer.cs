@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label6 = new Label();
             btnExit = new Button();
             panel2 = new Panel();
-            label5 = new Label();
             label4 = new Label();
             pictureBox3 = new PictureBox();
             showPass = new CheckBox();
             label3 = new Label();
             label2 = new Label();
-            label1 = new Label();
             btnSignIn = new Button();
             txtPassword = new TextBox();
-            txtUsername = new TextBox();
             pictureBox2 = new PictureBox();
             Background = new PictureBox();
+            gtxtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -88,30 +88,20 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(192, 192, 255);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(gtxtUsername);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(showPass);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(btnSignIn);
             panel2.Controls.Add(txtPassword);
-            panel2.Controls.Add(txtUsername);
             panel2.Controls.Add(pictureBox2);
             panel2.Location = new Point(162, 112);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(637, 470);
+            panel2.Size = new Size(656, 558);
             panel2.TabIndex = 1;
-            // 
-            // label5
-            // 
-            label5.Image = Properties.Resources.user;
-            label5.Location = new Point(579, 208);
-            label5.Name = "label5";
-            label5.Size = new Size(32, 30);
-            label5.TabIndex = 10;
             // 
             // label4
             // 
@@ -163,16 +153,6 @@
             label2.TabIndex = 5;
             label2.Text = "Password";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(319, 162);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 25);
-            label1.TabIndex = 4;
-            label1.Text = "Username";
-            // 
             // btnSignIn
             // 
             btnSignIn.BackColor = Color.Brown;
@@ -199,14 +179,6 @@
             txtPassword.Size = new Size(253, 27);
             txtPassword.TabIndex = 2;
             // 
-            // txtUsername
-            // 
-            txtUsername.Location = new Point(319, 208);
-            txtUsername.Margin = new Padding(3, 4, 3, 4);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(253, 27);
-            txtUsername.TabIndex = 1;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.images__1_;
@@ -230,12 +202,40 @@
             Background.TabStop = false;
             Background.Click += pictureBox1_Click;
             // 
+            // gtxtUsername
+            // 
+            gtxtUsername.Animated = true;
+            gtxtUsername.BorderRadius = 5;
+            customizableEdges1.BottomLeft = false;
+            customizableEdges1.BottomRight = false;
+            customizableEdges1.TopLeft = false;
+            customizableEdges1.TopRight = false;
+            gtxtUsername.CustomizableEdges = customizableEdges1;
+            gtxtUsername.DefaultText = "";
+            gtxtUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            gtxtUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            gtxtUsername.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            gtxtUsername.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            gtxtUsername.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            gtxtUsername.Font = new Font("Segoe UI", 9F);
+            gtxtUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            gtxtUsername.IconRight = Properties.Resources.user__1_;
+            gtxtUsername.Location = new Point(319, 208);
+            gtxtUsername.Margin = new Padding(3, 4, 3, 4);
+            gtxtUsername.Name = "gtxtUsername";
+            gtxtUsername.PlaceholderText = "Username";
+            gtxtUsername.SelectedText = "";
+            gtxtUsername.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            gtxtUsername.Size = new Size(286, 27);
+            gtxtUsername.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            gtxtUsername.TabIndex = 11;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(967, 655);
+            ClientSize = new Size(986, 723);
             ControlBox = false;
             Controls.Add(panel1);
             Margin = new Padding(3, 4, 3, 4);
@@ -258,15 +258,13 @@
         private PictureBox pictureBox2;
         private Button btnSignIn;
         private TextBox txtPassword;
-        private TextBox txtUsername;
         private Label label3;
         private Label label2;
-        private Label label1;
         private CheckBox showPass;
         private PictureBox pictureBox3;
         private Button btnExit;
         private Label label4;
-        private Label label5;
         private Label label6;
+        private Guna.UI2.WinForms.Guna2TextBox gtxtUsername;
     }
 }

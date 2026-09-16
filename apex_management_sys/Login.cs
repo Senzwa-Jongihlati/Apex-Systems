@@ -17,7 +17,7 @@ namespace apex_management_sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
+            string username = gtxtUsername.Text.Trim();
             string password = txtPassword.Text;
 
 
@@ -56,11 +56,13 @@ namespace apex_management_sys
 
 
 
-            if (loginSuccess) { 
+            if (loginSuccess)
+            {
                 RP_Queue Q = new RP_Queue();
                 Q.Show();
                 this.Hide();
-            } else
+            }
+            else
                 MessageBox.Show("Incorrect username or password");
 
 
@@ -81,6 +83,11 @@ namespace apex_management_sys
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
