@@ -191,9 +191,11 @@
             // 
             // txtPassword
             // 
+            txtPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(319, 300);
             txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(253, 27);
             txtPassword.TabIndex = 2;
             // 
