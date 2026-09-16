@@ -25,5 +25,23 @@ namespace apex_management_sys
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeshPatient_Click(object sender, EventArgs e)
+        {
+            RP_SearchPatient sp = new RP_SearchPatient();
+            sp.Show();
+            this.Close();
+           
+        }
     }
 }

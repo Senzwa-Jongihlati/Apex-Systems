@@ -14,8 +14,8 @@ namespace apex_management_sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RP_Queue Q = new RP_Queue();
-            Q.Show();
+            home h = new home();
+            h.Show();
             this.Hide();
            
 

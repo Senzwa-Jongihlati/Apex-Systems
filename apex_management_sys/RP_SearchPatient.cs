@@ -23,8 +23,8 @@ namespace apex_management_sys
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Registration Regst = new Registration();
-            Regst.Show();
+            RP_SearchPatient sp = new RP_SearchPatient();
+            sp.Show();
             this.Close();
         }
         private void button7_Click(object sender, EventArgs e)
@@ -32,6 +32,35 @@ namespace apex_management_sys
             Login login = new Login();
             login.Show();
             this.Close();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddPatient_Click(object sender, EventArgs e)
+        {
+            Registration Regst = new Registration();
+            Regst.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btndPatient_Click(object sender, EventArgs e)
+        {
+            RP_SearchPatient sp = new RP_SearchPatient();
+            sp.Show();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

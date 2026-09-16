@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             lblName = new Label();
             lblSurname = new Label();
             lblIDNo = new Label();
@@ -41,316 +41,551 @@
             txtPhoneNo = new TextBox();
             cbGender = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
-            btnSave = new Button();
-            btnClear = new Button();
             label2 = new Label();
             txtAddress = new TextBox();
-            Background = new PictureBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            panel1 = new Panel();
+            btnQueue = new Button();
             button7 = new Button();
-            button6 = new Button();
-            button4 = new Button();
+            btnAppointment = new Button();
+            label18 = new Label();
+            btnReception = new Button();
             label4 = new Label();
+            label3 = new Label();
+            btnLogOut = new Button();
+            btnDoctor = new Button();
+            btnPatient = new Button();
+            homeDeshbord = new Button();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)Background).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
+            panel2 = new Panel();
+            label1 = new Label();
+            label7 = new Label();
+            groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            button2 = new Button();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(285, 9);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(138, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Patient Registration";
-            label1.Click += label1_Click;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(317, 184);
+            lblName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblName.Location = new Point(58, 34);
             lblName.Margin = new Padding(2, 0, 2, 0);
             lblName.Name = "lblName";
-            lblName.Size = new Size(53, 20);
+            lblName.Size = new Size(42, 15);
             lblName.TabIndex = 1;
             lblName.Text = "Name ";
             // 
             // lblSurname
             // 
             lblSurname.AutoSize = true;
-            lblSurname.Location = new Point(317, 230);
+            lblSurname.Location = new Point(338, 35);
             lblSurname.Margin = new Padding(2, 0, 2, 0);
             lblSurname.Name = "lblSurname";
-            lblSurname.Size = new Size(67, 20);
+            lblSurname.Size = new Size(54, 15);
             lblSurname.TabIndex = 2;
             lblSurname.Text = "Surname";
             // 
             // lblIDNo
             // 
             lblIDNo.AutoSize = true;
-            lblIDNo.Location = new Point(317, 277);
+            lblIDNo.Location = new Point(55, 90);
             lblIDNo.Margin = new Padding(2, 0, 2, 0);
             lblIDNo.Name = "lblIDNo";
-            lblIDNo.Size = new Size(86, 20);
+            lblIDNo.Size = new Size(68, 15);
             lblIDNo.TabIndex = 3;
             lblIDNo.Text = "ID Number ";
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(317, 325);
+            lblPhone.Location = new Point(55, 230);
             lblPhone.Margin = new Padding(2, 0, 2, 0);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(108, 20);
+            lblPhone.Size = new Size(108, 15);
             lblPhone.TabIndex = 4;
-            lblPhone.Text = "Phone Number";
+            lblPhone.Text = "Cellphone Number";
             // 
             // lblGender
             // 
             lblGender.AutoSize = true;
-            lblGender.Location = new Point(317, 366);
+            lblGender.Location = new Point(55, 145);
             lblGender.Margin = new Padding(2, 0, 2, 0);
             lblGender.Name = "lblGender";
-            lblGender.Size = new Size(57, 20);
+            lblGender.Size = new Size(45, 15);
             lblGender.TabIndex = 5;
             lblGender.Text = "Gender";
             // 
             // lblDOB
             // 
             lblDOB.AutoSize = true;
-            lblDOB.Location = new Point(317, 449);
+            lblDOB.Location = new Point(338, 90);
             lblDOB.Margin = new Padding(2, 0, 2, 0);
             lblDOB.Name = "lblDOB";
-            lblDOB.Size = new Size(94, 20);
+            lblDOB.Size = new Size(73, 15);
             lblDOB.TabIndex = 6;
             lblDOB.Text = "Date of Birth";
+            lblDOB.Click += lblDOB_Click;
             // 
             // txtName
             // 
-            txtName.Location = new Point(459, 181);
+            txtName.Location = new Point(55, 51);
             txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(121, 27);
+            txtName.Size = new Size(279, 23);
             txtName.TabIndex = 7;
             // 
             // txtSurname
             // 
-            txtSurname.Location = new Point(459, 230);
+            txtSurname.Location = new Point(338, 51);
             txtSurname.Margin = new Padding(2);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(121, 27);
+            txtSurname.Size = new Size(287, 23);
             txtSurname.TabIndex = 8;
             // 
             // txtID
             // 
-            txtID.Location = new Point(459, 277);
+            txtID.Location = new Point(55, 107);
             txtID.Margin = new Padding(2);
             txtID.Name = "txtID";
-            txtID.Size = new Size(121, 27);
+            txtID.Size = new Size(279, 23);
             txtID.TabIndex = 9;
             // 
             // txtPhoneNo
             // 
-            txtPhoneNo.Location = new Point(459, 325);
+            txtPhoneNo.Location = new Point(55, 248);
             txtPhoneNo.Margin = new Padding(2);
             txtPhoneNo.Name = "txtPhoneNo";
-            txtPhoneNo.Size = new Size(121, 27);
+            txtPhoneNo.Size = new Size(275, 23);
             txtPhoneNo.TabIndex = 10;
             // 
             // cbGender
             // 
             cbGender.FormattingEnabled = true;
             cbGender.Items.AddRange(new object[] { "Female ", "Male" });
-            cbGender.Location = new Point(459, 366);
+            cbGender.Location = new Point(58, 162);
             cbGender.Margin = new Padding(2);
             cbGender.Name = "cbGender";
-            cbGender.Size = new Size(146, 28);
+            cbGender.Size = new Size(276, 23);
             cbGender.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(459, 445);
+            dateTimePicker1.Location = new Point(338, 107);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(241, 27);
+            dateTimePicker1.Size = new Size(287, 23);
             dateTimePicker1.TabIndex = 12;
-            // 
-            // btnSave
-            // 
-            btnSave.Location = new Point(446, 510);
-            btnSave.Margin = new Padding(2);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(90, 27);
-            btnSave.TabIndex = 13;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            btnClear.Location = new Point(565, 510);
-            btnClear.Margin = new Padding(2);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(90, 27);
-            btnClear.TabIndex = 15;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(317, 409);
+            label2.Location = new Point(338, 145);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(62, 20);
+            label2.Size = new Size(92, 15);
             label2.TabIndex = 16;
-            label2.Text = "Address";
+            label2.Text = "Home language";
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(459, 409);
+            txtAddress.Location = new Point(338, 162);
             txtAddress.Margin = new Padding(2);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(121, 27);
+            txtAddress.Size = new Size(287, 23);
             txtAddress.TabIndex = 17;
             // 
-            // Background
+            // panel1
             // 
-            Background.Dock = DockStyle.Fill;
-            Background.Image = Properties.Resources.Screenshot_2026_09_10_232332;
-            Background.Location = new Point(0, 0);
-            Background.Name = "Background";
-            Background.Size = new Size(946, 708);
-            Background.SizeMode = PictureBoxSizeMode.StretchImage;
-            Background.TabIndex = 18;
-            Background.TabStop = false;
+            panel1.BackColor = Color.FromArgb(11, 61, 92);
+            panel1.Controls.Add(btnQueue);
+            panel1.Controls.Add(button7);
+            panel1.Controls.Add(btnAppointment);
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(btnReception);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(btnLogOut);
+            panel1.Controls.Add(btnDoctor);
+            panel1.Controls.Add(btnPatient);
+            panel1.Controls.Add(homeDeshbord);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(174, 749);
+            panel1.TabIndex = 21;
             // 
-            // tableLayoutPanel1
+            // btnQueue
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(25, 35, 126);
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(button7, 0, 7);
-            tableLayoutPanel1.Controls.Add(button6, 0, 6);
-            tableLayoutPanel1.Controls.Add(button4, 0, 5);
-            tableLayoutPanel1.Controls.Add(label4, 0, 3);
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Left;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(280, 708);
-            tableLayoutPanel1.TabIndex = 19;
+            btnQueue.FlatAppearance.BorderSize = 0;
+            btnQueue.FlatStyle = FlatStyle.Flat;
+            btnQueue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnQueue.ForeColor = SystemColors.ButtonHighlight;
+            btnQueue.Image = Properties.Resources.queue;
+            btnQueue.ImageAlign = ContentAlignment.MiddleLeft;
+            btnQueue.Location = new Point(8, 567);
+            btnQueue.Name = "btnQueue";
+            btnQueue.Size = new Size(142, 39);
+            btnQueue.TabIndex = 13;
+            btnQueue.Text = "Queue";
+            btnQueue.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            button7.Dock = DockStyle.Bottom;
-            button7.Location = new Point(3, 653);
-            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ButtonHighlight;
+            button7.Image = Properties.Resources.medical_assistance;
+            button7.ImageAlign = ContentAlignment.MiddleLeft;
+            button7.Location = new Point(8, 511);
             button7.Name = "button7";
-            button7.Size = new Size(274, 51);
-            button7.TabIndex = 14;
-            button7.Text = "Log Out";
+            button7.Size = new Size(142, 39);
+            button7.TabIndex = 12;
+            button7.Text = "Admissions";
             button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button6
+            // btnAppointment
             // 
-            button6.Dock = DockStyle.Top;
-            button6.Location = new Point(2, 203);
-            button6.Margin = new Padding(2, 2, 2, 0);
-            button6.Name = "button6";
-            button6.Size = new Size(276, 51);
-            button6.TabIndex = 13;
-            button6.Text = "Search Patient";
-            button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            btnAppointment.FlatAppearance.BorderSize = 0;
+            btnAppointment.FlatStyle = FlatStyle.Flat;
+            btnAppointment.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAppointment.ForeColor = SystemColors.ButtonHighlight;
+            btnAppointment.Image = (Image)resources.GetObject("btnAppointment.Image");
+            btnAppointment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAppointment.Location = new Point(8, 450);
+            btnAppointment.Name = "btnAppointment";
+            btnAppointment.Size = new Size(142, 41);
+            btnAppointment.TabIndex = 11;
+            btnAppointment.Text = "Appointments";
+            btnAppointment.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // label18
             // 
-            button4.Dock = DockStyle.Top;
-            button4.Location = new Point(2, 150);
-            button4.Margin = new Padding(2, 2, 2, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(276, 51);
-            button4.TabIndex = 12;
-            button4.Text = "Manage Queue";
-            button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.ForeColor = SystemColors.ButtonHighlight;
+            label18.Location = new Point(8, 417);
+            label18.Name = "label18";
+            label18.Size = new Size(45, 15);
+            label18.TabIndex = 10;
+            label18.Text = "Clinical";
+            // 
+            // btnReception
+            // 
+            btnReception.FlatAppearance.BorderSize = 0;
+            btnReception.FlatStyle = FlatStyle.Flat;
+            btnReception.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReception.ForeColor = SystemColors.ButtonFace;
+            btnReception.Image = Properties.Resources.receptionist;
+            btnReception.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReception.Location = new Point(8, 360);
+            btnReception.Name = "btnReception";
+            btnReception.Size = new Size(142, 38);
+            btnReception.TabIndex = 9;
+            btnReception.Text = "Reception";
+            btnReception.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Dock = DockStyle.Top;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlLight;
-            label4.Location = new Point(3, 120);
+            label4.Location = new Point(8, 220);
             label4.Name = "label4";
-            label4.Size = new Size(274, 28);
-            label4.TabIndex = 10;
+            label4.Size = new Size(81, 15);
+            label4.TabIndex = 8;
             label4.Text = "Management";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlLight;
+            label3.Location = new Point(8, 131);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 21);
+            label3.TabIndex = 7;
+            label3.Text = "Main:";
+            // 
+            // btnLogOut
+            // 
+            btnLogOut.FlatStyle = FlatStyle.Flat;
+            btnLogOut.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogOut.ForeColor = SystemColors.Control;
+            btnLogOut.Image = Properties.Resources.enter;
+            btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogOut.Location = new Point(8, 679);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(142, 38);
+            btnLogOut.TabIndex = 6;
+            btnLogOut.Text = "log out";
+            btnLogOut.UseVisualStyleBackColor = true;
+            // 
+            // btnDoctor
+            // 
+            btnDoctor.FlatAppearance.BorderSize = 0;
+            btnDoctor.FlatStyle = FlatStyle.Flat;
+            btnDoctor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDoctor.ForeColor = SystemColors.ButtonHighlight;
+            btnDoctor.Image = Properties.Resources.doctor__1_;
+            btnDoctor.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDoctor.Location = new Point(8, 307);
+            btnDoctor.Name = "btnDoctor";
+            btnDoctor.Size = new Size(142, 38);
+            btnDoctor.TabIndex = 5;
+            btnDoctor.Text = "Doctors";
+            btnDoctor.UseVisualStyleBackColor = true;
+            // 
+            // btnPatient
+            // 
+            btnPatient.FlatAppearance.BorderSize = 0;
+            btnPatient.FlatStyle = FlatStyle.Flat;
+            btnPatient.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPatient.ForeColor = SystemColors.ButtonHighlight;
+            btnPatient.Image = Properties.Resources.healthcare;
+            btnPatient.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPatient.Location = new Point(8, 252);
+            btnPatient.Name = "btnPatient";
+            btnPatient.Size = new Size(142, 38);
+            btnPatient.TabIndex = 4;
+            btnPatient.Text = "Patients";
+            btnPatient.UseVisualStyleBackColor = true;
+            // 
+            // homeDeshbord
+            // 
+            homeDeshbord.BackColor = Color.FromArgb(11, 61, 92);
+            homeDeshbord.FlatAppearance.BorderSize = 0;
+            homeDeshbord.FlatStyle = FlatStyle.Flat;
+            homeDeshbord.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            homeDeshbord.ForeColor = SystemColors.ControlLight;
+            homeDeshbord.Image = Properties.Resources.employment;
+            homeDeshbord.ImageAlign = ContentAlignment.MiddleLeft;
+            homeDeshbord.Location = new Point(8, 155);
+            homeDeshbord.Name = "homeDeshbord";
+            homeDeshbord.Size = new Size(142, 38);
+            homeDeshbord.TabIndex = 3;
+            homeDeshbord.Text = "Deshboard";
+            homeDeshbord.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = Properties.Resources.apex_logo;
-            pictureBox1.Location = new Point(3, 4);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(274, 112);
+            pictureBox1.Size = new Size(174, 84);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
+            pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(180, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(730, 59);
+            panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Black", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(202, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(246, 40);
+            label1.TabIndex = 23;
+            label1.Text = "Register patient";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(202, 93);
+            label7.Name = "label7";
+            label7.Size = new Size(303, 17);
+            label7.TabIndex = 24;
+            label7.Text = "Enter the patient's details to create a new record";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(lblName);
+            groupBox1.Controls.Add(lblSurname);
+            groupBox1.Controls.Add(lblIDNo);
+            groupBox1.Controls.Add(lblPhone);
+            groupBox1.Controls.Add(lblGender);
+            groupBox1.Controls.Add(txtAddress);
+            groupBox1.Controls.Add(lblDOB);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtName);
+            groupBox1.Controls.Add(txtSurname);
+            groupBox1.Controls.Add(txtID);
+            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(txtPhoneNo);
+            groupBox1.Controls.Add(cbGender);
+            groupBox1.Location = new Point(202, 132);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(749, 450);
+            groupBox1.TabIndex = 25;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Personal information";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(344, 398);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(281, 23);
+            comboBox1.TabIndex = 28;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(344, 382);
+            label13.Name = "label13";
+            label13.Size = new Size(45, 15);
+            label13.TabIndex = 27;
+            label13.Text = "Priority";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(59, 379);
+            label12.Name = "label12";
+            label12.Size = new Size(87, 15);
+            label12.TabIndex = 26;
+            label12.Text = "Reason for visit";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(22, 345);
+            label11.Name = "label11";
+            label11.Size = new Size(110, 20);
+            label11.TabIndex = 25;
+            label11.Text = "Medical intake";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(22, 198);
+            label10.Name = "label10";
+            label10.Size = new Size(113, 20);
+            label10.TabIndex = 24;
+            label10.Text = "Contact details";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(58, 291);
+            label9.Name = "label9";
+            label9.Size = new Size(49, 15);
+            label9.TabIndex = 23;
+            label9.Text = "Address";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(338, 230);
+            label8.Name = "label8";
+            label8.Size = new Size(109, 15);
+            label8.TabIndex = 22;
+            label8.Text = "Emergency contact";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(58, 398);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(272, 23);
+            textBox3.TabIndex = 20;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(338, 248);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(287, 23);
+            textBox2.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(55, 309);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(570, 23);
+            textBox1.TabIndex = 18;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(593, 587);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(132, 39);
+            button1.TabIndex = 26;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(11, 61, 92);
+            button2.ForeColor = SystemColors.ControlLightLight;
+            button2.Location = new Point(778, 587);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(132, 39);
+            button2.TabIndex = 27;
+            button2.Text = "Register patient";
+            button2.UseVisualStyleBackColor = false;
             // 
             // Registration
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 708);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(txtAddress);
-            Controls.Add(label2);
-            Controls.Add(btnClear);
-            Controls.Add(btnSave);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(cbGender);
-            Controls.Add(txtPhoneNo);
-            Controls.Add(txtID);
-            Controls.Add(txtSurname);
-            Controls.Add(txtName);
-            Controls.Add(lblDOB);
-            Controls.Add(lblGender);
-            Controls.Add(lblPhone);
-            Controls.Add(lblIDNo);
-            Controls.Add(lblSurname);
-            Controls.Add(lblName);
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(1077, 749);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(groupBox1);
+            Controls.Add(label7);
             Controls.Add(label1);
-            Controls.Add(Background);
+            Controls.Add(panel1);
             Margin = new Padding(2);
             Name = "Registration";
             Text = "Patient Registration";
             Load += Form2_Load;
-            ((System.ComponentModel.ISupportInitialize)Background).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Label lblName;
         private Label lblSurname;
         private Label lblIDNo;
@@ -363,16 +598,36 @@
         private TextBox txtPhoneNo;
         private ComboBox cbGender;
         private DateTimePicker dateTimePicker1;
-        private Button btnSave;
-        private Button btnClear;
         private Label label2;
         private TextBox txtAddress;
-        private PictureBox Background;
-        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Button btnQueue;
         private Button button7;
-        private Button button6;
-        private Button button4;
+        private Button btnAppointment;
+        private Label label18;
+        private Button btnReception;
         private Label label4;
+        private Label label3;
+        private Button btnLogOut;
+        private Button btnDoctor;
+        private Button btnPatient;
+        private Button homeDeshbord;
         private PictureBox pictureBox1;
+        private Panel panel2;
+        private Label label1;
+        private Label label7;
+        private GroupBox groupBox1;
+        private Button button1;
+        private Button button2;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label8;
+        private Label label9;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private ComboBox comboBox1;
     }
 }

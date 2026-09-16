@@ -45,5 +45,20 @@ namespace apex_management_sys
             login.Show();
             this.Close();
         }
+
+        private void Background_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDOB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
