@@ -40,3 +40,6 @@ Thumbs.db
 
 # Keep SQL scripts tracked
 # *.sql   <-- DO NOT add this unless you specifically want to ignore SQL files
+
+#SQL database configuration
+App.config
