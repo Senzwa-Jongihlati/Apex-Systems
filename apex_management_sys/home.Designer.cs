@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
-            panel3 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
-            button5 = new Button();
-            txtSearch = new TextBox();
+            TopBar = new Panel();
+            Name_Logo_Group = new TableLayoutPanel();
+            User_Name = new Label();
+            NameLogo = new Label();
+            Bottom_Border = new Panel();
             label1 = new Label();
             label2 = new Label();
             panel4 = new Panel();
@@ -77,7 +77,10 @@
             Dashboard = new Button();
             Main = new Label();
             SideBar = new Panel();
-            panel3.SuspendLayout();
+            Sidebar_Border = new Panel();
+            Main_Content = new Panel();
+            TopBar.SuspendLayout();
+            Name_Logo_Group.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -89,58 +92,67 @@
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SideBar.SuspendLayout();
+            Main_Content.SuspendLayout();
             SuspendLayout();
             // 
-            // panel3
+            // TopBar
             // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(button5);
-            panel3.Controls.Add(txtSearch);
-            panel3.Location = new Point(199, 0);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1152, 101);
-            panel3.TabIndex = 1;
-            panel3.Paint += panel3_Paint;
+            TopBar.BackColor = Color.FromArgb(222, 235, 245);
+            TopBar.Controls.Add(Name_Logo_Group);
+            TopBar.Controls.Add(Bottom_Border);
+            TopBar.Dock = DockStyle.Top;
+            TopBar.Location = new Point(199, 0);
+            TopBar.Margin = new Padding(3, 4, 3, 4);
+            TopBar.Name = "TopBar";
+            TopBar.Size = new Size(1152, 112);
+            TopBar.TabIndex = 1;
+            TopBar.Paint += panel3_Paint;
             // 
-            // label6
+            // Name_Logo_Group
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(982, 36);
-            label6.Name = "label6";
-            label6.Size = new Size(147, 20);
-            label6.TabIndex = 3;
-            label6.Text = "system administrator";
+            Name_Logo_Group.ColumnCount = 2;
+            Name_Logo_Group.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            Name_Logo_Group.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            Name_Logo_Group.Controls.Add(User_Name, 1, 0);
+            Name_Logo_Group.Controls.Add(NameLogo, 0, 0);
+            Name_Logo_Group.Dock = DockStyle.Right;
+            Name_Logo_Group.Location = new Point(902, 0);
+            Name_Logo_Group.Name = "Name_Logo_Group";
+            Name_Logo_Group.RowCount = 1;
+            Name_Logo_Group.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Name_Logo_Group.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Name_Logo_Group.Size = new Size(250, 110);
+            Name_Logo_Group.TabIndex = 19;
             // 
-            // label5
+            // User_Name
             // 
-            label5.Image = Properties.Resources.user__1_;
-            label5.Location = new Point(926, 12);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 72);
-            label5.TabIndex = 2;
-            label5.Click += label5_Click;
+            User_Name.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            User_Name.AutoSize = true;
+            User_Name.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            User_Name.Location = new Point(128, 35);
+            User_Name.Name = "User_Name";
+            User_Name.Size = new Size(119, 40);
+            User_Name.TabIndex = 3;
+            User_Name.Text = "system administrator";
             // 
-            // button5
+            // NameLogo
             // 
-            button5.BackColor = Color.FromArgb(255, 224, 192);
-            button5.Image = Properties.Resources.search_interface_symbol;
-            button5.Location = new Point(369, 23);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(62, 45);
-            button5.TabIndex = 1;
-            button5.UseVisualStyleBackColor = false;
+            NameLogo.Dock = DockStyle.Left;
+            NameLogo.Image = (Image)resources.GetObject("NameLogo.Image");
+            NameLogo.Location = new Point(3, 0);
+            NameLogo.Name = "NameLogo";
+            NameLogo.Size = new Size(119, 110);
+            NameLogo.TabIndex = 2;
+            NameLogo.Click += label5_Click;
             // 
-            // txtSearch
+            // Bottom_Border
             // 
-            txtSearch.Location = new Point(17, 32);
-            txtSearch.Margin = new Padding(3, 4, 3, 4);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(337, 27);
-            txtSearch.TabIndex = 0;
+            Bottom_Border.BackColor = Color.FromArgb(180, 200, 215);
+            Bottom_Border.Dock = DockStyle.Bottom;
+            Bottom_Border.Location = new Point(0, 110);
+            Bottom_Border.Name = "Bottom_Border";
+            Bottom_Border.Size = new Size(1152, 2);
+            Bottom_Border.TabIndex = 20;
             // 
             // label1
             // 
@@ -404,11 +416,12 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 57);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(913, 175);
+            dataGridView1.Size = new Size(1063, 232);
             dataGridView1.TabIndex = 0;
             // 
             // panel12
@@ -469,6 +482,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(199, 887);
             tableLayoutPanel1.TabIndex = 3;
             // 
@@ -670,33 +684,53 @@
             SideBar.Size = new Size(199, 999);
             SideBar.TabIndex = 12;
             // 
+            // Sidebar_Border
+            // 
+            Sidebar_Border.BackColor = Color.FromArgb(180, 200, 215);
+            Sidebar_Border.Dock = DockStyle.Left;
+            Sidebar_Border.Location = new Point(199, 112);
+            Sidebar_Border.Name = "Sidebar_Border";
+            Sidebar_Border.Size = new Size(2, 887);
+            Sidebar_Border.TabIndex = 13;
+            // 
+            // Main_Content
+            // 
+            Main_Content.Controls.Add(label1);
+            Main_Content.Controls.Add(label2);
+            Main_Content.Controls.Add(panel4);
+            Main_Content.Controls.Add(panel5);
+            Main_Content.Controls.Add(panel6);
+            Main_Content.Controls.Add(flowLayoutPanel1);
+            Main_Content.Controls.Add(panel7);
+            Main_Content.Controls.Add(panel8);
+            Main_Content.Controls.Add(panel10);
+            Main_Content.Controls.Add(panel11);
+            Main_Content.Controls.Add(panel12);
+            Main_Content.Dock = DockStyle.Fill;
+            Main_Content.Location = new Point(0, 0);
+            Main_Content.Name = "Main_Content";
+            Main_Content.Size = new Size(1351, 999);
+            Main_Content.TabIndex = 14;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(245, 248, 251);
             ClientSize = new Size(1351, 999);
+            Controls.Add(Sidebar_Border);
+            Controls.Add(TopBar);
             Controls.Add(SideBar);
-            Controls.Add(panel12);
-            Controls.Add(panel11);
-            Controls.Add(panel10);
-            Controls.Add(panel8);
-            Controls.Add(panel7);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(panel6);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(panel3);
-            ForeColor = SystemColors.ActiveCaptionText;
+            Controls.Add(Main_Content);
+            ForeColor = Color.FromArgb(33, 37, 41);
             Margin = new Padding(3, 4, 3, 4);
             Name = "home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "home";
             WindowState = FormWindowState.Maximized;
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            TopBar.ResumeLayout(false);
+            Name_Logo_Group.ResumeLayout(false);
+            Name_Logo_Group.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel5.ResumeLayout(false);
@@ -714,21 +748,20 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             SideBar.ResumeLayout(false);
+            Main_Content.ResumeLayout(false);
+            Main_Content.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Panel panel3;
-        private TextBox txtSearch;
+        private Panel TopBar;
         private Label label1;
         private Label label2;
-        private Button button5;
-        private Label label5;
+        private Label NameLogo;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
-        private Label label6;
+        private Label User_Name;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel7;
         private Panel panel8;
@@ -767,5 +800,9 @@
         private Button Dashboard;
         private Label Main;
         private Panel SideBar;
+        private TableLayoutPanel Name_Logo_Group;
+        private Panel Bottom_Border;
+        private Panel Sidebar_Border;
+        private Panel Main_Content;
     }
 }
