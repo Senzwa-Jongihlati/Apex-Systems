@@ -10,16 +10,17 @@ namespace apex_management_sys
 {
     public partial class home : Form
     {
+        private Login login;
         public home()
         {
             InitializeComponent();
         }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
+        public home(Login loginform)
         {
-            Login f = new Login();
-            f.Show();
+            InitializeComponent();
+            login = loginform;
         }
+
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -38,10 +39,35 @@ namespace apex_management_sys
 
         private void btnDeshPatient_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void Patients_Click(object sender, EventArgs e)
+        {
             RP_SearchPatient sp = new RP_SearchPatient();
             sp.Show();
             this.Close();
-           
+        }
+
+        private void Queue_Click(object sender, EventArgs e)
+        {
+            RP_Queue Q = new RP_Queue();
+            Q.Show();
+            this.Close();
+        }
+
+        private void Admissions_Click(object sender, EventArgs e)
+        {
+            Registration R = new Registration();
+            R.Show();
+            this.Close();
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            login.Show();
+            this.Close();
         }
     }
 }

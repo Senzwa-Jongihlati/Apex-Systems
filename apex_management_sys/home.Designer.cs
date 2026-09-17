@@ -77,8 +77,6 @@
             Doctors = new Button();
             Patients = new Button();
             Management = new Label();
-            Dashboard = new Button();
-            Main = new Label();
             SideBar = new Panel();
             Sidebar_Border = new Panel();
             Main_Content = new Panel();
@@ -547,8 +545,6 @@
             tableLayoutPanel1.Controls.Add(Doctors, 0, 4);
             tableLayoutPanel1.Controls.Add(Patients, 0, 3);
             tableLayoutPanel1.Controls.Add(Management, 0, 2);
-            tableLayoutPanel1.Controls.Add(Dashboard, 0, 1);
-            tableLayoutPanel1.Controls.Add(Main, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 112);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -585,6 +581,7 @@
             Logout.TabIndex = 18;
             Logout.Text = "log out";
             Logout.UseVisualStyleBackColor = false;
+            Logout.Click += Logout_Click;
             // 
             // Queue
             // 
@@ -596,13 +593,14 @@
             Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Queue.Image = (Image)resources.GetObject("Queue.Image");
             Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 567);
+            Queue.Location = new Point(3, 440);
             Queue.Margin = new Padding(3, 4, 0, 4);
             Queue.Name = "Queue";
             Queue.Size = new Size(196, 52);
             Queue.TabIndex = 17;
             Queue.Text = "Queue";
             Queue.UseVisualStyleBackColor = false;
+            Queue.Click += Queue_Click;
             // 
             // Admissions
             // 
@@ -614,13 +612,14 @@
             Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Admissions.Image = (Image)resources.GetObject("Admissions.Image");
             Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 507);
+            Admissions.Location = new Point(3, 380);
             Admissions.Margin = new Padding(3, 4, 0, 4);
             Admissions.Name = "Admissions";
             Admissions.Size = new Size(196, 52);
             Admissions.TabIndex = 16;
             Admissions.Text = "Admissions";
             Admissions.UseVisualStyleBackColor = false;
+            Admissions.Click += Admissions_Click;
             // 
             // Appointments
             // 
@@ -632,7 +631,7 @@
             Appointments.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Appointments.Image = (Image)resources.GetObject("Appointments.Image");
             Appointments.ImageAlign = ContentAlignment.MiddleLeft;
-            Appointments.Location = new Point(3, 444);
+            Appointments.Location = new Point(3, 317);
             Appointments.Margin = new Padding(3, 4, 0, 4);
             Appointments.Name = "Appointments";
             Appointments.Size = new Size(196, 55);
@@ -646,7 +645,7 @@
             Clinical.Dock = DockStyle.Top;
             Clinical.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Clinical.ForeColor = SystemColors.ActiveCaptionText;
-            Clinical.Location = new Point(3, 392);
+            Clinical.Location = new Point(3, 265);
             Clinical.Margin = new Padding(3, 20, 3, 20);
             Clinical.Name = "Clinical";
             Clinical.Size = new Size(193, 28);
@@ -664,7 +663,7 @@
             Reception.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Reception.Image = (Image)resources.GetObject("Reception.Image");
             Reception.ImageAlign = ContentAlignment.MiddleLeft;
-            Reception.Location = new Point(3, 317);
+            Reception.Location = new Point(3, 190);
             Reception.Margin = new Padding(3, 4, 0, 4);
             Reception.Name = "Reception";
             Reception.Size = new Size(196, 51);
@@ -682,7 +681,7 @@
             Doctors.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Doctors.Image = (Image)resources.GetObject("Doctors.Image");
             Doctors.ImageAlign = ContentAlignment.MiddleLeft;
-            Doctors.Location = new Point(3, 258);
+            Doctors.Location = new Point(3, 131);
             Doctors.Margin = new Padding(3, 4, 0, 4);
             Doctors.Name = "Doctors";
             Doctors.Size = new Size(196, 51);
@@ -700,13 +699,14 @@
             Patients.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Patients.Image = (Image)resources.GetObject("Patients.Image");
             Patients.ImageAlign = ContentAlignment.MiddleLeft;
-            Patients.Location = new Point(3, 199);
+            Patients.Location = new Point(3, 72);
             Patients.Margin = new Padding(3, 4, 0, 4);
             Patients.Name = "Patients";
             Patients.Size = new Size(196, 51);
             Patients.TabIndex = 11;
             Patients.Text = "Patients";
             Patients.UseVisualStyleBackColor = false;
+            Patients.Click += Patients_Click;
             // 
             // Management
             // 
@@ -714,44 +714,13 @@
             Management.Dock = DockStyle.Top;
             Management.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Management.ForeColor = SystemColors.ActiveCaptionText;
-            Management.Location = new Point(3, 147);
+            Management.Location = new Point(3, 20);
             Management.Margin = new Padding(3, 20, 3, 20);
             Management.Name = "Management";
             Management.Size = new Size(193, 28);
             Management.TabIndex = 10;
             Management.Text = "Management";
             Management.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Dashboard
-            // 
-            Dashboard.Cursor = Cursors.Hand;
-            Dashboard.Dock = DockStyle.Top;
-            Dashboard.FlatAppearance.BorderSize = 0;
-            Dashboard.FlatStyle = FlatStyle.Flat;
-            Dashboard.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Dashboard.Image = (Image)resources.GetObject("Dashboard.Image");
-            Dashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            Dashboard.Location = new Point(3, 72);
-            Dashboard.Margin = new Padding(3, 4, 0, 4);
-            Dashboard.Name = "Dashboard";
-            Dashboard.Size = new Size(196, 51);
-            Dashboard.TabIndex = 9;
-            Dashboard.Text = "Dashboard";
-            Dashboard.UseVisualStyleBackColor = true;
-            // 
-            // Main
-            // 
-            Main.AutoSize = true;
-            Main.Dock = DockStyle.Top;
-            Main.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Main.ForeColor = SystemColors.ActiveCaptionText;
-            Main.Location = new Point(3, 20);
-            Main.Margin = new Padding(3, 20, 3, 20);
-            Main.Name = "Main";
-            Main.Size = new Size(193, 28);
-            Main.TabIndex = 8;
-            Main.Text = "Main";
-            Main.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SideBar
             // 
@@ -1075,8 +1044,6 @@
         private Button Doctors;
         private Button Patients;
         private Label Management;
-        private Button Dashboard;
-        private Label Main;
         private Panel SideBar;
         private Panel Sidebar_Border;
         private Panel Main_Content;

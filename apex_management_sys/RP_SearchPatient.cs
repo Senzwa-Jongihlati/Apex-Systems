@@ -62,5 +62,26 @@ namespace apex_management_sys
         {
 
         }
+
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            home h = new home();
+            h.Show();
+            this.Close();
+        }
+
+        private void Queue_Click(object sender, EventArgs e)
+        {
+            RP_Queue Q = new RP_Queue();
+            Q.Show();
+            this.Close();
+        }
+
+        private void Admissions_Click(object sender, EventArgs e)
+        {
+            Registration R = new Registration();
+            R.Show();
+            this.Close();
+        }
     }
 }

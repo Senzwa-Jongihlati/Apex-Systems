@@ -33,5 +33,26 @@ namespace apex_management_sys
             login.Show();
             this.Close();
         }
+
+        private void Admissions_Click(object sender, EventArgs e)
+        {
+            Registration R = new Registration();
+            R.Show();
+            this.Close();
+        }
+
+        private void Patients_Click(object sender, EventArgs e)
+        {
+            RP_SearchPatient sp = new RP_SearchPatient();
+            sp.Show();
+            this.Close();
+        }
+
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            home h = new home();
+            h.Show();
+            this.Close();
+        }
     }
 }

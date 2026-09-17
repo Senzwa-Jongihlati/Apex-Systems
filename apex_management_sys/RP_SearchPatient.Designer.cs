@@ -56,7 +56,6 @@
             Clinical = new Label();
             Reception = new Button();
             Doctors = new Button();
-            Patients = new Button();
             Management = new Label();
             Dashboard = new Button();
             Important = new Label();
@@ -298,7 +297,6 @@
             tableLayoutPanel1.Controls.Add(Clinical, 0, 6);
             tableLayoutPanel1.Controls.Add(Reception, 0, 5);
             tableLayoutPanel1.Controls.Add(Doctors, 0, 4);
-            tableLayoutPanel1.Controls.Add(Patients, 0, 3);
             tableLayoutPanel1.Controls.Add(Management, 0, 2);
             tableLayoutPanel1.Controls.Add(Dashboard, 0, 1);
             tableLayoutPanel1.Controls.Add(Important, 0, 0);
@@ -349,13 +347,14 @@
             Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Queue.Image = (Image)resources.GetObject("Queue.Image");
             Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 567);
+            Queue.Location = new Point(3, 508);
             Queue.Margin = new Padding(3, 4, 0, 4);
             Queue.Name = "Queue";
             Queue.Size = new Size(196, 52);
             Queue.TabIndex = 17;
             Queue.Text = "Queue";
             Queue.UseVisualStyleBackColor = false;
+            Queue.Click += Queue_Click;
             // 
             // Admissions
             // 
@@ -367,13 +366,14 @@
             Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Admissions.Image = (Image)resources.GetObject("Admissions.Image");
             Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 507);
+            Admissions.Location = new Point(3, 448);
             Admissions.Margin = new Padding(3, 4, 0, 4);
             Admissions.Name = "Admissions";
             Admissions.Size = new Size(196, 52);
             Admissions.TabIndex = 16;
             Admissions.Text = "Admissions";
             Admissions.UseVisualStyleBackColor = false;
+            Admissions.Click += Admissions_Click;
             // 
             // Appointments
             // 
@@ -385,7 +385,7 @@
             Appointments.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Appointments.Image = (Image)resources.GetObject("Appointments.Image");
             Appointments.ImageAlign = ContentAlignment.MiddleLeft;
-            Appointments.Location = new Point(3, 444);
+            Appointments.Location = new Point(3, 385);
             Appointments.Margin = new Padding(3, 4, 0, 4);
             Appointments.Name = "Appointments";
             Appointments.Size = new Size(196, 55);
@@ -399,7 +399,7 @@
             Clinical.Dock = DockStyle.Top;
             Clinical.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Clinical.ForeColor = SystemColors.ActiveCaptionText;
-            Clinical.Location = new Point(3, 392);
+            Clinical.Location = new Point(3, 333);
             Clinical.Margin = new Padding(3, 20, 3, 20);
             Clinical.Name = "Clinical";
             Clinical.Size = new Size(193, 28);
@@ -417,7 +417,7 @@
             Reception.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Reception.Image = (Image)resources.GetObject("Reception.Image");
             Reception.ImageAlign = ContentAlignment.MiddleLeft;
-            Reception.Location = new Point(3, 317);
+            Reception.Location = new Point(3, 258);
             Reception.Margin = new Padding(3, 4, 0, 4);
             Reception.Name = "Reception";
             Reception.Size = new Size(196, 51);
@@ -435,31 +435,13 @@
             Doctors.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Doctors.Image = (Image)resources.GetObject("Doctors.Image");
             Doctors.ImageAlign = ContentAlignment.MiddleLeft;
-            Doctors.Location = new Point(3, 258);
+            Doctors.Location = new Point(3, 199);
             Doctors.Margin = new Padding(3, 4, 0, 4);
             Doctors.Name = "Doctors";
             Doctors.Size = new Size(196, 51);
             Doctors.TabIndex = 12;
             Doctors.Text = "Doctors";
             Doctors.UseVisualStyleBackColor = false;
-            // 
-            // Patients
-            // 
-            Patients.BackColor = Color.FromArgb(222, 235, 245);
-            Patients.Cursor = Cursors.Hand;
-            Patients.Dock = DockStyle.Top;
-            Patients.FlatAppearance.BorderSize = 0;
-            Patients.FlatStyle = FlatStyle.Flat;
-            Patients.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Patients.Image = (Image)resources.GetObject("Patients.Image");
-            Patients.ImageAlign = ContentAlignment.MiddleLeft;
-            Patients.Location = new Point(3, 199);
-            Patients.Margin = new Padding(3, 4, 0, 4);
-            Patients.Name = "Patients";
-            Patients.Size = new Size(196, 51);
-            Patients.TabIndex = 11;
-            Patients.Text = "Patients";
-            Patients.UseVisualStyleBackColor = false;
             // 
             // Management
             // 
@@ -491,6 +473,7 @@
             Dashboard.TabIndex = 9;
             Dashboard.Text = "Dashboard";
             Dashboard.UseVisualStyleBackColor = true;
+            Dashboard.Click += Dashboard_Click;
             // 
             // Important
             // 
@@ -606,7 +589,6 @@
         private Label Clinical;
         private Button Reception;
         private Button Doctors;
-        private Button Patients;
         private Label Management;
         private Button Dashboard;
         private Label Important;

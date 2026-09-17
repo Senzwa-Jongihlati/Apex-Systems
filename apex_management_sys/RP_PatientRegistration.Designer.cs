@@ -62,7 +62,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
             Queue = new Button();
-            Admissions = new Button();
             Appointments = new Button();
             Clinical = new Label();
             Reception = new Button();
@@ -396,7 +395,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(Logout, 0, 10);
             tableLayoutPanel1.Controls.Add(Queue, 0, 9);
-            tableLayoutPanel1.Controls.Add(Admissions, 0, 8);
             tableLayoutPanel1.Controls.Add(Appointments, 0, 7);
             tableLayoutPanel1.Controls.Add(Clinical, 0, 6);
             tableLayoutPanel1.Controls.Add(Reception, 0, 5);
@@ -452,31 +450,14 @@
             Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Queue.Image = (Image)resources.GetObject("Queue.Image");
             Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 567);
+            Queue.Location = new Point(3, 507);
             Queue.Margin = new Padding(3, 4, 0, 4);
             Queue.Name = "Queue";
             Queue.Size = new Size(196, 52);
             Queue.TabIndex = 17;
             Queue.Text = "Queue";
             Queue.UseVisualStyleBackColor = false;
-            // 
-            // Admissions
-            // 
-            Admissions.BackColor = Color.FromArgb(222, 235, 245);
-            Admissions.Cursor = Cursors.Hand;
-            Admissions.Dock = DockStyle.Top;
-            Admissions.FlatAppearance.BorderSize = 0;
-            Admissions.FlatStyle = FlatStyle.Flat;
-            Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Admissions.Image = (Image)resources.GetObject("Admissions.Image");
-            Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 507);
-            Admissions.Margin = new Padding(3, 4, 0, 4);
-            Admissions.Name = "Admissions";
-            Admissions.Size = new Size(196, 52);
-            Admissions.TabIndex = 16;
-            Admissions.Text = "Admissions";
-            Admissions.UseVisualStyleBackColor = false;
+            Queue.Click += Queue_Click;
             // 
             // Appointments
             // 
@@ -563,6 +544,7 @@
             Patients.TabIndex = 11;
             Patients.Text = "Patients";
             Patients.UseVisualStyleBackColor = false;
+            Patients.Click += Patients_Click;
             // 
             // Management
             // 
@@ -594,6 +576,7 @@
             Dashboard.TabIndex = 9;
             Dashboard.Text = "Dashboard";
             Dashboard.UseVisualStyleBackColor = true;
+            Dashboard.Click += Dashboard_Click;
             // 
             // Main
             // 
@@ -701,7 +684,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;
         private Button Queue;
-        private Button Admissions;
         private Button Appointments;
         private Label Clinical;
         private Button Reception;

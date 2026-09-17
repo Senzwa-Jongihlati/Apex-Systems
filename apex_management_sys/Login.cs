@@ -58,7 +58,7 @@ namespace apex_management_sys
 
             if (loginSuccess)
             {
-                home h = new home();
+                home h = new home(this);
                 h.Show();
                 this.Hide();
             }
