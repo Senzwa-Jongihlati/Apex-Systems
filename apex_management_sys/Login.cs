@@ -1,3 +1,6 @@
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
+
 namespace apex_management_sys
 {
     public partial class Login : Form
@@ -14,10 +17,54 @@ namespace apex_management_sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            home h = new home();
-            h.Show();
-            this.Hide();
-           
+            string username = gtxtUsername.Text.Trim();
+            string password = txtPassword.Text;
+
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
+            //open the connection
+            MySqlConnection conn = DatabaseHelper.GetConnection();
+
+            //ask the database for this user's stored info
+            string query = "SELECT PasswordHash, IsActive FROM Receptionist WHERE Username = @Username";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@Username", username);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            //check what came back
+            bool loginSuccess = false;
+
+            if (reader.Read())
+            {
+                string storedHash = reader.GetString("PasswordHash");
+                bool isActive = reader.GetBoolean("IsActive");
+                // BCrypt.Verify re-hashes the entered password using the salt stored inside storedHash, then compares the result — it never decrypts the stored hash
+                if (isActive && BCrypt.Net.BCrypt.Verify(password, storedHash))
+                {
+                    loginSuccess = true;
+                }
+            }
+
+            //close the connection now that we're done with it
+            reader.Close();
+            conn.Close();
+
+
+
+            if (loginSuccess)
+            {
+                RP_Queue Q = new RP_Queue();
+                Q.Show();
+                this.Hide();
+            }
+            else
+                MessageBox.Show("Incorrect username or password");
+
 
         }
 
@@ -36,6 +83,11 @@ namespace apex_management_sys
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

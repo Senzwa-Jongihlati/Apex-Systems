@@ -21,3 +21,25 @@ obj/
 *.rsuser
 *.suo
 *.user
+
+
+# MySQL Workbench
+*.mwb.bak
+*.mwb~
+*.tmp
+
+# MySQL Workbench lock/temp files
+*.mwb.lock
+*.bak
+
+# OS temporary files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Keep SQL scripts tracked
+# *.sql   <-- DO NOT add this unless you specifically want to ignore SQL files
+
+#SQL database configuration
+App.config
