@@ -17,8 +17,8 @@ namespace apex_management_sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = gtxtUsername.Text.Trim();
-            string password = txtPassword.Text;
+            string username = ktxtUsername.Text.Trim();
+            string password = ktxtPassword.Text;
 
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
@@ -58,8 +58,8 @@ namespace apex_management_sys
 
             if (loginSuccess)
             {
-                RP_Queue Q = new RP_Queue();
-                Q.Show();
+                home h = new home();
+                h.Show();
                 this.Hide();
             }
             else

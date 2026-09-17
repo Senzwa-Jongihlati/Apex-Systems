@@ -34,23 +34,22 @@
             User_Name = new Label();
             NameLogo = new Label();
             Bottom_Border = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            panel4 = new Panel();
+            Header = new Label();
+            p1 = new Label();
+            TotalPatients = new Panel();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            panel5 = new Panel();
+            TodaysAppointments = new Panel();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
-            panel6 = new Panel();
+            TotalDoctors = new Panel();
             label22 = new Label();
             label21 = new Label();
             label20 = new Label();
             label19 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             panel7 = new Panel();
             panel9 = new Panel();
             label17 = new Label();
@@ -79,11 +78,14 @@
             SideBar = new Panel();
             Sidebar_Border = new Panel();
             Main_Content = new Panel();
+            SummariesPanel = new TableLayoutPanel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            HeaderPanel = new TableLayoutPanel();
             TopBar.SuspendLayout();
             Name_Logo_Group.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
+            TotalPatients.SuspendLayout();
+            TodaysAppointments.SuspendLayout();
+            TotalDoctors.SuspendLayout();
             panel7.SuspendLayout();
             panel9.SuspendLayout();
             panel8.SuspendLayout();
@@ -93,6 +95,8 @@
             tableLayoutPanel1.SuspendLayout();
             SideBar.SuspendLayout();
             Main_Content.SuspendLayout();
+            SummariesPanel.SuspendLayout();
+            HeaderPanel.SuspendLayout();
             SuspendLayout();
             // 
             // TopBar
@@ -104,7 +108,7 @@
             TopBar.Location = new Point(199, 0);
             TopBar.Margin = new Padding(3, 4, 3, 4);
             TopBar.Name = "TopBar";
-            TopBar.Size = new Size(1152, 112);
+            TopBar.Size = new Size(1493, 112);
             TopBar.TabIndex = 1;
             TopBar.Paint += panel3_Paint;
             // 
@@ -116,7 +120,7 @@
             Name_Logo_Group.Controls.Add(User_Name, 1, 0);
             Name_Logo_Group.Controls.Add(NameLogo, 0, 0);
             Name_Logo_Group.Dock = DockStyle.Right;
-            Name_Logo_Group.Location = new Point(902, 0);
+            Name_Logo_Group.Location = new Point(1243, 0);
             Name_Logo_Group.Name = "Name_Logo_Group";
             Name_Logo_Group.RowCount = 1;
             Name_Logo_Group.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -151,40 +155,42 @@
             Bottom_Border.Dock = DockStyle.Bottom;
             Bottom_Border.Location = new Point(0, 110);
             Bottom_Border.Name = "Bottom_Border";
-            Bottom_Border.Size = new Size(1152, 2);
+            Bottom_Border.Size = new Size(1493, 2);
             Bottom_Border.TabIndex = 20;
             // 
-            // label1
+            // Header
             // 
-            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(216, 116);
-            label1.Name = "label1";
-            label1.Size = new Size(187, 37);
-            label1.TabIndex = 2;
-            label1.Text = "welcome back";
+            Header.Dock = DockStyle.Fill;
+            Header.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Header.Location = new Point(3, 18);
+            Header.Name = "Header";
+            Header.Size = new Size(1485, 53);
+            Header.TabIndex = 2;
+            Header.Text = "Welcome back";
+            Header.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
+            // p1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(216, 151);
-            label2.Name = "label2";
-            label2.Size = new Size(301, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Here's what heppening in the hospital today";
+            p1.AutoSize = true;
+            p1.Dock = DockStyle.Fill;
+            p1.Location = new Point(3, 71);
+            p1.Name = "p1";
+            p1.Size = new Size(1485, 54);
+            p1.TabIndex = 3;
+            p1.Text = "Here's what heppening in the hospital today";
             // 
-            // panel4
+            // TotalPatients
             // 
-            panel4.BackColor = Color.White;
-            panel4.Controls.Add(label9);
-            panel4.Controls.Add(label8);
-            panel4.Controls.Add(label7);
-            panel4.Location = new Point(216, 200);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(229, 133);
-            panel4.TabIndex = 4;
+            TotalPatients.BackColor = Color.White;
+            TotalPatients.Controls.Add(label9);
+            TotalPatients.Controls.Add(label8);
+            TotalPatients.Controls.Add(label7);
+            TotalPatients.Dock = DockStyle.Left;
+            TotalPatients.Location = new Point(1172, 66);
+            TotalPatients.Margin = new Padding(3, 4, 3, 4);
+            TotalPatients.Name = "TotalPatients";
+            TotalPatients.Size = new Size(229, 139);
+            TotalPatients.TabIndex = 4;
             // 
             // label9
             // 
@@ -214,18 +220,19 @@
             label7.Size = new Size(55, 53);
             label7.TabIndex = 0;
             // 
-            // panel5
+            // TodaysAppointments
             // 
-            panel5.BackColor = Color.FromArgb(192, 255, 192);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(label12);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(label10);
-            panel5.Location = new Point(489, 200);
-            panel5.Margin = new Padding(3, 4, 3, 4);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(229, 133);
-            panel5.TabIndex = 5;
+            TodaysAppointments.BackColor = Color.FromArgb(192, 255, 192);
+            TodaysAppointments.Controls.Add(label13);
+            TodaysAppointments.Controls.Add(label12);
+            TodaysAppointments.Controls.Add(label11);
+            TodaysAppointments.Controls.Add(label10);
+            TodaysAppointments.Dock = DockStyle.Left;
+            TodaysAppointments.Location = new Point(209, 66);
+            TodaysAppointments.Margin = new Padding(3, 4, 3, 4);
+            TodaysAppointments.Name = "TodaysAppointments";
+            TodaysAppointments.Size = new Size(229, 139);
+            TodaysAppointments.TabIndex = 5;
             // 
             // label13
             // 
@@ -265,18 +272,19 @@
             label10.Size = new Size(53, 59);
             label10.TabIndex = 0;
             // 
-            // panel6
+            // TotalDoctors
             // 
-            panel6.BackColor = Color.FromArgb(255, 255, 192);
-            panel6.Controls.Add(label22);
-            panel6.Controls.Add(label21);
-            panel6.Controls.Add(label20);
-            panel6.Controls.Add(label19);
-            panel6.Location = new Point(758, 200);
-            panel6.Margin = new Padding(3, 4, 3, 4);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(229, 133);
-            panel6.TabIndex = 6;
+            TotalDoctors.BackColor = Color.FromArgb(255, 255, 192);
+            TotalDoctors.Controls.Add(label22);
+            TotalDoctors.Controls.Add(label21);
+            TotalDoctors.Controls.Add(label20);
+            TotalDoctors.Controls.Add(label19);
+            TotalDoctors.Dock = DockStyle.Left;
+            TotalDoctors.Location = new Point(530, 66);
+            TotalDoctors.Margin = new Padding(3, 4, 3, 4);
+            TotalDoctors.Name = "TotalDoctors";
+            TotalDoctors.Size = new Size(229, 139);
+            TotalDoctors.TabIndex = 6;
             // 
             // label22
             // 
@@ -316,15 +324,6 @@
             label19.Name = "label19";
             label19.Size = new Size(47, 56);
             label19.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.WhiteSmoke;
-            flowLayoutPanel1.Location = new Point(216, 375);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(632, 356);
-            flowLayoutPanel1.TabIndex = 7;
             // 
             // panel7
             // 
@@ -398,10 +397,11 @@
             // panel10
             // 
             panel10.BackColor = Color.Violet;
-            panel10.Location = new Point(1037, 200);
+            panel10.Dock = DockStyle.Left;
+            panel10.Location = new Point(851, 66);
             panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(229, 133);
+            panel10.Size = new Size(229, 139);
             panel10.TabIndex = 11;
             // 
             // panel11
@@ -696,32 +696,76 @@
             // 
             // Main_Content
             // 
-            Main_Content.Controls.Add(label1);
-            Main_Content.Controls.Add(label2);
-            Main_Content.Controls.Add(panel4);
-            Main_Content.Controls.Add(panel5);
-            Main_Content.Controls.Add(panel6);
+            Main_Content.AutoScroll = true;
+            Main_Content.Controls.Add(SummariesPanel);
             Main_Content.Controls.Add(flowLayoutPanel1);
             Main_Content.Controls.Add(panel7);
             Main_Content.Controls.Add(panel8);
-            Main_Content.Controls.Add(panel10);
             Main_Content.Controls.Add(panel11);
             Main_Content.Controls.Add(panel12);
-            Main_Content.Location = new Point(0, 0);
+            Main_Content.Controls.Add(HeaderPanel);
+            Main_Content.Dock = DockStyle.Top;
+            Main_Content.Location = new Point(201, 112);
             Main_Content.Name = "Main_Content";
-            Main_Content.Size = new Size(1351, 999);
+            Main_Content.Size = new Size(1491, 999);
             Main_Content.TabIndex = 14;
+            // 
+            // SummariesPanel
+            // 
+            SummariesPanel.ColumnCount = 5;
+            SummariesPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.81688F));
+            SummariesPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.54578F));
+            SummariesPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.54578F));
+            SummariesPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.54578F));
+            SummariesPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.54578F));
+            SummariesPanel.Controls.Add(panel10, 3, 1);
+            SummariesPanel.Controls.Add(TotalDoctors, 2, 1);
+            SummariesPanel.Controls.Add(TodaysAppointments, 1, 1);
+            SummariesPanel.Controls.Add(TotalPatients, 4, 1);
+            SummariesPanel.Dock = DockStyle.Top;
+            SummariesPanel.Location = new Point(0, 125);
+            SummariesPanel.Name = "SummariesPanel";
+            SummariesPanel.RowCount = 2;
+            SummariesPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            SummariesPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
+            SummariesPanel.Size = new Size(1491, 209);
+            SummariesPanel.TabIndex = 13;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.WhiteSmoke;
+            flowLayoutPanel1.Location = new Point(216, 430);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(632, 301);
+            flowLayoutPanel1.TabIndex = 7;
+            // 
+            // HeaderPanel
+            // 
+            HeaderPanel.ColumnCount = 1;
+            HeaderPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            HeaderPanel.Controls.Add(Header, 0, 1);
+            HeaderPanel.Controls.Add(p1, 0, 2);
+            HeaderPanel.Dock = DockStyle.Top;
+            HeaderPanel.Location = new Point(0, 0);
+            HeaderPanel.Name = "HeaderPanel";
+            HeaderPanel.RowCount = 2;
+            HeaderPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            HeaderPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 42.5F));
+            HeaderPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 42.5F));
+            HeaderPanel.Size = new Size(1491, 125);
+            HeaderPanel.TabIndex = 14;
             // 
             // home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 248, 251);
-            ClientSize = new Size(1351, 999);
+            ClientSize = new Size(1692, 999);
+            Controls.Add(Main_Content);
             Controls.Add(Sidebar_Border);
             Controls.Add(TopBar);
             Controls.Add(SideBar);
-            Controls.Add(Main_Content);
             ForeColor = Color.FromArgb(33, 37, 41);
             Margin = new Padding(3, 4, 3, 4);
             Name = "home";
@@ -731,12 +775,12 @@
             TopBar.ResumeLayout(false);
             Name_Logo_Group.ResumeLayout(false);
             Name_Logo_Group.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            TotalPatients.ResumeLayout(false);
+            TotalPatients.PerformLayout();
+            TodaysAppointments.ResumeLayout(false);
+            TodaysAppointments.PerformLayout();
+            TotalDoctors.ResumeLayout(false);
+            TotalDoctors.PerformLayout();
             panel7.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -749,20 +793,21 @@
             tableLayoutPanel1.PerformLayout();
             SideBar.ResumeLayout(false);
             Main_Content.ResumeLayout(false);
-            Main_Content.PerformLayout();
+            SummariesPanel.ResumeLayout(false);
+            HeaderPanel.ResumeLayout(false);
+            HeaderPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel TopBar;
-        private Label label1;
-        private Label label2;
+        private Label Header;
+        private Label p1;
         private Label NameLogo;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
+        private Panel TotalPatients;
+        private Panel TodaysAppointments;
+        private Panel TotalDoctors;
         private Label User_Name;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel7;
         private Panel panel8;
         private Panel panel9;
@@ -804,5 +849,8 @@
         private Panel Bottom_Border;
         private Panel Sidebar_Border;
         private Panel Main_Content;
+        private TableLayoutPanel SummariesPanel;
+        private TableLayoutPanel HeaderPanel;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -28,22 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label6 = new Label();
             btnExit = new Button();
             panel2 = new Panel();
+            ktxtPassword = new Krypton.Toolkit.KryptonTextBox();
+            ktxtUsername = new Krypton.Toolkit.KryptonTextBox();
             label4 = new Label();
             pictureBox3 = new PictureBox();
             showPass = new CheckBox();
             label3 = new Label();
-            label2 = new Label();
             btnSignIn = new Button();
-            txtPassword = new TextBox();
             pictureBox2 = new PictureBox();
             Background = new PictureBox();
-            gtxtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -88,20 +85,37 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(192, 192, 255);
-            panel2.Controls.Add(gtxtUsername);
+            panel2.Controls.Add(ktxtPassword);
+            panel2.Controls.Add(ktxtUsername);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(showPass);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
             panel2.Controls.Add(btnSignIn);
-            panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(pictureBox2);
             panel2.Location = new Point(162, 112);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(656, 558);
             panel2.TabIndex = 1;
+            // 
+            // ktxtPassword
+            // 
+            ktxtPassword.CueHint.CueHintText = "Enter Password";
+            ktxtPassword.Location = new Point(319, 304);
+            ktxtPassword.Name = "ktxtPassword";
+            ktxtPassword.PasswordChar = '●';
+            ktxtPassword.Size = new Size(253, 27);
+            ktxtPassword.TabIndex = 11;
+            ktxtPassword.UseSystemPasswordChar = true;
+            // 
+            // ktxtUsername
+            // 
+            ktxtUsername.CueHint.CueHintText = "Enter Username";
+            ktxtUsername.Location = new Point(319, 217);
+            ktxtUsername.Name = "ktxtUsername";
+            ktxtUsername.Size = new Size(253, 27);
+            ktxtUsername.TabIndex = 10;
             // 
             // label4
             // 
@@ -143,16 +157,6 @@
             label3.TabIndex = 6;
             label3.Text = "Sign in";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(319, 270);
-            label2.Name = "label2";
-            label2.Size = new Size(97, 25);
-            label2.TabIndex = 5;
-            label2.Text = "Password";
-            // 
             // btnSignIn
             // 
             btnSignIn.BackColor = Color.Brown;
@@ -168,16 +172,6 @@
             btnSignIn.Text = "sign in";
             btnSignIn.UseVisualStyleBackColor = false;
             btnSignIn.Click += button1_Click;
-            // 
-            // txtPassword
-            // 
-            txtPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(319, 300);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(253, 27);
-            txtPassword.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -201,34 +195,6 @@
             Background.TabIndex = 0;
             Background.TabStop = false;
             Background.Click += pictureBox1_Click;
-            // 
-            // gtxtUsername
-            // 
-            gtxtUsername.Animated = true;
-            gtxtUsername.BorderRadius = 5;
-            customizableEdges1.BottomLeft = false;
-            customizableEdges1.BottomRight = false;
-            customizableEdges1.TopLeft = false;
-            customizableEdges1.TopRight = false;
-            gtxtUsername.CustomizableEdges = customizableEdges1;
-            gtxtUsername.DefaultText = "";
-            gtxtUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            gtxtUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            gtxtUsername.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            gtxtUsername.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            gtxtUsername.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            gtxtUsername.Font = new Font("Segoe UI", 9F);
-            gtxtUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            gtxtUsername.IconRight = Properties.Resources.user__1_;
-            gtxtUsername.Location = new Point(319, 208);
-            gtxtUsername.Margin = new Padding(3, 4, 3, 4);
-            gtxtUsername.Name = "gtxtUsername";
-            gtxtUsername.PlaceholderText = "Username";
-            gtxtUsername.SelectedText = "";
-            gtxtUsername.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            gtxtUsername.Size = new Size(286, 27);
-            gtxtUsername.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            gtxtUsername.TabIndex = 11;
             // 
             // Login
             // 
@@ -257,14 +223,13 @@
         private Panel panel2;
         private PictureBox pictureBox2;
         private Button btnSignIn;
-        private TextBox txtPassword;
         private Label label3;
-        private Label label2;
         private CheckBox showPass;
         private PictureBox pictureBox3;
         private Button btnExit;
         private Label label4;
         private Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox gtxtUsername;
+        private Krypton.Toolkit.KryptonTextBox ktxtUsername;
+        private Krypton.Toolkit.KryptonTextBox ktxtPassword;
     }
 }
