@@ -156,9 +156,10 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(216, 111);
+            label1.Location = new Point(216, 116);
             label1.Name = "label1";
             label1.Size = new Size(187, 37);
             label1.TabIndex = 2;
@@ -706,7 +707,6 @@
             Main_Content.Controls.Add(panel10);
             Main_Content.Controls.Add(panel11);
             Main_Content.Controls.Add(panel12);
-            Main_Content.Dock = DockStyle.Fill;
             Main_Content.Location = new Point(0, 0);
             Main_Content.Name = "Main_Content";
             Main_Content.Size = new Size(1351, 999);
