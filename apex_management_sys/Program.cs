@@ -11,7 +11,11 @@ namespace apex_management_sys
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+<<<<<<< HEAD
             Application.Run(new Form2());
+=======
+            Application.Run(new Login());
+>>>>>>> reception
         }
     }
 }

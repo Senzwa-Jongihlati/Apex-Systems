@@ -1,8 +1,8 @@
 namespace apex_management_sys
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -16,6 +16,7 @@ namespace apex_management_sys
         {
             home h = new home();
             h.Show();
+            this.Hide();
            
 
         }
