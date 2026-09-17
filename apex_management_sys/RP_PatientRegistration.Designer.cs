@@ -58,11 +58,6 @@
             textBox1 = new TextBox();
             button1 = new Button();
             button2 = new Button();
-            TopBar = new Panel();
-            Name_Logo_Group = new TableLayoutPanel();
-            User_Name = new Label();
-            NameLogo = new Label();
-            Bottom_Border = new Panel();
             SideBar = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
@@ -80,8 +75,6 @@
             panel13 = new Panel();
             Sidebar_Border = new Panel();
             groupBox1.SuspendLayout();
-            TopBar.SuspendLayout();
-            Name_Logo_Group.SuspendLayout();
             SideBar.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
@@ -239,6 +232,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label12);
@@ -382,63 +376,6 @@
             button2.TabIndex = 27;
             button2.Text = "Register patient";
             button2.UseVisualStyleBackColor = false;
-            // 
-            // TopBar
-            // 
-            TopBar.BackColor = Color.FromArgb(222, 235, 245);
-            TopBar.Controls.Add(Name_Logo_Group);
-            TopBar.Controls.Add(Bottom_Border);
-            TopBar.Dock = DockStyle.Top;
-            TopBar.Location = new Point(199, 0);
-            TopBar.Margin = new Padding(3, 4, 3, 4);
-            TopBar.Name = "TopBar";
-            TopBar.Size = new Size(1032, 112);
-            TopBar.TabIndex = 28;
-            // 
-            // Name_Logo_Group
-            // 
-            Name_Logo_Group.ColumnCount = 2;
-            Name_Logo_Group.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            Name_Logo_Group.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            Name_Logo_Group.Controls.Add(User_Name, 1, 0);
-            Name_Logo_Group.Controls.Add(NameLogo, 0, 0);
-            Name_Logo_Group.Dock = DockStyle.Right;
-            Name_Logo_Group.Location = new Point(782, 0);
-            Name_Logo_Group.Name = "Name_Logo_Group";
-            Name_Logo_Group.RowCount = 1;
-            Name_Logo_Group.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Name_Logo_Group.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Name_Logo_Group.Size = new Size(250, 110);
-            Name_Logo_Group.TabIndex = 19;
-            // 
-            // User_Name
-            // 
-            User_Name.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            User_Name.AutoSize = true;
-            User_Name.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            User_Name.Location = new Point(128, 35);
-            User_Name.Name = "User_Name";
-            User_Name.Size = new Size(119, 40);
-            User_Name.TabIndex = 3;
-            User_Name.Text = "system administrator";
-            // 
-            // NameLogo
-            // 
-            NameLogo.Dock = DockStyle.Left;
-            NameLogo.Image = (Image)resources.GetObject("NameLogo.Image");
-            NameLogo.Location = new Point(3, 0);
-            NameLogo.Name = "NameLogo";
-            NameLogo.Size = new Size(119, 110);
-            NameLogo.TabIndex = 2;
-            // 
-            // Bottom_Border
-            // 
-            Bottom_Border.BackColor = Color.FromArgb(180, 200, 215);
-            Bottom_Border.Dock = DockStyle.Bottom;
-            Bottom_Border.Location = new Point(0, 110);
-            Bottom_Border.Name = "Bottom_Border";
-            Bottom_Border.Size = new Size(1032, 2);
-            Bottom_Border.TabIndex = 20;
             // 
             // SideBar
             // 
@@ -696,19 +633,18 @@
             // 
             Sidebar_Border.BackColor = Color.FromArgb(180, 200, 215);
             Sidebar_Border.Dock = DockStyle.Left;
-            Sidebar_Border.Location = new Point(199, 112);
+            Sidebar_Border.Location = new Point(199, 0);
             Sidebar_Border.Name = "Sidebar_Border";
-            Sidebar_Border.Size = new Size(2, 887);
+            Sidebar_Border.Size = new Size(2, 999);
             Sidebar_Border.TabIndex = 30;
             // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
+            BackColor = Color.FromArgb(245, 248, 251);
             ClientSize = new Size(1231, 999);
             Controls.Add(Sidebar_Border);
-            Controls.Add(TopBar);
             Controls.Add(SideBar);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -717,13 +653,12 @@
             Controls.Add(label1);
             Margin = new Padding(2, 3, 2, 3);
             Name = "Registration";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Patient Registration";
+            WindowState = FormWindowState.Maximized;
             Load += Form2_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            TopBar.ResumeLayout(false);
-            Name_Logo_Group.ResumeLayout(false);
-            Name_Logo_Group.PerformLayout();
             SideBar.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -762,11 +697,6 @@
         private Label label11;
         private Label label10;
         private ComboBox comboBox1;
-        private Panel TopBar;
-        private TableLayoutPanel Name_Logo_Group;
-        private Label User_Name;
-        private Label NameLogo;
-        private Panel Bottom_Border;
         private Panel SideBar;
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;

@@ -60,6 +60,10 @@
             label3 = new Label();
             label2 = new Label();
             QueueGrid = new DataGridView();
+            Position = new DataGridViewTextBoxColumn();
+            PatientName = new DataGridViewTextBoxColumn();
+            DoctorName = new DataGridViewTextBoxColumn();
+            Wait = new DataGridViewTextBoxColumn();
             panel12 = new Panel();
             panel13 = new Panel();
             Logo = new PictureBox();
@@ -94,10 +98,6 @@
             SummariesPanel = new TableLayoutPanel();
             HeaderPanel = new TableLayoutPanel();
             label1 = new Label();
-            Position = new DataGridViewTextBoxColumn();
-            PatientName = new DataGridViewTextBoxColumn();
-            DoctorName = new DataGridViewTextBoxColumn();
-            Wait = new DataGridViewTextBoxColumn();
             TotalPatients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             TodaysAppointments.SuspendLayout();
@@ -473,6 +473,38 @@
             QueueGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             QueueGrid.Size = new Size(1469, 132);
             QueueGrid.TabIndex = 0;
+            // 
+            // Position
+            // 
+            Position.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Position.HeaderText = "#";
+            Position.MinimumWidth = 6;
+            Position.Name = "Position";
+            Position.ReadOnly = true;
+            // 
+            // PatientName
+            // 
+            PatientName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PatientName.HeaderText = "Patient";
+            PatientName.MinimumWidth = 6;
+            PatientName.Name = "PatientName";
+            PatientName.ReadOnly = true;
+            // 
+            // DoctorName
+            // 
+            DoctorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DoctorName.HeaderText = "Doctor";
+            DoctorName.MinimumWidth = 6;
+            DoctorName.Name = "DoctorName";
+            DoctorName.ReadOnly = true;
+            // 
+            // Wait
+            // 
+            Wait.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Wait.HeaderText = "Waiting Time";
+            Wait.MinimumWidth = 6;
+            Wait.Name = "Wait";
+            Wait.ReadOnly = true;
             // 
             // panel12
             // 
@@ -954,38 +986,6 @@
             label1.TabIndex = 4;
             label1.Text = "17 September 2026";
             label1.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // Position
-            // 
-            Position.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Position.HeaderText = "#";
-            Position.MinimumWidth = 6;
-            Position.Name = "Position";
-            Position.ReadOnly = true;
-            // 
-            // PatientName
-            // 
-            PatientName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PatientName.HeaderText = "Patient";
-            PatientName.MinimumWidth = 6;
-            PatientName.Name = "PatientName";
-            PatientName.ReadOnly = true;
-            // 
-            // DoctorName
-            // 
-            DoctorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DoctorName.HeaderText = "Doctor";
-            DoctorName.MinimumWidth = 6;
-            DoctorName.Name = "DoctorName";
-            DoctorName.ReadOnly = true;
-            // 
-            // Wait
-            // 
-            Wait.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Wait.HeaderText = "Waiting Time";
-            Wait.MinimumWidth = 6;
-            Wait.Name = "Wait";
-            Wait.ReadOnly = true;
             // 
             // home
             // 

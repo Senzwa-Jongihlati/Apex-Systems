@@ -99,6 +99,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 73);
             dataGridView1.Margin = new Padding(2, 3, 2, 3);
@@ -234,6 +235,7 @@
             // 
             // panel4
             // 
+            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label10);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label8);
@@ -535,6 +537,7 @@
             // 
             // Main
             // 
+            Main.BackColor = Color.FromArgb(245, 248, 251);
             Main.Controls.Add(panel1);
             Main.Controls.Add(label1);
             Main.Controls.Add(lbl2IDNo);
@@ -556,7 +559,9 @@
             Controls.Add(SideBar);
             Margin = new Padding(2, 3, 2, 3);
             Name = "RP_SearchPatient";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Returning Patient";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
