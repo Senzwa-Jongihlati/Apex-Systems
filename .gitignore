@@ -43,3 +43,8 @@ Thumbs.db
 
 #SQL database configuration
 App.config
+
+# Microsoft Word temporary files
+~$*.docx
+~$*.doc
+~$*.docm
