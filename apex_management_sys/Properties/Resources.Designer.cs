@@ -143,6 +143,26 @@ namespace apex_management_sys.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye {
+            get {
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye__1_ {
+            get {
+                object obj = ResourceManager.GetObject("eye (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap healthcare {
             get {
                 object obj = ResourceManager.GetObject("healthcare", resourceCulture);
@@ -226,6 +246,26 @@ namespace apex_management_sys.Properties {
         internal static System.Drawing.Bitmap Screenshot_2026_09_10_232332 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2026-09-10 232332", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2026_09_17_131010 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2026-09-17 131010", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2026_09_17_132434 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2026-09-17 132434", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

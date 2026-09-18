@@ -17,7 +17,7 @@ namespace apex_management_sys
             home h = new home();
             h.Show();
             this.Hide();
-           
+
 
         }
 
@@ -36,6 +36,21 @@ namespace apex_management_sys
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
