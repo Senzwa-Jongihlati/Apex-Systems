@@ -13,6 +13,7 @@ namespace apex_management_sys
         public RP_Queue()
         {
             InitializeComponent();
+            lblWelcome.Text = $"Welcome To The Queue {Session.CurrentReceptionist.GetFullName()}";
         }
 
         private void button3_Click(object sender, EventArgs e)
