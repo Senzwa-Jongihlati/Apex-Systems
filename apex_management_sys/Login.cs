@@ -8,8 +8,13 @@ namespace apex_management_sys
         public Login()
         {
             InitializeComponent();
+            CenterLoginPanel();
         }
-
+        private void CenterLoginPanel()
+        {
+            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
+            panel1.Top = (this.ClientSize.Height - panel1.Height) / 2;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -47,7 +52,7 @@ namespace apex_management_sys
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string username = gtxtUsername.Text.Trim();
+            string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
 
