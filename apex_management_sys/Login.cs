@@ -1,3 +1,4 @@
+using ApexSystems;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Crypto.Generators;
 
@@ -55,45 +56,50 @@ namespace apex_management_sys
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please enter both username and password.");
                 return;
             }
-            //open the connection
-            MySqlConnection conn = DatabaseHelper.GetConnection();
 
-            //ask the database for this user's stored info
-            string query = "SELECT PasswordHash, IsActive FROM Receptionist WHERE Username = @Username";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@Username", username);
+            Receptionist receptionist = null;
 
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            //check what came back
-            bool loginSuccess = false;
-
-            if (reader.Read())
+            try
             {
-                string storedHash = reader.GetString("PasswordHash");
-                bool isActive = reader.GetBoolean("IsActive");
-                // BCrypt.Verify re-hashes the entered password using the salt stored inside storedHash, then compares the result — it never decrypts the stored hash
-                if (isActive && BCrypt.Net.BCrypt.Verify(password, storedHash))
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                using (MySqlCommand cmd = new MySqlCommand(
+                    "SELECT * FROM Receptionist WHERE Username = @Username", conn))
                 {
-                    loginSuccess = true;
+                    cmd.Parameters.AddWithValue("@Username", username);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            receptionist = new Receptionist(
+                                reader.GetInt32("ReceptionistID"),
+                                reader.GetString("FirstName"),
+                                reader.GetString("LastName"),
+                                reader.GetString("Username"),
+                                reader.GetString("PasswordHash"),
+                                reader["ContactNumber"] as string,   // null if the column is NULL
+                                reader["Email"] as string,
+                                reader.GetDateTime("DateHired"),
+                                reader.GetBoolean("IsActive"));
+                        }
+                    }
                 }
             }
-
-            //close the connection now that we're done with it
-            reader.Close();
-            conn.Close();
-
-
-
-            if (loginSuccess)
+            catch (MySqlException)
             {
-                RP_Queue Q = new RP_Queue();
+                MessageBox.Show("Could not reach the database. Please try again.");
+                return;
+            }
+
+            if (receptionist != null && receptionist.VerifyPassword(password))
+            {
+                Session.Login(receptionist);
+                RP_Queue Q = new RP_Queue();// pass the logged-in receptionist along
                 Q.Show();
                 this.Hide();
             }
