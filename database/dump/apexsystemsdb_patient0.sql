@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.46, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: apexsystemsdb
 -- ------------------------------------------------------
--- Server version	8.0.46
+-- Server version	8.0.43
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,11 +33,10 @@ CREATE TABLE `patient` (
   `ContactNumber` varchar(20) NOT NULL,
   `Address` varchar(255) DEFAULT NULL,
   `RegisteredDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `EmergencyContact` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`PatientID`),
   UNIQUE KEY `UQ_Patient_Identification` (`IdentificationType`,`IdentificationNumber`),
   CONSTRAINT `CK_Patient_IdentificationType` CHECK ((`IdentificationType` in (_utf8mb4'SA ID',_utf8mb4'Passport')))
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +45,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (1,'Nomvula','Zulu','1990-05-14','Female','SA ID','9005140123456','0821112223','12 Umgeni Road, Durban','2024-03-01 09:15:00',NULL),(2,'James','van der Merwe','1985-11-02','Male','SA ID','8511025678901','0733334445','45 Musgrave Road, Durban','2024-03-02 10:00:00',NULL),(3,'Aisha','Patel','2000-07-22','Female','Passport','A12345678','0845556667','8 Overport Drive, Durban','2024-03-03 08:45:00',NULL),(4,'Bongani','Khumalo','1978-01-30','Male','SA ID','7801305432109','0716667778','23 Berea Road, Durban','2024-03-04 11:20:00',NULL),(5,'Nelisa','Mu','2026-09-21','Female ','SA ID','1234567','123456','asdfgh','2026-09-21 14:22:06','23456');
+INSERT INTO `patient` VALUES (1,'Nomvula','Zulu','1990-05-14','Female','SA ID','9005140123456','0821112223','12 Umgeni Road, Durban','2024-03-01 09:15:00'),(2,'James','van der Merwe','1985-11-02','Male','SA ID','8511025678901','0733334445','45 Musgrave Road, Durban','2024-03-02 10:00:00'),(3,'Aisha','Patel','2000-07-22','Female','Passport','A12345678','0845556667','8 Overport Drive, Durban','2024-03-03 08:45:00'),(4,'Bongani','Khumalo','1978-01-30','Male','SA ID','7801305432109','0716667778','23 Berea Road, Durban','2024-03-04 11:20:00');
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-21 15:35:41
+-- Dump completed on 2026-09-21 16:44:29

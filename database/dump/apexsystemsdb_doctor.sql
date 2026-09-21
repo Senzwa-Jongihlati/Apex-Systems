@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.46, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: apexsystemsdb
 -- ------------------------------------------------------
--- Server version	8.0.46
+-- Server version	8.0.43
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,14 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `receptionist`
+-- Table structure for table `doctor`
 --
 
-DROP TABLE IF EXISTS `receptionist`;
+DROP TABLE IF EXISTS `doctor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `receptionist` (
-  `ReceptionistID` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `doctor` (
+  `DoctorID` int NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
   `Username` varchar(50) NOT NULL,
@@ -32,20 +32,20 @@ CREATE TABLE `receptionist` (
   `Email` varchar(100) DEFAULT NULL,
   `DateHired` date NOT NULL,
   `IsActive` bit(1) NOT NULL DEFAULT b'1',
-  PRIMARY KEY (`ReceptionistID`),
-  UNIQUE KEY `UQ_Receptionist_Username` (`Username`),
-  UNIQUE KEY `UQ_Receptionist_Email` (`Email`)
+  PRIMARY KEY (`DoctorID`),
+  UNIQUE KEY `UQ_Doctor_Username` (`Username`),
+  UNIQUE KEY `UQ_Doctor_Email` (`Email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `receptionist`
+-- Dumping data for table `doctor`
 --
 
-LOCK TABLES `receptionist` WRITE;
-/*!40000 ALTER TABLE `receptionist` DISABLE KEYS */;
-INSERT INTO `receptionist` VALUES (1,'Thandeka','Mkhize','tmkhize','$2a$11$ZOTryu2bpVjXAgpPyEqVLeOrydHrjKhlB8vDAtA84t4WxwFhzO.rC','0731234567','tmkhize@apexsystems.co.za','2024-02-01',_binary ''),(2,'Sipho','Naidoo','snaidoo','$2a$11$/GE0ZdcnsCWQSwIN5mW8ZOx0TLql47/ICwRbH9XnkKpNvovhNc8aC','0827654321','snaidoo@apexsystems.co.za','2023-11-15',_binary ''),(3,'Lerato','Dlamini','ldlamini','$2a$11$nLnXcEZW/R/.l7ZNKphnl.6zv72McVKiCFR2eLw6J8chN6HWhKYra','0619988776','ldlamini@apexsystems.co.za','2025-01-10',_binary '\0');
-/*!40000 ALTER TABLE `receptionist` ENABLE KEYS */;
+LOCK TABLES `doctor` WRITE;
+/*!40000 ALTER TABLE `doctor` DISABLE KEYS */;
+INSERT INTO `doctor` VALUES (1,'Nkosinathi','Ndlovu','nndlovu','$2a$11$6ybmg.YRpq3d6Esdc.ovlu/WbLZxPqoLaqIB/p6ENqxKGKqCD7U9S','0721239876','nndlovu@apexsystems.co.za','2022-06-01',_binary ''),(2,'Priya','Govender','pgovender','$2a$11$St4J2YU0v74fAVC5Vkh0UeHZxd2S9rnw/3/R7NiHd6.QyBZ6b1RWu','0839871234','pgovender@apexsystems.co.za','2023-03-20',_binary ''),(3,'Pieter','Botha','pbotha','$2a$11$u1FFbgZ8n.YLsyiUpxiTI.rKHcbq2Y3vHahbPZGT8cw6cKfba3Pke','0645551212','pbotha@apexsystems.co.za','2021-09-05',_binary '\0');
+/*!40000 ALTER TABLE `doctor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-21 15:35:41
+-- Dump completed on 2026-09-21 16:44:29
