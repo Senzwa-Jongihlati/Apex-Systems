@@ -77,10 +77,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(66, 66);
+            label1.Location = new Point(58, 50);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(148, 46);
+            label1.Size = new Size(121, 37);
             label1.TabIndex = 0;
             label1.Text = "Patients";
             // 
@@ -89,10 +89,10 @@
             lbl2IDNo.AutoSize = true;
             lbl2IDNo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl2IDNo.ForeColor = Color.Blue;
-            lbl2IDNo.Location = new Point(66, 126);
+            lbl2IDNo.Location = new Point(58, 94);
             lbl2IDNo.Margin = new Padding(2, 0, 2, 0);
             lbl2IDNo.Name = "lbl2IDNo";
-            lbl2IDNo.Size = new Size(212, 28);
+            lbl2IDNo.Size = new Size(170, 21);
             lbl2IDNo.TabIndex = 1;
             lbl2IDNo.Text = "Deshboard / Patients";
             // 
@@ -100,11 +100,11 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 73);
-            dataGridView1.Margin = new Padding(2, 3, 2, 3);
+            dataGridView1.Location = new Point(0, 55);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1114, 460);
+            dataGridView1.Size = new Size(975, 345);
             dataGridView1.TabIndex = 15;
             // 
             // button2
@@ -112,10 +112,9 @@
             button2.BackColor = Color.FromArgb(255, 128, 128);
             button2.Image = Properties.Resources.search_interface_symbol;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(894, 37);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(782, 28);
             button2.Name = "button2";
-            button2.Size = new Size(92, 45);
+            button2.Size = new Size(80, 34);
             button2.TabIndex = 16;
             button2.Text = "Filter";
             button2.TextAlign = ContentAlignment.MiddleRight;
@@ -132,37 +131,35 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(comboBox2);
-            panel1.Location = new Point(107, 281);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(94, 211);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1117, 119);
+            panel1.Size = new Size(978, 90);
             panel1.TabIndex = 19;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(17, 44);
+            label2.Location = new Point(15, 33);
             label2.Name = "label2";
-            label2.Size = new Size(72, 28);
+            label2.Size = new Size(59, 21);
             label2.TabIndex = 0;
             label2.Text = "Search";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(95, 48);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Location = new Point(83, 36);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 27);
+            textBox1.Size = new Size(249, 23);
             textBox1.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(443, 9);
+            label3.Location = new Point(388, 7);
             label3.Name = "label3";
-            label3.Size = new Size(71, 28);
+            label3.Size = new Size(57, 21);
             label3.TabIndex = 3;
             label3.Text = "Status";
             // 
@@ -170,19 +167,17 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Completed", "Waiting", "Cancelled" });
-            comboBox1.Location = new Point(433, 48);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Location = new Point(379, 36);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(209, 28);
+            comboBox1.Size = new Size(183, 23);
             comboBox1.TabIndex = 2;
             // 
             // button1
             // 
             button1.BackColor = Color.Yellow;
-            button1.Location = new Point(1010, 37);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(884, 28);
             button1.Name = "button1";
-            button1.Size = new Size(86, 45);
+            button1.Size = new Size(75, 34);
             button1.TabIndex = 17;
             button1.Text = "Reset";
             button1.UseVisualStyleBackColor = false;
@@ -192,9 +187,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(689, 9);
+            label7.Location = new Point(603, 7);
             label7.Name = "label7";
-            label7.Size = new Size(79, 28);
+            label7.Size = new Size(64, 21);
             label7.TabIndex = 4;
             label7.Text = "Gender";
             // 
@@ -202,20 +197,18 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox2.Location = new Point(674, 46);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
+            comboBox2.Location = new Point(590, 34);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(162, 28);
+            comboBox2.Size = new Size(142, 23);
             comboBox2.TabIndex = 5;
             // 
             // btnAddPatient
             // 
             btnAddPatient.BackColor = Color.FromArgb(11, 61, 92);
             btnAddPatient.ForeColor = SystemColors.ControlLightLight;
-            btnAddPatient.Location = new Point(1002, 162);
-            btnAddPatient.Margin = new Padding(3, 4, 3, 4);
+            btnAddPatient.Location = new Point(877, 122);
             btnAddPatient.Name = "btnAddPatient";
-            btnAddPatient.Size = new Size(222, 73);
+            btnAddPatient.Size = new Size(194, 55);
             btnAddPatient.TabIndex = 20;
             btnAddPatient.Text = "Add patient";
             btnAddPatient.UseVisualStyleBackColor = false;
@@ -226,10 +219,9 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(106, 408);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(93, 306);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1116, 533);
+            panel2.Size = new Size(977, 400);
             panel2.TabIndex = 21;
             // 
             // panel4
@@ -239,18 +231,17 @@
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label8);
             panel4.Location = new Point(0, 0);
-            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1117, 75);
+            panel4.Size = new Size(978, 57);
             panel4.TabIndex = 0;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(197, 23);
+            label10.Location = new Point(172, 17);
             label10.Name = "label10";
-            label10.Size = new Size(68, 20);
+            label10.Size = new Size(54, 15);
             label10.TabIndex = 2;
             label10.Text = "(12 total)";
             // 
@@ -258,9 +249,9 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(81, 16);
+            label9.Location = new Point(71, 12);
             label9.Name = "label9";
-            label9.Size = new Size(119, 28);
+            label9.Size = new Size(95, 21);
             label9.TabIndex = 1;
             label9.Text = "Patient List";
             label9.Click += label9_Click;
@@ -268,9 +259,9 @@
             // label8
             // 
             label8.Image = Properties.Resources.users_avatar;
-            label8.Location = new Point(21, 16);
+            label8.Location = new Point(18, 12);
             label8.Name = "label8";
-            label8.Size = new Size(54, 45);
+            label8.Size = new Size(47, 34);
             label8.TabIndex = 0;
             // 
             // SideBar
@@ -281,9 +272,8 @@
             SideBar.Controls.Add(panel13);
             SideBar.Dock = DockStyle.Left;
             SideBar.Location = new Point(0, 0);
-            SideBar.Margin = new Padding(3, 4, 3, 4);
             SideBar.Name = "SideBar";
-            SideBar.Size = new Size(199, 971);
+            SideBar.Size = new Size(174, 562);
             SideBar.TabIndex = 23;
             // 
             // tableLayoutPanel1
@@ -301,7 +291,8 @@
             tableLayoutPanel1.Controls.Add(Dashboard, 0, 1);
             tableLayoutPanel1.Controls.Add(Important, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 112);
+            tableLayoutPanel1.Location = new Point(0, 84);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 11;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -315,8 +306,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(199, 859);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.Size = new Size(174, 478);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // Logout
@@ -329,10 +320,10 @@
             Logout.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Logout.Image = (Image)resources.GetObject("Logout.Image");
             Logout.ImageAlign = ContentAlignment.MiddleLeft;
-            Logout.Location = new Point(3, 808);
-            Logout.Margin = new Padding(3, 4, 0, 0);
+            Logout.Location = new Point(3, 440);
+            Logout.Margin = new Padding(3, 3, 0, 0);
             Logout.Name = "Logout";
-            Logout.Size = new Size(196, 51);
+            Logout.Size = new Size(171, 38);
             Logout.TabIndex = 18;
             Logout.Text = "log out";
             Logout.UseVisualStyleBackColor = false;
@@ -347,10 +338,10 @@
             Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Queue.Image = (Image)resources.GetObject("Queue.Image");
             Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 508);
-            Queue.Margin = new Padding(3, 4, 0, 4);
+            Queue.Location = new Point(3, 380);
+            Queue.Margin = new Padding(3, 3, 0, 3);
             Queue.Name = "Queue";
-            Queue.Size = new Size(196, 52);
+            Queue.Size = new Size(171, 39);
             Queue.TabIndex = 17;
             Queue.Text = "Queue";
             Queue.UseVisualStyleBackColor = false;
@@ -366,10 +357,10 @@
             Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Admissions.Image = (Image)resources.GetObject("Admissions.Image");
             Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 448);
-            Admissions.Margin = new Padding(3, 4, 0, 4);
+            Admissions.Location = new Point(3, 335);
+            Admissions.Margin = new Padding(3, 3, 0, 3);
             Admissions.Name = "Admissions";
-            Admissions.Size = new Size(196, 52);
+            Admissions.Size = new Size(171, 39);
             Admissions.TabIndex = 16;
             Admissions.Text = "Admissions";
             Admissions.UseVisualStyleBackColor = false;
@@ -385,10 +376,10 @@
             Appointments.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Appointments.Image = (Image)resources.GetObject("Appointments.Image");
             Appointments.ImageAlign = ContentAlignment.MiddleLeft;
-            Appointments.Location = new Point(3, 385);
-            Appointments.Margin = new Padding(3, 4, 0, 4);
+            Appointments.Location = new Point(3, 288);
+            Appointments.Margin = new Padding(3, 3, 0, 3);
             Appointments.Name = "Appointments";
-            Appointments.Size = new Size(196, 55);
+            Appointments.Size = new Size(171, 41);
             Appointments.TabIndex = 15;
             Appointments.Text = "Appointments";
             Appointments.UseVisualStyleBackColor = false;
@@ -399,10 +390,10 @@
             Clinical.Dock = DockStyle.Top;
             Clinical.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Clinical.ForeColor = SystemColors.ActiveCaptionText;
-            Clinical.Location = new Point(3, 333);
-            Clinical.Margin = new Padding(3, 20, 3, 20);
+            Clinical.Location = new Point(3, 249);
+            Clinical.Margin = new Padding(3, 15, 3, 15);
             Clinical.Name = "Clinical";
-            Clinical.Size = new Size(193, 28);
+            Clinical.Size = new Size(168, 21);
             Clinical.TabIndex = 14;
             Clinical.Text = "Clinical";
             Clinical.TextAlign = ContentAlignment.MiddleCenter;
@@ -417,10 +408,10 @@
             Reception.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Reception.Image = (Image)resources.GetObject("Reception.Image");
             Reception.ImageAlign = ContentAlignment.MiddleLeft;
-            Reception.Location = new Point(3, 258);
-            Reception.Margin = new Padding(3, 4, 0, 4);
+            Reception.Location = new Point(3, 193);
+            Reception.Margin = new Padding(3, 3, 0, 3);
             Reception.Name = "Reception";
-            Reception.Size = new Size(196, 51);
+            Reception.Size = new Size(171, 38);
             Reception.TabIndex = 13;
             Reception.Text = "Reception";
             Reception.UseVisualStyleBackColor = false;
@@ -435,10 +426,10 @@
             Doctors.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Doctors.Image = (Image)resources.GetObject("Doctors.Image");
             Doctors.ImageAlign = ContentAlignment.MiddleLeft;
-            Doctors.Location = new Point(3, 199);
-            Doctors.Margin = new Padding(3, 4, 0, 4);
+            Doctors.Location = new Point(3, 149);
+            Doctors.Margin = new Padding(3, 3, 0, 3);
             Doctors.Name = "Doctors";
-            Doctors.Size = new Size(196, 51);
+            Doctors.Size = new Size(171, 38);
             Doctors.TabIndex = 12;
             Doctors.Text = "Doctors";
             Doctors.UseVisualStyleBackColor = false;
@@ -449,10 +440,10 @@
             Management.Dock = DockStyle.Top;
             Management.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Management.ForeColor = SystemColors.ActiveCaptionText;
-            Management.Location = new Point(3, 147);
-            Management.Margin = new Padding(3, 20, 3, 20);
+            Management.Location = new Point(3, 110);
+            Management.Margin = new Padding(3, 15, 3, 15);
             Management.Name = "Management";
-            Management.Size = new Size(193, 28);
+            Management.Size = new Size(168, 21);
             Management.TabIndex = 10;
             Management.Text = "Management";
             Management.TextAlign = ContentAlignment.MiddleCenter;
@@ -466,10 +457,10 @@
             Dashboard.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Dashboard.Image = (Image)resources.GetObject("Dashboard.Image");
             Dashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            Dashboard.Location = new Point(3, 72);
-            Dashboard.Margin = new Padding(3, 4, 0, 4);
+            Dashboard.Location = new Point(3, 54);
+            Dashboard.Margin = new Padding(3, 3, 0, 3);
             Dashboard.Name = "Dashboard";
-            Dashboard.Size = new Size(196, 51);
+            Dashboard.Size = new Size(171, 38);
             Dashboard.TabIndex = 9;
             Dashboard.Text = "Dashboard";
             Dashboard.UseVisualStyleBackColor = true;
@@ -481,10 +472,10 @@
             Important.Dock = DockStyle.Top;
             Important.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Important.ForeColor = SystemColors.ActiveCaptionText;
-            Important.Location = new Point(3, 20);
-            Important.Margin = new Padding(3, 20, 3, 20);
+            Important.Location = new Point(3, 15);
+            Important.Margin = new Padding(3, 15, 3, 15);
             Important.Name = "Important";
-            Important.Size = new Size(193, 28);
+            Important.Size = new Size(168, 21);
             Important.TabIndex = 8;
             Important.Text = "Main";
             Important.TextAlign = ContentAlignment.MiddleCenter;
@@ -494,28 +485,27 @@
             Logo.Dock = DockStyle.Top;
             Logo.Image = (Image)resources.GetObject("Logo.Image");
             Logo.Location = new Point(0, 0);
-            Logo.Margin = new Padding(3, 4, 3, 4);
             Logo.Name = "Logo";
-            Logo.Size = new Size(199, 112);
+            Logo.Size = new Size(174, 84);
             Logo.SizeMode = PictureBoxSizeMode.Zoom;
             Logo.TabIndex = 2;
             Logo.TabStop = false;
             // 
             // panel13
             // 
-            panel13.Location = new Point(206, 0);
-            panel13.Margin = new Padding(3, 4, 3, 4);
+            panel13.Location = new Point(180, 0);
             panel13.Name = "panel13";
-            panel13.Size = new Size(834, 79);
+            panel13.Size = new Size(730, 59);
             panel13.TabIndex = 1;
             // 
             // Sidebar_Border
             // 
             Sidebar_Border.BackColor = Color.FromArgb(180, 200, 215);
             Sidebar_Border.Dock = DockStyle.Left;
-            Sidebar_Border.Location = new Point(199, 0);
+            Sidebar_Border.Location = new Point(174, 0);
+            Sidebar_Border.Margin = new Padding(3, 2, 3, 2);
             Sidebar_Border.Name = "Sidebar_Border";
-            Sidebar_Border.Size = new Size(2, 971);
+            Sidebar_Border.Size = new Size(2, 562);
             Sidebar_Border.TabIndex = 24;
             // 
             // Main
@@ -527,20 +517,21 @@
             Main.Controls.Add(btnAddPatient);
             Main.Controls.Add(panel2);
             Main.Dock = DockStyle.Fill;
-            Main.Location = new Point(201, 0);
+            Main.Location = new Point(176, 0);
+            Main.Margin = new Padding(3, 2, 3, 2);
             Main.Name = "Main";
-            Main.Size = new Size(1300, 971);
+            Main.Size = new Size(1105, 562);
             Main.TabIndex = 25;
             // 
             // RP_SearchPatient
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1501, 971);
+            ClientSize = new Size(1281, 562);
             Controls.Add(Main);
             Controls.Add(Sidebar_Border);
             Controls.Add(SideBar);
-            Margin = new Padding(2, 3, 2, 3);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "RP_SearchPatient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Returning Patient";
