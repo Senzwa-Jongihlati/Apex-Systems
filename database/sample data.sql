@@ -1,9 +1,9 @@
 USE ApexSystemsDB;
 -- Receptionist
 INSERT INTO Receptionist (FirstName, LastName, Username, PasswordHash, ContactNumber, Email, DateHired, IsActive) VALUES
-('Thandeka', 'Mkhize', 'tmkhize', '$2a$10$examplehash1', '0731234567', 'tmkhize@apexsystems.co.za', '2024-02-01', 1),
-('Sipho', 'Naidoo', 'snaidoo', '$2a$10$examplehash2', '0827654321', 'snaidoo@apexsystems.co.za', '2023-11-15', 1),
-('Lerato', 'Dlamini', 'ldlamini', '$2a$10$examplehash3', '0619988776', 'ldlamini@apexsystems.co.za', '2025-01-10', 0);
+('Thandeka', 'Mkhize', 'tmkhize', '$2a$11$ZOTryu2bpVjXAgpPyEqVLeOrydHrjKhlB8vDAtA84t4WxwFhzO.rC', '0731234567', 'tmkhize@apexsystems.co.za', '2024-02-01', 1),
+('Sipho', 'Naidoo', 'snaidoo', '$2a$11$/GE0ZdcnsCWQSwIN5mW8ZOx0TLql47/ICwRbH9XnkKpNvovhNc8aC', '0827654321', 'snaidoo@apexsystems.co.za', '2023-11-15', 1),
+('Lerato', 'Dlamini', 'ldlamini', '$2a$11$nLnXcEZW/R/.l7ZNKphnl.6zv72McVKiCFR2eLw6J8chN6HWhKYra', '0619988776', 'ldlamini@apexsystems.co.za', '2025-01-10', 0);
 
 -- Patient
 INSERT INTO Patient (FirstName, LastName, DateOfBirth, Gender, IdentificationType, IdentificationNumber, ContactNumber, Address, RegisteredDate) VALUES
