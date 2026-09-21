@@ -132,7 +132,7 @@
             ServedGrid.RowHeadersVisible = false;
             ServedGrid.RowHeadersWidth = 62;
             ServedGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ServedGrid.Size = new Size(1152, 137);
+            ServedGrid.Size = new Size(1152, 286);
             ServedGrid.TabIndex = 12;
             // 
             // QueueNumber
@@ -187,9 +187,9 @@
             // 
             Waiting.Controls.Add(WaitingGrid);
             Waiting.Controls.Add(panel1);
-            Waiting.Location = new Point(112, 456);
+            Waiting.Location = new Point(94, 132);
             Waiting.Name = "Waiting";
-            Waiting.Size = new Size(1152, 179);
+            Waiting.Size = new Size(1152, 389);
             Waiting.TabIndex = 15;
             // 
             // WaitingGrid
@@ -207,7 +207,7 @@
             WaitingGrid.RowHeadersVisible = false;
             WaitingGrid.RowHeadersWidth = 62;
             WaitingGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            WaitingGrid.Size = new Size(1152, 103);
+            WaitingGrid.Size = new Size(1152, 313);
             WaitingGrid.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
@@ -271,9 +271,9 @@
             // 
             Served.Controls.Add(ServedGrid);
             Served.Controls.Add(panel2);
-            Served.Location = new Point(112, 174);
+            Served.Location = new Point(94, 580);
             Served.Name = "Served";
-            Served.Size = new Size(1152, 206);
+            Served.Size = new Size(1152, 355);
             Served.TabIndex = 14;
             // 
             // panel2
