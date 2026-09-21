@@ -83,7 +83,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(353, 27);
-            txtPassword.TabIndex = 15;
+            txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // pictureBox2
@@ -105,7 +105,7 @@
             checkBox1.Location = new Point(0, 30);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(376, 24);
-            checkBox1.TabIndex = 14;
+            checkBox1.TabIndex = 3;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -127,7 +127,7 @@
             txtUsername.MaxLength = 250;
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(354, 27);
-            txtUsername.TabIndex = 14;
+            txtUsername.TabIndex = 1;
             // 
             // pictureBox1
             // 

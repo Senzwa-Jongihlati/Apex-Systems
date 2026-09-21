@@ -42,22 +42,22 @@
             cbGender = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
-            txtAddress = new TextBox();
             label1 = new Label();
             label7 = new Label();
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
+            cbIDType = new ComboBox();
+            cbPriority = new ComboBox();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtReasonForVisit = new TextBox();
+            txtEmergancyContact = new TextBox();
+            txtAddress = new TextBox();
             button1 = new Button();
-            button2 = new Button();
+            btnRegisterPatient = new Button();
             SideBar = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
@@ -103,7 +103,7 @@
             // lblIDNo
             // 
             lblIDNo.AutoSize = true;
-            lblIDNo.Location = new Point(55, 90);
+            lblIDNo.Location = new Point(386, 125);
             lblIDNo.Margin = new Padding(2, 0, 2, 0);
             lblIDNo.Name = "lblIDNo";
             lblIDNo.Size = new Size(68, 15);
@@ -133,7 +133,7 @@
             // lblDOB
             // 
             lblDOB.AutoSize = true;
-            lblDOB.Location = new Point(338, 90);
+            lblDOB.Location = new Point(386, 191);
             lblDOB.Margin = new Padding(2, 0, 2, 0);
             lblDOB.Name = "lblDOB";
             lblDOB.Size = new Size(73, 15);
@@ -146,68 +146,61 @@
             txtName.Location = new Point(55, 51);
             txtName.Margin = new Padding(2, 2, 2, 2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(279, 23);
-            txtName.TabIndex = 7;
+            txtName.Size = new Size(318, 27);
+            txtName.TabIndex = 0;
             // 
             // txtSurname
             // 
             txtSurname.Location = new Point(338, 51);
             txtSurname.Margin = new Padding(2, 2, 2, 2);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(287, 23);
-            txtSurname.TabIndex = 8;
+            txtSurname.Size = new Size(327, 27);
+            txtSurname.TabIndex = 1;
             // 
             // txtID
             // 
-            txtID.Location = new Point(55, 107);
-            txtID.Margin = new Padding(2, 2, 2, 2);
+            txtID.Location = new Point(386, 148);
+            txtID.Margin = new Padding(2, 3, 2, 3);
             txtID.Name = "txtID";
-            txtID.Size = new Size(279, 23);
-            txtID.TabIndex = 9;
+            txtID.Size = new Size(328, 27);
+            txtID.TabIndex = 4;
             // 
             // txtPhoneNo
             // 
             txtPhoneNo.Location = new Point(55, 248);
             txtPhoneNo.Margin = new Padding(2, 2, 2, 2);
             txtPhoneNo.Name = "txtPhoneNo";
-            txtPhoneNo.Size = new Size(275, 23);
-            txtPhoneNo.TabIndex = 10;
+            txtPhoneNo.Size = new Size(314, 27);
+            txtPhoneNo.TabIndex = 7;
             // 
             // cbGender
             // 
+            cbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGender.FormattingEnabled = true;
             cbGender.Items.AddRange(new object[] { "Female ", "Male" });
             cbGender.Location = new Point(58, 162);
             cbGender.Margin = new Padding(2, 2, 2, 2);
             cbGender.Name = "cbGender";
-            cbGender.Size = new Size(276, 23);
-            cbGender.TabIndex = 11;
+            cbGender.Size = new Size(315, 28);
+            cbGender.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(338, 107);
-            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
+            dateTimePicker1.Location = new Point(386, 214);
+            dateTimePicker1.Margin = new Padding(2, 3, 2, 3);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(287, 23);
-            dateTimePicker1.TabIndex = 12;
+            dateTimePicker1.Size = new Size(327, 27);
+            dateTimePicker1.TabIndex = 6;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(338, 145);
+            label2.Location = new Point(63, 125);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(92, 15);
+            label2.Size = new Size(132, 20);
             label2.TabIndex = 16;
-            label2.Text = "Home language";
-            // 
-            // txtAddress
-            // 
-            txtAddress.Location = new Point(338, 162);
-            txtAddress.Margin = new Padding(2, 2, 2, 2);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(287, 23);
-            txtAddress.TabIndex = 17;
+            label2.Text = "Identification Type";
             // 
             // label1
             // 
@@ -232,22 +225,22 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.White;
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cbIDType);
+            groupBox1.Controls.Add(cbPriority);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtReasonForVisit);
+            groupBox1.Controls.Add(txtEmergancyContact);
+            groupBox1.Controls.Add(txtAddress);
             groupBox1.Controls.Add(lblName);
             groupBox1.Controls.Add(lblSurname);
             groupBox1.Controls.Add(lblIDNo);
             groupBox1.Controls.Add(lblPhone);
             groupBox1.Controls.Add(lblGender);
-            groupBox1.Controls.Add(txtAddress);
             groupBox1.Controls.Add(lblDOB);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(txtName);
@@ -263,13 +256,28 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Personal information";
             // 
-            // comboBox1
+            // cbIDType
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(344, 455);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(281, 23);
-            comboBox1.TabIndex = 28;
+            cbIDType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbIDType.FormattingEnabled = true;
+            cbIDType.Items.AddRange(new object[] { "SA ID", "Passport" });
+            cbIDType.Location = new Point(66, 148);
+            cbIDType.Margin = new Padding(2, 3, 2, 3);
+            cbIDType.Name = "cbIDType";
+            cbIDType.Size = new Size(315, 28);
+            cbIDType.TabIndex = 3;
+            cbIDType.SelectedIndexChanged += cbIdententificationType_SelectedIndexChanged;
+            // 
+            // cbPriority
+            // 
+            cbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbPriority.FormattingEnabled = true;
+            cbPriority.Items.AddRange(new object[] { "Emergency", "Urgent", "Routine" });
+            cbPriority.Location = new Point(393, 531);
+            cbPriority.Margin = new Padding(3, 4, 3, 4);
+            cbPriority.Name = "cbPriority";
+            cbPriority.Size = new Size(321, 28);
+            cbPriority.TabIndex = 11;
             // 
             // label13
             // 
@@ -327,49 +335,52 @@
             label8.TabIndex = 22;
             label8.Text = "Emergency contact";
             // 
-            // textBox3
+            // txtReasonForVisit
             // 
-            textBox3.Location = new Point(58, 455);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(272, 23);
-            textBox3.TabIndex = 20;
+            txtReasonForVisit.Location = new Point(66, 531);
+            txtReasonForVisit.Margin = new Padding(3, 4, 3, 4);
+            txtReasonForVisit.Name = "txtReasonForVisit";
+            txtReasonForVisit.Size = new Size(310, 27);
+            txtReasonForVisit.TabIndex = 10;
             // 
-            // textBox2
+            // txtEmergancyContact
             // 
-            textBox2.Location = new Point(338, 248);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(287, 23);
-            textBox2.TabIndex = 19;
+            txtEmergancyContact.Location = new Point(386, 331);
+            txtEmergancyContact.Margin = new Padding(3, 4, 3, 4);
+            txtEmergancyContact.Name = "txtEmergancyContact";
+            txtEmergancyContact.Size = new Size(327, 27);
+            txtEmergancyContact.TabIndex = 8;
             // 
-            // textBox1
+            // txtAddress
             // 
-            textBox1.Location = new Point(55, 309);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(570, 81);
-            textBox1.TabIndex = 18;
+            txtAddress.Location = new Point(63, 412);
+            txtAddress.Margin = new Padding(3, 4, 3, 4);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(651, 27);
+            txtAddress.TabIndex = 9;
             // 
             // button1
             // 
             button1.Location = new Point(593, 674);
             button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(132, 39);
-            button1.TabIndex = 26;
+            button1.Size = new Size(151, 52);
+            button1.TabIndex = 13;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRegisterPatient
             // 
-            button2.BackColor = Color.FromArgb(11, 61, 92);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(778, 674);
-            button2.Margin = new Padding(2, 2, 2, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(132, 39);
-            button2.TabIndex = 27;
-            button2.Text = "Register patient";
-            button2.UseVisualStyleBackColor = false;
+            btnRegisterPatient.BackColor = Color.FromArgb(11, 61, 92);
+            btnRegisterPatient.ForeColor = SystemColors.ControlLightLight;
+            btnRegisterPatient.Location = new Point(889, 783);
+            btnRegisterPatient.Margin = new Padding(2, 3, 2, 3);
+            btnRegisterPatient.Name = "btnRegisterPatient";
+            btnRegisterPatient.Size = new Size(151, 52);
+            btnRegisterPatient.TabIndex = 12;
+            btnRegisterPatient.Text = "Register patient";
+            btnRegisterPatient.UseVisualStyleBackColor = false;
+            btnRegisterPatient.Click += btnRegisterPatient_Click;
             // 
             // SideBar
             // 
@@ -380,7 +391,7 @@
             SideBar.Dock = DockStyle.Left;
             SideBar.Location = new Point(0, 0);
             SideBar.Name = "SideBar";
-            SideBar.Size = new Size(174, 736);
+            SideBar.Size = new Size(199, 840);
             SideBar.TabIndex = 29;
             // 
             // tableLayoutPanel1
@@ -413,8 +424,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
-            tableLayoutPanel1.Size = new Size(174, 652);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(199, 728);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // Logout
@@ -427,8 +438,8 @@
             Logout.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Logout.Image = (Image)resources.GetObject("Logout.Image");
             Logout.ImageAlign = ContentAlignment.MiddleLeft;
-            Logout.Location = new Point(3, 614);
-            Logout.Margin = new Padding(3, 3, 0, 0);
+            Logout.Location = new Point(3, 677);
+            Logout.Margin = new Padding(3, 4, 0, 0);
             Logout.Name = "Logout";
             Logout.Size = new Size(171, 38);
             Logout.TabIndex = 18;
@@ -612,18 +623,19 @@
             Sidebar_Border.Location = new Point(174, 0);
             Sidebar_Border.Margin = new Padding(3, 2, 3, 2);
             Sidebar_Border.Name = "Sidebar_Border";
-            Sidebar_Border.Size = new Size(2, 736);
+            Sidebar_Border.Size = new Size(2, 840);
             Sidebar_Border.TabIndex = 30;
             // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(245, 248, 251);
-            ClientSize = new Size(1077, 736);
+            ClientSize = new Size(1231, 840);
             Controls.Add(Sidebar_Border);
             Controls.Add(SideBar);
-            Controls.Add(button2);
+            Controls.Add(btnRegisterPatient);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(label7);
@@ -658,22 +670,21 @@
         private ComboBox cbGender;
         private DateTimePicker dateTimePicker1;
         private Label label2;
-        private TextBox txtAddress;
         private Label label1;
         private Label label7;
         private GroupBox groupBox1;
         private Button button1;
-        private Button button2;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btnRegisterPatient;
+        private TextBox txtReasonForVisit;
+        private TextBox txtEmergancyContact;
+        private TextBox txtAddress;
         private Label label8;
         private Label label9;
         private Label label13;
         private Label label12;
         private Label label11;
         private Label label10;
-        private ComboBox comboBox1;
+        private ComboBox cbPriority;
         private Panel SideBar;
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;
@@ -689,5 +700,6 @@
         private PictureBox Logo;
         private Panel panel13;
         private Panel Sidebar_Border;
+        private ComboBox cbIDType;
     }
 }
