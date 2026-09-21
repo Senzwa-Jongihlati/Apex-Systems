@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,6 +81,104 @@ namespace apex_management_sys
             home h = new home();
             h.Show();
             this.Close();
+        }
+
+        private void btnRegisterPatient_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get values from the form
+                int patientid = int.Parse(txtID.Text);
+                string firstName = txtName.Text;
+                string lastName = txtSurname.Text;
+                DateTime dob = dateTimePicker1.Value;
+                string gender = cbGender.Text;
+                string contactNumber = txtPhoneNo.Text;                
+                string address = txtAddress.Text;
+                string reasonForVisit = txtReasonForVisit.Text;
+                string emergencyContact = txtEmergancyContact.Text;
+                //string priority = cbPriority.Text;
+
+                // Connect to database
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                {
+                    string query = @"INSERT INTO Patient 
+                (FirstName, LastName, DateOfBirth, Gender, 
+                 IdentificationType,IdentificationNumber,ContactNumber, Address,RegisteredDate, 
+                 EmergencyContact)
+                VALUES 
+                (@FirstName, @LastName, @DateOfBirth, @Gender,@IdentificationType,@IdentificationNumber,
+                 @ContactNumber, @Address, @RegisteredDate,
+                 @EmergencyContact)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {                       
+                        cmd.Parameters.AddWithValue("@FirstName", firstName);
+                        cmd.Parameters.AddWithValue("@LastName", lastName);
+                        cmd.Parameters.AddWithValue("@DateOfBirth", dob);
+                        cmd.Parameters.AddWithValue("@Gender", gender);
+                        cmd.Parameters.AddWithValue("@IdentificationType", cbIDType.Text); // Assuming txtID contains the identification type
+                        cmd.Parameters.AddWithValue("@IdentificationNumber", txtID.Text); // Assuming txtID contains the identification number
+                        cmd.Parameters.AddWithValue("@ContactNumber", contactNumber);                        
+                        cmd.Parameters.AddWithValue("@Address", address);
+                        cmd.Parameters.AddWithValue("@RegisteredDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@EmergencyContact", emergencyContact);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show(
+                    "Patient registered successfully!",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                // Optional: clear the form
+                txtID.Clear();
+                txtName.Clear();
+                txtSurname.Clear();
+                txtPhoneNo.Clear();                
+                txtAddress.Clear();
+                txtReasonForVisit.Clear();
+                txtEmergancyContact.Clear();
+
+                cbGender.SelectedIndex = -1;
+                cbPriority.SelectedIndex = -1;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show(
+                    "Please check that the Patient ID is a number and all required fields are entered correctly.",
+                    "Invalid Input",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Database error: {ex.Message}",
+                    "Database Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error registering patient: {ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private void cbIdententificationType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
