@@ -33,19 +33,9 @@
             label3 = new Label();
             label5 = new Label();
             ServedGrid = new DataGridView();
-            QueueNumber = new DataGridViewTextBoxColumn();
-            PatientName = new DataGridViewTextBoxColumn();
-            ArrivalTime = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            Priority = new DataGridViewTextBoxColumn();
             Components = new Panel();
             Waiting = new Panel();
             WaitingGrid = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             Served = new Panel();
@@ -124,7 +114,6 @@
             ServedGrid.BackgroundColor = Color.White;
             ServedGrid.BorderStyle = BorderStyle.None;
             ServedGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ServedGrid.Columns.AddRange(new DataGridViewColumn[] { QueueNumber, PatientName, ArrivalTime, Status, Priority });
             ServedGrid.Dock = DockStyle.Fill;
             ServedGrid.Location = new Point(0, 69);
             ServedGrid.Margin = new Padding(2, 3, 2, 3);
@@ -134,41 +123,6 @@
             ServedGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             ServedGrid.Size = new Size(1152, 286);
             ServedGrid.TabIndex = 12;
-            // 
-            // QueueNumber
-            // 
-            QueueNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            QueueNumber.HeaderText = "Queue Number";
-            QueueNumber.MinimumWidth = 8;
-            QueueNumber.Name = "QueueNumber";
-            // 
-            // PatientName
-            // 
-            PatientName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PatientName.HeaderText = "Patient Name";
-            PatientName.MinimumWidth = 8;
-            PatientName.Name = "PatientName";
-            // 
-            // ArrivalTime
-            // 
-            ArrivalTime.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ArrivalTime.HeaderText = "Arrival Time";
-            ArrivalTime.MinimumWidth = 8;
-            ArrivalTime.Name = "ArrivalTime";
-            // 
-            // Status
-            // 
-            Status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 8;
-            Status.Name = "Status";
-            // 
-            // Priority
-            // 
-            Priority.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Priority.HeaderText = "Priority";
-            Priority.MinimumWidth = 8;
-            Priority.Name = "Priority";
             // 
             // Components
             // 
@@ -199,51 +153,17 @@
             WaitingGrid.BackgroundColor = Color.White;
             WaitingGrid.BorderStyle = BorderStyle.None;
             WaitingGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            WaitingGrid.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
             WaitingGrid.Dock = DockStyle.Fill;
             WaitingGrid.Location = new Point(0, 76);
             WaitingGrid.Margin = new Padding(2, 3, 2, 3);
+            WaitingGrid.MultiSelect = false;
             WaitingGrid.Name = "WaitingGrid";
+            WaitingGrid.ReadOnly = true;
             WaitingGrid.RowHeadersVisible = false;
             WaitingGrid.RowHeadersWidth = 62;
             WaitingGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             WaitingGrid.Size = new Size(1152, 313);
             WaitingGrid.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.HeaderText = "Queue Number";
-            dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.HeaderText = "Patient Name";
-            dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn3.HeaderText = "Arrival Time";
-            dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.HeaderText = "Status";
-            dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.HeaderText = "Priority";
-            dataGridViewTextBoxColumn5.MinimumWidth = 8;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // panel1
             // 
@@ -551,6 +471,7 @@
             MainSection.Name = "MainSection";
             MainSection.Size = new Size(1276, 1001);
             MainSection.TabIndex = 18;
+            MainSection.Click += MainSection_Click;
             // 
             // RP_Queue
             // 
@@ -565,6 +486,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Queue";
             WindowState = FormWindowState.Maximized;
+            Load += RP_Queue_Load;
             ((System.ComponentModel.ISupportInitialize)ServedGrid).EndInit();
             Components.ResumeLayout(false);
             Components.PerformLayout();
@@ -612,15 +534,5 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private DataGridViewTextBoxColumn QueueNumber;
-        private DataGridViewTextBoxColumn PatientName;
-        private DataGridViewTextBoxColumn ArrivalTime;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn Priority;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
