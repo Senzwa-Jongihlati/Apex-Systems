@@ -94,7 +94,7 @@ namespace apex_management_sys
                 string lastName = txtSurname.Text;
                 DateTime dob = dateTimePicker1.Value;
                 string gender = cbGender.Text;
-                string contactNumber = txtPhoneNo.Text;                
+                string contactNumber = txtPhoneNo.Text;
                 string address = txtAddress.Text;
                 string reasonForVisit = txtReasonForVisit.Text;
                 string emergencyContact = txtEmergancyContact.Text;
@@ -160,7 +160,7 @@ namespace apex_management_sys
                 txtID.Clear();
                 txtName.Clear();
                 txtSurname.Clear();
-                txtPhoneNo.Clear();                
+                txtPhoneNo.Clear();
                 txtAddress.Clear();
                 txtReasonForVisit.Clear();
                 txtEmergancyContact.Clear();
@@ -198,6 +198,11 @@ namespace apex_management_sys
         }
 
         private void cbIdententificationType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
