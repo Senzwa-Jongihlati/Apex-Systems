@@ -51,3 +51,22 @@ VALUES (3, 1, 'Viral upper respiratory infection',
         'Temperature 38.4 C. Advised rest and plenty of fluids. Return if symptoms last beyond 5 days.',
         NULL, '2026-09-16 08:48:00');
 
+-- Queue (replaces your old Queue insert: it now has DoctorID and ReasonForVisit)
+INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, DoctorID, ReasonForVisit, CheckInTime, CompletedTime, Status) VALUES
+(1, 1, 1, 1, 2,    'Severe chest pain and shortness of breath', '2026-09-16 08:00:00', '2026-09-16 08:20:00', 'Completed'),
+(2, 2, 3, 1, NULL, 'Routine blood pressure check',              '2026-09-16 08:10:00', NULL,                  'Waiting'),
+(3, 3, 2, 2, 1,    'High fever and persistent cough',            '2026-09-16 08:25:00', '2026-09-16 08:50:00', 'Completed'),
+(4, 4, 3, 2, NULL, 'Follow-up consultation',                     '2026-09-16 08:30:00', NULL,                  'Cancelled'),
+(5, 1, 2, 1, 1,    'Follow-up on chest pain',                    '2026-09-16 09:00:00', NULL,                  'In Consultation');
+
+-- ConsultationNote
+INSERT INTO ConsultationNote (QueueID, DoctorID, Diagnosis, Notes, Prescription, CreatedTime)
+VALUES (1, 2, 'Suspected angina',
+        'Patient stabilised on arrival. ECG normal. Advised to book a cardiology follow-up.',
+        'Aspirin 75 mg once daily', '2026-09-16 08:18:00');
+
+INSERT INTO ConsultationNote (QueueID, DoctorID, Diagnosis, Notes, Prescription, CreatedTime)
+VALUES (3, 1, 'Viral upper respiratory infection',
+        'Temperature 38.4 C. Advised rest and plenty of fluids. Return if symptoms last beyond 5 days.',
+        NULL, '2026-09-16 08:48:00');
+
