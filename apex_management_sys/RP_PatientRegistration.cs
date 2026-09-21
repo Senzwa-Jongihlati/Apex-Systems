@@ -88,7 +88,7 @@ namespace apex_management_sys
             try
             {
                 // Get values from the form
-                int patientid = int.Parse(txtID.Text);
+                string patientid = txtID.Text;
                 string firstName = txtName.Text;
                 string lastName = txtSurname.Text;
                 DateTime dob = dateTimePicker1.Value;

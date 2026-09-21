@@ -24,5 +24,10 @@ INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, CheckInTi
 (3, 3, 2, 2, '2026-09-16 08:25:00', '2026-09-16 08:50:00', 'Completed'),
 (4, 4, 3, 2, '2026-09-16 08:30:00', NULL, 'Cancelled');
 
+INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, ReasonForVisit, CheckInTime, CompletedTime, Status) VALUES
+(1, 1, 1, 1, 'Severe chest pain and shortness of breath', '2026-09-16 08:00:00', '2026-09-16 08:20:00', 'Completed'),
+(2, 2, 3, 1, 'Routine blood pressure check',               '2026-09-16 08:10:00', NULL,                  'Waiting'),
+(3, 3, 2, 2, 'High fever and persistent cough',             '2026-09-16 08:25:00', '2026-09-16 08:50:00', 'Completed'),
+(4, 4, 3, 2, 'Follow-up consultation',                      '2026-09-16 08:30:00', NULL,                  'Cancelled');
 
 
