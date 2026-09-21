@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ApexSystems;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,28 +104,48 @@ namespace apex_management_sys
                 using (MySqlConnection conn = DatabaseHelper.GetConnection())
                 {
                     string query = @"INSERT INTO Patient 
-                (FirstName, LastName, DateOfBirth, Gender, 
-                 IdentificationType,IdentificationNumber,ContactNumber, Address,RegisteredDate, 
-                 EmergencyContact)
-                VALUES 
-                (@FirstName, @LastName, @DateOfBirth, @Gender,@IdentificationType,@IdentificationNumber,
-                 @ContactNumber, @Address, @RegisteredDate,
-                 @EmergencyContact)";
+                    (FirstName, LastName, DateOfBirth, Gender, 
+                     IdentificationType,IdentificationNumber,ContactNumber, Address,RegisteredDate, 
+                     EmergencyContact)
+                    VALUES 
+                    (@FirstName, @LastName, @DateOfBirth, @Gender,@IdentificationType,@IdentificationNumber,
+                     @ContactNumber, @Address, @RegisteredDate,
+                     @EmergencyContact)";
+                    string query2 = @"INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, ReasonForVisit)
+                    SELECT COALESCE(MAX(QueueNumber), 0) + 1,
+                           LAST_INSERT_ID(),
+                           (SELECT PriorityID FROM PriorityLevel WHERE LevelName = @Priority),
+                           @ReceptionistID,
+                           @ReasonForVisit
+                    FROM Queue
+                    WHERE DATE(CheckInTime) = CURDATE()";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {                       
-                        cmd.Parameters.AddWithValue("@FirstName", firstName);
-                        cmd.Parameters.AddWithValue("@LastName", lastName);
-                        cmd.Parameters.AddWithValue("@DateOfBirth", dob);
-                        cmd.Parameters.AddWithValue("@Gender", gender);
-                        cmd.Parameters.AddWithValue("@IdentificationType", cbIDType.Text); // Assuming txtID contains the identification type
-                        cmd.Parameters.AddWithValue("@IdentificationNumber", txtID.Text); // Assuming txtID contains the identification number
-                        cmd.Parameters.AddWithValue("@ContactNumber", contactNumber);                        
-                        cmd.Parameters.AddWithValue("@Address", address);
-                        cmd.Parameters.AddWithValue("@RegisteredDate", DateTime.Now);
-                        cmd.Parameters.AddWithValue("@EmergencyContact", emergencyContact);
+                    using (MySqlTransaction tx = conn.BeginTransaction())
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
 
-                        cmd.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@FirstName", firstName);
+                            cmd.Parameters.AddWithValue("@LastName", lastName);
+                            cmd.Parameters.AddWithValue("@DateOfBirth", dob);
+                            cmd.Parameters.AddWithValue("@Gender", gender);
+                            cmd.Parameters.AddWithValue("@IdentificationType", cbIDType.Text); // Assuming txtID contains the identification type
+                            cmd.Parameters.AddWithValue("@IdentificationNumber", txtID.Text); // Assuming txtID contains the identification number
+                            cmd.Parameters.AddWithValue("@ContactNumber", contactNumber);
+                            cmd.Parameters.AddWithValue("@Address", address);
+                            cmd.Parameters.AddWithValue("@RegisteredDate", DateTime.Now);
+                            cmd.Parameters.AddWithValue("@EmergencyContact", emergencyContact);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        using (MySqlCommand cmd2 = new MySqlCommand(query2, conn))
+                        {
+                            cmd2.Parameters.AddWithValue("@Priority", cbPriority.Text);
+                            cmd2.Parameters.AddWithValue("@ReceptionistID", Session.CurrentReceptionist.ReceptionistID);
+                            cmd2.Parameters.AddWithValue("@ReasonForVisit", reasonForVisit.Trim());
+                            cmd2.ExecuteNonQuery();
+                        }
+                        tx.Commit();
                     }
                 }
 
