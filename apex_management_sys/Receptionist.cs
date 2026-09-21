@@ -9,7 +9,9 @@ namespace ApexSystems
         private string firstName;
         private string lastName;
         private string username;
+        private string userRole;
         private string passwordHash;
+        private DateTime passwordChangedAt;
         private string contactNumber;
         private string email;
         private DateTime dateHired;
@@ -18,13 +20,15 @@ namespace ApexSystems
         // Use this when adding a NEW receptionist.
         // ReceptionistID stays 0 until the database generates it (AUTO_INCREMENT).
         public Receptionist(string firstName, string lastName, string username,
-                            string passwordHash, string contactNumber, string email,
-                            DateTime dateHired)
+                            string userRole, string passwordHash, string contactNumber, string email,
+                            DateTime dateHired, DateTime passwordChangedAt)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.username = username;
+            this.userRole = userRole;
             this.passwordHash = passwordHash;
+            this.passwordChangedAt = passwordChangedAt;
             this.contactNumber = contactNumber;
             this.email = email;
             this.dateHired = dateHired;
@@ -33,9 +37,11 @@ namespace ApexSystems
 
         // Use this when loading an EXISTING receptionist from the database.
         public Receptionist(int receptionistID, string firstName, string lastName,
-                            string username, string passwordHash, string contactNumber,
-                            string email, DateTime dateHired, bool isActive)
-            : this(firstName, lastName, username, passwordHash, contactNumber, email, dateHired)
+                            string username, string userRole, string passwordHash, string contactNumber,
+                            string email, DateTime dateHired, bool isActive,
+                            DateTime passwordChangedAt)
+            : this(firstName, lastName, username, userRole, passwordHash, contactNumber, email,
+                   dateHired, passwordChangedAt)
         {
             this.receptionistID = receptionistID;
             this.isActive = isActive;
@@ -65,10 +71,37 @@ namespace ApexSystems
             set { username = value; }
         }
 
+        public string UserRole
+        {
+            get { return userRole; }
+            set { userRole = value; }
+        }
+
+        public bool IsAdministrator()
+        {
+            return string.Equals(userRole, "Admin", StringComparison.OrdinalIgnoreCase);
+        }
+
+        public bool IsReceptionist()
+        {
+            return string.Equals(userRole, "Receptionist", StringComparison.OrdinalIgnoreCase);
+        }
+
         public string PasswordHash
         {
             get { return passwordHash; }
             set { passwordHash = value; }
+        }
+
+        public DateTime PasswordChangedAt
+        {
+            get { return passwordChangedAt; }
+            set { passwordChangedAt = value; }
+        }
+
+        public bool PasswordHasExpired()
+        {
+            return DateTime.Now >= passwordChangedAt.AddMonths(3);
         }
 
         public string ContactNumber
