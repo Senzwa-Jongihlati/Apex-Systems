@@ -48,6 +48,7 @@ CREATE TABLE Queue (
     PatientID      INT                NOT NULL,
     PriorityID     INT                NOT NULL,
     ReceptionistID INT                NOT NULL,
+	ReasonForVisit VARCHAR(255)       NOT NULL,
     CheckInTime    DATETIME           NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CompletedTime  DATETIME           NULL,
     Status         VARCHAR(20)       NOT NULL DEFAULT 'Waiting',
@@ -59,4 +60,3 @@ CREATE TABLE Queue (
     CONSTRAINT CK_Queue_Status CHECK (Status IN ('Waiting', 'Completed', 'Cancelled')),
     CONSTRAINT CK_Queue_CompletedAfterCheckIn CHECK (CompletedTime IS NULL OR CompletedTime >= CheckInTime)
 );
-
