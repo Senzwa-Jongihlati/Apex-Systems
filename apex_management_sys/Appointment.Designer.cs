@@ -28,27 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
             Main = new Panel();
-            Header = new TableLayoutPanel();
-            label4 = new Label();
-            CancelAppointment = new Button();
-            Delete = new Button();
-            CancelAddition = new Button();
-            BookAppointment = new Button();
-            panel4 = new Panel();
-            AppointmentsGrid = new DataGridView();
-            panel6 = new Panel();
-            label6 = new Label();
+            MainSection = new TableLayoutPanel();
+            NewAppointment = new TableLayoutPanel();
             groupBox1 = new GroupBox();
-            cmbPatient = new ComboBox();
+            txtPatient = new TextBox();
             cmbDoctor = new ComboBox();
-            Reason = new TextBox();
+            txtReason = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            panel1 = new Panel();
+            BookAppointment = new Button();
+            CancelAddition = new Button();
+            AllAppointments = new TableLayoutPanel();
+            panel2 = new Panel();
+            Delete = new Button();
+            Save = new Button();
+            panel4 = new Panel();
+            AppointmentsGrid = new DataGridView();
+            panel6 = new Panel();
+            label6 = new Label();
+            Header = new TableLayoutPanel();
+            label4 = new Label();
             SideBar = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
@@ -63,29 +69,25 @@
             Logo = new PictureBox();
             panel13 = new Panel();
             Sidebar_Border = new Panel();
-            MainSection = new TableLayoutPanel();
-            NewAppointment = new TableLayoutPanel();
-            panel1 = new Panel();
-            AllAppointments = new TableLayoutPanel();
-            panel2 = new Panel();
             Main.SuspendLayout();
-            Header.SuspendLayout();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)AppointmentsGrid).BeginInit();
-            panel6.SuspendLayout();
-            groupBox1.SuspendLayout();
-            SideBar.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             MainSection.SuspendLayout();
             NewAppointment.SuspendLayout();
+            groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             AllAppointments.SuspendLayout();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AppointmentsGrid).BeginInit();
+            panel6.SuspendLayout();
+            Header.SuspendLayout();
+            SideBar.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             SuspendLayout();
             // 
             // Main
             // 
+            Main.BackColor = Color.FromArgb(245, 248, 251);
             Main.Controls.Add(MainSection);
             Main.Controls.Add(Header);
             Main.Dock = DockStyle.Fill;
@@ -95,123 +97,46 @@
             Main.Size = new Size(1478, 947);
             Main.TabIndex = 1;
             // 
-            // Header
+            // MainSection
             // 
-            Header.ColumnCount = 2;
-            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Header.Controls.Add(label4, 1, 0);
-            Header.Dock = DockStyle.Top;
-            Header.Location = new Point(0, 0);
-            Header.Name = "Header";
-            Header.RowCount = 1;
-            Header.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Header.Size = new Size(1478, 112);
-            Header.TabIndex = 7;
+            MainSection.ColumnCount = 5;
+            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            MainSection.Controls.Add(NewAppointment, 3, 0);
+            MainSection.Controls.Add(AllAppointments, 1, 0);
+            MainSection.Dock = DockStyle.Fill;
+            MainSection.Location = new Point(0, 112);
+            MainSection.Name = "MainSection";
+            MainSection.RowCount = 1;
+            MainSection.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            MainSection.Size = new Size(1478, 835);
+            MainSection.TabIndex = 8;
             // 
-            // label4
+            // NewAppointment
             // 
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(23, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(1452, 112);
-            label4.TabIndex = 6;
-            label4.Text = "Appointments";
-            label4.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // CancelAppointment
-            // 
-            CancelAppointment.Dock = DockStyle.Left;
-            CancelAppointment.Location = new Point(0, 0);
-            CancelAppointment.Margin = new Padding(3, 4, 3, 4);
-            CancelAppointment.Name = "CancelAppointment";
-            CancelAppointment.Size = new Size(86, 77);
-            CancelAppointment.TabIndex = 5;
-            CancelAppointment.Text = "Cancel";
-            CancelAppointment.UseVisualStyleBackColor = true;
-            // 
-            // Delete
-            // 
-            Delete.Dock = DockStyle.Right;
-            Delete.Location = new Point(578, 0);
-            Delete.Margin = new Padding(3, 4, 3, 4);
-            Delete.Name = "Delete";
-            Delete.Size = new Size(129, 77);
-            Delete.TabIndex = 4;
-            Delete.Text = "delete";
-            Delete.UseVisualStyleBackColor = true;
-            // 
-            // CancelAddition
-            // 
-            CancelAddition.Dock = DockStyle.Left;
-            CancelAddition.Location = new Point(0, 0);
-            CancelAddition.Margin = new Padding(3, 4, 3, 4);
-            CancelAddition.Name = "CancelAddition";
-            CancelAddition.Size = new Size(164, 77);
-            CancelAddition.TabIndex = 3;
-            CancelAddition.Text = "Cancel";
-            CancelAddition.UseVisualStyleBackColor = true;
-            // 
-            // BookAppointment
-            // 
-            BookAppointment.Dock = DockStyle.Right;
-            BookAppointment.Location = new Point(507, 0);
-            BookAppointment.Margin = new Padding(3, 4, 3, 4);
-            BookAppointment.Name = "BookAppointment";
-            BookAppointment.Size = new Size(200, 77);
-            BookAppointment.TabIndex = 2;
-            BookAppointment.Text = "Book Appointment";
-            BookAppointment.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = SystemColors.ButtonHighlight;
-            panel4.Controls.Add(AppointmentsGrid);
-            panel4.Controls.Add(panel6);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(3, 4);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(707, 738);
-            panel4.TabIndex = 1;
-            // 
-            // AppointmentsGrid
-            // 
-            AppointmentsGrid.BackgroundColor = Color.White;
-            AppointmentsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AppointmentsGrid.Dock = DockStyle.Fill;
-            AppointmentsGrid.Location = new Point(0, 34);
-            AppointmentsGrid.Name = "AppointmentsGrid";
-            AppointmentsGrid.RowHeadersWidth = 51;
-            AppointmentsGrid.Size = new Size(707, 704);
-            AppointmentsGrid.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(label6);
-            panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(0, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(707, 34);
-            panel6.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(0, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(707, 34);
-            label6.TabIndex = 0;
-            label6.Text = "All appointments";
-            label6.TextAlign = ContentAlignment.MiddleLeft;
+            NewAppointment.ColumnCount = 1;
+            NewAppointment.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            NewAppointment.Controls.Add(groupBox1, 0, 0);
+            NewAppointment.Controls.Add(panel1, 0, 2);
+            NewAppointment.Dock = DockStyle.Fill;
+            NewAppointment.Location = new Point(747, 3);
+            NewAppointment.Name = "NewAppointment";
+            NewAppointment.RowCount = 3;
+            NewAppointment.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            NewAppointment.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            NewAppointment.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
+            NewAppointment.Size = new Size(708, 829);
+            NewAppointment.TabIndex = 9;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(cmbPatient);
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(txtPatient);
             groupBox1.Controls.Add(cmbDoctor);
-            groupBox1.Controls.Add(Reason);
+            groupBox1.Controls.Add(txtReason);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label3);
@@ -223,36 +148,36 @@
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(707, 738);
+            groupBox1.Size = new Size(702, 746);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "New Appointment";
             // 
-            // cmbPatient
+            // txtPatient
             // 
-            cmbPatient.FormattingEnabled = true;
-            cmbPatient.Location = new Point(21, 94);
-            cmbPatient.Name = "cmbPatient";
-            cmbPatient.Size = new Size(338, 28);
-            cmbPatient.TabIndex = 10;
+            txtPatient.Location = new Point(18, 89);
+            txtPatient.Name = "txtPatient";
+            txtPatient.Size = new Size(377, 27);
+            txtPatient.TabIndex = 10;
             // 
             // cmbDoctor
             // 
+            cmbDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDoctor.FormattingEnabled = true;
             cmbDoctor.Location = new Point(22, 185);
             cmbDoctor.Margin = new Padding(3, 4, 3, 4);
             cmbDoctor.Name = "cmbDoctor";
-            cmbDoctor.Size = new Size(337, 28);
+            cmbDoctor.Size = new Size(373, 28);
             cmbDoctor.TabIndex = 9;
             // 
-            // Reason
+            // txtReason
             // 
-            Reason.Location = new Point(18, 401);
-            Reason.Margin = new Padding(3, 4, 3, 4);
-            Reason.Multiline = true;
-            Reason.Name = "Reason";
-            Reason.Size = new Size(340, 64);
-            Reason.TabIndex = 8;
+            txtReason.Location = new Point(18, 401);
+            txtReason.Margin = new Padding(3, 4, 3, 4);
+            txtReason.Multiline = true;
+            txtReason.Name = "txtReason";
+            txtReason.Size = new Size(669, 160);
+            txtReason.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
@@ -261,7 +186,7 @@
             dateTimePicker1.Location = new Point(21, 292);
             dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(338, 27);
+            dateTimePicker1.Size = new Size(382, 27);
             dateTimePicker1.TabIndex = 7;
             // 
             // label5
@@ -299,6 +224,180 @@
             label1.Size = new Size(59, 20);
             label1.TabIndex = 0;
             label1.Text = "Patient";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(BookAppointment);
+            panel1.Controls.Add(CancelAddition);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 762);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(702, 64);
+            panel1.TabIndex = 9;
+            // 
+            // BookAppointment
+            // 
+            BookAppointment.BackColor = Color.FromArgb(52, 120, 180);
+            BookAppointment.Dock = DockStyle.Right;
+            BookAppointment.Location = new Point(502, 0);
+            BookAppointment.Margin = new Padding(3, 4, 3, 4);
+            BookAppointment.Name = "BookAppointment";
+            BookAppointment.Size = new Size(200, 64);
+            BookAppointment.TabIndex = 2;
+            BookAppointment.Text = "Book Appointment";
+            BookAppointment.UseVisualStyleBackColor = false;
+            BookAppointment.Click += BookAppointment_Click;
+            // 
+            // CancelAddition
+            // 
+            CancelAddition.BackColor = Color.FromArgb(120, 130, 140);
+            CancelAddition.Dock = DockStyle.Left;
+            CancelAddition.Location = new Point(0, 0);
+            CancelAddition.Margin = new Padding(3, 4, 3, 4);
+            CancelAddition.Name = "CancelAddition";
+            CancelAddition.Size = new Size(164, 64);
+            CancelAddition.TabIndex = 3;
+            CancelAddition.Text = "Cancel";
+            CancelAddition.UseVisualStyleBackColor = false;
+            // 
+            // AllAppointments
+            // 
+            AllAppointments.ColumnCount = 1;
+            AllAppointments.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            AllAppointments.Controls.Add(panel2, 0, 2);
+            AllAppointments.Controls.Add(panel4, 0, 0);
+            AllAppointments.Dock = DockStyle.Fill;
+            AllAppointments.Location = new Point(23, 3);
+            AllAppointments.Name = "AllAppointments";
+            AllAppointments.RowCount = 3;
+            AllAppointments.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            AllAppointments.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            AllAppointments.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
+            AllAppointments.Size = new Size(708, 829);
+            AllAppointments.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(Delete);
+            panel2.Controls.Add(Save);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(3, 762);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(702, 64);
+            panel2.TabIndex = 11;
+            // 
+            // Delete
+            // 
+            Delete.BackColor = Color.FromArgb(200, 70, 70);
+            Delete.Dock = DockStyle.Left;
+            Delete.Location = new Point(0, 0);
+            Delete.Margin = new Padding(3, 4, 3, 4);
+            Delete.Name = "Delete";
+            Delete.Size = new Size(129, 64);
+            Delete.TabIndex = 4;
+            Delete.Text = "Delete";
+            Delete.UseVisualStyleBackColor = false;
+            // 
+            // Save
+            // 
+            Save.BackColor = Color.FromArgb(45, 140, 120);
+            Save.Dock = DockStyle.Right;
+            Save.Location = new Point(570, 0);
+            Save.Margin = new Padding(3, 4, 3, 4);
+            Save.Name = "Save";
+            Save.Size = new Size(132, 64);
+            Save.TabIndex = 5;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = false;
+            Save.Click += Save_Click;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.ButtonHighlight;
+            panel4.Controls.Add(AppointmentsGrid);
+            panel4.Controls.Add(panel6);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(3, 4);
+            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(702, 746);
+            panel4.TabIndex = 1;
+            // 
+            // AppointmentsGrid
+            // 
+            AppointmentsGrid.AllowUserToAddRows = false;
+            AppointmentsGrid.AllowUserToDeleteRows = false;
+            AppointmentsGrid.AllowUserToResizeColumns = false;
+            AppointmentsGrid.AllowUserToResizeRows = false;
+            AppointmentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            AppointmentsGrid.BackgroundColor = Color.White;
+            AppointmentsGrid.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(222, 235, 245);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(180, 205, 225);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            AppointmentsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AppointmentsGrid.Dock = DockStyle.Fill;
+            AppointmentsGrid.EnableHeadersVisualStyles = false;
+            AppointmentsGrid.Location = new Point(0, 34);
+            AppointmentsGrid.MultiSelect = false;
+            AppointmentsGrid.Name = "AppointmentsGrid";
+            AppointmentsGrid.ReadOnly = true;
+            AppointmentsGrid.RowHeadersVisible = false;
+            AppointmentsGrid.RowHeadersWidth = 51;
+            AppointmentsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            AppointmentsGrid.Size = new Size(702, 712);
+            AppointmentsGrid.TabIndex = 0;
+            AppointmentsGrid.CellDoubleClick += AppointmentsGrid_CellDoubleClick;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(label6);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(702, 34);
+            panel6.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.Dock = DockStyle.Fill;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(0, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(702, 34);
+            label6.TabIndex = 0;
+            label6.Text = "All appointments";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Header
+            // 
+            Header.ColumnCount = 2;
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Header.Controls.Add(label4, 1, 0);
+            Header.Dock = DockStyle.Top;
+            Header.Location = new Point(0, 0);
+            Header.Name = "Header";
+            Header.RowCount = 1;
+            Header.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Header.Size = new Size(1478, 112);
+            Header.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.Dock = DockStyle.Fill;
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(23, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(1452, 112);
+            label4.TabIndex = 6;
+            label4.Text = "Appointments";
+            label4.TextAlign = ContentAlignment.BottomLeft;
             // 
             // SideBar
             // 
@@ -528,75 +627,6 @@
             Sidebar_Border.Size = new Size(2, 947);
             Sidebar_Border.TabIndex = 14;
             // 
-            // MainSection
-            // 
-            MainSection.ColumnCount = 4;
-            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            MainSection.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            MainSection.Controls.Add(NewAppointment, 1, 0);
-            MainSection.Controls.Add(AllAppointments, 2, 0);
-            MainSection.Dock = DockStyle.Fill;
-            MainSection.Location = new Point(0, 112);
-            MainSection.Name = "MainSection";
-            MainSection.RowCount = 1;
-            MainSection.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            MainSection.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            MainSection.Size = new Size(1478, 835);
-            MainSection.TabIndex = 8;
-            // 
-            // NewAppointment
-            // 
-            NewAppointment.ColumnCount = 1;
-            NewAppointment.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            NewAppointment.Controls.Add(groupBox1, 0, 0);
-            NewAppointment.Controls.Add(panel1, 0, 1);
-            NewAppointment.Dock = DockStyle.Fill;
-            NewAppointment.Location = new Point(23, 3);
-            NewAppointment.Name = "NewAppointment";
-            NewAppointment.RowCount = 2;
-            NewAppointment.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
-            NewAppointment.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            NewAppointment.Size = new Size(713, 829);
-            NewAppointment.TabIndex = 9;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(BookAppointment);
-            panel1.Controls.Add(CancelAddition);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 749);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(707, 77);
-            panel1.TabIndex = 9;
-            // 
-            // AllAppointments
-            // 
-            AllAppointments.ColumnCount = 1;
-            AllAppointments.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            AllAppointments.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            AllAppointments.Controls.Add(panel2, 0, 1);
-            AllAppointments.Controls.Add(panel4, 0, 0);
-            AllAppointments.Dock = DockStyle.Fill;
-            AllAppointments.Location = new Point(742, 3);
-            AllAppointments.Name = "AllAppointments";
-            AllAppointments.RowCount = 2;
-            AllAppointments.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
-            AllAppointments.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            AllAppointments.Size = new Size(713, 829);
-            AllAppointments.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(Delete);
-            panel2.Controls.Add(CancelAppointment);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 749);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(707, 77);
-            panel2.TabIndex = 11;
-            // 
             // Appointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -612,21 +642,21 @@
             WindowState = FormWindowState.Maximized;
             Load += Appointment_Load;
             Main.ResumeLayout(false);
-            Header.ResumeLayout(false);
+            MainSection.ResumeLayout(false);
+            NewAppointment.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            AllAppointments.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)AppointmentsGrid).EndInit();
             panel6.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Header.ResumeLayout(false);
             SideBar.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
-            MainSection.ResumeLayout(false);
-            NewAppointment.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            AllAppointments.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -643,16 +673,15 @@
         private DateTimePicker dateTimePicker1;
         private ComboBox comboBox1;
         private Label label4;
-        private Button CancelAppointment;
+        private Button Save;
         private Button Delete;
         private Button CancelAddition;
         private Button BookAppointment;
         private ComboBox cmbDoctor;
-        private TextBox Reason;
+        private TextBox txtReason;
         private Panel panel6;
         private DataGridView AppointmentsGrid;
         private Label label6;
-        private ComboBox cmbPatient;
         private Panel SideBar;
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;
@@ -673,5 +702,6 @@
         private Panel panel1;
         private TableLayoutPanel AllAppointments;
         private Panel panel2;
+        private TextBox txtPatient;
     }
 }
