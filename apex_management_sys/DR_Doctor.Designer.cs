@@ -1,6 +1,6 @@
 ﻿namespace apex_management_sys
 {
-    partial class Doctor
+    partial class DR_Doctor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DR_Doctor));
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();

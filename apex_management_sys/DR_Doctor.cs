@@ -8,21 +8,11 @@ using System.Windows.Forms;
 
 namespace apex_management_sys
 {
-    public partial class newAccount : Form
+    public partial class DR_Doctor : Form
     {
-        public newAccount()
+        public DR_Doctor()
         {
             InitializeComponent();
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

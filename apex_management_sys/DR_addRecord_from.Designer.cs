@@ -1,6 +1,6 @@
 ﻿namespace apex_management_sys
 {
-    partial class addRecord_fromDr
+    partial class DR_addRecord_from
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addRecord_fromDr));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DR_addRecord_from));
             panel1 = new Panel();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();

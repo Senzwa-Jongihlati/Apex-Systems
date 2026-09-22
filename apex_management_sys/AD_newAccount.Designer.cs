@@ -1,6 +1,6 @@
 ﻿namespace apex_management_sys
 {
-    partial class newAccount
+    partial class AD_newAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newAccount));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AD_newAccount));
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
