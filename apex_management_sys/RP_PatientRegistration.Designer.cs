@@ -362,6 +362,7 @@
             button1.TabIndex = 13;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnRegisterPatient
             // 
@@ -421,8 +422,12 @@
             AutoScroll = true;
             BackColor = Color.FromArgb(245, 248, 251);
             ClientSize = new Size(1407, 1055);
+            ControlBox = false;
             Controls.Add(Main);
+            FormScreenCaptureMode = ScreenCaptureMode.HideContent;
             Margin = new Padding(2, 3, 2, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Registration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Patient Registration";

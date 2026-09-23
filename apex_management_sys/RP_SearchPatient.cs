@@ -38,12 +38,16 @@ namespace apex_management_sys
         {
 
         }
+        public void CenterPanel()
+        {
+            Main.Left = (this.ClientSize.Width - Section.Width)/ 2;
+            Main.Top = (this.ClientSize.Height - Section.Height) / 2;
+        }
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
             Registration Regst = new Registration();
             Regst.Show();
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,6 +86,11 @@ namespace apex_management_sys
             Registration R = new Registration();
             R.Show();
             this.Close();
+        }
+
+        private void RP_SearchPatient_Load(object sender, EventArgs e)
+        {
+            CenterPanel();
         }
     }
 }

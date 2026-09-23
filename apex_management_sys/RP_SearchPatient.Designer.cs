@@ -31,18 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RP_SearchPatient));
             label1 = new Label();
             lbl2IDNo = new Label();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
-            panel1 = new Panel();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
+            PatientGrid = new DataGridView();
+            Search = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
             button1 = new Button();
-            label7 = new Label();
-            comboBox2 = new ComboBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
             btnAddPatient = new Button();
-            panel2 = new Panel();
+            Patient = new Panel();
             panel4 = new Panel();
             label10 = new Label();
             label9 = new Label();
@@ -62,21 +58,24 @@
             panel13 = new Panel();
             Sidebar_Border = new Panel();
             Main = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            Section = new TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)PatientGrid).BeginInit();
+            Search.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            Patient.SuspendLayout();
             panel4.SuspendLayout();
             SideBar.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             Main.SuspendLayout();
+            Section.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(66, 67);
+            label1.Location = new Point(2, 0);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(148, 46);
@@ -86,150 +85,117 @@
             // lbl2IDNo
             // 
             lbl2IDNo.AutoSize = true;
+            lbl2IDNo.Dock = DockStyle.Fill;
             lbl2IDNo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl2IDNo.ForeColor = Color.Blue;
-            lbl2IDNo.Location = new Point(66, 125);
+            lbl2IDNo.Location = new Point(2, 50);
             lbl2IDNo.Margin = new Padding(2, 0, 2, 0);
             lbl2IDNo.Name = "lbl2IDNo";
-            lbl2IDNo.Size = new Size(212, 28);
+            lbl2IDNo.Size = new Size(1189, 50);
             lbl2IDNo.TabIndex = 1;
             lbl2IDNo.Text = "Deshboard / Patients";
+            lbl2IDNo.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // dataGridView1
+            // PatientGrid
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 73);
-            dataGridView1.Margin = new Padding(2, 3, 2, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1114, 460);
-            dataGridView1.TabIndex = 15;
+            PatientGrid.BackgroundColor = Color.White;
+            PatientGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PatientGrid.Dock = DockStyle.Fill;
+            PatientGrid.Location = new Point(0, 0);
+            PatientGrid.Margin = new Padding(2, 3, 2, 3);
+            PatientGrid.Name = "PatientGrid";
+            PatientGrid.RowHeadersWidth = 62;
+            PatientGrid.Size = new Size(1185, 404);
+            PatientGrid.TabIndex = 15;
             // 
-            // button2
+            // Search
             // 
-            button2.BackColor = Color.FromArgb(255, 128, 128);
-            button2.Image = Properties.Resources.search_interface_symbol;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(894, 37);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 45);
-            button2.TabIndex = 16;
-            button2.Text = "Filter";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
+            Search.BorderStyle = BorderStyle.FixedSingle;
+            Search.Controls.Add(tableLayoutPanel2);
+            Search.Dock = DockStyle.Fill;
+            Search.Location = new Point(3, 169);
+            Search.Margin = new Padding(3, 4, 3, 4);
+            Search.Name = "Search";
+            Search.Size = new Size(1187, 95);
+            Search.TabIndex = 19;
             // 
-            // panel1
+            // tableLayoutPanel2
             // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(comboBox2);
-            panel1.Location = new Point(107, 281);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1117, 119);
-            panel1.TabIndex = 19;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(17, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Search";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(95, 48);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 27);
-            textBox1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(443, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(71, 28);
-            label3.TabIndex = 3;
-            label3.Text = "Status";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Completed", "Waiting", "Cancelled" });
-            comboBox1.Location = new Point(433, 48);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(209, 28);
-            comboBox1.TabIndex = 2;
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel2.Controls.Add(button1, 2, 1);
+            tableLayoutPanel2.Controls.Add(textBox1, 1, 1);
+            tableLayoutPanel2.Controls.Add(label2, 1, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Size = new Size(1185, 93);
+            tableLayoutPanel2.TabIndex = 18;
             // 
             // button1
             // 
             button1.BackColor = Color.Yellow;
-            button1.Location = new Point(1010, 37);
+            button1.Dock = DockStyle.Right;
+            button1.Location = new Point(1007, 50);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(86, 45);
+            button1.Size = new Size(175, 39);
             button1.TabIndex = 17;
             button1.Text = "Reset";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // label7
+            // textBox1
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(689, 9);
-            label7.Name = "label7";
-            label7.Size = new Size(79, 28);
-            label7.TabIndex = 4;
-            label7.Text = "Gender";
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(8, 50);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search by ID or Name";
+            textBox1.Size = new Size(348, 27);
+            textBox1.TabIndex = 1;
             // 
-            // comboBox2
+            // label2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox2.Location = new Point(674, 45);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(162, 28);
-            comboBox2.TabIndex = 5;
+            label2.Dock = DockStyle.Left;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(8, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 46);
+            label2.TabIndex = 0;
+            label2.Text = "Search";
+            label2.TextAlign = ContentAlignment.BottomLeft;
             // 
             // btnAddPatient
             // 
             btnAddPatient.BackColor = Color.FromArgb(11, 61, 92);
+            btnAddPatient.Dock = DockStyle.Right;
             btnAddPatient.ForeColor = SystemColors.ControlLightLight;
-            btnAddPatient.Location = new Point(1002, 163);
+            btnAddPatient.Location = new Point(1014, 104);
             btnAddPatient.Margin = new Padding(3, 4, 3, 4);
             btnAddPatient.Name = "btnAddPatient";
-            btnAddPatient.Size = new Size(222, 73);
+            btnAddPatient.Size = new Size(176, 57);
             btnAddPatient.TabIndex = 20;
             btnAddPatient.Text = "Add patient";
             btnAddPatient.UseVisualStyleBackColor = false;
             btnAddPatient.Click += btnAddPatient_Click;
             // 
-            // panel2
+            // Patient
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(panel4);
-            panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(106, 408);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1116, 533);
-            panel2.TabIndex = 21;
+            Patient.BorderStyle = BorderStyle.FixedSingle;
+            Patient.Controls.Add(panel4);
+            Patient.Controls.Add(PatientGrid);
+            Patient.Dock = DockStyle.Fill;
+            Patient.Location = new Point(3, 272);
+            Patient.Margin = new Padding(3, 4, 3, 4);
+            Patient.Name = "Patient";
+            Patient.Size = new Size(1187, 406);
+            Patient.TabIndex = 21;
             // 
             // panel4
             // 
@@ -237,10 +203,11 @@
             panel4.Controls.Add(label10);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label8);
+            panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1117, 75);
+            panel4.Size = new Size(1185, 75);
             panel4.TabIndex = 0;
             // 
             // label10
@@ -500,16 +467,34 @@
             // Main
             // 
             Main.BackColor = Color.FromArgb(245, 248, 251);
-            Main.Controls.Add(panel1);
-            Main.Controls.Add(label1);
-            Main.Controls.Add(lbl2IDNo);
-            Main.Controls.Add(btnAddPatient);
-            Main.Controls.Add(panel2);
+            Main.Controls.Add(Section);
             Main.Dock = DockStyle.Fill;
             Main.Location = new Point(201, 0);
             Main.Name = "Main";
             Main.Size = new Size(1263, 749);
             Main.TabIndex = 25;
+            // 
+            // Section
+            // 
+            Section.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            Section.BackColor = Color.White;
+            Section.ColumnCount = 1;
+            Section.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Section.Controls.Add(Patient, 0, 4);
+            Section.Controls.Add(Search, 0, 3);
+            Section.Controls.Add(btnAddPatient, 0, 2);
+            Section.Controls.Add(lbl2IDNo, 0, 1);
+            Section.Controls.Add(label1, 0, 0);
+            Section.Location = new Point(58, 67);
+            Section.Name = "Section";
+            Section.RowCount = 5;
+            Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));
+            Section.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            Section.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            Section.Size = new Size(1193, 682);
+            Section.TabIndex = 22;
             // 
             // RP_SearchPatient
             // 
@@ -524,10 +509,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Returning Patient";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
+            Load += RP_SearchPatient_Load;
+            ((System.ComponentModel.ISupportInitialize)PatientGrid).EndInit();
+            Search.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            Patient.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             SideBar.ResumeLayout(false);
@@ -535,7 +522,8 @@
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             Main.ResumeLayout(false);
-            Main.PerformLayout();
+            Section.ResumeLayout(false);
+            Section.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -543,18 +531,13 @@
 
         private Label label1;
         private Label lbl2IDNo;
-        private DataGridView dataGridView1;
-        private Button button2;
-        private Panel panel1;
-        private ComboBox comboBox2;
-        private Label label7;
-        private Label label3;
-        private ComboBox comboBox1;
+        private DataGridView PatientGrid;
+        private Panel Search;
         private TextBox textBox1;
         private Label label2;
         private Button button1;
         private Button btnAddPatient;
-        private Panel panel2;
+        private Panel Patient;
         private Panel panel4;
         private Label label9;
         private Label label8;
@@ -574,5 +557,7 @@
         private Panel panel13;
         private Panel Sidebar_Border;
         private Panel Main;
+        private TableLayoutPanel Section;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -216,5 +216,10 @@ namespace apex_management_sys
         {
             CenterPanel();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
