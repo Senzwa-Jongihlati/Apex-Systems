@@ -67,8 +67,26 @@ namespace apex_management_sys
         }
         private void AppointmentsGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex < 0)
                 return;
+            string columnName = AppointmentsGrid.Columns[e.ColumnIndex].Name;
+
+            // Double-click Reason for Visit
+            if (columnName == "Reason for Visit")
+            {
+                string reason = AppointmentsGrid.Rows[e.RowIndex]
+                    .Cells[e.ColumnIndex]
+                    .Value?.ToString();
+
+                MessageBox.Show(
+                    reason,
+                    "Reason for Visit",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                return;
+            }
 
             if (AppointmentsGrid.Columns[e.ColumnIndex].Name != "Status")
                 return;
@@ -253,8 +271,8 @@ namespace apex_management_sys
                     appointmentCommand.Parameters.AddWithValue("@PatientID", patientID);
                     appointmentCommand.Parameters.AddWithValue("@DoctorID", doctorID);
                     appointmentCommand.Parameters.AddWithValue("@ReceptionistID", Session.CurrentReceptionist.ReceptionistID);
-                    appointmentCommand.Parameters.AddWithValue("@AppointmentDateTime",appointmentDateTime);
-                    appointmentCommand.Parameters.AddWithValue("@ReasonForVisit",reason);
+                    appointmentCommand.Parameters.AddWithValue("@AppointmentDateTime", appointmentDateTime);
+                    appointmentCommand.Parameters.AddWithValue("@ReasonForVisit", reason);
 
                     appointmentCommand.ExecuteNonQuery();
                 }
@@ -292,6 +310,14 @@ namespace apex_management_sys
                 cmbDoctor.DisplayMember = "DoctorName";
                 cmbDoctor.ValueMember = "DoctorID";
             }
+            cmbDoctor.SelectedIndex = -1;
+        }
+
+        private void CancelAddition_Click(object sender, EventArgs e)
+        {
+            txtPatient.Clear();
+            cmbDoctor.SelectedIndex = -1;
+            txtReason.Clear();
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
             Main = new Panel();
             MainSection = new TableLayoutPanel();
@@ -47,7 +47,6 @@
             CancelAddition = new Button();
             AllAppointments = new TableLayoutPanel();
             panel2 = new Panel();
-            Delete = new Button();
             Save = new Button();
             panel4 = new Panel();
             AppointmentsGrid = new DataGridView();
@@ -259,6 +258,7 @@
             CancelAddition.TabIndex = 3;
             CancelAddition.Text = "Cancel";
             CancelAddition.UseVisualStyleBackColor = false;
+            CancelAddition.Click += CancelAddition_Click;
             // 
             // AllAppointments
             // 
@@ -278,25 +278,12 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(Delete);
             panel2.Controls.Add(Save);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 762);
             panel2.Name = "panel2";
             panel2.Size = new Size(702, 64);
             panel2.TabIndex = 11;
-            // 
-            // Delete
-            // 
-            Delete.BackColor = Color.FromArgb(200, 70, 70);
-            Delete.Dock = DockStyle.Left;
-            Delete.Location = new Point(0, 0);
-            Delete.Margin = new Padding(3, 4, 3, 4);
-            Delete.Name = "Delete";
-            Delete.Size = new Size(129, 64);
-            Delete.TabIndex = 4;
-            Delete.Text = "Delete";
-            Delete.UseVisualStyleBackColor = false;
             // 
             // Save
             // 
@@ -332,14 +319,14 @@
             AppointmentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AppointmentsGrid.BackgroundColor = Color.White;
             AppointmentsGrid.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(222, 235, 245);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(180, 205, 225);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 235, 245);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(180, 205, 225);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AppointmentsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             AppointmentsGrid.Dock = DockStyle.Fill;
             AppointmentsGrid.EnableHeadersVisualStyles = false;
@@ -674,7 +661,6 @@
         private ComboBox comboBox1;
         private Label label4;
         private Button Save;
-        private Button Delete;
         private Button CancelAddition;
         private Button BookAppointment;
         private ComboBox cmbDoctor;
