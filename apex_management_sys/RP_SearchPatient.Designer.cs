@@ -34,14 +34,16 @@
             PatientGrid = new DataGridView();
             Search = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            txtSearch = new TextBox();
             label2 = new Label();
+            ButtonControls = new Panel();
+            btnReset = new Button();
+            btnSave = new Button();
             btnAddPatient = new Button();
             Patient = new Panel();
             panel4 = new Panel();
-            label10 = new Label();
-            label9 = new Label();
+            lblCount = new Label();
+            lblPatient = new Label();
             label8 = new Label();
             SideBar = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -62,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)PatientGrid).BeginInit();
             Search.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            ButtonControls.SuspendLayout();
             Patient.SuspendLayout();
             panel4.SuspendLayout();
             SideBar.SuspendLayout();
@@ -98,14 +101,16 @@
             // 
             // PatientGrid
             // 
+            PatientGrid.AllowUserToOrderColumns = true;
             PatientGrid.BackgroundColor = Color.White;
             PatientGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PatientGrid.Dock = DockStyle.Fill;
-            PatientGrid.Location = new Point(0, 0);
+            PatientGrid.Location = new Point(0, 75);
             PatientGrid.Margin = new Padding(2, 3, 2, 3);
             PatientGrid.Name = "PatientGrid";
             PatientGrid.RowHeadersWidth = 62;
-            PatientGrid.Size = new Size(1185, 404);
+            PatientGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            PatientGrid.Size = new Size(1185, 329);
             PatientGrid.TabIndex = 15;
             // 
             // Search
@@ -121,13 +126,14 @@
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnCount = 4;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tableLayoutPanel2.Controls.Add(button1, 2, 1);
-            tableLayoutPanel2.Controls.Add(textBox1, 1, 1);
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tableLayoutPanel2.Controls.Add(txtSearch, 1, 1);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
+            tableLayoutPanel2.Controls.Add(ButtonControls, 3, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -137,28 +143,16 @@
             tableLayoutPanel2.Size = new Size(1185, 93);
             tableLayoutPanel2.TabIndex = 18;
             // 
-            // button1
+            // txtSearch
             // 
-            button1.BackColor = Color.Yellow;
-            button1.Dock = DockStyle.Right;
-            button1.Location = new Point(1007, 50);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(175, 39);
-            button1.TabIndex = 17;
-            button1.Text = "Reset";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(8, 50);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search by ID or Name";
-            textBox1.Size = new Size(348, 27);
-            textBox1.TabIndex = 1;
+            txtSearch.Dock = DockStyle.Fill;
+            txtSearch.Location = new Point(8, 50);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search by ID or Name";
+            txtSearch.Size = new Size(348, 27);
+            txtSearch.TabIndex = 1;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // label2
             // 
@@ -170,6 +164,40 @@
             label2.TabIndex = 0;
             label2.Text = "Search";
             label2.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // ButtonControls
+            // 
+            ButtonControls.Controls.Add(btnReset);
+            ButtonControls.Controls.Add(btnSave);
+            ButtonControls.Dock = DockStyle.Fill;
+            ButtonControls.Location = new Point(775, 49);
+            ButtonControls.Name = "ButtonControls";
+            ButtonControls.Size = new Size(407, 41);
+            ButtonControls.TabIndex = 19;
+            // 
+            // btnReset
+            // 
+            btnReset.BackColor = Color.Yellow;
+            btnReset.Dock = DockStyle.Left;
+            btnReset.Location = new Point(0, 0);
+            btnReset.Margin = new Padding(3, 4, 3, 4);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(180, 41);
+            btnReset.TabIndex = 17;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += button1_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(45, 140, 120);
+            btnSave.Dock = DockStyle.Right;
+            btnSave.Location = new Point(227, 0);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(180, 41);
+            btnSave.TabIndex = 18;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // btnAddPatient
             // 
@@ -188,8 +216,8 @@
             // Patient
             // 
             Patient.BorderStyle = BorderStyle.FixedSingle;
-            Patient.Controls.Add(panel4);
             Patient.Controls.Add(PatientGrid);
+            Patient.Controls.Add(panel4);
             Patient.Dock = DockStyle.Fill;
             Patient.Location = new Point(3, 272);
             Patient.Margin = new Padding(3, 4, 3, 4);
@@ -200,8 +228,8 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(label9);
+            panel4.Controls.Add(lblCount);
+            panel4.Controls.Add(lblPatient);
             panel4.Controls.Add(label8);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
@@ -210,26 +238,26 @@
             panel4.Size = new Size(1185, 75);
             panel4.TabIndex = 0;
             // 
-            // label10
+            // lblCount
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(197, 23);
-            label10.Name = "label10";
-            label10.Size = new Size(68, 20);
-            label10.TabIndex = 2;
-            label10.Text = "(12 total)";
+            lblCount.AutoSize = true;
+            lblCount.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCount.Location = new Point(197, 23);
+            lblCount.Name = "lblCount";
+            lblCount.Size = new Size(68, 20);
+            lblCount.TabIndex = 2;
+            lblCount.Text = "(12 total)";
             // 
-            // label9
+            // lblPatient
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(81, 16);
-            label9.Name = "label9";
-            label9.Size = new Size(119, 28);
-            label9.TabIndex = 1;
-            label9.Text = "Patient List";
-            label9.Click += label9_Click;
+            lblPatient.AutoSize = true;
+            lblPatient.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPatient.Location = new Point(81, 16);
+            lblPatient.Name = "lblPatient";
+            lblPatient.Size = new Size(119, 28);
+            lblPatient.TabIndex = 1;
+            lblPatient.Text = "Patient List";
+            lblPatient.Click += label9_Click;
             // 
             // label8
             // 
@@ -514,6 +542,7 @@
             Search.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            ButtonControls.ResumeLayout(false);
             Patient.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -533,15 +562,15 @@
         private Label lbl2IDNo;
         private DataGridView PatientGrid;
         private Panel Search;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Label label2;
-        private Button button1;
+        private Button btnReset;
         private Button btnAddPatient;
         private Panel Patient;
         private Panel panel4;
-        private Label label9;
+        private Label lblPatient;
         private Label label8;
-        private Label label10;
+        private Label lblCount;
         private Panel SideBar;
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;
@@ -553,11 +582,14 @@
         private Label Management;
         private Button Dashboard;
         private Label Important;
+
         private PictureBox Logo;
         private Panel panel13;
         private Panel Sidebar_Border;
         private Panel Main;
         private TableLayoutPanel Section;
         private TableLayoutPanel tableLayoutPanel2;
+        private Button btnSave;
+        private Panel ButtonControls;
     }
 }

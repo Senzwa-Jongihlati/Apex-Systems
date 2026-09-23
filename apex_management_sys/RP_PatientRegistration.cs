@@ -172,6 +172,10 @@ namespace apex_management_sys
 
                 cbGender.SelectedIndex = -1;
                 cbPriority.SelectedIndex = -1;
+
+                //Refresh Search Patient Form
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (FormatException)
             {
@@ -219,6 +223,7 @@ namespace apex_management_sys
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }
