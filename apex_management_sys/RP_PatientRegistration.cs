@@ -15,6 +15,7 @@ namespace apex_management_sys
         public Registration()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,9 +25,13 @@ namespace apex_management_sys
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            CenterPanel();
         }
-
+        public void CenterPanel()
+        {
+            Main.Left = (this.ClientSize.Width - Main.Width) / 2;
+            Main.Top = (this.ClientSize.Height - Main.Height) / 2;
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             RP_Queue Queue = new RP_Queue();
@@ -205,6 +210,11 @@ namespace apex_management_sys
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Registration_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
         }
     }
 }

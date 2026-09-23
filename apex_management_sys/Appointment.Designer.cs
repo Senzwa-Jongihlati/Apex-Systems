@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
             Main = new Panel();
             MainSection = new TableLayoutPanel();
@@ -58,7 +58,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
             Queue = new Button();
-            Admissions = new Button();
             Appointments = new Button();
             Clinical = new Label();
             Reception = new Button();
@@ -319,14 +318,14 @@
             AppointmentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AppointmentsGrid.BackgroundColor = Color.White;
             AppointmentsGrid.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 235, 245);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(180, 205, 225);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(222, 235, 245);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(180, 205, 225);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             AppointmentsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             AppointmentsGrid.Dock = DockStyle.Fill;
             AppointmentsGrid.EnableHeadersVisualStyles = false;
@@ -405,7 +404,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(Logout, 0, 10);
             tableLayoutPanel1.Controls.Add(Queue, 0, 9);
-            tableLayoutPanel1.Controls.Add(Admissions, 0, 8);
             tableLayoutPanel1.Controls.Add(Appointments, 0, 7);
             tableLayoutPanel1.Controls.Add(Clinical, 0, 6);
             tableLayoutPanel1.Controls.Add(Reception, 0, 5);
@@ -459,31 +457,13 @@
             Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Queue.Image = (Image)resources.GetObject("Queue.Image");
             Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 440);
+            Queue.Location = new Point(3, 380);
             Queue.Margin = new Padding(3, 4, 0, 4);
             Queue.Name = "Queue";
             Queue.Size = new Size(196, 52);
             Queue.TabIndex = 17;
             Queue.Text = "Queue";
             Queue.UseVisualStyleBackColor = false;
-            // 
-            // Admissions
-            // 
-            Admissions.BackColor = Color.FromArgb(222, 235, 245);
-            Admissions.Cursor = Cursors.Hand;
-            Admissions.Dock = DockStyle.Top;
-            Admissions.FlatAppearance.BorderSize = 0;
-            Admissions.FlatStyle = FlatStyle.Flat;
-            Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Admissions.Image = (Image)resources.GetObject("Admissions.Image");
-            Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 380);
-            Admissions.Margin = new Padding(3, 4, 0, 4);
-            Admissions.Name = "Admissions";
-            Admissions.Size = new Size(196, 52);
-            Admissions.TabIndex = 16;
-            Admissions.Text = "Admissions";
-            Admissions.UseVisualStyleBackColor = false;
             // 
             // Appointments
             // 
@@ -672,7 +652,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;
         private Button Queue;
-        private Button Admissions;
         private Button Appointments;
         private Label Clinical;
         private Button Reception;
