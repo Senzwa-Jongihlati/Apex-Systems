@@ -42,64 +42,71 @@
             Management = new Label();
             Logo = new PictureBox();
             panel2 = new Panel();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
-            label4 = new Label();
-            label5 = new Label();
-            textBox4 = new TextBox();
-            button1 = new Button();
-            label6 = new Label();
-            textBox5 = new TextBox();
-            listBox1 = new ListBox();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            button2 = new Button();
-            label16 = new Label();
-            label17 = new Label();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            label18 = new Label();
-            panel3 = new Panel();
-            panel4 = new Panel();
             panel5 = new Panel();
+            groupBox3 = new GroupBox();
+            btnSave = new Button();
+            txtViewLastName = new TextBox();
+            label20 = new Label();
+            btnDelete = new Button();
+            txtViewCreatedOn = new TextBox();
+            txtViewAddress = new TextBox();
+            txtViewType = new TextBox();
+            txtViewPhone = new TextBox();
+            txtViewExperience = new TextBox();
+            txtViewFirstName = new TextBox();
+            txtViewUsername = new TextBox();
+            txtViewAccountId = new TextBox();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            panel4 = new Panel();
+            groupBox2 = new GroupBox();
+            btnSearchAcc = new Button();
+            bntViewAcc = new Button();
+            lstAccounts = new ListBox();
+            txtSearchAccount = new TextBox();
+            label6 = new Label();
+            panel3 = new Panel();
+            groupBox1 = new GroupBox();
+            txtLastname = new TextBox();
+            label19 = new Label();
+            label18 = new Label();
+            txtPhone = new TextBox();
+            txtExperience = new TextBox();
+            label17 = new Label();
+            btnCreateAcc = new Button();
+            txtAddress = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            cbRole = new ComboBox();
+            label3 = new Label();
+            txtFirstName = new TextBox();
+            txtPassword = new TextBox();
+            txtUsername = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            label16 = new Label();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             panel2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
             panel5.SuspendLayout();
+            groupBox3.SuspendLayout();
+            panel4.SuspendLayout();
+            groupBox2.SuspendLayout();
+            panel3.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(222, 235, 245);
+            panel1.BackColor = Color.FromArgb(224, 224, 224);
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(Logo);
             panel1.Location = new Point(2, 2);
@@ -313,56 +320,32 @@
             panel2.Controls.Add(label16);
             panel2.Location = new Point(205, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1086, 633);
+            panel2.Size = new Size(1120, 652);
             panel2.TabIndex = 1;
             // 
-            // groupBox1
+            // panel5
             // 
-            groupBox1.Controls.Add(label18);
-            groupBox1.Controls.Add(textBox15);
-            groupBox1.Controls.Add(textBox14);
-            groupBox1.Controls.Add(label17);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(3, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(343, 520);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Create New Account";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(listBox1);
-            groupBox2.Controls.Add(textBox5);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(3, 5);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(354, 505);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Find Account";
+            panel5.BackColor = SystemColors.ButtonHighlight;
+            panel5.Controls.Add(groupBox3);
+            panel5.Location = new Point(755, 81);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(338, 558);
+            panel5.TabIndex = 6;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(button2);
-            groupBox3.Controls.Add(textBox13);
-            groupBox3.Controls.Add(textBox12);
-            groupBox3.Controls.Add(textBox11);
-            groupBox3.Controls.Add(textBox10);
-            groupBox3.Controls.Add(textBox9);
-            groupBox3.Controls.Add(textBox8);
-            groupBox3.Controls.Add(textBox7);
-            groupBox3.Controls.Add(textBox6);
+            groupBox3.Controls.Add(btnSave);
+            groupBox3.Controls.Add(txtViewLastName);
+            groupBox3.Controls.Add(label20);
+            groupBox3.Controls.Add(btnDelete);
+            groupBox3.Controls.Add(txtViewCreatedOn);
+            groupBox3.Controls.Add(txtViewAddress);
+            groupBox3.Controls.Add(txtViewType);
+            groupBox3.Controls.Add(txtViewPhone);
+            groupBox3.Controls.Add(txtViewExperience);
+            groupBox3.Controls.Add(txtViewFirstName);
+            groupBox3.Controls.Add(txtViewUsername);
+            groupBox3.Controls.Add(txtViewAccountId);
             groupBox3.Controls.Add(label15);
             groupBox3.Controls.Add(label14);
             groupBox3.Controls.Add(label13);
@@ -374,146 +357,159 @@
             groupBox3.Controls.Add(label7);
             groupBox3.Location = new Point(3, 5);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(308, 521);
+            groupBox3.Size = new Size(332, 547);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "View Account";
             // 
-            // label1
+            // btnSave
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(16, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Username:";
+            btnSave.BackColor = Color.FromArgb(11, 61, 92);
+            btnSave.ForeColor = SystemColors.ControlLightLight;
+            btnSave.Location = new Point(34, 505);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 28);
+            btnSave.TabIndex = 20;
+            btnSave.Text = "Save Chages";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
-            // label2
+            // txtViewLastName
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(16, 98);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Password:";
+            txtViewLastName.Location = new Point(107, 125);
+            txtViewLastName.Name = "txtViewLastName";
+            txtViewLastName.Size = new Size(185, 23);
+            txtViewLastName.TabIndex = 19;
             // 
-            // textBox1
+            // label20
             // 
-            textBox1.Location = new Point(104, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 23);
-            textBox1.TabIndex = 2;
+            label20.AutoSize = true;
+            label20.Location = new Point(24, 127);
+            label20.Name = "label20";
+            label20.Size = new Size(66, 15);
+            label20.TabIndex = 18;
+            label20.Text = "Last Name:";
             // 
-            // textBox2
+            // btnDelete
             // 
-            textBox2.Location = new Point(104, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(189, 23);
-            textBox2.TabIndex = 3;
+            btnDelete.BackColor = SystemColors.ActiveCaption;
+            btnDelete.Location = new Point(172, 505);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(137, 33);
+            btnDelete.TabIndex = 17;
+            btnDelete.Text = "Delete Account";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // txtViewCreatedOn
             // 
-            textBox3.Location = new Point(103, 174);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(187, 23);
-            textBox3.TabIndex = 4;
+            txtViewCreatedOn.Location = new Point(109, 462);
+            txtViewCreatedOn.Name = "txtViewCreatedOn";
+            txtViewCreatedOn.Size = new Size(183, 23);
+            txtViewCreatedOn.TabIndex = 16;
             // 
-            // label3
+            // txtViewAddress
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(19, 182);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Name:";
+            txtViewAddress.Location = new Point(107, 336);
+            txtViewAddress.Multiline = true;
+            txtViewAddress.Name = "txtViewAddress";
+            txtViewAddress.Size = new Size(187, 108);
+            txtViewAddress.TabIndex = 15;
             // 
-            // comboBox1
+            // txtViewType
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "doctor", "reception" });
-            comboBox1.Location = new Point(106, 252);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(187, 23);
-            comboBox1.TabIndex = 6;
+            txtViewType.Location = new Point(107, 288);
+            txtViewType.Name = "txtViewType";
+            txtViewType.Size = new Size(185, 23);
+            txtViewType.TabIndex = 14;
             // 
-            // label4
+            // txtViewPhone
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(19, 255);
-            label4.Name = "label4";
-            label4.Size = new Size(35, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Type:";
-            label4.Click += label4_Click;
+            txtViewPhone.Location = new Point(107, 250);
+            txtViewPhone.Name = "txtViewPhone";
+            txtViewPhone.Size = new Size(185, 23);
+            txtViewPhone.TabIndex = 13;
             // 
-            // label5
+            // txtViewExperience
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(19, 299);
-            label5.Name = "label5";
-            label5.Size = new Size(52, 15);
-            label5.TabIndex = 8;
-            label5.Text = "Address:";
+            txtViewExperience.Location = new Point(107, 200);
+            txtViewExperience.Name = "txtViewExperience";
+            txtViewExperience.Size = new Size(185, 23);
+            txtViewExperience.TabIndex = 12;
             // 
-            // textBox4
+            // txtViewFirstName
             // 
-            textBox4.Location = new Point(106, 299);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(187, 152);
-            textBox4.TabIndex = 9;
+            txtViewFirstName.Location = new Point(107, 164);
+            txtViewFirstName.Name = "txtViewFirstName";
+            txtViewFirstName.Size = new Size(185, 23);
+            txtViewFirstName.TabIndex = 11;
             // 
-            // button1
+            // txtViewUsername
             // 
-            button1.BackColor = Color.FromArgb(11, 61, 92);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(118, 475);
-            button1.Name = "button1";
-            button1.Size = new Size(133, 32);
-            button1.TabIndex = 10;
-            button1.Text = "Create Accout";
-            button1.UseVisualStyleBackColor = false;
+            txtViewUsername.Location = new Point(107, 77);
+            txtViewUsername.Name = "txtViewUsername";
+            txtViewUsername.Size = new Size(185, 23);
+            txtViewUsername.TabIndex = 10;
             // 
-            // label6
+            // txtViewAccountId
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(21, 49);
-            label6.Name = "label6";
-            label6.Size = new Size(87, 15);
-            label6.TabIndex = 0;
-            label6.Text = "Name / Phone:";
+            txtViewAccountId.Location = new Point(107, 41);
+            txtViewAccountId.Name = "txtViewAccountId";
+            txtViewAccountId.Size = new Size(185, 23);
+            txtViewAccountId.TabIndex = 9;
             // 
-            // textBox5
+            // label15
             // 
-            textBox5.Location = new Point(132, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(198, 23);
-            textBox5.TabIndex = 1;
+            label15.AutoSize = true;
+            label15.Location = new Point(23, 462);
+            label15.Name = "label15";
+            label15.Size = new Size(68, 15);
+            label15.TabIndex = 8;
+            label15.Text = "Created on:";
             // 
-            // listBox1
+            // label14
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(21, 86);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(309, 409);
-            listBox1.TabIndex = 2;
+            label14.AutoSize = true;
+            label14.Location = new Point(23, 336);
+            label14.Name = "label14";
+            label14.Size = new Size(52, 15);
+            label14.TabIndex = 7;
+            label14.Text = "Address:";
             // 
-            // label7
+            // label13
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(22, 45);
-            label7.Name = "label7";
-            label7.Size = new Size(63, 15);
-            label7.TabIndex = 0;
-            label7.Text = "Acount ID:";
+            label13.AutoSize = true;
+            label13.Location = new Point(22, 291);
+            label13.Name = "label13";
+            label13.Size = new Size(35, 15);
+            label13.TabIndex = 6;
+            label13.Text = "Type:";
             // 
-            // label8
+            // label12
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(22, 77);
-            label8.Name = "label8";
-            label8.Size = new Size(0, 15);
-            label8.TabIndex = 1;
+            label12.AutoSize = true;
+            label12.Location = new Point(22, 248);
+            label12.Name = "label12";
+            label12.Size = new Size(44, 15);
+            label12.TabIndex = 5;
+            label12.Text = "Phone:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(22, 208);
+            label11.Name = "label11";
+            label11.Size = new Size(66, 15);
+            label11.TabIndex = 4;
+            label11.Text = "Experience:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(22, 164);
+            label10.Name = "label10";
+            label10.Size = new Size(42, 15);
+            label10.TabIndex = 3;
+            label10.Text = "Name:";
             // 
             // label9
             // 
@@ -524,126 +520,281 @@
             label9.TabIndex = 2;
             label9.Text = "Username:";
             // 
-            // label10
+            // label8
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(22, 121);
-            label10.Name = "label10";
-            label10.Size = new Size(42, 15);
-            label10.TabIndex = 3;
-            label10.Text = "Name:";
+            label8.AutoSize = true;
+            label8.Location = new Point(22, 77);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 15);
+            label8.TabIndex = 1;
             // 
-            // label11
+            // label7
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(22, 165);
-            label11.Name = "label11";
-            label11.Size = new Size(66, 15);
-            label11.TabIndex = 4;
-            label11.Text = "Experience:";
+            label7.AutoSize = true;
+            label7.Location = new Point(22, 45);
+            label7.Name = "label7";
+            label7.Size = new Size(63, 15);
+            label7.TabIndex = 0;
+            label7.Text = "Acount ID:";
             // 
-            // label12
+            // panel4
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(22, 205);
-            label12.Name = "label12";
-            label12.Size = new Size(44, 15);
-            label12.TabIndex = 5;
-            label12.Text = "Phone:";
+            panel4.BackColor = SystemColors.ControlLightLight;
+            panel4.Controls.Add(groupBox2);
+            panel4.Location = new Point(372, 81);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(371, 558);
+            panel4.TabIndex = 5;
             // 
-            // label13
+            // groupBox2
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(22, 250);
-            label13.Name = "label13";
-            label13.Size = new Size(35, 15);
-            label13.TabIndex = 6;
-            label13.Text = "Type:";
+            groupBox2.Controls.Add(btnSearchAcc);
+            groupBox2.Controls.Add(bntViewAcc);
+            groupBox2.Controls.Add(lstAccounts);
+            groupBox2.Controls.Add(txtSearchAccount);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Location = new Point(3, 5);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(354, 547);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Find Account";
             // 
-            // label14
+            // btnSearchAcc
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(23, 287);
-            label14.Name = "label14";
-            label14.Size = new Size(52, 15);
-            label14.TabIndex = 7;
-            label14.Text = "Address:";
+            btnSearchAcc.BackColor = SystemColors.ActiveCaption;
+            btnSearchAcc.Image = Properties.Resources.refer;
+            btnSearchAcc.Location = new Point(273, 15);
+            btnSearchAcc.Name = "btnSearchAcc";
+            btnSearchAcc.Size = new Size(57, 40);
+            btnSearchAcc.TabIndex = 4;
+            btnSearchAcc.UseVisualStyleBackColor = false;
+            btnSearchAcc.Click += btnSearchAcc_Click;
             // 
-            // label15
+            // bntViewAcc
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(28, 424);
-            label15.Name = "label15";
-            label15.Size = new Size(68, 15);
-            label15.TabIndex = 8;
-            label15.Text = "Created on:";
+            bntViewAcc.BackColor = Color.Silver;
+            bntViewAcc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bntViewAcc.Location = new Point(111, 508);
+            bntViewAcc.Name = "bntViewAcc";
+            bntViewAcc.Size = new Size(128, 30);
+            bntViewAcc.TabIndex = 3;
+            bntViewAcc.Text = "View";
+            bntViewAcc.UseVisualStyleBackColor = false;
+            bntViewAcc.Click += button1_Click;
             // 
-            // textBox6
+            // lstAccounts
             // 
-            textBox6.Location = new Point(107, 41);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(185, 23);
-            textBox6.TabIndex = 9;
+            lstAccounts.FormattingEnabled = true;
+            lstAccounts.Location = new Point(21, 103);
+            lstAccounts.Name = "lstAccounts";
+            lstAccounts.Size = new Size(309, 394);
+            lstAccounts.TabIndex = 2;
             // 
-            // textBox7
+            // txtSearchAccount
             // 
-            textBox7.Location = new Point(107, 77);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(185, 23);
-            textBox7.TabIndex = 10;
+            txtSearchAccount.Location = new Point(132, 61);
+            txtSearchAccount.Name = "txtSearchAccount";
+            txtSearchAccount.Size = new Size(198, 23);
+            txtSearchAccount.TabIndex = 1;
             // 
-            // textBox8
+            // label6
             // 
-            textBox8.Location = new Point(107, 121);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(185, 23);
-            textBox8.TabIndex = 11;
+            label6.AutoSize = true;
+            label6.Location = new Point(21, 64);
+            label6.Name = "label6";
+            label6.Size = new Size(87, 15);
+            label6.TabIndex = 0;
+            label6.Text = "Name / Phone:";
             // 
-            // textBox9
+            // panel3
             // 
-            textBox9.Location = new Point(107, 157);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(185, 23);
-            textBox9.TabIndex = 12;
+            panel3.BackColor = SystemColors.ButtonHighlight;
+            panel3.Controls.Add(groupBox1);
+            panel3.Location = new Point(17, 81);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(349, 558);
+            panel3.TabIndex = 4;
             // 
-            // textBox10
+            // groupBox1
             // 
-            textBox10.Location = new Point(107, 202);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(185, 23);
-            textBox10.TabIndex = 13;
+            groupBox1.Controls.Add(txtLastname);
+            groupBox1.Controls.Add(label19);
+            groupBox1.Controls.Add(label18);
+            groupBox1.Controls.Add(txtPhone);
+            groupBox1.Controls.Add(txtExperience);
+            groupBox1.Controls.Add(label17);
+            groupBox1.Controls.Add(btnCreateAcc);
+            groupBox1.Controls.Add(txtAddress);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(cbRole);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtFirstName);
+            groupBox1.Controls.Add(txtPassword);
+            groupBox1.Controls.Add(txtUsername);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(3, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(343, 549);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Create New Account";
             // 
-            // textBox11
+            // txtLastname
             // 
-            textBox11.Location = new Point(107, 247);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(185, 23);
-            textBox11.TabIndex = 14;
+            txtLastname.Location = new Point(21, 105);
+            txtLastname.Name = "txtLastname";
+            txtLastname.Size = new Size(287, 23);
+            txtLastname.TabIndex = 16;
             // 
-            // textBox12
+            // label19
             // 
-            textBox12.Location = new Point(105, 293);
-            textBox12.Multiline = true;
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(187, 108);
-            textBox12.TabIndex = 15;
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.Location = new Point(19, 82);
+            label19.Name = "label19";
+            label19.Size = new Size(70, 15);
+            label19.TabIndex = 15;
+            label19.Text = "last Name *";
             // 
-            // textBox13
+            // label18
             // 
-            textBox13.Location = new Point(109, 426);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(183, 23);
-            textBox13.TabIndex = 16;
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.Location = new Point(21, 298);
+            label18.Name = "label18";
+            label18.Size = new Size(50, 15);
+            label18.TabIndex = 14;
+            label18.Text = "Phone *";
             // 
-            // button2
+            // txtPhone
             // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.Location = new Point(92, 462);
-            button2.Name = "button2";
-            button2.Size = new Size(153, 33);
-            button2.TabIndex = 17;
-            button2.Text = "Delete Account";
-            button2.UseVisualStyleBackColor = false;
+            txtPhone.Location = new Point(21, 316);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(287, 23);
+            txtPhone.TabIndex = 13;
+            // 
+            // txtExperience
+            // 
+            txtExperience.Location = new Point(21, 267);
+            txtExperience.Name = "txtExperience";
+            txtExperience.Size = new Size(287, 23);
+            txtExperience.TabIndex = 12;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(19, 249);
+            label17.Name = "label17";
+            label17.Size = new Size(77, 15);
+            label17.TabIndex = 11;
+            label17.Text = "Experience *";
+            label17.Click += label17_Click;
+            // 
+            // btnCreateAcc
+            // 
+            btnCreateAcc.BackColor = Color.FromArgb(11, 61, 92);
+            btnCreateAcc.ForeColor = SystemColors.ButtonFace;
+            btnCreateAcc.Location = new Point(104, 511);
+            btnCreateAcc.Name = "btnCreateAcc";
+            btnCreateAcc.Size = new Size(133, 32);
+            btnCreateAcc.TabIndex = 10;
+            btnCreateAcc.Text = "Create Accout";
+            btnCreateAcc.UseVisualStyleBackColor = false;
+            btnCreateAcc.Click += btnCreateAcc_Click;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Location = new Point(81, 414);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(227, 73);
+            txtAddress.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(21, 414);
+            label5.Name = "label5";
+            label5.Size = new Size(54, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Address:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(21, 353);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Type / Role*";
+            label4.Click += label4_Click;
+            // 
+            // cbRole
+            // 
+            cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRole.FormattingEnabled = true;
+            cbRole.Items.AddRange(new object[] { "Doctor", "Reception" });
+            cbRole.Location = new Point(21, 371);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(287, 23);
+            cbRole.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(18, 21);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 15);
+            label3.TabIndex = 5;
+            label3.Text = "First Name *";
+            // 
+            // txtFirstName
+            // 
+            txtFirstName.Location = new Point(19, 44);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(289, 23);
+            txtFirstName.TabIndex = 4;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(19, 216);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(289, 23);
+            txtPassword.TabIndex = 3;
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(19, 164);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(289, 23);
+            txtUsername.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(19, 198);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Password *";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(21, 142);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Username * ";
             // 
             // label16
             // 
@@ -655,90 +806,31 @@
             label16.TabIndex = 3;
             label16.Text = "Admin";
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(16, 142);
-            label17.Name = "label17";
-            label17.Size = new Size(66, 15);
-            label17.TabIndex = 11;
-            label17.Text = "Experience:";
-            label17.Click += label17_Click;
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(104, 134);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(186, 23);
-            textBox14.TabIndex = 12;
-            // 
-            // textBox15
-            // 
-            textBox15.Location = new Point(103, 210);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(185, 23);
-            textBox15.TabIndex = 13;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(19, 218);
-            label18.Name = "label18";
-            label18.Size = new Size(44, 15);
-            label18.TabIndex = 14;
-            label18.Text = "Phone:";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.ButtonHighlight;
-            panel3.Controls.Add(groupBox1);
-            panel3.Location = new Point(17, 81);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(349, 529);
-            panel3.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = SystemColors.ControlLightLight;
-            panel4.Controls.Add(groupBox2);
-            panel4.Location = new Point(372, 81);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(371, 529);
-            panel4.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = SystemColors.ButtonHighlight;
-            panel5.Controls.Add(groupBox3);
-            panel5.Location = new Point(755, 81);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(319, 529);
-            panel5.TabIndex = 6;
-            // 
             // newAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1291, 637);
+            ClientSize = new Size(1337, 653);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "newAccount";
             Text = "newAccount";
+            Load += newAccount_Load;
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            panel5.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            panel3.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -761,17 +853,17 @@
         private GroupBox groupBox2;
         private GroupBox groupBox1;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox cbRole;
         private Label label3;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtFirstName;
+        private TextBox txtPassword;
+        private TextBox txtUsername;
         private Label label2;
         private Label label1;
-        private Button button1;
-        private TextBox textBox4;
+        private Button btnCreateAcc;
+        private TextBox txtAddress;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtSearchAccount;
         private Label label6;
         private Label label13;
         private Label label12;
@@ -780,25 +872,32 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private ListBox listBox1;
-        private Button button2;
-        private TextBox textBox13;
-        private TextBox textBox12;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private ListBox lstAccounts;
+        private Button btnDelete;
+        private TextBox txtViewCreatedOn;
+        private TextBox txtViewAddress;
+        private TextBox txtViewType;
+        private TextBox txtViewPhone;
+        private TextBox txtViewExperience;
+        private TextBox txtViewFirstName;
+        private TextBox txtViewUsername;
+        private TextBox txtViewAccountId;
         private Label label15;
         private Label label14;
         private Label label16;
-        private TextBox textBox14;
+        private TextBox txtExperience;
         private Label label17;
-        private TextBox textBox15;
+        private TextBox txtPhone;
         private Label label18;
         private Panel panel5;
         private Panel panel4;
         private Panel panel3;
+        private Label label19;
+        private TextBox txtLastname;
+        private TextBox txtViewLastName;
+        private Label label20;
+        private Button btnSearchAcc;
+        private Button bntViewAcc;
+        private Button btnSave;
     }
 }
