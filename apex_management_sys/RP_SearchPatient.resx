@@ -153,22 +153,6 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Admissions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        XgAAB14BODEn8gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIwSURBVFhH7dZJ
-        yE5hFAfwHzIUNoqSUiwMKcqwskOGjFlKEkUWWFjIRvSVCMmSLEQsCAtKhshOUVYKkVIWkplMGXrqeb9u
-        p/ve995vKAv/+te9t3P/59x7hufwj2MePuBPDzkJjwv3TzEmOqnCwRLRJpyanRafLY1OqnCoRLQJn+F3
-        eLY8OqlCDOA1dmFnBU8U7PfgfW8CiCn4iMPYX8FLBftYA4mNUjAeXfgeROpyMp7k6+fYjOHRSR0czyJv
-        GqbgHn7l62VRtAkuZJHUkk1ScA7f8vX6KFoHs3G+5NfWZbEGPuFo0zkQu+AVtmBTBY+0CaDFRl0QA/ic
-        c3ysgtcL9ifxtS8DaMo7+BmeNQrgQIloE6YUtNqwxcXRSRWm51ZKI7UnnICbhfsrGBGd/EcnzMKGPEZX
-        YUHeExZhLXbkcT0zvthbjMLVksJqx9RuE6NITzE0t1B00olrohCmYS9u50J8mEf24GjYQvqKayXinZgO
-        nbQBtbAQN0rsWlxRsDUDF3G/ZIOpw/T7N2atJXhQYlNkOt5Ti3cj/bpoVMV0wqUZn2pkG0bnIkw9H20j
-        UwrmFp03DSCd+YMK76aUnSmc++2Ygt6NIYV3u9EkgLdYl1er0zW3pVTQU6LTIpoE0ITvsB0Do8OI/gjg
-        MsZFR+3QlwG8xOrooBP6IoBUhGkhGRnF62A+fpSI1uXdvD/2CqlQxmIOVmIr9uEUbuERvhScvsDZPHgG
-        RLH+xLA6VV0XfwGp1uvMkCyB5gAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="Appointments.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA

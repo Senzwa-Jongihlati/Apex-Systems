@@ -163,5 +163,19 @@ namespace apex_management_sys
             ServedGrid.ClearSelection();
             ServedGrid.CurrentCell = null;
         }
+
+        private void Appointments_Click(object sender, EventArgs e)
+        {
+            Appointment ap = new Appointment();
+            ap.Show();
+            this.Close();
+        }
+
+        private void Doctors_Click(object sender, EventArgs e)
+        {
+            DR_Doctor drd = new DR_Doctor();
+            drd.show();
+            this.Close();
+        }
     }
 }

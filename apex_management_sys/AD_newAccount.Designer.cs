@@ -33,7 +33,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Logout = new Button();
             Queue = new Button();
-            Admissions = new Button();
             Appointments = new Button();
             Clinical = new Label();
             Reception = new Button();
@@ -42,59 +41,59 @@
             Management = new Label();
             Logo = new PictureBox();
             panel2 = new Panel();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
-            label4 = new Label();
-            label5 = new Label();
-            textBox4 = new TextBox();
-            button1 = new Button();
-            label6 = new Label();
-            textBox5 = new TextBox();
-            listBox1 = new ListBox();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            button2 = new Button();
-            label16 = new Label();
-            label17 = new Label();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            label18 = new Label();
-            panel3 = new Panel();
-            panel4 = new Panel();
             panel5 = new Panel();
+            groupBox3 = new GroupBox();
+            button2 = new Button();
+            textBox13 = new TextBox();
+            textBox12 = new TextBox();
+            textBox11 = new TextBox();
+            textBox10 = new TextBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            panel4 = new Panel();
+            groupBox2 = new GroupBox();
+            listBox1 = new ListBox();
+            textBox5 = new TextBox();
+            label6 = new Label();
+            panel3 = new Panel();
+            groupBox1 = new GroupBox();
+            label18 = new Label();
+            textBox15 = new TextBox();
+            textBox14 = new TextBox();
+            label17 = new Label();
+            button1 = new Button();
+            textBox4 = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            comboBox1 = new ComboBox();
+            label3 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            label16 = new Label();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             panel2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
             panel5.SuspendLayout();
+            groupBox3.SuspendLayout();
+            panel4.SuspendLayout();
+            groupBox2.SuspendLayout();
+            panel3.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -102,9 +101,10 @@
             panel1.BackColor = Color.FromArgb(222, 235, 245);
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(Logo);
-            panel1.Location = new Point(2, 2);
+            panel1.Location = new Point(2, 3);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 633);
+            panel1.Size = new Size(229, 844);
             panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -113,7 +113,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(Logout, 0, 10);
             tableLayoutPanel1.Controls.Add(Queue, 0, 9);
-            tableLayoutPanel1.Controls.Add(Admissions, 0, 8);
             tableLayoutPanel1.Controls.Add(Appointments, 0, 7);
             tableLayoutPanel1.Controls.Add(Clinical, 0, 6);
             tableLayoutPanel1.Controls.Add(Reception, 0, 5);
@@ -121,8 +120,7 @@
             tableLayoutPanel1.Controls.Add(Patients, 0, 3);
             tableLayoutPanel1.Controls.Add(Management, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 84);
-            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel1.Location = new Point(0, 112);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 11;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -136,8 +134,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
-            tableLayoutPanel1.Size = new Size(200, 549);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(229, 732);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // Logout
@@ -150,10 +148,10 @@
             Logout.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Logout.Image = (Image)resources.GetObject("Logout.Image");
             Logout.ImageAlign = ContentAlignment.MiddleLeft;
-            Logout.Location = new Point(3, 511);
-            Logout.Margin = new Padding(3, 3, 0, 0);
+            Logout.Location = new Point(3, 681);
+            Logout.Margin = new Padding(3, 4, 0, 0);
             Logout.Name = "Logout";
-            Logout.Size = new Size(197, 38);
+            Logout.Size = new Size(226, 51);
             Logout.TabIndex = 18;
             Logout.Text = "log out";
             Logout.UseVisualStyleBackColor = false;
@@ -168,31 +166,13 @@
             Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Queue.Image = (Image)resources.GetObject("Queue.Image");
             Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 329);
-            Queue.Margin = new Padding(3, 3, 0, 3);
+            Queue.Location = new Point(3, 380);
+            Queue.Margin = new Padding(3, 4, 0, 4);
             Queue.Name = "Queue";
-            Queue.Size = new Size(197, 39);
+            Queue.Size = new Size(226, 52);
             Queue.TabIndex = 17;
             Queue.Text = "Queue";
             Queue.UseVisualStyleBackColor = false;
-            // 
-            // Admissions
-            // 
-            Admissions.BackColor = Color.FromArgb(222, 235, 245);
-            Admissions.Cursor = Cursors.Hand;
-            Admissions.Dock = DockStyle.Top;
-            Admissions.FlatAppearance.BorderSize = 0;
-            Admissions.FlatStyle = FlatStyle.Flat;
-            Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Admissions.Image = (Image)resources.GetObject("Admissions.Image");
-            Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 284);
-            Admissions.Margin = new Padding(3, 3, 0, 3);
-            Admissions.Name = "Admissions";
-            Admissions.Size = new Size(197, 39);
-            Admissions.TabIndex = 16;
-            Admissions.Text = "Admissions";
-            Admissions.UseVisualStyleBackColor = false;
             // 
             // Appointments
             // 
@@ -204,10 +184,10 @@
             Appointments.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Appointments.Image = (Image)resources.GetObject("Appointments.Image");
             Appointments.ImageAlign = ContentAlignment.MiddleLeft;
-            Appointments.Location = new Point(3, 237);
-            Appointments.Margin = new Padding(3, 3, 0, 3);
+            Appointments.Location = new Point(3, 317);
+            Appointments.Margin = new Padding(3, 4, 0, 4);
             Appointments.Name = "Appointments";
-            Appointments.Size = new Size(197, 41);
+            Appointments.Size = new Size(226, 55);
             Appointments.TabIndex = 15;
             Appointments.Text = "Appointments";
             Appointments.UseVisualStyleBackColor = false;
@@ -218,10 +198,10 @@
             Clinical.Dock = DockStyle.Top;
             Clinical.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Clinical.ForeColor = SystemColors.ActiveCaptionText;
-            Clinical.Location = new Point(3, 198);
-            Clinical.Margin = new Padding(3, 15, 3, 15);
+            Clinical.Location = new Point(3, 265);
+            Clinical.Margin = new Padding(3, 20, 3, 20);
             Clinical.Name = "Clinical";
-            Clinical.Size = new Size(194, 21);
+            Clinical.Size = new Size(223, 28);
             Clinical.TabIndex = 14;
             Clinical.Text = "Clinical";
             Clinical.TextAlign = ContentAlignment.MiddleCenter;
@@ -236,10 +216,10 @@
             Reception.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Reception.Image = (Image)resources.GetObject("Reception.Image");
             Reception.ImageAlign = ContentAlignment.MiddleLeft;
-            Reception.Location = new Point(3, 142);
-            Reception.Margin = new Padding(3, 3, 0, 3);
+            Reception.Location = new Point(3, 190);
+            Reception.Margin = new Padding(3, 4, 0, 4);
             Reception.Name = "Reception";
-            Reception.Size = new Size(197, 38);
+            Reception.Size = new Size(226, 51);
             Reception.TabIndex = 13;
             Reception.Text = "Reception";
             Reception.UseVisualStyleBackColor = false;
@@ -254,10 +234,10 @@
             Doctors.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Doctors.Image = (Image)resources.GetObject("Doctors.Image");
             Doctors.ImageAlign = ContentAlignment.MiddleLeft;
-            Doctors.Location = new Point(3, 98);
-            Doctors.Margin = new Padding(3, 3, 0, 3);
+            Doctors.Location = new Point(3, 131);
+            Doctors.Margin = new Padding(3, 4, 0, 4);
             Doctors.Name = "Doctors";
-            Doctors.Size = new Size(197, 38);
+            Doctors.Size = new Size(226, 51);
             Doctors.TabIndex = 12;
             Doctors.Text = "Doctors";
             Doctors.UseVisualStyleBackColor = false;
@@ -272,10 +252,10 @@
             Patients.ForeColor = Color.FromArgb(0, 0, 0, 0);
             Patients.Image = (Image)resources.GetObject("Patients.Image");
             Patients.ImageAlign = ContentAlignment.MiddleLeft;
-            Patients.Location = new Point(3, 54);
-            Patients.Margin = new Padding(3, 3, 0, 3);
+            Patients.Location = new Point(3, 72);
+            Patients.Margin = new Padding(3, 4, 0, 4);
             Patients.Name = "Patients";
-            Patients.Size = new Size(197, 38);
+            Patients.Size = new Size(226, 51);
             Patients.TabIndex = 11;
             Patients.Text = "Patients";
             Patients.UseVisualStyleBackColor = false;
@@ -286,10 +266,10 @@
             Management.Dock = DockStyle.Top;
             Management.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Management.ForeColor = SystemColors.ActiveCaptionText;
-            Management.Location = new Point(3, 15);
-            Management.Margin = new Padding(3, 15, 3, 15);
+            Management.Location = new Point(3, 20);
+            Management.Margin = new Padding(3, 20, 3, 20);
             Management.Name = "Management";
-            Management.Size = new Size(194, 21);
+            Management.Size = new Size(223, 28);
             Management.TabIndex = 10;
             Management.Text = "Management";
             Management.TextAlign = ContentAlignment.MiddleCenter;
@@ -299,8 +279,9 @@
             Logo.Dock = DockStyle.Top;
             Logo.Image = (Image)resources.GetObject("Logo.Image");
             Logo.Location = new Point(0, 0);
+            Logo.Margin = new Padding(3, 4, 3, 4);
             Logo.Name = "Logo";
-            Logo.Size = new Size(200, 84);
+            Logo.Size = new Size(229, 112);
             Logo.SizeMode = PictureBoxSizeMode.Zoom;
             Logo.TabIndex = 4;
             Logo.TabStop = false;
@@ -311,46 +292,21 @@
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(label16);
-            panel2.Location = new Point(205, 2);
+            panel2.Location = new Point(234, 3);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1086, 633);
+            panel2.Size = new Size(1241, 844);
             panel2.TabIndex = 1;
             // 
-            // groupBox1
+            // panel5
             // 
-            groupBox1.Controls.Add(label18);
-            groupBox1.Controls.Add(textBox15);
-            groupBox1.Controls.Add(textBox14);
-            groupBox1.Controls.Add(label17);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(3, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(343, 520);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Create New Account";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(listBox1);
-            groupBox2.Controls.Add(textBox5);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(3, 5);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(354, 505);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Find Account";
+            panel5.BackColor = SystemColors.ButtonHighlight;
+            panel5.Controls.Add(groupBox3);
+            panel5.Location = new Point(863, 108);
+            panel5.Margin = new Padding(3, 4, 3, 4);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(365, 705);
+            panel5.TabIndex = 6;
             // 
             // groupBox3
             // 
@@ -372,357 +328,412 @@
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label7);
-            groupBox3.Location = new Point(3, 5);
+            groupBox3.Location = new Point(3, 7);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(308, 521);
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(352, 695);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "View Account";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(16, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Username:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(16, 98);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Password:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(104, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 23);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(104, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(189, 23);
-            textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(103, 174);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(187, 23);
-            textBox3.TabIndex = 4;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(19, 182);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Name:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "doctor", "reception" });
-            comboBox1.Location = new Point(106, 252);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(187, 23);
-            comboBox1.TabIndex = 6;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(19, 255);
-            label4.Name = "label4";
-            label4.Size = new Size(35, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Type:";
-            label4.Click += label4_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(19, 299);
-            label5.Name = "label5";
-            label5.Size = new Size(52, 15);
-            label5.TabIndex = 8;
-            label5.Text = "Address:";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(106, 299);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(187, 152);
-            textBox4.TabIndex = 9;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(11, 61, 92);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(118, 475);
-            button1.Name = "button1";
-            button1.Size = new Size(133, 32);
-            button1.TabIndex = 10;
-            button1.Text = "Create Accout";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(21, 49);
-            label6.Name = "label6";
-            label6.Size = new Size(87, 15);
-            label6.TabIndex = 0;
-            label6.Text = "Name / Phone:";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(132, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(198, 23);
-            textBox5.TabIndex = 1;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(21, 86);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(309, 409);
-            listBox1.TabIndex = 2;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(22, 45);
-            label7.Name = "label7";
-            label7.Size = new Size(63, 15);
-            label7.TabIndex = 0;
-            label7.Text = "Acount ID:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(22, 77);
-            label8.Name = "label8";
-            label8.Size = new Size(0, 15);
-            label8.TabIndex = 1;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(22, 85);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 15);
-            label9.TabIndex = 2;
-            label9.Text = "Username:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(22, 121);
-            label10.Name = "label10";
-            label10.Size = new Size(42, 15);
-            label10.TabIndex = 3;
-            label10.Text = "Name:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(22, 165);
-            label11.Name = "label11";
-            label11.Size = new Size(66, 15);
-            label11.TabIndex = 4;
-            label11.Text = "Experience:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(22, 205);
-            label12.Name = "label12";
-            label12.Size = new Size(44, 15);
-            label12.TabIndex = 5;
-            label12.Text = "Phone:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(22, 250);
-            label13.Name = "label13";
-            label13.Size = new Size(35, 15);
-            label13.TabIndex = 6;
-            label13.Text = "Type:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(23, 287);
-            label14.Name = "label14";
-            label14.Size = new Size(52, 15);
-            label14.TabIndex = 7;
-            label14.Text = "Address:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(28, 424);
-            label15.Name = "label15";
-            label15.Size = new Size(68, 15);
-            label15.TabIndex = 8;
-            label15.Text = "Created on:";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(107, 41);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(185, 23);
-            textBox6.TabIndex = 9;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(107, 77);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(185, 23);
-            textBox7.TabIndex = 10;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(107, 121);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(185, 23);
-            textBox8.TabIndex = 11;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(107, 157);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(185, 23);
-            textBox9.TabIndex = 12;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(107, 202);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(185, 23);
-            textBox10.TabIndex = 13;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(107, 247);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(185, 23);
-            textBox11.TabIndex = 14;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(105, 293);
-            textBox12.Multiline = true;
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(187, 108);
-            textBox12.TabIndex = 15;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(109, 426);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(183, 23);
-            textBox13.TabIndex = 16;
-            // 
             // button2
             // 
             button2.BackColor = SystemColors.ActiveCaption;
-            button2.Location = new Point(92, 462);
+            button2.Location = new Point(105, 616);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(153, 33);
+            button2.Size = new Size(175, 44);
             button2.TabIndex = 17;
             button2.Text = "Delete Account";
             button2.UseVisualStyleBackColor = false;
             // 
-            // label16
+            // textBox13
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(968, 18);
-            label16.Name = "label16";
-            label16.Size = new Size(79, 30);
-            label16.TabIndex = 3;
-            label16.Text = "Admin";
+            textBox13.Location = new Point(125, 568);
+            textBox13.Margin = new Padding(3, 4, 3, 4);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(209, 27);
+            textBox13.TabIndex = 16;
             // 
-            // label17
+            // textBox12
             // 
-            label17.AutoSize = true;
-            label17.Location = new Point(16, 142);
-            label17.Name = "label17";
-            label17.Size = new Size(66, 15);
-            label17.TabIndex = 11;
-            label17.Text = "Experience:";
-            label17.Click += label17_Click;
+            textBox12.Location = new Point(120, 391);
+            textBox12.Margin = new Padding(3, 4, 3, 4);
+            textBox12.Multiline = true;
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(213, 143);
+            textBox12.TabIndex = 15;
             // 
-            // textBox14
+            // textBox11
             // 
-            textBox14.Location = new Point(104, 134);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(186, 23);
-            textBox14.TabIndex = 12;
+            textBox11.Location = new Point(122, 329);
+            textBox11.Margin = new Padding(3, 4, 3, 4);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(211, 27);
+            textBox11.TabIndex = 14;
             // 
-            // textBox15
+            // textBox10
             // 
-            textBox15.Location = new Point(103, 210);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(185, 23);
-            textBox15.TabIndex = 13;
+            textBox10.Location = new Point(122, 269);
+            textBox10.Margin = new Padding(3, 4, 3, 4);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(211, 27);
+            textBox10.TabIndex = 13;
             // 
-            // label18
+            // textBox9
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(19, 218);
-            label18.Name = "label18";
-            label18.Size = new Size(44, 15);
-            label18.TabIndex = 14;
-            label18.Text = "Phone:";
+            textBox9.Location = new Point(122, 209);
+            textBox9.Margin = new Padding(3, 4, 3, 4);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(211, 27);
+            textBox9.TabIndex = 12;
             // 
-            // panel3
+            // textBox8
             // 
-            panel3.BackColor = SystemColors.ButtonHighlight;
-            panel3.Controls.Add(groupBox1);
-            panel3.Location = new Point(17, 81);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(349, 529);
-            panel3.TabIndex = 4;
+            textBox8.Location = new Point(122, 161);
+            textBox8.Margin = new Padding(3, 4, 3, 4);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(211, 27);
+            textBox8.TabIndex = 11;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(122, 103);
+            textBox7.Margin = new Padding(3, 4, 3, 4);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(211, 27);
+            textBox7.TabIndex = 10;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(122, 55);
+            textBox6.Margin = new Padding(3, 4, 3, 4);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(211, 27);
+            textBox6.TabIndex = 9;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(32, 565);
+            label15.Name = "label15";
+            label15.Size = new Size(85, 20);
+            label15.TabIndex = 8;
+            label15.Text = "Created on:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(26, 383);
+            label14.Name = "label14";
+            label14.Size = new Size(65, 20);
+            label14.TabIndex = 7;
+            label14.Text = "Address:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(25, 333);
+            label13.Name = "label13";
+            label13.Size = new Size(43, 20);
+            label13.TabIndex = 6;
+            label13.Text = "Type:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(25, 273);
+            label12.Name = "label12";
+            label12.Size = new Size(53, 20);
+            label12.TabIndex = 5;
+            label12.Text = "Phone:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(25, 220);
+            label11.Name = "label11";
+            label11.Size = new Size(84, 20);
+            label11.TabIndex = 4;
+            label11.Text = "Experience:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(25, 161);
+            label10.Name = "label10";
+            label10.Size = new Size(52, 20);
+            label10.TabIndex = 3;
+            label10.Text = "Name:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(25, 113);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 20);
+            label9.TabIndex = 2;
+            label9.Text = "Username:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(25, 103);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 20);
+            label8.TabIndex = 1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(25, 60);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 20);
+            label7.TabIndex = 0;
+            label7.Text = "Acount ID:";
             // 
             // panel4
             // 
             panel4.BackColor = SystemColors.ControlLightLight;
             panel4.Controls.Add(groupBox2);
-            panel4.Location = new Point(372, 81);
+            panel4.Location = new Point(425, 108);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(371, 529);
+            panel4.Size = new Size(424, 705);
             panel4.TabIndex = 5;
             // 
-            // panel5
+            // groupBox2
             // 
-            panel5.BackColor = SystemColors.ButtonHighlight;
-            panel5.Controls.Add(groupBox3);
-            panel5.Location = new Point(755, 81);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(319, 529);
-            panel5.TabIndex = 6;
+            groupBox2.Controls.Add(listBox1);
+            groupBox2.Controls.Add(textBox5);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Location = new Point(3, 7);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(405, 673);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Find Account";
             // 
-            // newAccount
+            // listBox1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(24, 115);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(353, 544);
+            listBox1.TabIndex = 2;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(151, 55);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(226, 27);
+            textBox5.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(24, 65);
+            label6.Name = "label6";
+            label6.Size = new Size(107, 20);
+            label6.TabIndex = 0;
+            label6.Text = "Name / Phone:";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.ButtonHighlight;
+            panel3.Controls.Add(groupBox1);
+            panel3.Location = new Point(19, 108);
+            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(399, 705);
+            panel3.TabIndex = 4;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label18);
+            groupBox1.Controls.Add(textBox15);
+            groupBox1.Controls.Add(textBox14);
+            groupBox1.Controls.Add(label17);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(3, 4);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(392, 693);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Create New Account";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(22, 291);
+            label18.Name = "label18";
+            label18.Size = new Size(53, 20);
+            label18.TabIndex = 14;
+            label18.Text = "Phone:";
+            // 
+            // textBox15
+            // 
+            textBox15.Location = new Point(118, 280);
+            textBox15.Margin = new Padding(3, 4, 3, 4);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(211, 27);
+            textBox15.TabIndex = 13;
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(119, 179);
+            textBox14.Margin = new Padding(3, 4, 3, 4);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(212, 27);
+            textBox14.TabIndex = 12;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(18, 189);
+            label17.Name = "label17";
+            label17.Size = new Size(84, 20);
+            label17.TabIndex = 11;
+            label17.Text = "Experience:";
+            label17.Click += label17_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(11, 61, 92);
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(135, 633);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 43);
+            button1.TabIndex = 10;
+            button1.Text = "Create Accout";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(121, 399);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(213, 201);
+            textBox4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(22, 399);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Address:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(22, 340);
+            label4.Name = "label4";
+            label4.Size = new Size(43, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Type:";
+            label4.Click += label4_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "doctor", "reception" });
+            comboBox1.Location = new Point(121, 336);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(213, 28);
+            comboBox1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(22, 243);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Name:";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(118, 232);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(213, 27);
+            textBox3.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(119, 127);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(215, 27);
+            textBox2.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(119, 65);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(215, 27);
+            textBox1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(18, 131);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Password:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(18, 69);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Username:";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(1106, 24);
+            label16.Name = "label16";
+            label16.Size = new Size(102, 37);
+            label16.TabIndex = 3;
+            label16.Text = "Admin";
+            // 
+            // AD_newAccount
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1291, 637);
+            ClientSize = new Size(1475, 849);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "newAccount";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "AD_newAccount";
             Text = "newAccount";
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -730,15 +741,15 @@
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            panel5.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            panel3.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -748,7 +759,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button Logout;
         private Button Queue;
-        private Button Admissions;
         private Button Appointments;
         private Label Clinical;
         private Button Reception;

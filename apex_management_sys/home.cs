@@ -69,5 +69,12 @@ namespace apex_management_sys
             login.Show();
             this.Close();
         }
+
+        private void Appointments_Click(object sender, EventArgs e)
+        {
+            Appointment ap = new Appointment();
+            ap.Show();
+            this.Close();
+        }
     }
 }
