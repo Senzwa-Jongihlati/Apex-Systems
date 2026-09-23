@@ -366,6 +366,7 @@
             Appointments.TabIndex = 15;
             Appointments.Text = "Appointments";
             Appointments.UseVisualStyleBackColor = false;
+            Appointments.Click += Appointments_Click;
             // 
             // Clinical
             // 
@@ -416,6 +417,7 @@
             Doctors.TabIndex = 12;
             Doctors.Text = "Doctors";
             Doctors.UseVisualStyleBackColor = false;
+            Doctors.Click += Doctors_Click;
             // 
             // Management
             // 
