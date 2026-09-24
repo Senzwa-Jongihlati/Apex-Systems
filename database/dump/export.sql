@@ -243,6 +243,8 @@ CREATE TABLE `receptionist` (
   `Email` varchar(100) DEFAULT NULL,
   `DateHired` date NOT NULL,
   `IsActive` bit(1) NOT NULL DEFAULT b'1',
+  `Experience` varchar(250) DEFAULT NULL,
+  `Address` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`ReceptionistID`),
   UNIQUE KEY `UQ_Receptionist_Username` (`Username`),
   UNIQUE KEY `UQ_Receptionist_Email` (`Email`)
@@ -255,7 +257,7 @@ CREATE TABLE `receptionist` (
 
 LOCK TABLES `receptionist` WRITE;
 /*!40000 ALTER TABLE `receptionist` DISABLE KEYS */;
-INSERT INTO `receptionist` VALUES (1,'Thandeka','Mkhize','tmkhize','$2a$11$ZOTryu2bpVjXAgpPyEqVLeOrydHrjKhlB8vDAtA84t4WxwFhzO.rC','0731234567','tmkhize@apexsystems.co.za','2024-02-01',_binary ''),(2,'Sipho','Naidoo','snaidoo','$2a$11$/GE0ZdcnsCWQSwIN5mW8ZOx0TLql47/ICwRbH9XnkKpNvovhNc8aC','0827654321','snaidoo@apexsystems.co.za','2023-11-15',_binary ''),(3,'Lerato','Dlamini','ldlamini','$2a$11$nLnXcEZW/R/.l7ZNKphnl.6zv72McVKiCFR2eLw6J8chN6HWhKYra','0619988776','ldlamini@apexsystems.co.za','2025-01-10',_binary '\0'),(4,'Apex','Receptionist','receptionist','$2a$11$6MuYCKdDNW0GIFPxp7CdaeyD6fbcgXvzmoepoeuQhaX4sKj.bTviC',NULL,'receptionist@apexsystems.co.za','2026-09-21',_binary ''),(5,'System','Administrator','admin','$2a$11$UIB7nvetq9hocFOTtZCMm.PLJ7N1TF.WYH.BVCng3DFdmRkNVEFDG',NULL,'admin@apexsystems.co.za','2026-09-21',_binary '');
+INSERT INTO `receptionist` VALUES (1,'Thandeka','Mkhize','tmkhize','$2a$11$ZOTryu2bpVjXAgpPyEqVLeOrydHrjKhlB8vDAtA84t4WxwFhzO.rC','0731234567','tmkhize@apexsystems.co.za','2024-02-01',_binary '',NULL,NULL),(2,'Sipho','Naidoo','snaidoo','$2a$11$/GE0ZdcnsCWQSwIN5mW8ZOx0TLql47/ICwRbH9XnkKpNvovhNc8aC','0827654321','snaidoo@apexsystems.co.za','2023-11-15',_binary '',NULL,NULL),(3,'Lerato','Dlamini','ldlamini','$2a$11$nLnXcEZW/R/.l7ZNKphnl.6zv72McVKiCFR2eLw6J8chN6HWhKYra','0619988776','ldlamini@apexsystems.co.za','2025-01-10',_binary '\0',NULL,NULL),(4,'Apex','Receptionist','receptionist','$2a$11$6MuYCKdDNW0GIFPxp7CdaeyD6fbcgXvzmoepoeuQhaX4sKj.bTviC',NULL,'receptionist@apexsystems.co.za','2026-09-21',_binary '',NULL,NULL),(5,'System','Administrator','admin','$2a$11$UIB7nvetq9hocFOTtZCMm.PLJ7N1TF.WYH.BVCng3DFdmRkNVEFDG',NULL,'admin@apexsystems.co.za','2026-09-21',_binary '',NULL,NULL);
 /*!40000 ALTER TABLE `receptionist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -268,4 +270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-24 12:05:17
+-- Dump completed on 2026-09-24 21:26:01
