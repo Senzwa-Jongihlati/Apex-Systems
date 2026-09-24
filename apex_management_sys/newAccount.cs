@@ -166,55 +166,6 @@ namespace apex_management_sys
             RefreshAccountList(filtered);
         }
 
-        private void ClearCreateAccountForm()
-        {
-            txtUsername.Clear();
-            txtPassword.Clear();
-            txtExperience.Clear();
-            txtFirstName.Clear();
-            txtLastname.Clear();
-            txtPhone.Clear();
-            cbRole.SelectedIndex = -1;
-            txtAddress.Clear();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int index = lstAccounts.SelectedIndex;
-
-
-            // txtViewAccountId.Text = acc.AccountId.ToString();
-
-            if (index < 0)
-            {
-                MessageBox.Show("Please select an account from the list first.", "No Selection",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (index >= displayedAccounts.Count)
-            {
-                MessageBox.Show("Selected account could not be found — try refreshing the list.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            var acc = displayedAccounts[index];
-            currentlyViewedAccount = acc;
-
-
-            txtViewAccountId.Text = acc.AccountId.ToString();
-            txtViewUsername.Text = acc.Username;
-            txtViewLastName.Text = acc.LastName;
-            txtViewFirstName.Text = acc.FirstName;
-            txtViewExperience.Text = acc.Experience;
-            txtViewPhone.Text = acc.Phone;
-            txtViewType.Text = acc.Role;
-            txtViewAddress.Text = acc.Address;
-            txtViewCreatedOn.Text = acc.CreatedOn.ToString("yyyy-MM-dd");
-        }
-
         private void btnSearchAcc_Click(object sender, EventArgs e)
         {
             string filter = txtSearchAccount.Text.Trim().ToLower();
@@ -238,7 +189,53 @@ namespace apex_management_sys
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-       
+
+        private void ClearCreateAccountForm()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtExperience.Clear();
+            txtFirstName.Clear();
+            txtLastname.Clear();
+            txtPhone.Clear();
+            cbRole.SelectedIndex = -1;
+            txtAddress.Clear();
+        }
+
+        // View button — loads the selected list item into the View Account panel
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int index = lstAccounts.SelectedIndex;
+
+            if (index < 0)
+            {
+                MessageBox.Show("Please select an account from the list first.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (index >= displayedAccounts.Count)
+            {
+                MessageBox.Show("Selected account could not be found — try refreshing the list.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var acc = displayedAccounts[index];
+            currentlyViewedAccount = acc;
+
+            txtViewAccountId.Text = acc.AccountId.ToString();
+            txtViewUsername.Text = acc.Username;
+            txtViewLastName.Text = acc.LastName;
+            txtViewFirstName.Text = acc.FirstName;
+            txtViewExperience.Text = acc.Experience;
+            txtViewPhone.Text = acc.Phone;
+            txtViewType.Text = acc.Role;
+            txtViewAddress.Text = acc.Address;
+            txtViewCreatedOn.Text = acc.CreatedOn.ToString("yyyy-MM-dd");
+        }
+
+        // ----- Save -----
 
         private bool ValidateViewForm()
         {
@@ -256,6 +253,8 @@ namespace apex_management_sys
 
         private int SaveViewedAccountChanges()
         {
+            // Role is NOT editable here — moving someone between Doctor/Receptionist
+            // means moving their row to a different table, which this doesn't handle.
             bool isDoctor = currentlyViewedAccount.Role.Equals("Doctor", StringComparison.OrdinalIgnoreCase);
             string table = isDoctor ? "doctor" : "receptionist";
             string idColumn = isDoctor ? "DoctorID" : "ReceptionistID";
@@ -265,12 +264,12 @@ namespace apex_management_sys
             using (MySqlConnection conn = DatabaseHelper.GetConnection())
             {
                 string updateQuery = $@"UPDATE {table} SET
-                   FirstName = @FirstName,
-                   LastName = @LastName,
-                   Username = @Username,
-                   Phone = @Phone,
-                   Experience = @Experience,
-                   Address = @Address
+                    FirstName = @FirstName,
+                    LastName = @LastName,
+                    Username = @Username,
+                    Phone = @Phone,
+                    Experience = @Experience,
+                    Address = @Address
                     WHERE {idColumn} = @AccountId";
 
                 using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
@@ -290,7 +289,6 @@ namespace apex_management_sys
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if (currentlyViewedAccount == null)
             {
                 MessageBox.Show("View an account first before saving changes.", "No Account Loaded",
@@ -307,33 +305,107 @@ namespace apex_management_sys
 
                 if (rowsAffected == 0)
                 {
-                    MessageBox.Show("No account was updated.",
-                        "Update Failed",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                    MessageBox.Show("No account was updated — it may have been deleted by someone else.",
+                        "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 MessageBox.Show("Account updated successfully!", "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LoadAccounts();
                 currentlyViewedAccount = null;
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Database error: {ex.Message}",
-                    "Database Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show($"Database error: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating account: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show($"Error updating account: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ----- Delete -----
+
+        private int DeleteViewedAccount()
+        {
+            bool isDoctor = currentlyViewedAccount.Role.Equals("Doctor", StringComparison.OrdinalIgnoreCase);
+            string table = isDoctor ? "doctor" : "receptionist";
+            string idColumn = isDoctor ? "DoctorID" : "ReceptionistID";
+
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string deleteQuery = $"DELETE FROM {table} WHERE {idColumn} = @AccountId";
+
+                using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AccountId", currentlyViewedAccount.AccountId);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void ClearViewPanel()
+        {
+            txtViewAccountId.Clear();
+            txtViewUsername.Clear();
+            txtViewLastName.Clear();
+            txtViewFirstName.Clear();
+            txtViewExperience.Clear();
+            txtViewPhone.Clear();
+            txtViewType.Clear();
+            txtViewAddress.Clear();
+            txtViewCreatedOn.Clear();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (currentlyViewedAccount == null)
+            {
+                MessageBox.Show("View an account first before deleting it.", "No Account Loaded",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show(
+                $"Are you sure you want to delete {currentlyViewedAccount.FirstName} {currentlyViewedAccount.LastName}'s account?\n\nThis cannot be undone.",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
+            try
+            {
+                int rowsAffected = DeleteViewedAccount();
+
+                if (rowsAffected == 0)
+                {
+                    MessageBox.Show("No account was deleted — it may have already been removed.",
+                        "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                MessageBox.Show("Account deleted successfully.", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ClearViewPanel();
+                currentlyViewedAccount = null;
+                LoadAccounts();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting account: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

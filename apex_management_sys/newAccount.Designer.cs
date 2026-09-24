@@ -320,7 +320,7 @@
             panel2.Controls.Add(label16);
             panel2.Location = new Point(205, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1120, 652);
+            panel2.Size = new Size(1133, 652);
             panel2.TabIndex = 1;
             // 
             // panel5
@@ -399,6 +399,7 @@
             btnDelete.TabIndex = 17;
             btnDelete.Text = "Delete Account";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtViewCreatedOn
             // 
