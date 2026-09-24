@@ -186,7 +186,7 @@ namespace apex_management_sys
 
         private void Doctors_Click(object sender, EventArgs e)
         {
-            DR_Doctor drd = new DR_Doctor;
+            DR_Doctor drd = new DR_Doctor();
             drd.Show();
             this.Close();
         }
