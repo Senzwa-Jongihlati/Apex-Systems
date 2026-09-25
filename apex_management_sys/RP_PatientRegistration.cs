@@ -15,6 +15,7 @@ namespace apex_management_sys
         public Registration()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,9 +25,13 @@ namespace apex_management_sys
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            CenterPanel();
         }
-
+        public void CenterPanel()
+        {
+            Main.Left = (this.ClientSize.Width - Main.Width) / 2;
+            Main.Top = (this.ClientSize.Height - Main.Height) / 2;
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             RP_Queue Queue = new RP_Queue();
@@ -94,7 +99,7 @@ namespace apex_management_sys
                 string lastName = txtSurname.Text;
                 DateTime dob = dateTimePicker1.Value;
                 string gender = cbGender.Text;
-                string contactNumber = txtPhoneNo.Text;                
+                string contactNumber = txtPhoneNo.Text;
                 string address = txtAddress.Text;
                 string reasonForVisit = txtReasonForVisit.Text;
                 string emergencyContact = txtEmergancyContact.Text;
@@ -160,13 +165,17 @@ namespace apex_management_sys
                 txtID.Clear();
                 txtName.Clear();
                 txtSurname.Clear();
-                txtPhoneNo.Clear();                
+                txtPhoneNo.Clear();
                 txtAddress.Clear();
                 txtReasonForVisit.Clear();
                 txtEmergancyContact.Clear();
 
                 cbGender.SelectedIndex = -1;
                 cbPriority.SelectedIndex = -1;
+
+                //Refresh Search Patient Form
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (FormatException)
             {
@@ -200,6 +209,22 @@ namespace apex_management_sys
         private void cbIdententificationType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Registration_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

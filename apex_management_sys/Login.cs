@@ -109,7 +109,16 @@ namespace apex_management_sys
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
 
+            }
         }
     }
 

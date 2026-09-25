@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace apex_management_sys
 {
-    public partial class addRecord_fromDr : Form
+    public partial class DR_addRecord_from : Form
     {
-        public addRecord_fromDr()
+        public DR_addRecord_from()
         {
             InitializeComponent();
         }
