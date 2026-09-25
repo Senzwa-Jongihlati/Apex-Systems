@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             Password = new Panel();
             txtPassword = new Krypton.Toolkit.KryptonTextBox();
             pictureBox2 = new PictureBox();
@@ -50,19 +53,59 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.FromArgb(61, 137, 196);
+            panel1.BackColor = Color.White;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(Password);
             panel1.Controls.Add(Username);
             panel1.Controls.Add(button1);
             panel1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(200, 261);
+            panel1.Location = new Point(57, 62);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(470, 448);
+            panel1.Size = new Size(470, 489);
             panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.DarkGray;
+            label3.Location = new Point(166, 430);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(136, 40);
+            label3.TabIndex = 2;
+            label3.Text = "2026 Apex Systems\r\nVersion 1.0\r\n";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Teal;
+            label2.Location = new Point(45, 91);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(210, 25);
+            label2.TabIndex = 15;
+            label2.Text = "Sign in to Apex Systems";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Teal;
+            label1.Location = new Point(38, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(277, 50);
+            label1.TabIndex = 14;
+            label1.Text = "Welcome Back";
             // 
             // Password
             // 
@@ -108,6 +151,7 @@
             checkBox1.TabIndex = 3;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // Username
             // 
@@ -143,14 +187,14 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(230, 235, 240);
+            button1.BackColor = Color.Teal;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(45, 350);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(144, 48);
+            button1.Size = new Size(376, 48);
             button1.TabIndex = 4;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -162,7 +206,7 @@
             Background.Image = Properties.Resources.Screenshot_2026_09_17_132434;
             Background.Location = new Point(0, 0);
             Background.Name = "Background";
-            Background.Size = new Size(1291, 799);
+            Background.Size = new Size(1026, 559);
             Background.SizeMode = PictureBoxSizeMode.StretchImage;
             Background.TabIndex = 1;
             Background.TabStop = false;
@@ -173,7 +217,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1291, 799);
+            ClientSize = new Size(1026, 559);
             Controls.Add(panel1);
             Controls.Add(Background);
             ForeColor = SystemColors.ControlText;
@@ -182,6 +226,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             Password.ResumeLayout(false);
             Password.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -204,5 +249,7 @@
         private Panel Password;
         private Krypton.Toolkit.KryptonTextBox txtPassword;
         private Krypton.Toolkit.KryptonTextBox txtUsername;
+        private Label label2;
+        private Label label3;
     }
 }

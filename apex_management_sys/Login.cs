@@ -106,6 +106,11 @@ namespace apex_management_sys
             else
                 MessageBox.Show("Incorrect username or password");
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
