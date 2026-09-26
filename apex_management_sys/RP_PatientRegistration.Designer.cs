@@ -70,94 +70,94 @@
             // 
             lblName.AutoSize = true;
             lblName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(56, 39);
+            lblName.Location = new Point(49, 29);
             lblName.Margin = new Padding(2, 0, 2, 0);
             lblName.Name = "lblName";
-            lblName.Size = new Size(53, 20);
+            lblName.Size = new Size(42, 15);
             lblName.TabIndex = 1;
             lblName.Text = "Name ";
             // 
             // lblSurname
             // 
             lblSurname.AutoSize = true;
-            lblSurname.Location = new Point(441, 39);
+            lblSurname.Location = new Point(386, 29);
             lblSurname.Margin = new Padding(2, 0, 2, 0);
             lblSurname.Name = "lblSurname";
-            lblSurname.Size = new Size(67, 20);
+            lblSurname.Size = new Size(54, 15);
             lblSurname.TabIndex = 2;
             lblSurname.Text = "Surname";
             // 
             // lblIDNo
             // 
             lblIDNo.AutoSize = true;
-            lblIDNo.Location = new Point(441, 117);
+            lblIDNo.Location = new Point(386, 88);
             lblIDNo.Margin = new Padding(2, 0, 2, 0);
             lblIDNo.Name = "lblIDNo";
-            lblIDNo.Size = new Size(86, 20);
+            lblIDNo.Size = new Size(68, 15);
             lblIDNo.TabIndex = 3;
             lblIDNo.Text = "ID Number ";
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(56, 316);
+            lblPhone.Location = new Point(49, 237);
             lblPhone.Margin = new Padding(2, 0, 2, 0);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(134, 20);
+            lblPhone.Size = new Size(108, 15);
             lblPhone.TabIndex = 4;
             lblPhone.Text = "Cellphone Number";
             // 
             // lblGender
             // 
             lblGender.AutoSize = true;
-            lblGender.Location = new Point(53, 209);
+            lblGender.Location = new Point(46, 157);
             lblGender.Margin = new Padding(2, 0, 2, 0);
             lblGender.Name = "lblGender";
-            lblGender.Size = new Size(57, 20);
+            lblGender.Size = new Size(45, 15);
             lblGender.TabIndex = 5;
             lblGender.Text = "Gender";
             // 
             // lblDOB
             // 
             lblDOB.AutoSize = true;
-            lblDOB.Location = new Point(441, 209);
+            lblDOB.Location = new Point(386, 157);
             lblDOB.Margin = new Padding(2, 0, 2, 0);
             lblDOB.Name = "lblDOB";
-            lblDOB.Size = new Size(94, 20);
+            lblDOB.Size = new Size(73, 15);
             lblDOB.TabIndex = 6;
             lblDOB.Text = "Date of Birth";
             lblDOB.Click += lblDOB_Click;
             // 
             // txtName
             // 
-            txtName.Location = new Point(56, 68);
-            txtName.Margin = new Padding(2, 3, 2, 3);
+            txtName.Location = new Point(49, 51);
+            txtName.Margin = new Padding(2, 2, 2, 2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(356, 27);
+            txtName.Size = new Size(312, 23);
             txtName.TabIndex = 0;
             // 
             // txtSurname
             // 
-            txtSurname.Location = new Point(441, 68);
-            txtSurname.Margin = new Padding(2, 3, 2, 3);
+            txtSurname.Location = new Point(386, 51);
+            txtSurname.Margin = new Padding(2, 2, 2, 2);
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(373, 27);
+            txtSurname.Size = new Size(327, 23);
             txtSurname.TabIndex = 1;
             // 
             // txtID
             // 
-            txtID.Location = new Point(441, 147);
-            txtID.Margin = new Padding(2, 4, 2, 4);
+            txtID.Location = new Point(386, 110);
+            txtID.Margin = new Padding(2, 3, 2, 3);
             txtID.Name = "txtID";
-            txtID.Size = new Size(374, 27);
+            txtID.Size = new Size(328, 23);
             txtID.TabIndex = 4;
             // 
             // txtPhoneNo
             // 
-            txtPhoneNo.Location = new Point(56, 339);
-            txtPhoneNo.Margin = new Padding(2, 3, 2, 3);
+            txtPhoneNo.Location = new Point(49, 254);
+            txtPhoneNo.Margin = new Padding(2, 2, 2, 2);
             txtPhoneNo.Name = "txtPhoneNo";
-            txtPhoneNo.Size = new Size(358, 27);
+            txtPhoneNo.Size = new Size(314, 23);
             txtPhoneNo.TabIndex = 7;
             // 
             // cbGender
@@ -165,27 +165,27 @@
             cbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGender.FormattingEnabled = true;
             cbGender.Items.AddRange(new object[] { "Female ", "Male" });
-            cbGender.Location = new Point(53, 232);
-            cbGender.Margin = new Padding(2, 3, 2, 3);
+            cbGender.Location = new Point(46, 174);
+            cbGender.Margin = new Padding(2, 2, 2, 2);
             cbGender.Name = "cbGender";
-            cbGender.Size = new Size(359, 28);
+            cbGender.Size = new Size(315, 23);
             cbGender.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(441, 233);
-            dateTimePicker1.Margin = new Padding(2, 4, 2, 4);
+            dateTimePicker1.Location = new Point(386, 175);
+            dateTimePicker1.Margin = new Padding(2, 3, 2, 3);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(373, 27);
+            dateTimePicker1.Size = new Size(327, 23);
             dateTimePicker1.TabIndex = 6;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(53, 117);
+            label2.Location = new Point(46, 88);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(132, 20);
+            label2.Size = new Size(105, 15);
             label2.TabIndex = 16;
             label2.Text = "Identification Type";
             // 
@@ -254,10 +254,10 @@
             cbIDType.DropDownStyle = ComboBoxStyle.DropDownList;
             cbIDType.FormattingEnabled = true;
             cbIDType.Items.AddRange(new object[] { "SA ID", "Passport" });
-            cbIDType.Location = new Point(56, 147);
-            cbIDType.Margin = new Padding(2, 4, 2, 4);
+            cbIDType.Location = new Point(49, 110);
+            cbIDType.Margin = new Padding(2, 3, 2, 3);
             cbIDType.Name = "cbIDType";
-            cbIDType.Size = new Size(359, 28);
+            cbIDType.Size = new Size(315, 23);
             cbIDType.TabIndex = 3;
             cbIDType.SelectedIndexChanged += cbIdententificationType_SelectedIndexChanged;
             // 
@@ -266,27 +266,27 @@
             cbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPriority.FormattingEnabled = true;
             cbPriority.Items.AddRange(new object[] { "Emergency", "Urgent", "Routine" });
-            cbPriority.Location = new Point(441, 598);
-            cbPriority.Margin = new Padding(3, 5, 3, 5);
+            cbPriority.Location = new Point(386, 448);
+            cbPriority.Margin = new Padding(3, 4, 3, 4);
             cbPriority.Name = "cbPriority";
-            cbPriority.Size = new Size(366, 28);
+            cbPriority.Size = new Size(321, 23);
             cbPriority.TabIndex = 11;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(441, 564);
+            label13.Location = new Point(386, 423);
             label13.Name = "label13";
-            label13.Size = new Size(56, 20);
+            label13.Size = new Size(45, 15);
             label13.TabIndex = 27;
             label13.Text = "Priority";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(56, 564);
+            label12.Location = new Point(49, 423);
             label12.Name = "label12";
-            label12.Size = new Size(110, 20);
+            label12.Size = new Size(87, 15);
             label12.TabIndex = 26;
             label12.Text = "Reason for visit";
             // 
@@ -294,9 +294,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(53, 519);
+            label11.Location = new Point(46, 389);
             label11.Name = "label11";
-            label11.Size = new Size(141, 25);
+            label11.Size = new Size(110, 20);
             label11.TabIndex = 25;
             label11.Text = "Medical intake";
             // 
@@ -304,52 +304,52 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(53, 279);
+            label10.Location = new Point(46, 209);
             label10.Name = "label10";
-            label10.Size = new Size(143, 25);
+            label10.Size = new Size(113, 20);
             label10.TabIndex = 24;
             label10.Text = "Contact details";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(53, 415);
+            label9.Location = new Point(46, 311);
             label9.Name = "label9";
-            label9.Size = new Size(62, 20);
+            label9.Size = new Size(49, 15);
             label9.TabIndex = 23;
             label9.Text = "Address";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(441, 315);
+            label8.Location = new Point(386, 236);
             label8.Name = "label8";
-            label8.Size = new Size(135, 20);
+            label8.Size = new Size(109, 15);
             label8.TabIndex = 22;
             label8.Text = "Emergency contact";
             // 
             // txtReasonForVisit
             // 
-            txtReasonForVisit.Location = new Point(53, 598);
-            txtReasonForVisit.Margin = new Padding(3, 5, 3, 5);
+            txtReasonForVisit.Location = new Point(46, 448);
+            txtReasonForVisit.Margin = new Padding(3, 4, 3, 4);
             txtReasonForVisit.Name = "txtReasonForVisit";
-            txtReasonForVisit.Size = new Size(354, 27);
+            txtReasonForVisit.Size = new Size(310, 23);
             txtReasonForVisit.TabIndex = 10;
             // 
             // txtEmergancyContact
             // 
-            txtEmergancyContact.Location = new Point(441, 339);
-            txtEmergancyContact.Margin = new Padding(3, 5, 3, 5);
+            txtEmergancyContact.Location = new Point(386, 254);
+            txtEmergancyContact.Margin = new Padding(3, 4, 3, 4);
             txtEmergancyContact.Name = "txtEmergancyContact";
-            txtEmergancyContact.Size = new Size(373, 27);
+            txtEmergancyContact.Size = new Size(327, 23);
             txtEmergancyContact.TabIndex = 8;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(56, 456);
-            txtAddress.Margin = new Padding(3, 5, 3, 5);
+            txtAddress.Location = new Point(49, 342);
+            txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(743, 27);
+            txtAddress.Size = new Size(651, 23);
             txtAddress.TabIndex = 9;
             // 
             // button1
@@ -417,7 +417,7 @@
             // 
             // Registration
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(245, 248, 251);
