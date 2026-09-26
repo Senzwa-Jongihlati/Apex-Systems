@@ -22,15 +22,43 @@ VALUES ('Nkosinathi', 'Ndlovu', 'nndlovu', '$2a$11$6ybmg.YRpq3d6Esdc.ovlu/WbLZxP
 
 INSERT INTO Doctor (FirstName, LastName, Username, PasswordHash, ContactNumber, Email, DateHired, IsActive)
 VALUES ('Priya', 'Govender', 'pgovender', '$2a$11$St4J2YU0v74fAVC5Vkh0UeHZxd2S9rnw/3/R7NiHd6.QyBZ6b1RWu','0839871234', 'pgovender@apexsystems.co.za', '2023-03-20', 1);
+<<<<<<< HEAD
+=======
+
+INSERT INTO Doctor (FirstName, LastName, Username, PasswordHash, ContactNumber, Email, DateHired, IsActive)
+VALUES ('Pieter', 'Botha', 'pbotha', '$2a$11$u1FFbgZ8n.YLsyiUpxiTI.rKHcbq2Y3vHahbPZGT8cw6cKfba3Pke','0645551212', 'pbotha@apexsystems.co.za', '2021-09-05', 0);
+>>>>>>> c0ed073b9fba9f427982f2a632516f57635b8b9d
 
 INSERT INTO Doctor (FirstName, LastName, Username, PasswordHash, ContactNumber, Email, DateHired, IsActive)
 VALUES ('Pieter', 'Botha', 'pbotha', '$2a$11$u1FFbgZ8n.YLsyiUpxiTI.rKHcbq2Y3vHahbPZGT8cw6cKfba3Pke','0645551212', 'pbotha@apexsystems.co.za', '2021-09-05', 0);
 
+<<<<<<< HEAD
 INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, ReasonForVisit, CheckInTime, CompletedTime, Status) VALUES
 (1, 1, 1, 1, 'Severe chest pain and shortness of breath', '2026-09-16 08:00:00', '2026-09-16 08:20:00', 'Completed'),
 (2, 2, 3, 1, 'Routine blood pressure check',               '2026-09-16 08:10:00', NULL,                  'Waiting'),
 (3, 3, 2, 2, 'High fever and persistent cough',             '2026-09-16 08:25:00', '2026-09-16 08:50:00', 'Completed'),
 (4, 4, 3, 2, 'Follow-up consultation',                      '2026-09-16 08:30:00', NULL,                  'Cancelled');
+
+=======
+>>>>>>> c0ed073b9fba9f427982f2a632516f57635b8b9d
+-- Queue (replaces your old Queue insert: it now has DoctorID and ReasonForVisit)
+INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, DoctorID, ReasonForVisit, CheckInTime, CompletedTime, Status) VALUES
+(1, 1, 1, 1, 2,    'Severe chest pain and shortness of breath', '2026-09-16 08:00:00', '2026-09-16 08:20:00', 'Completed'),
+(2, 2, 3, 1, NULL, 'Routine blood pressure check',              '2026-09-16 08:10:00', NULL,                  'Waiting'),
+(3, 3, 2, 2, 1,    'High fever and persistent cough',            '2026-09-16 08:25:00', '2026-09-16 08:50:00', 'Completed'),
+(4, 4, 3, 2, NULL, 'Follow-up consultation',                     '2026-09-16 08:30:00', NULL,                  'Cancelled'),
+(5, 1, 2, 1, 1,    'Follow-up on chest pain',                    '2026-09-16 09:00:00', NULL,                  'In Consultation');
+
+-- ConsultationNote
+INSERT INTO ConsultationNote (QueueID, DoctorID, Diagnosis, Notes, Prescription, CreatedTime)
+VALUES (1, 2, 'Suspected angina',
+        'Patient stabilised on arrival. ECG normal. Advised to book a cardiology follow-up.',
+        'Aspirin 75 mg once daily', '2026-09-16 08:18:00');
+
+INSERT INTO ConsultationNote (QueueID, DoctorID, Diagnosis, Notes, Prescription, CreatedTime)
+VALUES (3, 1, 'Viral upper respiratory infection',
+        'Temperature 38.4 C. Advised rest and plenty of fluids. Return if symptoms last beyond 5 days.',
+        NULL, '2026-09-16 08:48:00');
 
 -- Queue (replaces your old Queue insert: it now has DoctorID and ReasonForVisit)
 INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, DoctorID, ReasonForVisit, CheckInTime, CompletedTime, Status) VALUES
