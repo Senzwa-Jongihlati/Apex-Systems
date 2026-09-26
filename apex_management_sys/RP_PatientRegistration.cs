@@ -12,6 +12,29 @@ namespace apex_management_sys
 {
     public partial class Registration : Form
     {
+        private bool isQueueMode = false;
+        private int existingPatientId = 0;
+        public Registration(DataRowView existingPatient)
+        {
+                    InitializeComponent();
+                    isQueueMode = true;
+                    existingPatientId = Convert.ToInt32(existingPatient["ID"]);
+
+                    string[] nameParts = existingPatient["Name"].ToString().Split(new[] { ' ' }, 2);
+                    txtName.Text = nameParts[0];
+                    txtSurname.Text = nameParts.Length > 1 ? nameParts[1] : "";
+                    cbIDType.Text = existingPatient["ID Type"].ToString();
+                    txtID.Text = existingPatient["ID / Passport"].ToString();
+                    txtPhoneNo.Text = existingPatient["Contact"].ToString();
+                    txtEmergancyContact.Text = existingPatient["Emergency"].ToString();
+
+                    LoadRemainingFieldsFromDb(existingPatientId); // DOB/Gender/Address aren't in the SearchPatient grid
+
+                    foreach (Control c in new Control[] { txtName, txtSurname, cbIDType, txtID,cbGender, dateTimePicker1, txtPhoneNo, txtEmergancyContact, txtAddress})
+                        c.Enabled = false;
+
+                    btnRegisterPatient.Text = "Add to Queue";
+        }
         public Registration()
         {
             InitializeComponent();
@@ -74,9 +97,84 @@ namespace apex_management_sys
             h.Show();
             this.Close();
         }
+        private void LoadRemainingFieldsFromDb(int patientId)
+        {
+            string query = "SELECT DateOfBirth, Gender, Address FROM Patient WHERE PatientID = @PatientID";
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@PatientID", patientId);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        dateTimePicker1.Value = Convert.ToDateTime(reader["DateOfBirth"]);
+                        cbGender.Text = reader["Gender"].ToString();
+                        txtAddress.Text = reader["Address"].ToString();
+                    }
+                }
+            }
+        }
+
+        private bool PatientHasActiveQueueEntry(int patientId)
+        {
+            string query = "SELECT COUNT(*) FROM Queue WHERE PatientID = @PatientID AND Status = 'Waiting'";
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@PatientID", patientId);
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
+        private void AddExistingPatientToQueue()
+        {
+            try
+            {
+                if (PatientHasActiveQueueEntry(existingPatientId))
+                {
+                    MessageBox.Show("This patient already has an active queue entry.", "Already in Queue",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query2 = @"INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, ReasonForVisit)
+            SELECT COALESCE(MAX(QueueNumber), 0) + 1,
+                   @PatientID,
+                   (SELECT PriorityID FROM PriorityLevel WHERE LevelName = @Priority),
+                   @ReceptionistID,
+                   @ReasonForVisit
+            FROM Queue
+            WHERE DATE(CheckInTime) = CURDATE()";
+
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                using (MySqlCommand cmd2 = new MySqlCommand(query2, conn))
+                {
+                    cmd2.Parameters.AddWithValue("@PatientID", existingPatientId);
+                    cmd2.Parameters.AddWithValue("@Priority", cbPriority.Text);
+                    cmd2.Parameters.AddWithValue("@ReceptionistID", Session.CurrentUser.StaffId);
+                    cmd2.Parameters.AddWithValue("@ReasonForVisit", txtReasonForVisit.Text.Trim());
+                    cmd2.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Patient added to queue.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding patient to queue: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void btnRegisterPatient_Click(object sender, EventArgs e)
         {
+            if (isQueueMode) { AddExistingPatientToQueue(); return; }
             try
             {
                 // Get values from the form

@@ -39,6 +39,7 @@
             ButtonControls = new Panel();
             btnReset = new Button();
             btnSave = new Button();
+            btnAddToQueue = new Button();
             btnAddPatient = new Button();
             Patient = new Panel();
             panel4 = new Panel();
@@ -135,6 +136,7 @@
             tableLayoutPanel2.Controls.Add(txtSearch, 1, 1);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Controls.Add(ButtonControls, 3, 1);
+            tableLayoutPanel2.Controls.Add(btnAddToQueue, 2, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -199,6 +201,16 @@
             btnSave.TabIndex = 18;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnAddToQueue
+            // 
+            btnAddToQueue.Location = new Point(362, 49);
+            btnAddToQueue.Name = "btnAddToQueue";
+            btnAddToQueue.Size = new Size(209, 29);
+            btnAddToQueue.TabIndex = 20;
+            btnAddToQueue.Text = "Add to Queue";
+            btnAddToQueue.UseVisualStyleBackColor = true;
+            btnAddToQueue.Click += btnAddToQueue_Click;
             // 
             // btnAddPatient
             // 
@@ -617,5 +629,6 @@
         private Label Management;
         private PictureBox Logo;
         private Panel panel13;
+        private Button btnAddToQueue;
     }
 }

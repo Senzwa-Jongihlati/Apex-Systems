@@ -184,5 +184,22 @@ namespace apex_management_sys
             Login.Instance.Show();
             this.Close();
         }
+
+        private void btnAddToQueue_Click(object sender, EventArgs e)
+        {
+            if (PatientGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Select a patient first.");
+                return;
+            }
+
+            DataRowView selected = (DataRowView)PatientGrid.CurrentRow.DataBoundItem;
+
+            using (Registration reg = new Registration(selected))
+            {
+                if (reg.ShowDialog(this) == DialogResult.OK)
+                    LoadPatients(txtSearch.Text);
+            }
+        }
     }
 }
