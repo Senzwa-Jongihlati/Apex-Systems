@@ -19,6 +19,9 @@
     <Compile Update="AD_newAccount.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="newAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="RP_PatientRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
