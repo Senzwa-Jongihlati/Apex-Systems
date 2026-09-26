@@ -15,11 +15,6 @@ namespace apex_management_sys
         {
             InitializeComponent();
         }
-        public home(Login loginform)
-        {
-            InitializeComponent();
-            login = loginform;
-        }
 
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -37,19 +32,6 @@ namespace apex_management_sys
 
         }
 
-        private void btnDeshPatient_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void Patients_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
-        }
-
         private void Queue_Click(object sender, EventArgs e)
         {
             RP_Queue Q = new RP_Queue();
@@ -57,16 +39,10 @@ namespace apex_management_sys
             this.Close();
         }
 
-        private void Admissions_Click(object sender, EventArgs e)
-        {
-            Registration R = new Registration();
-            R.Show();
-            this.Close();
-        }
-
         private void Logout_Click(object sender, EventArgs e)
         {
-            login.Show();
+            Session.Logout();
+            Login.Instance.Show();
             this.Close();
         }
 
@@ -74,6 +50,68 @@ namespace apex_management_sys
         {
             Appointment ap = new Appointment();
             ap.Show();
+            this.Close();
+        }
+
+        private void home_Load(object sender, EventArgs e)
+        {
+            btnQueue.Visible = Session.CurrentUser.HasPermission(Permission.ManageQueue);
+            btnDoctors.Visible = Session.CurrentUser.HasPermission(Permission.AddConsultationNote);
+            btnAppointments.Visible = Session.CurrentUser.HasPermission(Permission.BookAppointment);
+            btnPatients.Visible = Session.CurrentUser.HasPermission(Permission.ViewPatientRecords);
+            btnEmployees.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+            btnDashboard.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+            Main.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+
+            btnDashboard.Enabled = false;
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            home h = new home();
+            h.Show();
+            this.Close();
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+            RP_SearchPatient r = new RP_SearchPatient();
+            r.Show();
+            this.Close();
+        }
+
+        private void btnDoctors_Click(object sender, EventArgs e)
+        {
+            DR_Doctor d = new DR_Doctor();
+            d.Show();
+            this.Close();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            newAccount na = new newAccount();
+            na.Show();
+            this.Close();
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            Appointment a = new Appointment();
+            a.Show();
+            this.Close();
+        }
+
+        private void btnQueue_Click(object sender, EventArgs e)
+        {
+            RP_Queue q = new RP_Queue();
+            q.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+            Login.Instance.Show();
             this.Close();
         }
     }

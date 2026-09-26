@@ -2,17 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+namespace apex_management_sys {
 public static class Session
 {
-    public static Receptionist CurrentReceptionist { get; private set; }
+        public static User CurrentUser { get; private set; }
+        public static bool IsLoggedIn => CurrentUser != null;
 
-    public static void Login(Receptionist receptionist)
-    {
-        CurrentReceptionist = receptionist;
-    }
+        public static void Login(User user)
+        {
+            CurrentUser = user;
+        }
 
-    public static void Logout()
-    {
-        CurrentReceptionist = null;
+        public static void Logout()
+        {
+            CurrentUser = null;
+        }
     }
 }

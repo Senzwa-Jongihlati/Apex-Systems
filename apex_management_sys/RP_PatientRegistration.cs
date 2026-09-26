@@ -39,13 +39,6 @@ namespace apex_management_sys
             this.Close();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient Search = new RP_SearchPatient();
-            Search.Show();
-            this.Close();
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -66,13 +59,6 @@ namespace apex_management_sys
         private void lblDOB_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void Patients_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
         }
 
         private void Queue_Click(object sender, EventArgs e)
@@ -146,7 +132,7 @@ namespace apex_management_sys
                         using (MySqlCommand cmd2 = new MySqlCommand(query2, conn))
                         {
                             cmd2.Parameters.AddWithValue("@Priority", cbPriority.Text);
-                            cmd2.Parameters.AddWithValue("@ReceptionistID", Session.CurrentReceptionist.ReceptionistID);
+                            cmd2.Parameters.AddWithValue("@ReceptionistID", Session.CurrentUser.StaffId);
                             cmd2.Parameters.AddWithValue("@ReasonForVisit", reasonForVisit.Trim());
                             cmd2.ExecuteNonQuery();
                         }

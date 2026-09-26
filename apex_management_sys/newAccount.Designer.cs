@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newAccount));
-            panel1 = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            Logout = new Button();
-            Queue = new Button();
-            Admissions = new Button();
-            Appointments = new Button();
-            Clinical = new Label();
-            Reception = new Button();
-            Doctors = new Button();
-            Patients = new Button();
-            Management = new Label();
-            Logo = new PictureBox();
             panel2 = new Panel();
             panel5 = new Panel();
             groupBox3 = new GroupBox();
@@ -92,9 +80,21 @@
             label2 = new Label();
             label1 = new Label();
             label16 = new Label();
-            panel1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
+            Sidebar_Border = new Panel();
+            SideBar = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            btnDashboard = new Button();
+            Main = new Label();
+            btnLogout = new Button();
+            btnQueue = new Button();
+            btnAppointments = new Button();
+            Clinical = new Label();
+            btnEmployees = new Button();
+            btnDoctors = new Button();
+            btnPatients = new Button();
+            Management = new Label();
+            Logo = new PictureBox();
+            panel13 = new Panel();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -102,215 +102,10 @@
             groupBox2.SuspendLayout();
             panel3.SuspendLayout();
             groupBox1.SuspendLayout();
+            SideBar.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
-            panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Controls.Add(Logo);
-            panel1.Location = new Point(2, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 633);
-            panel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(Logout, 0, 10);
-            tableLayoutPanel1.Controls.Add(Queue, 0, 9);
-            tableLayoutPanel1.Controls.Add(Admissions, 0, 8);
-            tableLayoutPanel1.Controls.Add(Appointments, 0, 7);
-            tableLayoutPanel1.Controls.Add(Clinical, 0, 6);
-            tableLayoutPanel1.Controls.Add(Reception, 0, 5);
-            tableLayoutPanel1.Controls.Add(Doctors, 0, 4);
-            tableLayoutPanel1.Controls.Add(Patients, 0, 3);
-            tableLayoutPanel1.Controls.Add(Management, 0, 2);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 84);
-            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 11;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
-            tableLayoutPanel1.Size = new Size(200, 549);
-            tableLayoutPanel1.TabIndex = 5;
-            // 
-            // Logout
-            // 
-            Logout.BackColor = Color.FromArgb(222, 235, 245);
-            Logout.Cursor = Cursors.Hand;
-            Logout.Dock = DockStyle.Bottom;
-            Logout.FlatAppearance.BorderSize = 0;
-            Logout.FlatStyle = FlatStyle.Flat;
-            Logout.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Logout.Image = (Image)resources.GetObject("Logout.Image");
-            Logout.ImageAlign = ContentAlignment.MiddleLeft;
-            Logout.Location = new Point(3, 511);
-            Logout.Margin = new Padding(3, 3, 0, 0);
-            Logout.Name = "Logout";
-            Logout.Size = new Size(197, 38);
-            Logout.TabIndex = 18;
-            Logout.Text = "log out";
-            Logout.UseVisualStyleBackColor = false;
-            // 
-            // Queue
-            // 
-            Queue.BackColor = Color.FromArgb(222, 235, 245);
-            Queue.Cursor = Cursors.Hand;
-            Queue.Dock = DockStyle.Top;
-            Queue.FlatAppearance.BorderSize = 0;
-            Queue.FlatStyle = FlatStyle.Flat;
-            Queue.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Queue.Image = (Image)resources.GetObject("Queue.Image");
-            Queue.ImageAlign = ContentAlignment.MiddleLeft;
-            Queue.Location = new Point(3, 329);
-            Queue.Margin = new Padding(3, 3, 0, 3);
-            Queue.Name = "Queue";
-            Queue.Size = new Size(197, 39);
-            Queue.TabIndex = 17;
-            Queue.Text = "Queue";
-            Queue.UseVisualStyleBackColor = false;
-            // 
-            // Admissions
-            // 
-            Admissions.BackColor = Color.FromArgb(222, 235, 245);
-            Admissions.Cursor = Cursors.Hand;
-            Admissions.Dock = DockStyle.Top;
-            Admissions.FlatAppearance.BorderSize = 0;
-            Admissions.FlatStyle = FlatStyle.Flat;
-            Admissions.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Admissions.Image = (Image)resources.GetObject("Admissions.Image");
-            Admissions.ImageAlign = ContentAlignment.MiddleLeft;
-            Admissions.Location = new Point(3, 284);
-            Admissions.Margin = new Padding(3, 3, 0, 3);
-            Admissions.Name = "Admissions";
-            Admissions.Size = new Size(197, 39);
-            Admissions.TabIndex = 16;
-            Admissions.Text = "Admissions";
-            Admissions.UseVisualStyleBackColor = false;
-            // 
-            // Appointments
-            // 
-            Appointments.BackColor = Color.FromArgb(222, 235, 245);
-            Appointments.Cursor = Cursors.Hand;
-            Appointments.Dock = DockStyle.Top;
-            Appointments.FlatAppearance.BorderSize = 0;
-            Appointments.FlatStyle = FlatStyle.Flat;
-            Appointments.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Appointments.Image = (Image)resources.GetObject("Appointments.Image");
-            Appointments.ImageAlign = ContentAlignment.MiddleLeft;
-            Appointments.Location = new Point(3, 237);
-            Appointments.Margin = new Padding(3, 3, 0, 3);
-            Appointments.Name = "Appointments";
-            Appointments.Size = new Size(197, 41);
-            Appointments.TabIndex = 15;
-            Appointments.Text = "Appointments";
-            Appointments.UseVisualStyleBackColor = false;
-            // 
-            // Clinical
-            // 
-            Clinical.AutoSize = true;
-            Clinical.Dock = DockStyle.Top;
-            Clinical.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Clinical.ForeColor = SystemColors.ActiveCaptionText;
-            Clinical.Location = new Point(3, 198);
-            Clinical.Margin = new Padding(3, 15, 3, 15);
-            Clinical.Name = "Clinical";
-            Clinical.Size = new Size(194, 21);
-            Clinical.TabIndex = 14;
-            Clinical.Text = "Clinical";
-            Clinical.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Reception
-            // 
-            Reception.BackColor = Color.FromArgb(222, 235, 245);
-            Reception.Cursor = Cursors.Hand;
-            Reception.Dock = DockStyle.Top;
-            Reception.FlatAppearance.BorderSize = 0;
-            Reception.FlatStyle = FlatStyle.Flat;
-            Reception.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Reception.Image = (Image)resources.GetObject("Reception.Image");
-            Reception.ImageAlign = ContentAlignment.MiddleLeft;
-            Reception.Location = new Point(3, 142);
-            Reception.Margin = new Padding(3, 3, 0, 3);
-            Reception.Name = "Reception";
-            Reception.Size = new Size(197, 38);
-            Reception.TabIndex = 13;
-            Reception.Text = "Reception";
-            Reception.UseVisualStyleBackColor = false;
-            // 
-            // Doctors
-            // 
-            Doctors.BackColor = Color.FromArgb(222, 235, 245);
-            Doctors.Cursor = Cursors.Hand;
-            Doctors.Dock = DockStyle.Top;
-            Doctors.FlatAppearance.BorderSize = 0;
-            Doctors.FlatStyle = FlatStyle.Flat;
-            Doctors.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Doctors.Image = (Image)resources.GetObject("Doctors.Image");
-            Doctors.ImageAlign = ContentAlignment.MiddleLeft;
-            Doctors.Location = new Point(3, 98);
-            Doctors.Margin = new Padding(3, 3, 0, 3);
-            Doctors.Name = "Doctors";
-            Doctors.Size = new Size(197, 38);
-            Doctors.TabIndex = 12;
-            Doctors.Text = "Doctors";
-            Doctors.UseVisualStyleBackColor = false;
-            // 
-            // Patients
-            // 
-            Patients.BackColor = Color.FromArgb(222, 235, 245);
-            Patients.Cursor = Cursors.Hand;
-            Patients.Dock = DockStyle.Top;
-            Patients.FlatAppearance.BorderSize = 0;
-            Patients.FlatStyle = FlatStyle.Flat;
-            Patients.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            Patients.Image = (Image)resources.GetObject("Patients.Image");
-            Patients.ImageAlign = ContentAlignment.MiddleLeft;
-            Patients.Location = new Point(3, 54);
-            Patients.Margin = new Padding(3, 3, 0, 3);
-            Patients.Name = "Patients";
-            Patients.Size = new Size(197, 38);
-            Patients.TabIndex = 11;
-            Patients.Text = "Patients";
-            Patients.UseVisualStyleBackColor = false;
-            // 
-            // Management
-            // 
-            Management.AutoSize = true;
-            Management.Dock = DockStyle.Top;
-            Management.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Management.ForeColor = SystemColors.ActiveCaptionText;
-            Management.Location = new Point(3, 15);
-            Management.Margin = new Padding(3, 15, 3, 15);
-            Management.Name = "Management";
-            Management.Size = new Size(194, 21);
-            Management.TabIndex = 10;
-            Management.Text = "Management";
-            Management.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Logo
-            // 
-            Logo.Dock = DockStyle.Top;
-            Logo.Image = (Image)resources.GetObject("Logo.Image");
-            Logo.Location = new Point(0, 0);
-            Logo.Name = "Logo";
-            Logo.Size = new Size(200, 84);
-            Logo.SizeMode = PictureBoxSizeMode.Zoom;
-            Logo.TabIndex = 4;
-            Logo.TabStop = false;
             // 
             // panel2
             // 
@@ -318,18 +113,21 @@
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(label16);
-            panel2.Location = new Point(205, 2);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(201, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1133, 652);
+            panel2.Size = new Size(1327, 871);
             panel2.TabIndex = 1;
             // 
             // panel5
             // 
             panel5.BackColor = SystemColors.ButtonHighlight;
             panel5.Controls.Add(groupBox3);
-            panel5.Location = new Point(755, 81);
+            panel5.Location = new Point(863, 108);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(338, 558);
+            panel5.Size = new Size(386, 744);
             panel5.TabIndex = 6;
             // 
             // groupBox3
@@ -355,9 +153,11 @@
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(label7);
-            groupBox3.Location = new Point(3, 5);
+            groupBox3.Location = new Point(3, 7);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(332, 547);
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(379, 729);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "View Account";
@@ -366,9 +166,10 @@
             // 
             btnSave.BackColor = Color.FromArgb(11, 61, 92);
             btnSave.ForeColor = SystemColors.ControlLightLight;
-            btnSave.Location = new Point(34, 505);
+            btnSave.Location = new Point(39, 673);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(94, 28);
+            btnSave.Size = new Size(107, 37);
             btnSave.TabIndex = 20;
             btnSave.Text = "Save Chages";
             btnSave.UseVisualStyleBackColor = false;
@@ -376,26 +177,28 @@
             // 
             // txtViewLastName
             // 
-            txtViewLastName.Location = new Point(107, 125);
+            txtViewLastName.Location = new Point(122, 167);
+            txtViewLastName.Margin = new Padding(3, 4, 3, 4);
             txtViewLastName.Name = "txtViewLastName";
-            txtViewLastName.Size = new Size(185, 23);
+            txtViewLastName.Size = new Size(211, 27);
             txtViewLastName.TabIndex = 19;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(24, 127);
+            label20.Location = new Point(27, 169);
             label20.Name = "label20";
-            label20.Size = new Size(66, 15);
+            label20.Size = new Size(82, 20);
             label20.TabIndex = 18;
             label20.Text = "Last Name:";
             // 
             // btnDelete
             // 
             btnDelete.BackColor = SystemColors.ActiveCaption;
-            btnDelete.Location = new Point(172, 505);
+            btnDelete.Location = new Point(197, 673);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(137, 33);
+            btnDelete.Size = new Size(157, 44);
             btnDelete.TabIndex = 17;
             btnDelete.Text = "Delete Account";
             btnDelete.UseVisualStyleBackColor = false;
@@ -403,138 +206,146 @@
             // 
             // txtViewCreatedOn
             // 
-            txtViewCreatedOn.Location = new Point(109, 462);
+            txtViewCreatedOn.Location = new Point(125, 616);
+            txtViewCreatedOn.Margin = new Padding(3, 4, 3, 4);
             txtViewCreatedOn.Name = "txtViewCreatedOn";
-            txtViewCreatedOn.Size = new Size(183, 23);
+            txtViewCreatedOn.Size = new Size(209, 27);
             txtViewCreatedOn.TabIndex = 16;
             // 
             // txtViewAddress
             // 
-            txtViewAddress.Location = new Point(107, 336);
+            txtViewAddress.Location = new Point(122, 448);
+            txtViewAddress.Margin = new Padding(3, 4, 3, 4);
             txtViewAddress.Multiline = true;
             txtViewAddress.Name = "txtViewAddress";
-            txtViewAddress.Size = new Size(187, 108);
+            txtViewAddress.Size = new Size(213, 143);
             txtViewAddress.TabIndex = 15;
             // 
             // txtViewType
             // 
-            txtViewType.Location = new Point(107, 288);
+            txtViewType.Location = new Point(122, 384);
+            txtViewType.Margin = new Padding(3, 4, 3, 4);
             txtViewType.Name = "txtViewType";
-            txtViewType.Size = new Size(185, 23);
+            txtViewType.Size = new Size(211, 27);
             txtViewType.TabIndex = 14;
             // 
             // txtViewPhone
             // 
-            txtViewPhone.Location = new Point(107, 250);
+            txtViewPhone.Location = new Point(122, 333);
+            txtViewPhone.Margin = new Padding(3, 4, 3, 4);
             txtViewPhone.Name = "txtViewPhone";
-            txtViewPhone.Size = new Size(185, 23);
+            txtViewPhone.Size = new Size(211, 27);
             txtViewPhone.TabIndex = 13;
             // 
             // txtViewExperience
             // 
-            txtViewExperience.Location = new Point(107, 200);
+            txtViewExperience.Location = new Point(122, 267);
+            txtViewExperience.Margin = new Padding(3, 4, 3, 4);
             txtViewExperience.Name = "txtViewExperience";
-            txtViewExperience.Size = new Size(185, 23);
+            txtViewExperience.Size = new Size(211, 27);
             txtViewExperience.TabIndex = 12;
             // 
             // txtViewFirstName
             // 
-            txtViewFirstName.Location = new Point(107, 164);
+            txtViewFirstName.Location = new Point(122, 219);
+            txtViewFirstName.Margin = new Padding(3, 4, 3, 4);
             txtViewFirstName.Name = "txtViewFirstName";
-            txtViewFirstName.Size = new Size(185, 23);
+            txtViewFirstName.Size = new Size(211, 27);
             txtViewFirstName.TabIndex = 11;
             // 
             // txtViewUsername
             // 
-            txtViewUsername.Location = new Point(107, 77);
+            txtViewUsername.Location = new Point(122, 103);
+            txtViewUsername.Margin = new Padding(3, 4, 3, 4);
             txtViewUsername.Name = "txtViewUsername";
-            txtViewUsername.Size = new Size(185, 23);
+            txtViewUsername.Size = new Size(211, 27);
             txtViewUsername.TabIndex = 10;
             // 
             // txtViewAccountId
             // 
-            txtViewAccountId.Location = new Point(107, 41);
+            txtViewAccountId.Location = new Point(122, 55);
+            txtViewAccountId.Margin = new Padding(3, 4, 3, 4);
             txtViewAccountId.Name = "txtViewAccountId";
-            txtViewAccountId.Size = new Size(185, 23);
+            txtViewAccountId.Size = new Size(211, 27);
             txtViewAccountId.TabIndex = 9;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(23, 462);
+            label15.Location = new Point(26, 616);
             label15.Name = "label15";
-            label15.Size = new Size(68, 15);
+            label15.Size = new Size(85, 20);
             label15.TabIndex = 8;
             label15.Text = "Created on:";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(23, 336);
+            label14.Location = new Point(26, 448);
             label14.Name = "label14";
-            label14.Size = new Size(52, 15);
+            label14.Size = new Size(65, 20);
             label14.TabIndex = 7;
             label14.Text = "Address:";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(22, 291);
+            label13.Location = new Point(25, 388);
             label13.Name = "label13";
-            label13.Size = new Size(35, 15);
+            label13.Size = new Size(43, 20);
             label13.TabIndex = 6;
             label13.Text = "Type:";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(22, 248);
+            label12.Location = new Point(25, 331);
             label12.Name = "label12";
-            label12.Size = new Size(44, 15);
+            label12.Size = new Size(53, 20);
             label12.TabIndex = 5;
             label12.Text = "Phone:";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(22, 208);
+            label11.Location = new Point(25, 277);
             label11.Name = "label11";
-            label11.Size = new Size(66, 15);
+            label11.Size = new Size(84, 20);
             label11.TabIndex = 4;
             label11.Text = "Experience:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(22, 164);
+            label10.Location = new Point(25, 219);
             label10.Name = "label10";
-            label10.Size = new Size(42, 15);
+            label10.Size = new Size(52, 20);
             label10.TabIndex = 3;
             label10.Text = "Name:";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(22, 85);
+            label9.Location = new Point(25, 113);
             label9.Name = "label9";
-            label9.Size = new Size(63, 15);
+            label9.Size = new Size(78, 20);
             label9.TabIndex = 2;
             label9.Text = "Username:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(22, 77);
+            label8.Location = new Point(25, 103);
             label8.Name = "label8";
-            label8.Size = new Size(0, 15);
+            label8.Size = new Size(0, 20);
             label8.TabIndex = 1;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(22, 45);
+            label7.Location = new Point(25, 60);
             label7.Name = "label7";
-            label7.Size = new Size(63, 15);
+            label7.Size = new Size(78, 20);
             label7.TabIndex = 0;
             label7.Text = "Acount ID:";
             // 
@@ -542,9 +353,10 @@
             // 
             panel4.BackColor = SystemColors.ControlLightLight;
             panel4.Controls.Add(groupBox2);
-            panel4.Location = new Point(372, 81);
+            panel4.Location = new Point(425, 108);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(371, 558);
+            panel4.Size = new Size(424, 744);
             panel4.TabIndex = 5;
             // 
             // groupBox2
@@ -554,9 +366,11 @@
             groupBox2.Controls.Add(lstAccounts);
             groupBox2.Controls.Add(txtSearchAccount);
             groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(3, 5);
+            groupBox2.Location = new Point(3, 7);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(354, 547);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(405, 729);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Find Account";
@@ -565,9 +379,10 @@
             // 
             btnSearchAcc.BackColor = SystemColors.ActiveCaption;
             btnSearchAcc.Image = Properties.Resources.refer;
-            btnSearchAcc.Location = new Point(273, 15);
+            btnSearchAcc.Location = new Point(312, 20);
+            btnSearchAcc.Margin = new Padding(3, 4, 3, 4);
             btnSearchAcc.Name = "btnSearchAcc";
-            btnSearchAcc.Size = new Size(57, 40);
+            btnSearchAcc.Size = new Size(65, 53);
             btnSearchAcc.TabIndex = 4;
             btnSearchAcc.UseVisualStyleBackColor = false;
             btnSearchAcc.Click += btnSearchAcc_Click;
@@ -576,9 +391,10 @@
             // 
             bntViewAcc.BackColor = Color.Silver;
             bntViewAcc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bntViewAcc.Location = new Point(111, 508);
+            bntViewAcc.Location = new Point(127, 677);
+            bntViewAcc.Margin = new Padding(3, 4, 3, 4);
             bntViewAcc.Name = "bntViewAcc";
-            bntViewAcc.Size = new Size(128, 30);
+            bntViewAcc.Size = new Size(146, 40);
             bntViewAcc.TabIndex = 3;
             bntViewAcc.Text = "View";
             bntViewAcc.UseVisualStyleBackColor = false;
@@ -587,24 +403,26 @@
             // lstAccounts
             // 
             lstAccounts.FormattingEnabled = true;
-            lstAccounts.Location = new Point(21, 103);
+            lstAccounts.Location = new Point(24, 137);
+            lstAccounts.Margin = new Padding(3, 4, 3, 4);
             lstAccounts.Name = "lstAccounts";
-            lstAccounts.Size = new Size(309, 394);
+            lstAccounts.Size = new Size(353, 524);
             lstAccounts.TabIndex = 2;
             // 
             // txtSearchAccount
             // 
-            txtSearchAccount.Location = new Point(132, 61);
+            txtSearchAccount.Location = new Point(151, 81);
+            txtSearchAccount.Margin = new Padding(3, 4, 3, 4);
             txtSearchAccount.Name = "txtSearchAccount";
-            txtSearchAccount.Size = new Size(198, 23);
+            txtSearchAccount.Size = new Size(226, 27);
             txtSearchAccount.TabIndex = 1;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(21, 64);
+            label6.Location = new Point(24, 85);
             label6.Name = "label6";
-            label6.Size = new Size(87, 15);
+            label6.Size = new Size(107, 20);
             label6.TabIndex = 0;
             label6.Text = "Name / Phone:";
             // 
@@ -612,9 +430,10 @@
             // 
             panel3.BackColor = SystemColors.ButtonHighlight;
             panel3.Controls.Add(groupBox1);
-            panel3.Location = new Point(17, 81);
+            panel3.Location = new Point(19, 108);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(349, 558);
+            panel3.Size = new Size(399, 744);
             panel3.TabIndex = 4;
             // 
             // groupBox1
@@ -636,27 +455,30 @@
             groupBox1.Controls.Add(txtUsername);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(3, 3);
+            groupBox1.Location = new Point(3, 4);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(343, 549);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(392, 732);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Create New Account";
             // 
             // txtLastname
             // 
-            txtLastname.Location = new Point(21, 105);
+            txtLastname.Location = new Point(24, 140);
+            txtLastname.Margin = new Padding(3, 4, 3, 4);
             txtLastname.Name = "txtLastname";
-            txtLastname.Size = new Size(287, 23);
+            txtLastname.Size = new Size(327, 27);
             txtLastname.TabIndex = 16;
             // 
             // label19
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(19, 82);
+            label19.Location = new Point(22, 109);
             label19.Name = "label19";
-            label19.Size = new Size(70, 15);
+            label19.Size = new Size(91, 20);
             label19.TabIndex = 15;
             label19.Text = "last Name *";
             // 
@@ -664,33 +486,35 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(21, 298);
+            label18.Location = new Point(24, 397);
             label18.Name = "label18";
-            label18.Size = new Size(50, 15);
+            label18.Size = new Size(64, 20);
             label18.TabIndex = 14;
             label18.Text = "Phone *";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(21, 316);
+            txtPhone.Location = new Point(24, 421);
+            txtPhone.Margin = new Padding(3, 4, 3, 4);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(287, 23);
+            txtPhone.Size = new Size(327, 27);
             txtPhone.TabIndex = 13;
             // 
             // txtExperience
             // 
-            txtExperience.Location = new Point(21, 267);
+            txtExperience.Location = new Point(24, 356);
+            txtExperience.Margin = new Padding(3, 4, 3, 4);
             txtExperience.Name = "txtExperience";
-            txtExperience.Size = new Size(287, 23);
+            txtExperience.Size = new Size(327, 27);
             txtExperience.TabIndex = 12;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(19, 249);
+            label17.Location = new Point(22, 332);
             label17.Name = "label17";
-            label17.Size = new Size(77, 15);
+            label17.Size = new Size(95, 20);
             label17.TabIndex = 11;
             label17.Text = "Experience *";
             label17.Click += label17_Click;
@@ -699,9 +523,10 @@
             // 
             btnCreateAcc.BackColor = Color.FromArgb(11, 61, 92);
             btnCreateAcc.ForeColor = SystemColors.ButtonFace;
-            btnCreateAcc.Location = new Point(104, 511);
+            btnCreateAcc.Location = new Point(119, 681);
+            btnCreateAcc.Margin = new Padding(3, 4, 3, 4);
             btnCreateAcc.Name = "btnCreateAcc";
-            btnCreateAcc.Size = new Size(133, 32);
+            btnCreateAcc.Size = new Size(152, 43);
             btnCreateAcc.TabIndex = 10;
             btnCreateAcc.Text = "Create Accout";
             btnCreateAcc.UseVisualStyleBackColor = false;
@@ -709,19 +534,20 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(81, 414);
+            txtAddress.Location = new Point(93, 552);
+            txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(227, 73);
+            txtAddress.Size = new Size(259, 96);
             txtAddress.TabIndex = 9;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(21, 414);
+            label5.Location = new Point(24, 552);
             label5.Name = "label5";
-            label5.Size = new Size(54, 15);
+            label5.Size = new Size(70, 20);
             label5.TabIndex = 8;
             label5.Text = "Address:";
             // 
@@ -729,9 +555,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(21, 353);
+            label4.Location = new Point(24, 471);
             label4.Name = "label4";
-            label4.Size = new Size(74, 15);
+            label4.Size = new Size(95, 20);
             label4.TabIndex = 7;
             label4.Text = "Type / Role*";
             label4.Click += label4_Click;
@@ -741,49 +567,53 @@
             cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRole.FormattingEnabled = true;
             cbRole.Items.AddRange(new object[] { "Doctor", "Reception" });
-            cbRole.Location = new Point(21, 371);
+            cbRole.Location = new Point(24, 495);
+            cbRole.Margin = new Padding(3, 4, 3, 4);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(287, 23);
+            cbRole.Size = new Size(327, 28);
             cbRole.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(18, 21);
+            label3.Location = new Point(21, 28);
             label3.Name = "label3";
-            label3.Size = new Size(75, 15);
+            label3.Size = new Size(97, 20);
             label3.TabIndex = 5;
             label3.Text = "First Name *";
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(19, 44);
+            txtFirstName.Location = new Point(22, 59);
+            txtFirstName.Margin = new Padding(3, 4, 3, 4);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(289, 23);
+            txtFirstName.Size = new Size(330, 27);
             txtFirstName.TabIndex = 4;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(19, 216);
+            txtPassword.Location = new Point(22, 288);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(289, 23);
+            txtPassword.Size = new Size(330, 27);
             txtPassword.TabIndex = 3;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(19, 164);
+            txtUsername.Location = new Point(22, 219);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(289, 23);
+            txtUsername.Size = new Size(330, 27);
             txtUsername.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(19, 198);
+            label2.Location = new Point(22, 264);
             label2.Name = "label2";
-            label2.Size = new Size(67, 15);
+            label2.Size = new Size(87, 20);
             label2.TabIndex = 1;
             label2.Text = "Password *";
             // 
@@ -791,9 +621,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(21, 142);
+            label1.Location = new Point(24, 189);
             label1.Name = "label1";
-            label1.Size = new Size(75, 15);
+            label1.Size = new Size(95, 20);
             label1.TabIndex = 0;
             label1.Text = "Username * ";
             // 
@@ -801,26 +631,266 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(968, 18);
+            label16.Location = new Point(1106, 24);
             label16.Name = "label16";
-            label16.Size = new Size(79, 30);
+            label16.Size = new Size(102, 37);
             label16.TabIndex = 3;
             label16.Text = "Admin";
             // 
+            // Sidebar_Border
+            // 
+            Sidebar_Border.BackColor = Color.FromArgb(180, 200, 215);
+            Sidebar_Border.Dock = DockStyle.Left;
+            Sidebar_Border.Location = new Point(199, 0);
+            Sidebar_Border.Name = "Sidebar_Border";
+            Sidebar_Border.Size = new Size(2, 871);
+            Sidebar_Border.TabIndex = 14;
+            // 
+            // SideBar
+            // 
+            SideBar.BackColor = Color.FromArgb(222, 235, 245);
+            SideBar.Controls.Add(tableLayoutPanel1);
+            SideBar.Controls.Add(Logo);
+            SideBar.Controls.Add(panel13);
+            SideBar.Dock = DockStyle.Left;
+            SideBar.Location = new Point(0, 0);
+            SideBar.Margin = new Padding(3, 4, 3, 4);
+            SideBar.Name = "SideBar";
+            SideBar.Size = new Size(199, 871);
+            SideBar.TabIndex = 15;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(btnDashboard, 0, 0);
+            tableLayoutPanel1.Controls.Add(Main, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnLogout, 0, 10);
+            tableLayoutPanel1.Controls.Add(btnQueue, 0, 9);
+            tableLayoutPanel1.Controls.Add(btnAppointments, 0, 7);
+            tableLayoutPanel1.Controls.Add(Clinical, 0, 6);
+            tableLayoutPanel1.Controls.Add(btnEmployees, 0, 5);
+            tableLayoutPanel1.Controls.Add(btnDoctors, 0, 4);
+            tableLayoutPanel1.Controls.Add(btnPatients, 0, 3);
+            tableLayoutPanel1.Controls.Add(Management, 0, 2);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 112);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 11;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(199, 759);
+            tableLayoutPanel1.TabIndex = 3;
+            // 
+            // btnDashboard
+            // 
+            btnDashboard.Cursor = Cursors.Hand;
+            btnDashboard.Dock = DockStyle.Top;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
+            btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDashboard.Location = new Point(3, 72);
+            btnDashboard.Margin = new Padding(3, 4, 0, 4);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(196, 51);
+            btnDashboard.TabIndex = 20;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = true;
+            // 
+            // Main
+            // 
+            Main.AutoSize = true;
+            Main.Dock = DockStyle.Top;
+            Main.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Main.ForeColor = SystemColors.ActiveCaptionText;
+            Main.Location = new Point(3, 20);
+            Main.Margin = new Padding(3, 20, 3, 20);
+            Main.Name = "Main";
+            Main.Size = new Size(193, 28);
+            Main.TabIndex = 19;
+            Main.Text = "Main";
+            Main.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.FromArgb(222, 235, 245);
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.Dock = DockStyle.Bottom;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(3, 708);
+            btnLogout.Margin = new Padding(3, 4, 0, 0);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(196, 51);
+            btnLogout.TabIndex = 18;
+            btnLogout.Text = "log out";
+            btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // btnQueue
+            // 
+            btnQueue.BackColor = Color.FromArgb(222, 235, 245);
+            btnQueue.Cursor = Cursors.Hand;
+            btnQueue.Dock = DockStyle.Top;
+            btnQueue.FlatAppearance.BorderSize = 0;
+            btnQueue.FlatStyle = FlatStyle.Flat;
+            btnQueue.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnQueue.Image = (Image)resources.GetObject("btnQueue.Image");
+            btnQueue.ImageAlign = ContentAlignment.MiddleLeft;
+            btnQueue.Location = new Point(3, 507);
+            btnQueue.Margin = new Padding(3, 4, 0, 4);
+            btnQueue.Name = "btnQueue";
+            btnQueue.Size = new Size(196, 52);
+            btnQueue.TabIndex = 17;
+            btnQueue.Text = "Queue";
+            btnQueue.UseVisualStyleBackColor = false;
+            // 
+            // btnAppointments
+            // 
+            btnAppointments.BackColor = Color.FromArgb(222, 235, 245);
+            btnAppointments.Cursor = Cursors.Hand;
+            btnAppointments.Dock = DockStyle.Top;
+            btnAppointments.FlatAppearance.BorderSize = 0;
+            btnAppointments.FlatStyle = FlatStyle.Flat;
+            btnAppointments.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnAppointments.Image = (Image)resources.GetObject("btnAppointments.Image");
+            btnAppointments.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAppointments.Location = new Point(3, 444);
+            btnAppointments.Margin = new Padding(3, 4, 0, 4);
+            btnAppointments.Name = "btnAppointments";
+            btnAppointments.Size = new Size(196, 55);
+            btnAppointments.TabIndex = 15;
+            btnAppointments.Text = "Appointments";
+            btnAppointments.UseVisualStyleBackColor = false;
+            // 
+            // Clinical
+            // 
+            Clinical.AutoSize = true;
+            Clinical.Dock = DockStyle.Top;
+            Clinical.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Clinical.ForeColor = SystemColors.ActiveCaptionText;
+            Clinical.Location = new Point(3, 392);
+            Clinical.Margin = new Padding(3, 20, 3, 20);
+            Clinical.Name = "Clinical";
+            Clinical.Size = new Size(193, 28);
+            Clinical.TabIndex = 14;
+            Clinical.Text = "Clinical";
+            Clinical.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnEmployees
+            // 
+            btnEmployees.BackColor = Color.FromArgb(222, 235, 245);
+            btnEmployees.Cursor = Cursors.Hand;
+            btnEmployees.Dock = DockStyle.Top;
+            btnEmployees.FlatAppearance.BorderSize = 0;
+            btnEmployees.FlatStyle = FlatStyle.Flat;
+            btnEmployees.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnEmployees.Image = (Image)resources.GetObject("btnEmployees.Image");
+            btnEmployees.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmployees.Location = new Point(3, 317);
+            btnEmployees.Margin = new Padding(3, 4, 0, 4);
+            btnEmployees.Name = "btnEmployees";
+            btnEmployees.Size = new Size(196, 51);
+            btnEmployees.TabIndex = 13;
+            btnEmployees.Text = "Employees";
+            btnEmployees.UseVisualStyleBackColor = false;
+            // 
+            // btnDoctors
+            // 
+            btnDoctors.BackColor = Color.FromArgb(222, 235, 245);
+            btnDoctors.Cursor = Cursors.Hand;
+            btnDoctors.Dock = DockStyle.Top;
+            btnDoctors.FlatAppearance.BorderSize = 0;
+            btnDoctors.FlatStyle = FlatStyle.Flat;
+            btnDoctors.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnDoctors.Image = (Image)resources.GetObject("btnDoctors.Image");
+            btnDoctors.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDoctors.Location = new Point(3, 258);
+            btnDoctors.Margin = new Padding(3, 4, 0, 4);
+            btnDoctors.Name = "btnDoctors";
+            btnDoctors.Size = new Size(196, 51);
+            btnDoctors.TabIndex = 12;
+            btnDoctors.Text = "Doctors";
+            btnDoctors.UseVisualStyleBackColor = false;
+            // 
+            // btnPatients
+            // 
+            btnPatients.BackColor = Color.FromArgb(222, 235, 245);
+            btnPatients.Cursor = Cursors.Hand;
+            btnPatients.Dock = DockStyle.Top;
+            btnPatients.FlatAppearance.BorderSize = 0;
+            btnPatients.FlatStyle = FlatStyle.Flat;
+            btnPatients.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnPatients.Image = (Image)resources.GetObject("btnPatients.Image");
+            btnPatients.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPatients.Location = new Point(3, 199);
+            btnPatients.Margin = new Padding(3, 4, 0, 4);
+            btnPatients.Name = "btnPatients";
+            btnPatients.Size = new Size(196, 51);
+            btnPatients.TabIndex = 11;
+            btnPatients.Text = "Patients";
+            btnPatients.UseVisualStyleBackColor = false;
+            // 
+            // Management
+            // 
+            Management.AutoSize = true;
+            Management.Dock = DockStyle.Top;
+            Management.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Management.ForeColor = SystemColors.ActiveCaptionText;
+            Management.Location = new Point(3, 147);
+            Management.Margin = new Padding(3, 20, 3, 20);
+            Management.Name = "Management";
+            Management.Size = new Size(193, 28);
+            Management.TabIndex = 10;
+            Management.Text = "Management";
+            Management.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Logo
+            // 
+            Logo.Dock = DockStyle.Top;
+            Logo.Image = (Image)resources.GetObject("Logo.Image");
+            Logo.Location = new Point(0, 0);
+            Logo.Margin = new Padding(3, 4, 3, 4);
+            Logo.Name = "Logo";
+            Logo.Size = new Size(199, 112);
+            Logo.SizeMode = PictureBoxSizeMode.Zoom;
+            Logo.TabIndex = 2;
+            Logo.TabStop = false;
+            // 
+            // panel13
+            // 
+            panel13.Location = new Point(206, 0);
+            panel13.Margin = new Padding(3, 4, 3, 4);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(834, 79);
+            panel13.TabIndex = 1;
+            // 
             // newAccount
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1337, 653);
+            ClientSize = new Size(1528, 871);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(Sidebar_Border);
+            Controls.Add(SideBar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "newAccount";
             Text = "newAccount";
             Load += newAccount_Load;
-            panel1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel5.ResumeLayout(false);
@@ -832,23 +902,22 @@
             panel3.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            SideBar.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             ResumeLayout(false);
+
+            btnDashboard.Click += btnDashboard_Click;
+            btnPatients.Click += btnPatients_Click;
+            btnDoctors.Click += btnDoctors_Click;
+            btnEmployees.Click += btnEmployees_Click;
+            btnAppointments.Click += btnAppointments_Click;
+            btnQueue.Click += btnQueue_Click;
+            btnLogout.Click += btnLogout_Click;
         }
 
         #endregion
-
-        private Panel panel1;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button Logout;
-        private Button Queue;
-        private Button Admissions;
-        private Button Appointments;
-        private Label Clinical;
-        private Button Reception;
-        private Button Doctors;
-        private Button Patients;
-        private Label Management;
-        private PictureBox Logo;
         private Panel panel2;
         private GroupBox groupBox3;
         private GroupBox groupBox2;
@@ -900,5 +969,20 @@
         private Button btnSearchAcc;
         private Button bntViewAcc;
         private Button btnSave;
+        private Panel Sidebar_Border;
+        private Panel SideBar;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button btnDashboard;
+        private Label Main;
+        private Button btnLogout;
+        private Button btnQueue;
+        private Button btnAppointments;
+        private Label Clinical;
+        private Button btnEmployees;
+        private Button btnDoctors;
+        private Button btnPatients;
+        private Label Management;
+        private PictureBox Logo;
+        private Panel panel13;
     }
 }

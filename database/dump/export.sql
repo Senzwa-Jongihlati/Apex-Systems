@@ -104,6 +104,7 @@ CREATE TABLE `doctor` (
   `IsActive` bit(1) NOT NULL DEFAULT b'1',
   `Experience` varchar(50) DEFAULT NULL,
   `Address` varchar(255) DEFAULT NULL,
+  `Role` varchar(10) DEFAULT 'Doctor',
   PRIMARY KEY (`DoctorID`),
   UNIQUE KEY `UQ_Doctor_Username` (`Username`),
   UNIQUE KEY `UQ_Doctor_Email` (`Email`)
@@ -116,7 +117,7 @@ CREATE TABLE `doctor` (
 
 LOCK TABLES `doctor` WRITE;
 /*!40000 ALTER TABLE `doctor` DISABLE KEYS */;
-INSERT INTO `doctor` VALUES (1,'Nkosinathi','Ndlovu','nndlovu','$2a$11$6ybmg.YRpq3d6Esdc.ovlu/WbLZxPqoLaqIB/p6ENqxKGKqCD7U9S','0721239876','nndlovu@apexsystems.co.za','2022-06-01',_binary '',NULL,NULL),(2,'Priya','Govender','pgovender','$2a$11$St4J2YU0v74fAVC5Vkh0UeHZxd2S9rnw/3/R7NiHd6.QyBZ6b1RWu','0839871234','pgovender@apexsystems.co.za','2023-03-20',_binary '',NULL,NULL),(3,'Pieter','Botha','pbotha','$2a$11$u1FFbgZ8n.YLsyiUpxiTI.rKHcbq2Y3vHahbPZGT8cw6cKfba3Pke','0645551212','pbotha@apexsystems.co.za','2021-09-05',_binary '\0',NULL,NULL);
+INSERT INTO `doctor` VALUES (1,'Nkosinathi','Ndlovu','nndlovu','$2a$11$6ybmg.YRpq3d6Esdc.ovlu/WbLZxPqoLaqIB/p6ENqxKGKqCD7U9S','0721239876','nndlovu@apexsystems.co.za','2022-06-01',_binary '',NULL,NULL,'Doctor'),(2,'Priya','Govender','pgovender','$2a$11$St4J2YU0v74fAVC5Vkh0UeHZxd2S9rnw/3/R7NiHd6.QyBZ6b1RWu','0839871234','pgovender@apexsystems.co.za','2023-03-20',_binary '',NULL,NULL,'Doctor'),(3,'Pieter','Botha','pbotha','$2a$11$u1FFbgZ8n.YLsyiUpxiTI.rKHcbq2Y3vHahbPZGT8cw6cKfba3Pke','0645551212','pbotha@apexsystems.co.za','2021-09-05',_binary '\0',NULL,NULL,'Doctor');
 /*!40000 ALTER TABLE `doctor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,6 +246,7 @@ CREATE TABLE `receptionist` (
   `IsActive` bit(1) NOT NULL DEFAULT b'1',
   `Experience` varchar(250) DEFAULT NULL,
   `Address` varchar(250) DEFAULT NULL,
+  `Role` varchar(20) DEFAULT 'Receptionist',
   PRIMARY KEY (`ReceptionistID`),
   UNIQUE KEY `UQ_Receptionist_Username` (`Username`),
   UNIQUE KEY `UQ_Receptionist_Email` (`Email`)
@@ -257,7 +259,7 @@ CREATE TABLE `receptionist` (
 
 LOCK TABLES `receptionist` WRITE;
 /*!40000 ALTER TABLE `receptionist` DISABLE KEYS */;
-INSERT INTO `receptionist` VALUES (1,'Thandeka','Mkhize','tmkhize','$2a$11$ZOTryu2bpVjXAgpPyEqVLeOrydHrjKhlB8vDAtA84t4WxwFhzO.rC','0731234567','tmkhize@apexsystems.co.za','2024-02-01',_binary '',NULL,NULL),(2,'Sipho','Naidoo','snaidoo','$2a$11$/GE0ZdcnsCWQSwIN5mW8ZOx0TLql47/ICwRbH9XnkKpNvovhNc8aC','0827654321','snaidoo@apexsystems.co.za','2023-11-15',_binary '',NULL,NULL),(3,'Lerato','Dlamini','ldlamini','$2a$11$nLnXcEZW/R/.l7ZNKphnl.6zv72McVKiCFR2eLw6J8chN6HWhKYra','0619988776','ldlamini@apexsystems.co.za','2025-01-10',_binary '\0',NULL,NULL),(4,'Apex','Receptionist','receptionist','$2a$11$6MuYCKdDNW0GIFPxp7CdaeyD6fbcgXvzmoepoeuQhaX4sKj.bTviC',NULL,'receptionist@apexsystems.co.za','2026-09-21',_binary '',NULL,NULL),(5,'System','Administrator','admin','$2a$11$UIB7nvetq9hocFOTtZCMm.PLJ7N1TF.WYH.BVCng3DFdmRkNVEFDG',NULL,'admin@apexsystems.co.za','2026-09-21',_binary '',NULL,NULL);
+INSERT INTO `receptionist` VALUES (1,'Thandeka','Mkhize','tmkhize','$2a$11$ZOTryu2bpVjXAgpPyEqVLeOrydHrjKhlB8vDAtA84t4WxwFhzO.rC','0731234567','tmkhize@apexsystems.co.za','2024-02-01',_binary '',NULL,NULL,'Receptionist'),(2,'Sipho','Naidoo','snaidoo','$2a$11$/GE0ZdcnsCWQSwIN5mW8ZOx0TLql47/ICwRbH9XnkKpNvovhNc8aC','0827654321','snaidoo@apexsystems.co.za','2023-11-15',_binary '',NULL,NULL,'Receptionist'),(3,'Lerato','Dlamini','ldlamini','$2a$11$nLnXcEZW/R/.l7ZNKphnl.6zv72McVKiCFR2eLw6J8chN6HWhKYra','0619988776','ldlamini@apexsystems.co.za','2025-01-10',_binary '\0',NULL,NULL,'Receptionist'),(4,'Apex','Receptionist','receptionist','$2a$11$6MuYCKdDNW0GIFPxp7CdaeyD6fbcgXvzmoepoeuQhaX4sKj.bTviC','0762494558','receptionist@apexsystems.co.za','2026-09-21',_binary '','12 years in receptionist experience','107 marine parade, south beach, durban','Receptionist'),(5,'System','Administrator','admin','$2a$11$UIB7nvetq9hocFOTtZCMm.PLJ7N1TF.WYH.BVCng3DFdmRkNVEFDG',NULL,'admin@apexsystems.co.za','2026-09-21',_binary '',NULL,NULL,'Receptionist');
 /*!40000 ALTER TABLE `receptionist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -270,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-24 21:26:01
+-- Dump completed on 2026-09-26  9:10:22

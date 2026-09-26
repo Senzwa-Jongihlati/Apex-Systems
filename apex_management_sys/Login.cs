@@ -6,11 +6,14 @@ namespace apex_management_sys
 {
     public partial class Login : Form
     {
+        public static Login Instance { get; private set; }
         public Login()
         {
             InitializeComponent();
+            Instance = this;
             CenterLoginPanel();
         }
+
         private void CenterLoginPanel()
         {
             panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
@@ -62,49 +65,26 @@ namespace apex_management_sys
                 return;
             }
 
-            Receptionist receptionist = null;
+            var user = AuthService.Authenticate(txtUsername.Text, txtPassword.Text);
 
-            try
+            if (user == null)
             {
-                using (MySqlConnection conn = DatabaseHelper.GetConnection())
-                using (MySqlCommand cmd = new MySqlCommand(
-                    "SELECT * FROM Receptionist WHERE Username = @Username", conn))
-                {
-                    cmd.Parameters.AddWithValue("@Username", username);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            receptionist = new Receptionist(
-                                reader.GetInt32("ReceptionistID"),
-                                reader.GetString("FirstName"),
-                                reader.GetString("LastName"),
-                                reader.GetString("Username"),
-                                reader.GetString("PasswordHash"),
-                                reader["ContactNumber"] as string,   // null if the column is NULL
-                                reader["Email"] as string,
-                                reader.GetDateTime("DateHired"),
-                                reader.GetBoolean("IsActive"));
-                        }
-                    }
-                }
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Could not reach the database. Please try again.");
+                MessageBox.Show("Invalid username or password.");
                 return;
             }
+            txtUsername.Clear();
+            txtPassword.Clear();
+            checkBox1.Checked = false;
+            Session.Login(user);
 
-            if (receptionist != null && receptionist.VerifyPassword(password))
+            switch (user.Role)
             {
-                Session.Login(receptionist);
-                RP_Queue Q = new RP_Queue();// pass the logged-in receptionist along
-                Q.Show();
-                this.Hide();
+                case UserRole.Receptionist: new RP_Queue().Show(); break;
+                case UserRole.Doctor: new DR_Doctor().Show(); break;
+                case UserRole.Admin: new home().Show(); break;
             }
-            else
-                MessageBox.Show("Incorrect username or password");
+
+            this.Hide();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

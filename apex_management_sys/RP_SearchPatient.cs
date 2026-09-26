@@ -22,25 +22,6 @@ namespace apex_management_sys
                 LoadPatients();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            RP_Queue Queue = new RP_Queue();
-            Queue.Show();
-            this.Close();
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Close();
-        }
-
         private void label9_Click(object sender, EventArgs e)
         {
 
@@ -80,8 +61,8 @@ namespace apex_management_sys
         }
         public void CenterPanel()
         {
-            Main.Left = (this.ClientSize.Width - Section.Width) / 2;
-            Main.Top = (this.ClientSize.Height - Section.Height) / 2;
+            MainPanel.Left = (this.ClientSize.Width - Section.Width) / 2;
+            MainPanel.Top = (this.ClientSize.Height - Section.Height) / 2;
         }
         private void Patients_Load(object sender, EventArgs e)
         {
@@ -133,61 +114,74 @@ namespace apex_management_sys
         {
 
         }
-
-        private void btndPatient_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Dashboard_Click(object sender, EventArgs e)
-        {
-            home h = new home();
-            h.Show();
-            this.Close();
-        }
-
-        private void Queue_Click(object sender, EventArgs e)
-        {
-            RP_Queue Q = new RP_Queue();
-            Q.Show();
-            this.Close();
-        }
-
-        private void Admissions_Click(object sender, EventArgs e)
-        {
-            Registration R = new Registration();
-            R.Show();
-            this.Close();
-        }
-
         private void RP_SearchPatient_Load(object sender, EventArgs e)
         {
+            btnQueue.Visible = Session.CurrentUser.HasPermission(Permission.ManageQueue);
+            btnDoctors.Visible = Session.CurrentUser.HasPermission(Permission.AddConsultationNote);
+            btnAppointments.Visible = Session.CurrentUser.HasPermission(Permission.BookAppointment);
+            btnPatients.Visible = Session.CurrentUser.HasPermission(Permission.ViewPatientRecords);
+            btnEmployees.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+            btnDashboard.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+            Main.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
 
+            btnPatients.Enabled = false;
             BeginInvoke(new Action(() =>
             {
                 LoadPatients();
                 CenterPanel();
             }));
         }
-
-        private void Appointments_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Appointment ap = new Appointment();
-            ap.Show();
+            home h = new home();
+            h.Show();
             this.Close();
         }
 
-        private void Doctors_Click(object sender, EventArgs e)
+        private void btnPatients_Click(object sender, EventArgs e)
         {
-            DR_Doctor drd = new DR_Doctor();
-            drd.Show();
+            RP_SearchPatient r = new RP_SearchPatient();
+            r.Show();
+            this.Close();
+        }
+
+        private void btnDoctors_Click(object sender, EventArgs e)
+        {
+            DR_Doctor d = new DR_Doctor();
+            d.Show();
+            this.Close();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            newAccount na = new newAccount();
+            na.Show();
+            this.Close();
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            Appointment a = new Appointment();
+            a.Show();
+            this.Close();
+        }
+
+        private void btnQueue_Click(object sender, EventArgs e)
+        {
+            RP_Queue q = new RP_Queue();
+            q.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+            Login.Instance.Show();
             this.Close();
         }
     }
