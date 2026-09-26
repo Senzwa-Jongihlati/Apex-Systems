@@ -65,8 +65,8 @@ namespace apex_management_sys
                 using (MySqlTransaction tx = conn.BeginTransaction())
                 {
                     string insertAccount = $@"INSERT INTO {table} 
-                        (Username, Password, FirstName, LastName, Phone, Experience, Role, Address, CreatedOn)
-                        VALUES (@Username, @Password, @FirstName, @LastName, @Phone, @Experience, @Role, @Address, @CreatedOn)";
+                        (Username, Password, FirstName, LastName, ContactNumber, Experience, Role, Address, CreatedOn)
+                        VALUES (@Username, @Password, @FirstName, @LastName, @ContactNumber, @Experience, @Role, @Address, @CreatedOn)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertAccount, conn, tx))
                     {
@@ -74,7 +74,7 @@ namespace apex_management_sys
                         cmd.Parameters.AddWithValue("@Password", password);
                         cmd.Parameters.AddWithValue("@FirstName", firstname);
                         cmd.Parameters.AddWithValue("@LastName", lastname);
-                        cmd.Parameters.AddWithValue("@Phone", phone);
+                        cmd.Parameters.AddWithValue("@ContactNumber", phone);
                         cmd.Parameters.AddWithValue("@Experience", string.IsNullOrEmpty(experience) ? (object)DBNull.Value : experience);
                         cmd.Parameters.AddWithValue("@Role", storedRole);
                         cmd.Parameters.AddWithValue("@Address", address);
@@ -109,9 +109,9 @@ namespace apex_management_sys
             using (MySqlConnection conn = DatabaseHelper.GetConnection())
             {
                 string query = @"
-                    SELECT DoctorID AS AccountID, Username, FirstName, LastName, Phone, Experience, Role, Address, CreatedOn FROM doctor
+                    SELECT DoctorID AS AccountID, Username, FirstName, LastName, ContactNumber, Experience, Role, Address, DateHired FROM doctor
                     UNION ALL
-                    SELECT ReceptionistID AS AccountID, Username, FirstName, LastName, Phone, Experience, Role, Address, CreatedOn FROM receptionist";
+                    SELECT ReceptionistID AS AccountID, Username, FirstName, LastName, ContactNumber, Experience, Role, Address, DateHired FROM receptionist";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -124,11 +124,11 @@ namespace apex_management_sys
                             Username = reader.GetString("Username"),
                             FirstName = reader.GetString("FirstName"),
                             LastName = reader.GetString("LastName"),
-                            Phone = reader.IsDBNull(reader.GetOrdinal("Phone")) ? "" : reader.GetString("Phone"),
+                            Phone = reader.IsDBNull(reader.GetOrdinal("ContactNumber")) ? "" : reader.GetString("ContactNumber"),
                             Experience = reader.IsDBNull(reader.GetOrdinal("Experience")) ? "" : reader.GetString("Experience"),
                             Role = reader.GetString("Role"),
                             Address = reader.IsDBNull(reader.GetOrdinal("Address")) ? "" : reader.GetString("Address"),
-                            CreatedOn = reader.GetDateTime("CreatedOn")
+                            CreatedOn = reader.GetDateTime("DateHired")
                         });
                     }
                 }
@@ -267,7 +267,7 @@ namespace apex_management_sys
                     FirstName = @FirstName,
                     LastName = @LastName,
                     Username = @Username,
-                    Phone = @Phone,
+                    ContactNumber = @ContactNumber,
                     Experience = @Experience,
                     Address = @Address
                     WHERE {idColumn} = @AccountId";
@@ -277,7 +277,7 @@ namespace apex_management_sys
                     cmd.Parameters.AddWithValue("@FirstName", txtViewFirstName.Text.Trim());
                     cmd.Parameters.AddWithValue("@LastName", txtViewLastName.Text.Trim());
                     cmd.Parameters.AddWithValue("@Username", txtViewUsername.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Phone", txtViewPhone.Text.Trim());
+                    cmd.Parameters.AddWithValue("@ContactNumber", txtViewPhone.Text.Trim());
                     cmd.Parameters.AddWithValue("@Experience", string.IsNullOrEmpty(experience) ? (object)DBNull.Value : experience);
                     cmd.Parameters.AddWithValue("@Address", txtViewAddress.Text.Trim());
                     cmd.Parameters.AddWithValue("@AccountId", currentlyViewedAccount.AccountId);
