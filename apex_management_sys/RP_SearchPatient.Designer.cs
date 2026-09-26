@@ -201,6 +201,7 @@
             btnSave.TabIndex = 18;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnAddToQueue
             // 

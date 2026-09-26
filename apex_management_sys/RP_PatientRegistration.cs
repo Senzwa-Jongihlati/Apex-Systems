@@ -16,24 +16,23 @@ namespace apex_management_sys
         private int existingPatientId = 0;
         public Registration(DataRowView existingPatient)
         {
-                    InitializeComponent();
-                    isQueueMode = true;
-                    existingPatientId = Convert.ToInt32(existingPatient["ID"]);
+            InitializeComponent();
+            isQueueMode = true;
+            existingPatientId = Convert.ToInt32(existingPatient["ID"]);
 
-                    string[] nameParts = existingPatient["Name"].ToString().Split(new[] { ' ' }, 2);
-                    txtName.Text = nameParts[0];
-                    txtSurname.Text = nameParts.Length > 1 ? nameParts[1] : "";
-                    cbIDType.Text = existingPatient["ID Type"].ToString();
-                    txtID.Text = existingPatient["ID / Passport"].ToString();
-                    txtPhoneNo.Text = existingPatient["Contact"].ToString();
-                    txtEmergancyContact.Text = existingPatient["Emergency"].ToString();
+            txtName.Text = existingPatient["First Name"].ToString();
+            txtSurname.Text = existingPatient["Last Name"].ToString();
+            cbIDType.Text = existingPatient["ID Type"].ToString();
+            txtID.Text = existingPatient["ID / Passport"].ToString();
+            txtPhoneNo.Text = existingPatient["Contact"].ToString();
+            txtEmergancyContact.Text = existingPatient["Emergency"].ToString();
 
-                    LoadRemainingFieldsFromDb(existingPatientId); // DOB/Gender/Address aren't in the SearchPatient grid
+            LoadRemainingFieldsFromDb(existingPatientId); // DOB/Gender/Address aren't in the SearchPatient grid
 
-                    foreach (Control c in new Control[] { txtName, txtSurname, cbIDType, txtID,cbGender, dateTimePicker1, txtPhoneNo, txtEmergancyContact, txtAddress})
-                        c.Enabled = false;
+            foreach (Control c in new Control[] {txtName, txtSurname, cbIDType, txtID,cbGender, dateTimePicker1, txtPhoneNo, txtEmergancyContact, txtAddress})
+                c.Enabled = false;
 
-                    btnRegisterPatient.Text = "Add to Queue";
+            btnRegisterPatient.Text = "Add to Queue";
         }
         public Registration()
         {

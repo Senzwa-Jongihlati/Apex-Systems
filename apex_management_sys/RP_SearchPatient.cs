@@ -29,19 +29,20 @@ namespace apex_management_sys
         private void LoadPatients(string searchTerm = "")
         {
             string query = @"
-        SELECT 
-            PatientID AS 'ID',
-            CONCAT(FirstName, ' ', LastName) AS 'Name',
-            IdentificationType AS 'ID Type',
-            IdentificationNumber AS 'ID / Passport',
-            ContactNumber AS 'Contact',
-            EmergencyContact AS 'Emergency',
-            RegisteredDate AS 'Date Added'
-        FROM Patient
-        WHERE (@Search = '' 
-               OR IdentificationNumber LIKE CONCAT('%', @Search, '%')
-               OR CONCAT(FirstName, ' ', LastName) LIKE CONCAT('%', @Search, '%'))
-        ORDER BY RegisteredDate DESC";
+            SELECT 
+                PatientID AS 'ID',
+                FirstName AS 'First Name',
+                LastName AS 'Last Name',
+                IdentificationType AS 'ID Type',
+                IdentificationNumber AS 'ID / Passport',
+                ContactNumber AS 'Contact',
+                EmergencyContact AS 'Emergency',
+                RegisteredDate AS 'Date Added'
+            FROM Patient
+            WHERE (@Search = '' 
+                   OR IdentificationNumber LIKE CONCAT('%', @Search, '%')
+                   OR CONCAT(FirstName, ' ', LastName) LIKE CONCAT('%', @Search, '%'))
+            ORDER BY RegisteredDate DESC";
 
             using (MySqlConnection connection = DatabaseHelper.GetConnection())
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -81,7 +82,7 @@ namespace apex_management_sys
         {
             grid.RowHeadersVisible = false;
             grid.AllowUserToAddRows = false;
-            grid.ReadOnly = true;
+            grid.ReadOnly = false; // was true
             grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid.EnableHeadersVisualStyles = false;
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(222, 235, 245);
@@ -92,6 +93,10 @@ namespace apex_management_sys
 
             foreach (DataGridViewColumn column in grid.Columns)
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            foreach (string colName in new[] { "ID", "ID Type", "ID / Passport", "Date Added" })
+                if (grid.Columns.Contains(colName))
+                    grid.Columns[colName].ReadOnly = true;
 
             grid.ClearSelection();
             grid.CurrentCell = null;
@@ -199,6 +204,55 @@ namespace apex_management_sys
             {
                 if (reg.ShowDialog(this) == DialogResult.OK)
                     LoadPatients(txtSearch.Text);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            PatientGrid.EndEdit(); // commit whatever cell is still being edited
+
+            DataTable table = (DataTable)PatientGrid.DataSource;
+            if (table == null) return;
+
+            DataTable changes = table.GetChanges(DataRowState.Modified);
+            if (changes == null)
+            {
+                MessageBox.Show("No changes to save.");
+                return;
+            }
+
+            string query = @"
+            UPDATE Patient
+            SET FirstName = @FirstName,
+                LastName = @LastName,
+                ContactNumber = @Contact,
+                EmergencyContact = @Emergency
+            WHERE PatientID = @ID";
+
+            try
+            {
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                {
+                    foreach (DataRow row in changes.Rows)
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@FirstName", row["First Name"]);
+                            cmd.Parameters.AddWithValue("@LastName", row["Last Name"]);
+                            cmd.Parameters.AddWithValue("@Contact", row["Contact"]);
+                            cmd.Parameters.AddWithValue("@Emergency", row["Emergency"]);
+                            cmd.Parameters.AddWithValue("@ID", row["ID"]);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                table.AcceptChanges();
+                MessageBox.Show("Changes saved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
