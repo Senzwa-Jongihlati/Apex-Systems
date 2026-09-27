@@ -196,7 +196,7 @@
             label1.Font = new Font("Segoe UI Black", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1164, 80);
+            label1.Size = new Size(1602, 107);
             label1.TabIndex = 23;
             label1.Text = "Register patient";
             label1.Click += label1_Click_1;
@@ -206,9 +206,9 @@
             label7.AutoSize = true;
             label7.Dock = DockStyle.Fill;
             label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(3, 80);
+            label7.Location = new Point(3, 107);
             label7.Name = "label7";
-            label7.Size = new Size(1164, 60);
+            label7.Size = new Size(1602, 80);
             label7.TabIndex = 24;
             label7.Text = "Enter the patient's details to create a new record";
             // 
@@ -240,11 +240,11 @@
             groupBox1.Controls.Add(txtPhoneNo);
             groupBox1.Controls.Add(cbGender);
             groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Location = new Point(3, 144);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(3, 192);
+            groupBox1.Margin = new Padding(3, 5, 3, 5);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(1164, 774);
+            groupBox1.Padding = new Padding(3, 5, 3, 5);
+            groupBox1.Size = new Size(1602, 751);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
             groupBox1.Text = "Personal information";
@@ -266,7 +266,7 @@
             cbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPriority.FormattingEnabled = true;
             cbPriority.Items.AddRange(new object[] { "Emergency", "Urgent", "Routine" });
-            cbPriority.Location = new Point(441, 598);
+            cbPriority.Location = new Point(441, 597);
             cbPriority.Margin = new Padding(3, 5, 3, 5);
             cbPriority.Name = "cbPriority";
             cbPriority.Size = new Size(366, 28);
@@ -330,7 +330,7 @@
             // 
             // txtReasonForVisit
             // 
-            txtReasonForVisit.Location = new Point(53, 598);
+            txtReasonForVisit.Location = new Point(53, 597);
             txtReasonForVisit.Margin = new Padding(3, 5, 3, 5);
             txtReasonForVisit.Name = "txtReasonForVisit";
             txtReasonForVisit.Size = new Size(354, 27);
@@ -356,9 +356,9 @@
             // 
             button1.Dock = DockStyle.Left;
             button1.Location = new Point(0, 0);
-            button1.Margin = new Padding(2, 3, 2, 3);
+            button1.Margin = new Padding(2, 4, 2, 4);
             button1.Name = "button1";
-            button1.Size = new Size(173, 74);
+            button1.Size = new Size(198, 99);
             button1.TabIndex = 13;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
@@ -369,10 +369,10 @@
             btnRegisterPatient.BackColor = Color.FromArgb(11, 61, 92);
             btnRegisterPatient.Dock = DockStyle.Right;
             btnRegisterPatient.ForeColor = SystemColors.ControlLightLight;
-            btnRegisterPatient.Location = new Point(991, 0);
-            btnRegisterPatient.Margin = new Padding(2, 4, 2, 4);
+            btnRegisterPatient.Location = new Point(1404, 0);
+            btnRegisterPatient.Margin = new Padding(2, 5, 2, 5);
             btnRegisterPatient.Name = "btnRegisterPatient";
-            btnRegisterPatient.Size = new Size(173, 74);
+            btnRegisterPatient.Size = new Size(198, 99);
             btnRegisterPatient.TabIndex = 12;
             btnRegisterPatient.Text = "Register patient";
             btnRegisterPatient.UseVisualStyleBackColor = false;
@@ -381,9 +381,11 @@
             // Main
             // 
             Main.Controls.Add(Container);
-            Main.Location = new Point(125, 12);
+            Main.Dock = DockStyle.Fill;
+            Main.Location = new Point(0, 0);
+            Main.Margin = new Padding(3, 4, 3, 4);
             Main.Name = "Main";
-            Main.Size = new Size(1170, 1002);
+            Main.Size = new Size(1608, 1055);
             Main.TabIndex = 26;
             // 
             // Container
@@ -396,13 +398,14 @@
             Container.Controls.Add(label1, 0, 0);
             Container.Dock = DockStyle.Fill;
             Container.Location = new Point(0, 0);
+            Container.Margin = new Padding(3, 4, 3, 4);
             Container.Name = "Container";
             Container.RowCount = 4;
+            Container.RowStyles.Add(new RowStyle(SizeType.Absolute, 107F));
             Container.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            Container.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             Container.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Container.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            Container.Size = new Size(1170, 1002);
+            Container.RowStyles.Add(new RowStyle(SizeType.Absolute, 107F));
+            Container.Size = new Size(1608, 1055);
             Container.TabIndex = 26;
             // 
             // ButtonContainer
@@ -410,9 +413,10 @@
             ButtonContainer.Controls.Add(button1);
             ButtonContainer.Controls.Add(btnRegisterPatient);
             ButtonContainer.Dock = DockStyle.Fill;
-            ButtonContainer.Location = new Point(3, 925);
+            ButtonContainer.Location = new Point(3, 952);
+            ButtonContainer.Margin = new Padding(3, 4, 3, 4);
             ButtonContainer.Name = "ButtonContainer";
-            ButtonContainer.Size = new Size(1164, 74);
+            ButtonContainer.Size = new Size(1602, 99);
             ButtonContainer.TabIndex = 27;
             // 
             // Registration
@@ -421,11 +425,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(245, 248, 251);
-            ClientSize = new Size(1407, 1055);
+            ClientSize = new Size(1608, 1055);
             ControlBox = false;
             Controls.Add(Main);
             FormScreenCaptureMode = ScreenCaptureMode.HideContent;
-            Margin = new Padding(2, 3, 2, 3);
+            Margin = new Padding(2, 4, 2, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Registration";

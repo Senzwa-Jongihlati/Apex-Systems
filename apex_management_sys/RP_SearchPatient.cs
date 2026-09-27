@@ -11,6 +11,7 @@ namespace apex_management_sys
 {
     public partial class RP_SearchPatient : Form
     {
+        bool isDoctor = Session.CurrentUser.HasPermission(Permission.AddConsultationNote);
         public RP_SearchPatient()
         {
             InitializeComponent();
@@ -22,25 +23,6 @@ namespace apex_management_sys
                 LoadPatients();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            RP_Queue Queue = new RP_Queue();
-            Queue.Show();
-            this.Close();
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Close();
-        }
-
         private void label9_Click(object sender, EventArgs e)
         {
 
@@ -48,19 +30,20 @@ namespace apex_management_sys
         private void LoadPatients(string searchTerm = "")
         {
             string query = @"
-        SELECT 
-            PatientID AS 'ID',
-            CONCAT(FirstName, ' ', LastName) AS 'Name',
-            IdentificationType AS 'ID Type',
-            IdentificationNumber AS 'ID / Passport',
-            ContactNumber AS 'Contact',
-            EmergencyContact AS 'Emergency',
-            RegisteredDate AS 'Date Added'
-        FROM Patient
-        WHERE (@Search = '' 
-               OR IdentificationNumber LIKE CONCAT('%', @Search, '%')
-               OR CONCAT(FirstName, ' ', LastName) LIKE CONCAT('%', @Search, '%'))
-        ORDER BY RegisteredDate DESC";
+            SELECT 
+                PatientID AS 'ID',
+                FirstName AS 'First Name',
+                LastName AS 'Last Name',
+                IdentificationType AS 'ID Type',
+                IdentificationNumber AS 'ID / Passport',
+                ContactNumber AS 'Contact',
+                EmergencyContact AS 'Emergency',
+                RegisteredDate AS 'Date Added'
+            FROM Patient
+            WHERE (@Search = '' 
+                   OR IdentificationNumber LIKE CONCAT('%', @Search, '%')
+                   OR CONCAT(FirstName, ' ', LastName) LIKE CONCAT('%', @Search, '%'))
+            ORDER BY RegisteredDate DESC";
 
             using (MySqlConnection connection = DatabaseHelper.GetConnection())
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -80,8 +63,8 @@ namespace apex_management_sys
         }
         public void CenterPanel()
         {
-            Main.Left = (this.ClientSize.Width - Section.Width) / 2;
-            Main.Top = (this.ClientSize.Height - Section.Height) / 2;
+            MainPanel.Left = (this.ClientSize.Width - Section.Width) / 2;
+            MainPanel.Top = (this.ClientSize.Height - Section.Height) / 2;
         }
         private void Patients_Load(object sender, EventArgs e)
         {
@@ -100,7 +83,7 @@ namespace apex_management_sys
         {
             grid.RowHeadersVisible = false;
             grid.AllowUserToAddRows = false;
-            grid.ReadOnly = true;
+            grid.ReadOnly = isDoctor; // was true
             grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid.EnableHeadersVisualStyles = false;
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(222, 235, 245);
@@ -111,6 +94,10 @@ namespace apex_management_sys
 
             foreach (DataGridViewColumn column in grid.Columns)
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            foreach (string colName in new[] { "ID", "ID Type", "ID / Passport", "Date Added" })
+                if (grid.Columns.Contains(colName))
+                    grid.Columns[colName].ReadOnly = true;
 
             grid.ClearSelection();
             grid.CurrentCell = null;
@@ -128,47 +115,29 @@ namespace apex_management_sys
                 }
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btndPatient_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Dashboard_Click(object sender, EventArgs e)
-        {
-            home h = new home();
-            h.Show();
-            this.Close();
-        }
-
-        private void Queue_Click(object sender, EventArgs e)
-        {
-            RP_Queue Q = new RP_Queue();
-            Q.Show();
-            this.Close();
-        }
-
-        private void Admissions_Click(object sender, EventArgs e)
-        {
-            Registration R = new Registration();
-            R.Show();
-            this.Close();
-        }
-
         private void RP_SearchPatient_Load(object sender, EventArgs e)
         {
+            btnQueue.Visible = Session.CurrentUser.HasPermission(Permission.ManageQueue);
+            btnDoctors.Visible = Session.CurrentUser.HasPermission(Permission.AddConsultationNote);
+            btnAppointments.Visible = Session.CurrentUser.HasPermission(Permission.BookAppointment);
+            btnPatients.Visible = Session.CurrentUser.HasPermission(Permission.ViewPatientRecords);
+            btnEmployees.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+            btnDashboard.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+            Main.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+
+            btnPatients.Enabled = false;
+
+            // Doctors can look patients up and review history, but shouldn't be
+            // adding new patients or checking people into today's queue.            
+            btnAddPatient.Visible = !isDoctor;
+            btnAddToQueue.Visible = !isDoctor;
+            btnSave.Visible = !isDoctor;
+            btnViewHistory.Visible = isDoctor; // change to `isDoctor || Session.CurrentUser.HasPermission(Permission.ManageStaff)` if admins should see it too
 
             BeginInvoke(new Action(() =>
             {
@@ -176,19 +145,139 @@ namespace apex_management_sys
                 CenterPanel();
             }));
         }
-
-        private void Appointments_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Appointment ap = new Appointment();
-            ap.Show();
+            home h = new home();
+            h.Show();
             this.Close();
         }
 
-        private void Doctors_Click(object sender, EventArgs e)
+        private void btnPatients_Click(object sender, EventArgs e)
         {
-            DR_Doctor drd = new DR_Doctor();
-            drd.Show();
+            RP_SearchPatient r = new RP_SearchPatient();
+            r.Show();
             this.Close();
+        }
+
+        private void btnDoctors_Click(object sender, EventArgs e)
+        {
+            DR_Doctor d = new DR_Doctor();
+            d.Show();
+            this.Close();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            newAccount na = new newAccount();
+            na.Show();
+            this.Close();
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            Appointment a = new Appointment();
+            a.Show();
+            this.Close();
+        }
+
+        private void btnQueue_Click(object sender, EventArgs e)
+        {
+            RP_Queue q = new RP_Queue();
+            q.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+            Login.Instance.Show();
+            this.Close();
+        }
+
+        private void btnAddToQueue_Click(object sender, EventArgs e)
+        {
+            if (PatientGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Select a patient first.");
+                return;
+            }
+
+            DataRowView selected = (DataRowView)PatientGrid.CurrentRow.DataBoundItem;
+
+            using (Registration reg = new Registration(selected))
+            {
+                if (reg.ShowDialog(this) == DialogResult.OK)
+                    LoadPatients(txtSearch.Text);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            PatientGrid.EndEdit(); // commit whatever cell is still being edited
+
+            DataTable table = (DataTable)PatientGrid.DataSource;
+            if (table == null) return;
+
+            DataTable changes = table.GetChanges(DataRowState.Modified);
+            if (changes == null)
+            {
+                MessageBox.Show("No changes to save.");
+                return;
+            }
+
+            string query = @"
+            UPDATE Patient
+            SET FirstName = @FirstName,
+                LastName = @LastName,
+                ContactNumber = @Contact,
+                EmergencyContact = @Emergency
+            WHERE PatientID = @ID";
+
+            try
+            {
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                {
+                    foreach (DataRow row in changes.Rows)
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@FirstName", row["First Name"]);
+                            cmd.Parameters.AddWithValue("@LastName", row["Last Name"]);
+                            cmd.Parameters.AddWithValue("@Contact", row["Contact"]);
+                            cmd.Parameters.AddWithValue("@Emergency", row["Emergency"]);
+                            cmd.Parameters.AddWithValue("@ID", row["ID"]);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                table.AcceptChanges();
+                MessageBox.Show("Changes saved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnViewHistory_Click(object sender, EventArgs e)
+        {
+            if (PatientGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Select a patient first.");
+                return;
+            }
+
+            DataRowView selected = (DataRowView)PatientGrid.CurrentRow.DataBoundItem;
+            int patientId = Convert.ToInt32(selected["ID"]);
+
+            DR_PatientHistory history = new DR_PatientHistory(patientId, true);
+            history.ShowDialog();
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            LoadPatients();
         }
     }
 }

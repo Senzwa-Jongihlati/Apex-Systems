@@ -10,13 +10,16 @@
     <Compile Update="DR_Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DR_PatientHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="loadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AD_newAccount.cs">
+    <Compile Update="newAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RP_PatientRegistration.cs">

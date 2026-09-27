@@ -29,364 +29,492 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DR_addRecord_from));
-            panel1 = new Panel();
-            panel2 = new Panel();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            panel3 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            Main = new Panel();
+            ContainerMain = new TableLayoutPanel();
+            PersonalInfo = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
             textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
             groupBox1 = new GroupBox();
-            textBox5 = new TextBox();
+            txtVisitReason = new TextBox();
+            button3 = new Button();
             label8 = new Label();
             groupBox2 = new GroupBox();
+            txtNotes = new TextBox();
+            lblNotes = new Label();
+            txtPrescription = new TextBox();
+            lblPrescription = new Label();
+            txtDiagnosis = new TextBox();
+            lblDiagnosis = new Label();
+            Buttons = new Panel();
             button1 = new Button();
             button2 = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
+            TopBar = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label2 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
+            Main.SuspendLayout();
+            ContainerMain.SuspendLayout();
+            PersonalInfo.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            Buttons.SuspendLayout();
+            TopBar.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // Main
             // 
-            panel1.BackColor = SystemColors.Control;
-            panel1.Controls.Add(groupBox2);
-            panel1.Controls.Add(groupBox1);
-            panel1.Controls.Add(panel3);
-            panel1.Location = new Point(2, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(856, 681);
-            panel1.TabIndex = 0;
+            Main.BackColor = SystemColors.Control;
+            Main.Controls.Add(ContainerMain);
+            Main.Controls.Add(TopBar);
+            Main.Dock = DockStyle.Fill;
+            Main.Location = new Point(0, 0);
+            Main.Margin = new Padding(3, 4, 3, 4);
+            Main.Name = "Main";
+            Main.Size = new Size(981, 903);
+            Main.TabIndex = 0;
             // 
-            // panel2
+            // ContainerMain
             // 
-            panel2.BackColor = Color.FromArgb(222, 235, 245);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(2, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(853, 67);
-            panel2.TabIndex = 0;
+            ContainerMain.BackColor = Color.FromArgb(245, 248, 251);
+            ContainerMain.ColumnCount = 3;
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.Controls.Add(PersonalInfo, 1, 1);
+            ContainerMain.Controls.Add(groupBox1, 1, 2);
+            ContainerMain.Controls.Add(groupBox2, 1, 3);
+            ContainerMain.Controls.Add(Buttons, 1, 4);
+            ContainerMain.Dock = DockStyle.Fill;
+            ContainerMain.Location = new Point(0, 100);
+            ContainerMain.Name = "ContainerMain";
+            ContainerMain.RowCount = 5;
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            ContainerMain.Size = new Size(981, 803);
+            ContainerMain.TabIndex = 4;
             // 
-            // pictureBox1
+            // PersonalInfo
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(10, 18);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(32, 32);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            PersonalInfo.BackColor = Color.White;
+            PersonalInfo.Controls.Add(tableLayoutPanel2);
+            PersonalInfo.Dock = DockStyle.Fill;
+            PersonalInfo.Location = new Point(83, 14);
+            PersonalInfo.Margin = new Padding(3, 4, 3, 4);
+            PersonalInfo.Name = "PersonalInfo";
+            PersonalInfo.Size = new Size(815, 92);
+            PersonalInfo.TabIndex = 0;
             // 
-            // label1
+            // tableLayoutPanel2
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(60, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(193, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Patient no. 20481 · queue no. 014";
-            label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(60, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(82, 21);
-            label2.TabIndex = 2;
-            label2.Text = "T. Mkhize";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Red;
-            label3.Location = new Point(662, 25);
-            label3.Name = "label3";
-            label3.Size = new Size(110, 25);
-            label3.TabIndex = 3;
-            label3.Text = "Emergency";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.ButtonHighlight;
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(textBox4);
-            panel3.Controls.Add(textBox3);
-            panel3.Controls.Add(textBox2);
-            panel3.Controls.Add(textBox1);
-            panel3.Location = new Point(3, 76);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(813, 73);
-            panel3.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(21, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(144, 23);
-            textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(240, 37);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 23);
-            textBox2.TabIndex = 1;
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.5714264F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.57143F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.8571472F));
+            tableLayoutPanel2.Controls.Add(textBox3, 0, 1);
+            tableLayoutPanel2.Controls.Add(textBox2, 1, 1);
+            tableLayoutPanel2.Controls.Add(textBox1, 2, 1);
+            tableLayoutPanel2.Controls.Add(label4, 2, 0);
+            tableLayoutPanel2.Controls.Add(label5, 1, 0);
+            tableLayoutPanel2.Controls.Add(label6, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(815, 92);
+            tableLayoutPanel2.TabIndex = 7;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(443, 40);
+            textBox3.Dock = DockStyle.Top;
+            textBox3.Location = new Point(3, 50);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(146, 23);
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(226, 27);
             textBox3.TabIndex = 2;
             // 
-            // textBox4
+            // textBox2
             // 
-            textBox4.Location = new Point(625, 40);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(167, 23);
-            textBox4.TabIndex = 3;
+            textBox2.Dock = DockStyle.Top;
+            textBox2.Location = new Point(235, 50);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(226, 27);
+            textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Dock = DockStyle.Top;
+            textBox1.Location = new Point(467, 50);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(345, 27);
+            textBox1.TabIndex = 0;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(21, 14);
+            label4.Location = new Point(467, 0);
             label4.Name = "label4";
-            label4.Size = new Size(36, 15);
+            label4.Size = new Size(345, 46);
             label4.TabIndex = 4;
             label4.Text = "DOB:";
+            label4.TextAlign = ContentAlignment.BottomLeft;
             label4.Click += label4_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(240, 14);
+            label5.Location = new Point(235, 0);
             label5.Name = "label5";
-            label5.Size = new Size(52, 15);
+            label5.Size = new Size(226, 46);
             label5.TabIndex = 5;
             label5.Text = "Gender:";
+            label5.TextAlign = ContentAlignment.BottomLeft;
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Dock = DockStyle.Fill;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(445, 16);
+            label6.Location = new Point(3, 0);
             label6.Name = "label6";
-            label6.Size = new Size(53, 15);
+            label6.Size = new Size(226, 46);
             label6.TabIndex = 6;
             label6.Text = "Contact:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(627, 14);
-            label7.Name = "label7";
-            label7.Size = new Size(76, 15);
-            label7.TabIndex = 7;
-            label7.Text = "blood Group";
+            label6.TextAlign = ContentAlignment.BottomLeft;
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(txtVisitReason);
+            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Dock = DockStyle.Fill;
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(11, 170);
+            groupBox1.Location = new Point(83, 114);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(805, 145);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(815, 120);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "View Note";
             // 
-            // textBox5
+            // txtVisitReason
             // 
-            textBox5.Location = new Point(13, 44);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(748, 80);
-            textBox5.TabIndex = 0;
+            txtVisitReason.Dock = DockStyle.Fill;
+            txtVisitReason.Location = new Point(3, 49);
+            txtVisitReason.Margin = new Padding(3, 4, 3, 4);
+            txtVisitReason.Multiline = true;
+            txtVisitReason.Name = "txtVisitReason";
+            txtVisitReason.ReadOnly = true;
+            txtVisitReason.Size = new Size(669, 67);
+            txtVisitReason.TabIndex = 0;
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.Dock = DockStyle.Right;
+            button3.Location = new Point(672, 49);
+            button3.Name = "button3";
+            button3.Size = new Size(140, 67);
+            button3.TabIndex = 2;
+            button3.Text = "View Patient History";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Dock = DockStyle.Top;
             label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(18, 26);
+            label8.Location = new Point(3, 26);
             label8.Name = "label8";
-            label8.Size = new Size(104, 17);
+            label8.Size = new Size(133, 23);
             label8.TabIndex = 1;
             label8.Text = "Reason for visit";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox8);
-            groupBox2.Controls.Add(textBox7);
-            groupBox2.Controls.Add(textBox6);
-            groupBox2.Controls.Add(label11);
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button1);
+            groupBox2.BackColor = Color.White;
+            groupBox2.Controls.Add(txtNotes);
+            groupBox2.Controls.Add(lblNotes);
+            groupBox2.Controls.Add(txtPrescription);
+            groupBox2.Controls.Add(lblPrescription);
+            groupBox2.Controls.Add(txtDiagnosis);
+            groupBox2.Controls.Add(lblDiagnosis);
+            groupBox2.Dock = DockStyle.Fill;
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(19, 354);
+            groupBox2.Location = new Point(83, 242);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(797, 326);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(815, 506);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Add Note";
             // 
+            // txtNotes
+            // 
+            txtNotes.Dock = DockStyle.Fill;
+            txtNotes.Location = new Point(3, 266);
+            txtNotes.Margin = new Padding(3, 4, 3, 4);
+            txtNotes.Multiline = true;
+            txtNotes.Name = "txtNotes";
+            txtNotes.Size = new Size(809, 236);
+            txtNotes.TabIndex = 6;
+            // 
+            // lblNotes
+            // 
+            lblNotes.AutoSize = true;
+            lblNotes.Dock = DockStyle.Top;
+            lblNotes.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNotes.Location = new Point(3, 241);
+            lblNotes.Name = "lblNotes";
+            lblNotes.Size = new Size(69, 25);
+            lblNotes.TabIndex = 3;
+            lblNotes.Text = "Notes:";
+            // 
+            // txtPrescription
+            // 
+            txtPrescription.Dock = DockStyle.Top;
+            txtPrescription.Location = new Point(3, 152);
+            txtPrescription.Margin = new Padding(3, 4, 3, 4);
+            txtPrescription.Multiline = true;
+            txtPrescription.Name = "txtPrescription";
+            txtPrescription.Size = new Size(809, 89);
+            txtPrescription.TabIndex = 7;
+            // 
+            // lblPrescription
+            // 
+            lblPrescription.AutoSize = true;
+            lblPrescription.Dock = DockStyle.Top;
+            lblPrescription.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrescription.Location = new Point(3, 127);
+            lblPrescription.Name = "lblPrescription";
+            lblPrescription.Size = new Size(219, 25);
+            lblPrescription.TabIndex = 4;
+            lblPrescription.Text = "Prescription (optional):";
+            // 
+            // txtDiagnosis
+            // 
+            txtDiagnosis.Dock = DockStyle.Top;
+            txtDiagnosis.Location = new Point(3, 51);
+            txtDiagnosis.Margin = new Padding(3, 4, 3, 4);
+            txtDiagnosis.Multiline = true;
+            txtDiagnosis.Name = "txtDiagnosis";
+            txtDiagnosis.Size = new Size(809, 76);
+            txtDiagnosis.TabIndex = 5;
+            // 
+            // lblDiagnosis
+            // 
+            lblDiagnosis.AutoSize = true;
+            lblDiagnosis.Dock = DockStyle.Top;
+            lblDiagnosis.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDiagnosis.Location = new Point(3, 26);
+            lblDiagnosis.Name = "lblDiagnosis";
+            lblDiagnosis.Size = new Size(103, 25);
+            lblDiagnosis.TabIndex = 2;
+            lblDiagnosis.Text = "Diagnosis:";
+            // 
+            // Buttons
+            // 
+            Buttons.BackColor = Color.White;
+            Buttons.Controls.Add(button1);
+            Buttons.Controls.Add(button2);
+            Buttons.Dock = DockStyle.Fill;
+            Buttons.Location = new Point(83, 755);
+            Buttons.Name = "Buttons";
+            Buttons.Size = new Size(815, 45);
+            Buttons.TabIndex = 3;
+            // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaption;
-            button1.Location = new Point(566, 22);
+            button1.Cursor = Cursors.Hand;
+            button1.Dock = DockStyle.Left;
+            button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(94, 36);
+            button1.Size = new Size(107, 45);
             button1.TabIndex = 0;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(11, 61, 92);
+            button2.Cursor = Cursors.Hand;
+            button2.Dock = DockStyle.Right;
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(681, 22);
+            button2.Location = new Point(706, 0);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(95, 36);
+            button2.Size = new Size(109, 45);
             button2.TabIndex = 1;
             button2.Text = "Save note";
             button2.UseVisualStyleBackColor = false;
             // 
-            // label9
+            // TopBar
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(24, 71);
-            label9.Name = "label9";
-            label9.Size = new Size(81, 20);
-            label9.TabIndex = 2;
-            label9.Text = "Diagnosis:";
+            TopBar.BackColor = Color.FromArgb(222, 235, 245);
+            TopBar.Controls.Add(tableLayoutPanel1);
+            TopBar.Controls.Add(label3);
+            TopBar.Controls.Add(pictureBox1);
+            TopBar.Dock = DockStyle.Top;
+            TopBar.Location = new Point(0, 0);
+            TopBar.Margin = new Padding(3, 4, 3, 4);
+            TopBar.Name = "TopBar";
+            TopBar.Size = new Size(981, 100);
+            TopBar.TabIndex = 3;
             // 
-            // label10
+            // tableLayoutPanel1
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(27, 155);
-            label10.Name = "label10";
-            label10.Size = new Size(55, 20);
-            label10.TabIndex = 3;
-            label10.Text = "Notes:";
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(label1, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(84, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(757, 100);
+            tableLayoutPanel1.TabIndex = 4;
             // 
-            // label11
+            // label2
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(24, 225);
-            label11.Name = "label11";
-            label11.Size = new Size(171, 20);
-            label11.TabIndex = 4;
-            label11.Text = "Prescription (optional):";
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(751, 50);
+            label2.TabIndex = 2;
+            label2.Text = "T. Mkhize";
+            label2.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox6
+            // label1
             // 
-            textBox6.Location = new Point(27, 94);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(749, 58);
-            textBox6.TabIndex = 5;
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(3, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(751, 50);
+            label1.TabIndex = 1;
+            label1.Text = "Patient no. 20481 · queue no. 014";
             // 
-            // textBox7
+            // label3
             // 
-            textBox7.Location = new Point(24, 173);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(752, 49);
-            textBox7.TabIndex = 6;
+            label3.Dock = DockStyle.Right;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(841, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(140, 100);
+            label3.TabIndex = 3;
+            label3.Text = "Emergency";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox8
+            // pictureBox1
             // 
-            textBox8.Location = new Point(24, 248);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(749, 68);
-            textBox8.TabIndex = 7;
+            pictureBox1.Dock = DockStyle.Left;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(84, 100);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // addRecord_fromDr
+            // DR_addRecord_from
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(858, 677);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "addRecord_fromDr";
+            ClientSize = new Size(981, 903);
+            Controls.Add(Main);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "DR_addRecord_from";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "addRecord_fromDr";
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            WindowState = FormWindowState.Maximized;
+            Main.ResumeLayout(false);
+            ContainerMain.ResumeLayout(false);
+            PersonalInfo.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            Buttons.ResumeLayout(false);
+            TopBar.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Panel panel3;
-        private Label label7;
+        private Panel Main;
+        private Panel PersonalInfo;
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox1;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox txtVisitReason;
         private Button button2;
         private Button button1;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private Label lblPrescription;
+        private Label lblNotes;
+        private Label lblDiagnosis;
+        private TextBox txtPrescription;
+        private TextBox txtNotes;
+        private TextBox txtDiagnosis;
+        private Button button3;
+        private Panel TopBar;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label2;
+        private Label label1;
+        private Label label3;
+        private PictureBox pictureBox1;
+        private TableLayoutPanel ContainerMain;
+        private Panel Buttons;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -14,49 +14,76 @@ namespace apex_management_sys
         public RP_Queue()
         {
             InitializeComponent();
-            lblWelcome.Text = $"Welcome To The Queue {Session.CurrentReceptionist.GetFullName()}";
+            //lblWelcome.Text = $"Welcome To The Queue {Session.CurrentReceptionist.GetFullName()}";
         }
         private void LoadWaitingPatients()
         {
             string query = @"
-            SELECT
-                q.QueueNumber AS 'Queue Number',
-                CONCAT(p.FirstName, ' ', p.LastName) AS 'Patient Name',
-                TIMESTAMPDIFF(YEAR, p.DateOfBirth, CURDATE()) AS Age,
-                q.CheckInTime AS 'Arrival Time',
-                pl.LevelName AS Priority,
-                q.ReasonForVisit AS 'Reason for Visit'
-            FROM Queue q
-            INNER JOIN Patient p
-                ON q.PatientID = p.PatientID
-            INNER JOIN PriorityLevel pl
-                ON q.PriorityID = pl.PriorityID
-            WHERE DATE(q.CheckInTime) = CURDATE()
-              AND q.Status = 'Waiting'
-            ORDER BY
-                pl.LevelRank ASC,
-                q.CheckInTime ASC;";
+    SELECT
+        q.QueueID,
+        q.QueueNumber AS 'Queue Number',
+        CONCAT(p.FirstName, ' ', p.LastName) AS 'Patient Name',
+        TIMESTAMPDIFF(YEAR, p.DateOfBirth, CURDATE()) AS Age,
+        q.CheckInTime AS 'Arrival Time',
+        pl.LevelName AS Priority,
+        q.ReasonForVisit AS 'Reason for Visit'
+    FROM Queue q
+    INNER JOIN Patient p
+        ON q.PatientID = p.PatientID
+    INNER JOIN PriorityLevel pl
+        ON q.PriorityID = pl.PriorityID
+    WHERE DATE(q.CheckInTime) = CURDATE()
+      AND q.Status = 'Waiting'
+    ORDER BY
+        pl.LevelRank ASC,
+        q.CheckInTime ASC;";
 
             using (MySqlConnection connection = DatabaseHelper.GetConnection())
             using (MySqlCommand command = new MySqlCommand(query, connection))
             using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
             {
                 DataTable table = new DataTable();
-
                 adapter.Fill(table);
-
                 WaitingGrid.DataSource = table;
             }
+
             WaitingGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             WaitingGrid.ClearSelection();
             WaitingGrid.CurrentCell = null;
             WaitingGrid.ColumnHeadersDefaultCellStyle.Font = new Font(
                 WaitingGrid.Font,
                 FontStyle.Bold
-             );
+            );
+
             foreach (DataGridViewColumn column in WaitingGrid.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            // QueueID is only needed for Cancel — keep it out of the display
+            if (WaitingGrid.Columns["QueueID"] != null)
+                WaitingGrid.Columns["QueueID"].Visible = false;
+
+            // Priority colour coding
+            foreach (DataGridViewRow row in WaitingGrid.Rows)
+            {
+                if (row.Cells["Priority"].Value == null) continue;
+
+                switch (row.Cells["Priority"].Value.ToString())
+                {
+                    case "Emergency":
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(245, 205, 205);
+                        row.DefaultCellStyle.ForeColor = Color.FromArgb(150, 30, 30);
+                        break;
+                    case "Urgent":
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(250, 232, 200);
+                        row.DefaultCellStyle.ForeColor = Color.FromArgb(150, 95, 20);
+                        break;
+                    default: // Routine
+                        row.DefaultCellStyle.BackColor = Color.White;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                        break;
+                }
             }
         }
         private void LoadServedPatients()
@@ -106,52 +133,21 @@ namespace apex_management_sys
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Registration Regst = new Registration();
-            Regst.Show();
-            this.Close();
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient Search = new RP_SearchPatient();
-            Search.Show();
-            this.Close();
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Close();
-        }
-
-        private void Admissions_Click(object sender, EventArgs e)
-        {
-            Registration R = new Registration();
-            R.Show();
-            this.Close();
-        }
-
-        private void Patients_Click(object sender, EventArgs e)
-        {
-            RP_SearchPatient sp = new RP_SearchPatient();
-            sp.Show();
-            this.Close();
-        }
-
-        private void Dashboard_Click(object sender, EventArgs e)
-        {
-            home h = new home();
-            h.Show();
-            this.Close();
-        }
-
         private void RP_Queue_Load(object sender, EventArgs e)
         {
             BeginInvoke(new Action(() =>
             {
                 LoadWaitingPatients();
                 LoadServedPatients();
+                btnQueue.Visible = Session.CurrentUser.HasPermission(Permission.ManageQueue);
+                btnDoctors.Visible = Session.CurrentUser.HasPermission(Permission.AddConsultationNote);
+                btnAppointments.Visible = Session.CurrentUser.HasPermission(Permission.BookAppointment);
+                btnPatients.Visible = Session.CurrentUser.HasPermission(Permission.ViewPatientRecords);
+                btnEmployees.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+                btnDashboard.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+                Main.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
+
+                btnQueue.Enabled = false;
             }));
         }
 
@@ -163,19 +159,107 @@ namespace apex_management_sys
             ServedGrid.ClearSelection();
             ServedGrid.CurrentCell = null;
         }
-
-        private void Appointments_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Appointment ap = new Appointment();
-            ap.Show();
+            home h = new home();
+            h.Show();
             this.Close();
         }
 
-        private void Doctors_Click(object sender, EventArgs e)
+        private void btnPatients_Click(object sender, EventArgs e)
         {
-            DR_Doctor drd = new DR_Doctor();
-            drd.Show();
+            RP_SearchPatient r = new RP_SearchPatient();
+            r.Show();
             this.Close();
+        }
+
+        private void btnDoctors_Click(object sender, EventArgs e)
+        {
+            DR_Doctor d = new DR_Doctor();
+            d.Show();
+            this.Close();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            newAccount na = new newAccount();
+            na.Show();
+            this.Close();
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            Appointment a = new Appointment();
+            a.Show();
+            this.Close();
+        }
+
+        private void btnQueue_Click(object sender, EventArgs e)
+        {
+            RP_Queue q = new RP_Queue();
+            q.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+            Login.Instance.Show();
+            this.Close();
+        }
+
+        private void WaitingGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            btnCancel.Enabled = WaitingGrid.SelectedRows.Count > 0;
+        }
+
+        private void ServedGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ServedGrid.SelectedRows.Count > 0)
+            {
+                WaitingGrid.ClearSelection();
+                btnCancel.Enabled = false;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (WaitingGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a patient in the queue to cancel.",
+                    "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            int queueId = Convert.ToInt32(WaitingGrid.CurrentRow.Cells["QueueID"].Value);
+            string patientName = WaitingGrid.CurrentRow.Cells["Patient Name"].Value.ToString();
+
+            DialogResult confirm = MessageBox.Show(
+                $"Cancel the queue entry for {patientName}?",
+                "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    string query = "UPDATE Queue SET Status = 'Cancelled' WHERE QueueID = @QueueID";
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@QueueID", queueId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                LoadWaitingPatients();
+                LoadServedPatients();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Could not cancel queue entry: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
