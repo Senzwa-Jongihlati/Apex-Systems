@@ -283,7 +283,7 @@
             // 
             label14.AutoSize = true;
             label14.ForeColor = Color.Red;
-            label14.Location = new Point(110, 63);
+            label14.Location = new Point(24, 61);
             label14.Name = "label14";
             label14.Size = new Size(95, 23);
             label14.TabIndex = 2;
@@ -292,7 +292,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(24, 63);
+            label13.Location = new Point(145, 61);
             label13.Name = "label13";
             label13.Size = new Size(82, 23);
             label13.TabIndex = 1;
@@ -316,6 +316,7 @@
             btnSkip.TabIndex = 7;
             btnSkip.Text = "Skip Patient";
             btnSkip.UseVisualStyleBackColor = true;
+            btnSkip.Click += btnSkip_Click_1;
             // 
             // LivePanels
             // 

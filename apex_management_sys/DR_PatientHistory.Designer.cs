@@ -46,8 +46,8 @@
             txtNotes = new TextBox();
             lblNotes = new Label();
             Prescriptions = new Panel();
-            lblPrescriptions = new Label();
             txtPrescriptions = new TextBox();
+            lblPrescriptions = new Label();
             btnClose = new Button();
             TopBar.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -190,6 +190,7 @@
             dataGridView1.Location = new Point(0, 59);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1042, 89);
             dataGridView1.TabIndex = 0;
@@ -264,16 +265,6 @@
             Prescriptions.Size = new Size(1042, 125);
             Prescriptions.TabIndex = 5;
             // 
-            // lblPrescriptions
-            // 
-            lblPrescriptions.Dock = DockStyle.Top;
-            lblPrescriptions.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrescriptions.Location = new Point(0, 0);
-            lblPrescriptions.Name = "lblPrescriptions";
-            lblPrescriptions.Size = new Size(1042, 25);
-            lblPrescriptions.TabIndex = 4;
-            lblPrescriptions.Text = "Prescription (optional):";
-            // 
             // txtPrescriptions
             // 
             txtPrescriptions.Dock = DockStyle.Fill;
@@ -283,6 +274,16 @@
             txtPrescriptions.Name = "txtPrescriptions";
             txtPrescriptions.Size = new Size(1042, 100);
             txtPrescriptions.TabIndex = 7;
+            // 
+            // lblPrescriptions
+            // 
+            lblPrescriptions.Dock = DockStyle.Top;
+            lblPrescriptions.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrescriptions.Location = new Point(0, 0);
+            lblPrescriptions.Name = "lblPrescriptions";
+            lblPrescriptions.Size = new Size(1042, 25);
+            lblPrescriptions.TabIndex = 4;
+            lblPrescriptions.Text = "Prescription (optional):";
             // 
             // btnClose
             // 
@@ -307,7 +308,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "DR_PatientHistory";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DR_PatientHistory";
+            Text = " ";
             WindowState = FormWindowState.Maximized;
             TopBar.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

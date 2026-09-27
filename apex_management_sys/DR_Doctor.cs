@@ -35,6 +35,9 @@ namespace apex_management_sys
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
 
+            lblWelcome.Text = $"Welcome Dr {Session.CurrentUser.LastName}";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             RefreshDashboard();
         }
 
@@ -143,7 +146,7 @@ namespace apex_management_sys
             dataGridView1.DataSource = table;
         }
 
-        private void btnSkip_Click(object sender, EventArgs e)
+        private void btnSkip_Click_1(object sender, EventArgs e)
         {
             if (_currentQueueId == null) return;
 
