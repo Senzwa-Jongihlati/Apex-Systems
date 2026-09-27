@@ -244,6 +244,7 @@
             button3.TabIndex = 2;
             button3.Text = "View Patient History";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label8
             // 

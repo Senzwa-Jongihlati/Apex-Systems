@@ -56,7 +56,6 @@
             panel5 = new Panel();
             pictureBox1 = new PictureBox();
             TodaysApp = new Label();
-            label12 = new Label();
             label11 = new Label();
             panel6 = new Panel();
             pictureBox3 = new PictureBox();
@@ -155,6 +154,7 @@
             dataGridView1.Location = new Point(0, 64);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(967, 228);
             dataGridView1.TabIndex = 1;
@@ -277,6 +277,7 @@
             button1.TabIndex = 3;
             button1.Text = "OPEN Record";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label14
             // 
@@ -360,7 +361,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(119, 35);
+            label8.Location = new Point(119, 42);
             label8.Name = "label8";
             label8.Size = new Size(28, 32);
             label8.TabIndex = 1;
@@ -382,7 +383,6 @@
             panel5.BackColor = SystemColors.ButtonHighlight;
             panel5.Controls.Add(pictureBox1);
             panel5.Controls.Add(TodaysApp);
-            panel5.Controls.Add(label12);
             panel5.Controls.Add(label11);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(647, 4);
@@ -405,31 +405,21 @@
             // 
             TodaysApp.AutoSize = true;
             TodaysApp.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TodaysApp.Location = new Point(123, 24);
+            TodaysApp.Location = new Point(107, 39);
             TodaysApp.Name = "TodaysApp";
             TodaysApp.Size = new Size(33, 37);
             TodaysApp.TabIndex = 6;
             TodaysApp.Text = "0";
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(107, 85);
-            label12.Name = "label12";
-            label12.Size = new Size(110, 20);
-            label12.TabIndex = 5;
-            label12.Text = "Appointments";
-            // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(107, 65);
+            label11.Location = new Point(107, 83);
             label11.Name = "label11";
-            label11.Size = new Size(65, 20);
+            label11.Size = new Size(163, 20);
             label11.TabIndex = 4;
-            label11.Text = "Today's ";
+            label11.Text = "Today's appointments";
             // 
             // panel6
             // 
@@ -447,7 +437,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(27, 39);
+            pictureBox3.Location = new Point(33, 39);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(64, 64);
             pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -458,7 +448,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(103, 27);
+            label6.Location = new Point(103, 39);
             label6.Name = "label6";
             label6.Size = new Size(33, 37);
             label6.TabIndex = 7;
@@ -468,7 +458,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(103, 81);
+            label7.Location = new Point(103, 83);
             label7.Name = "label7";
             label7.Size = new Size(127, 20);
             label7.TabIndex = 6;
@@ -798,7 +788,6 @@
         private Panel panel6;
         private Panel panel5;
         private Label TodaysApp;
-        private Label label12;
         private Label label11;
         private PictureBox pictureBox3;
         private Label label6;
