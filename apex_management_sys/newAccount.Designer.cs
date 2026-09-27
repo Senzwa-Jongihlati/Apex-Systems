@@ -708,6 +708,7 @@
             btnDashboard.TabIndex = 20;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // Main
             // 
@@ -740,6 +741,7 @@
             btnLogout.TabIndex = 18;
             btnLogout.Text = "log out";
             btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnQueue
             // 
@@ -758,6 +760,7 @@
             btnQueue.TabIndex = 17;
             btnQueue.Text = "Queue";
             btnQueue.UseVisualStyleBackColor = false;
+            btnQueue.Click += btnQueue_Click;
             // 
             // btnAppointments
             // 
@@ -776,6 +779,7 @@
             btnAppointments.TabIndex = 15;
             btnAppointments.Text = "Appointments";
             btnAppointments.UseVisualStyleBackColor = false;
+            btnAppointments.Click += btnAppointments_Click;
             // 
             // Clinical
             // 
@@ -808,6 +812,7 @@
             btnEmployees.TabIndex = 13;
             btnEmployees.Text = "Employees";
             btnEmployees.UseVisualStyleBackColor = false;
+            btnEmployees.Click += btnEmployees_Click;
             // 
             // btnDoctors
             // 
@@ -826,6 +831,7 @@
             btnDoctors.TabIndex = 12;
             btnDoctors.Text = "Doctors";
             btnDoctors.UseVisualStyleBackColor = false;
+            btnDoctors.Click += btnDoctors_Click;
             // 
             // btnPatients
             // 
@@ -844,6 +850,7 @@
             btnPatients.TabIndex = 11;
             btnPatients.Text = "Patients";
             btnPatients.UseVisualStyleBackColor = false;
+            btnPatients.Click += btnPatients_Click;
             // 
             // Management
             // 
@@ -889,7 +896,9 @@
             Controls.Add(SideBar);
             Margin = new Padding(3, 4, 3, 4);
             Name = "newAccount";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "newAccount";
+            WindowState = FormWindowState.Maximized;
             Load += newAccount_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -907,14 +916,6 @@
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             ResumeLayout(false);
-
-            btnDashboard.Click += btnDashboard_Click;
-            btnPatients.Click += btnPatients_Click;
-            btnDoctors.Click += btnDoctors_Click;
-            btnEmployees.Click += btnEmployees_Click;
-            btnAppointments.Click += btnAppointments_Click;
-            btnQueue.Click += btnQueue_Click;
-            btnLogout.Click += btnLogout_Click;
         }
 
         #endregion

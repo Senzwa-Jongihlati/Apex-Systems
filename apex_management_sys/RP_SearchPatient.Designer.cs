@@ -49,6 +49,7 @@
             Sidebar_Border = new Panel();
             MainPanel = new Panel();
             Section = new TableLayoutPanel();
+            spacer = new Panel();
             SideBar = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnDashboard = new Button();
@@ -98,7 +99,6 @@
             lbl2IDNo.Name = "lbl2IDNo";
             lbl2IDNo.Size = new Size(1189, 50);
             lbl2IDNo.TabIndex = 1;
-            lbl2IDNo.Text = "Deshboard / Patients";
             lbl2IDNo.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // PatientGrid
@@ -112,7 +112,7 @@
             PatientGrid.Name = "PatientGrid";
             PatientGrid.RowHeadersWidth = 62;
             PatientGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            PatientGrid.Size = new Size(1185, 329);
+            PatientGrid.Size = new Size(1185, 312);
             PatientGrid.TabIndex = 15;
             // 
             // Search
@@ -123,7 +123,7 @@
             Search.Location = new Point(3, 169);
             Search.Margin = new Padding(3, 4, 3, 4);
             Search.Name = "Search";
-            Search.Size = new Size(1187, 95);
+            Search.Size = new Size(1187, 91);
             Search.TabIndex = 19;
             // 
             // tableLayoutPanel2
@@ -143,13 +143,13 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(1185, 93);
+            tableLayoutPanel2.Size = new Size(1185, 89);
             tableLayoutPanel2.TabIndex = 18;
             // 
             // txtSearch
             // 
             txtSearch.Dock = DockStyle.Fill;
-            txtSearch.Location = new Point(8, 50);
+            txtSearch.Location = new Point(8, 48);
             txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search by ID or Name";
@@ -163,7 +163,7 @@
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(8, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 46);
+            label2.Size = new Size(72, 44);
             label2.TabIndex = 0;
             label2.Text = "Search";
             label2.TextAlign = ContentAlignment.BottomLeft;
@@ -173,9 +173,9 @@
             ButtonControls.Controls.Add(btnReset);
             ButtonControls.Controls.Add(btnSave);
             ButtonControls.Dock = DockStyle.Fill;
-            ButtonControls.Location = new Point(775, 49);
+            ButtonControls.Location = new Point(775, 47);
             ButtonControls.Name = "ButtonControls";
-            ButtonControls.Size = new Size(407, 41);
+            ButtonControls.Size = new Size(407, 39);
             ButtonControls.TabIndex = 19;
             // 
             // btnReset
@@ -185,7 +185,7 @@
             btnReset.Location = new Point(0, 0);
             btnReset.Margin = new Padding(3, 4, 3, 4);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(180, 41);
+            btnReset.Size = new Size(180, 39);
             btnReset.TabIndex = 17;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = false;
@@ -197,7 +197,7 @@
             btnSave.Dock = DockStyle.Right;
             btnSave.Location = new Point(227, 0);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(180, 41);
+            btnSave.Size = new Size(180, 39);
             btnSave.TabIndex = 18;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -205,7 +205,7 @@
             // 
             // btnAddToQueue
             // 
-            btnAddToQueue.Location = new Point(362, 49);
+            btnAddToQueue.Location = new Point(362, 47);
             btnAddToQueue.Name = "btnAddToQueue";
             btnAddToQueue.Size = new Size(209, 29);
             btnAddToQueue.TabIndex = 20;
@@ -233,10 +233,10 @@
             Patient.Controls.Add(PatientGrid);
             Patient.Controls.Add(panel4);
             Patient.Dock = DockStyle.Fill;
-            Patient.Location = new Point(3, 272);
+            Patient.Location = new Point(3, 268);
             Patient.Margin = new Padding(3, 4, 3, 4);
             Patient.Name = "Patient";
-            Patient.Size = new Size(1187, 406);
+            Patient.Size = new Size(1187, 389);
             Patient.TabIndex = 21;
             // 
             // panel4
@@ -306,6 +306,7 @@
             Section.BackColor = Color.White;
             Section.ColumnCount = 1;
             Section.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Section.Controls.Add(spacer, 0, 5);
             Section.Controls.Add(Patient, 0, 4);
             Section.Controls.Add(Search, 0, 3);
             Section.Controls.Add(btnAddPatient, 0, 2);
@@ -313,14 +314,23 @@
             Section.Controls.Add(label1, 0, 0);
             Section.Location = new Point(58, 67);
             Section.Name = "Section";
-            Section.RowCount = 5;
+            Section.RowCount = 6;
             Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));
             Section.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             Section.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            Section.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             Section.Size = new Size(1193, 682);
             Section.TabIndex = 22;
+            // 
+            // spacer
+            // 
+            spacer.Dock = DockStyle.Bottom;
+            spacer.Location = new Point(3, 664);
+            spacer.Name = "spacer";
+            spacer.Size = new Size(1187, 15);
+            spacer.TabIndex = 23;
             // 
             // SideBar
             // 
@@ -631,5 +641,6 @@
         private PictureBox Logo;
         private Panel panel13;
         private Button btnAddToQueue;
+        private Panel spacer;
     }
 }

@@ -29,14 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DR_Doctor));
-            panel3 = new Panel();
-            groupBox2 = new GroupBox();
-            panel8 = new Panel();
-            button1 = new Button();
-            label14 = new Label();
-            label13 = new Label();
-            label10 = new Label();
-            panel9 = new Panel();
+            MainPanel = new Panel();
+            ContainerMain = new TableLayoutPanel();
+            TodaysAppointments = new Panel();
             dataGridView1 = new DataGridView();
             time = new DataGridViewTextBoxColumn();
             Patient = new DataGridViewTextBoxColumn();
@@ -45,26 +40,30 @@
             panel10 = new Panel();
             label15 = new Label();
             pictureBox4 = new PictureBox();
-            groupBox1 = new GroupBox();
-            panel6 = new Panel();
-            pictureBox3 = new PictureBox();
-            label6 = new Label();
-            label7 = new Label();
+            groupBox2 = new GroupBox();
+            PatientQueue = new TableLayoutPanel();
+            panel8 = new Panel();
+            button1 = new Button();
+            label14 = new Label();
+            label13 = new Label();
+            label10 = new Label();
+            btnSkip = new Button();
+            LivePanels = new TableLayoutPanel();
+            panel7 = new Panel();
+            label9 = new Label();
+            label8 = new Label();
+            pictureBox2 = new PictureBox();
             panel5 = new Panel();
             pictureBox1 = new PictureBox();
             TodaysApp = new Label();
             label12 = new Label();
             label11 = new Label();
-            panel7 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
-            pictureBox2 = new PictureBox();
+            panel6 = new Panel();
+            pictureBox3 = new PictureBox();
+            label6 = new Label();
+            label7 = new Label();
             panel4 = new Panel();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label1 = new Label();
-            label2 = new Label();
+            lblWelcome = new Label();
             Sidebar_Border = new Panel();
             SideBar = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -80,126 +79,84 @@
             Management = new Label();
             Logo = new PictureBox();
             panel13 = new Panel();
-            panel3.SuspendLayout();
-            groupBox2.SuspendLayout();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
+            MainPanel.SuspendLayout();
+            ContainerMain.SuspendLayout();
+            TodaysAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            groupBox1.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
+            PatientQueue.SuspendLayout();
+            panel8.SuspendLayout();
+            LivePanels.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel4.SuspendLayout();
             SideBar.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             SuspendLayout();
             // 
-            // panel3
+            // MainPanel
             // 
-            panel3.Controls.Add(groupBox2);
-            panel3.Controls.Add(groupBox1);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(label2);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel3.Location = new Point(201, 0);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(940, 899);
-            panel3.TabIndex = 1;
+            MainPanel.Controls.Add(ContainerMain);
+            MainPanel.Dock = DockStyle.Fill;
+            MainPanel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MainPanel.Location = new Point(201, 0);
+            MainPanel.Margin = new Padding(3, 4, 3, 4);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(1133, 783);
+            MainPanel.TabIndex = 1;
             // 
-            // groupBox2
+            // ContainerMain
             // 
-            groupBox2.Controls.Add(panel8);
-            groupBox2.Controls.Add(panel9);
-            groupBox2.Location = new Point(30, 392);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(848, 491);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "patient queue";
+            ContainerMain.ColumnCount = 3;
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.Controls.Add(TodaysAppointments, 1, 3);
+            ContainerMain.Controls.Add(groupBox2, 1, 2);
+            ContainerMain.Controls.Add(LivePanels, 1, 1);
+            ContainerMain.Controls.Add(panel4, 1, 0);
+            ContainerMain.Dock = DockStyle.Fill;
+            ContainerMain.Location = new Point(0, 0);
+            ContainerMain.Name = "ContainerMain";
+            ContainerMain.RowCount = 5;
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 200F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 65F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            ContainerMain.Size = new Size(1133, 783);
+            ContainerMain.TabIndex = 10;
             // 
-            // panel8
+            // TodaysAppointments
             // 
-            panel8.BackColor = SystemColors.ButtonHighlight;
-            panel8.Controls.Add(button1);
-            panel8.Controls.Add(label14);
-            panel8.Controls.Add(label13);
-            panel8.Controls.Add(label10);
-            panel8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            panel8.Location = new Point(23, 52);
-            panel8.Margin = new Padding(3, 4, 3, 4);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(800, 115);
-            panel8.TabIndex = 6;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(11, 61, 92);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(571, 31);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(184, 56);
-            button1.TabIndex = 3;
-            button1.Text = "OPEN Record";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.ForeColor = Color.Red;
-            label14.Location = new Point(110, 63);
-            label14.Name = "label14";
-            label14.Size = new Size(95, 23);
-            label14.TabIndex = 2;
-            label14.Text = "Emergency";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(24, 63);
-            label13.Name = "label13";
-            label13.Size = new Size(82, 23);
-            label13.TabIndex = 1;
-            label13.Text = "T. Mkhize";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(24, 15);
-            label10.Name = "label10";
-            label10.Size = new Size(193, 23);
-            label10.TabIndex = 0;
-            label10.Text = "Up next · queue no. 014";
-            // 
-            // panel9
-            // 
-            panel9.Controls.Add(dataGridView1);
-            panel9.Controls.Add(panel10);
-            panel9.Location = new Point(23, 212);
-            panel9.Margin = new Padding(3, 4, 3, 4);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(526, 271);
-            panel9.TabIndex = 7;
+            TodaysAppointments.BackColor = Color.White;
+            TodaysAppointments.Controls.Add(dataGridView1);
+            TodaysAppointments.Controls.Add(panel10);
+            TodaysAppointments.Dock = DockStyle.Fill;
+            TodaysAppointments.Location = new Point(83, 466);
+            TodaysAppointments.Margin = new Padding(3, 4, 3, 4);
+            TodaysAppointments.Name = "TodaysAppointments";
+            TodaysAppointments.Size = new Size(967, 292);
+            TodaysAppointments.TabIndex = 7;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { time, Patient, Reason, status });
-            dataGridView1.Location = new Point(3, 63);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 64);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(506, 55);
+            dataGridView1.Size = new Size(967, 228);
             dataGridView1.TabIndex = 1;
             // 
             // time
@@ -234,88 +191,191 @@
             // 
             panel10.Controls.Add(label15);
             panel10.Controls.Add(pictureBox4);
+            panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(0, 0);
             panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(817, 64);
+            panel10.Size = new Size(967, 64);
             panel10.TabIndex = 0;
             // 
             // label15
             // 
-            label15.AutoSize = true;
+            label15.Dock = DockStyle.Fill;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(61, 17);
+            label15.Location = new Point(66, 0);
             label15.Name = "label15";
-            label15.Size = new Size(163, 20);
+            label15.Size = new Size(901, 64);
             label15.TabIndex = 1;
             label15.Text = "Today's appointments";
+            label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox4
             // 
+            pictureBox4.Dock = DockStyle.Left;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(17, 4);
+            pictureBox4.Location = new Point(0, 0);
             pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(32, 32);
-            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.Size = new Size(66, 64);
+            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
             // 
-            // groupBox1
+            // groupBox2
             // 
-            groupBox1.Controls.Add(panel6);
-            groupBox1.Controls.Add(panel5);
-            groupBox1.Controls.Add(panel7);
-            groupBox1.Location = new Point(30, 163);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(833, 205);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "desboard";
+            groupBox2.BackColor = Color.White;
+            groupBox2.Controls.Add(PatientQueue);
+            groupBox2.Dock = DockStyle.Fill;
+            groupBox2.Location = new Point(83, 304);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(967, 154);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "patient queue";
             // 
-            // panel6
+            // PatientQueue
             // 
-            panel6.BackColor = SystemColors.ButtonHighlight;
-            panel6.Controls.Add(pictureBox3);
-            panel6.Controls.Add(label6);
-            panel6.Controls.Add(label7);
-            panel6.Location = new Point(299, 37);
-            panel6.Margin = new Padding(3, 4, 3, 4);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(249, 133);
-            panel6.TabIndex = 4;
+            PatientQueue.ColumnCount = 1;
+            PatientQueue.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            PatientQueue.Controls.Add(panel8, 0, 0);
+            PatientQueue.Controls.Add(btnSkip, 0, 1);
+            PatientQueue.Dock = DockStyle.Fill;
+            PatientQueue.Location = new Point(3, 24);
+            PatientQueue.Name = "PatientQueue";
+            PatientQueue.RowCount = 2;
+            PatientQueue.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
+            PatientQueue.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            PatientQueue.Size = new Size(961, 126);
+            PatientQueue.TabIndex = 7;
             // 
-            // pictureBox3
+            // panel8
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(27, 39);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(64, 64);
-            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox3.TabIndex = 8;
-            pictureBox3.TabStop = false;
+            panel8.BackColor = SystemColors.ButtonHighlight;
+            panel8.Controls.Add(button1);
+            panel8.Controls.Add(label14);
+            panel8.Controls.Add(label13);
+            panel8.Controls.Add(label10);
+            panel8.Dock = DockStyle.Fill;
+            panel8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            panel8.Location = new Point(3, 4);
+            panel8.Margin = new Padding(3, 4, 3, 4);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(955, 80);
+            panel8.TabIndex = 6;
             // 
-            // label6
+            // button1
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(103, 27);
-            label6.Name = "label6";
-            label6.Size = new Size(33, 37);
-            label6.TabIndex = 7;
-            label6.Text = "0";
+            button1.BackColor = Color.FromArgb(11, 61, 92);
+            button1.Dock = DockStyle.Right;
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(785, 0);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(170, 80);
+            button1.TabIndex = 3;
+            button1.Text = "OPEN Record";
+            button1.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // label14
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(103, 81);
-            label7.Name = "label7";
-            label7.Size = new Size(127, 20);
-            label7.TabIndex = 6;
-            label7.Text = "Waiting in queue";
+            label14.AutoSize = true;
+            label14.ForeColor = Color.Red;
+            label14.Location = new Point(110, 63);
+            label14.Name = "label14";
+            label14.Size = new Size(95, 23);
+            label14.TabIndex = 2;
+            label14.Text = "Emergency";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(24, 63);
+            label13.Name = "label13";
+            label13.Size = new Size(82, 23);
+            label13.TabIndex = 1;
+            label13.Text = "T. Mkhize";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(24, 15);
+            label10.Name = "label10";
+            label10.Size = new Size(193, 23);
+            label10.TabIndex = 0;
+            label10.Text = "Up next · queue no. 014";
+            // 
+            // btnSkip
+            // 
+            btnSkip.Dock = DockStyle.Left;
+            btnSkip.Location = new Point(3, 91);
+            btnSkip.Name = "btnSkip";
+            btnSkip.Size = new Size(177, 32);
+            btnSkip.TabIndex = 7;
+            btnSkip.Text = "Skip Patient";
+            btnSkip.UseVisualStyleBackColor = true;
+            // 
+            // LivePanels
+            // 
+            LivePanels.ColumnCount = 3;
+            LivePanels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            LivePanels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            LivePanels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            LivePanels.Controls.Add(panel7, 1, 0);
+            LivePanels.Controls.Add(panel5, 2, 0);
+            LivePanels.Controls.Add(panel6, 0, 0);
+            LivePanels.Dock = DockStyle.Fill;
+            LivePanels.Location = new Point(83, 103);
+            LivePanels.Name = "LivePanels";
+            LivePanels.RowCount = 1;
+            LivePanels.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            LivePanels.Size = new Size(967, 194);
+            LivePanels.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = SystemColors.ButtonHighlight;
+            panel7.Controls.Add(label9);
+            panel7.Controls.Add(label8);
+            panel7.Controls.Add(pictureBox2);
+            panel7.Dock = DockStyle.Fill;
+            panel7.Location = new Point(325, 4);
+            panel7.Margin = new Padding(3, 4, 3, 4);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(316, 186);
+            panel7.TabIndex = 5;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(119, 83);
+            label9.Name = "label9";
+            label9.Size = new Size(90, 20);
+            label9.TabIndex = 2;
+            label9.Text = "Admissions";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(119, 35);
+            label8.Name = "label8";
+            label8.Size = new Size(28, 32);
+            label8.TabIndex = 1;
+            label8.Text = "0";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(33, 39);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(64, 64);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // panel5
             // 
@@ -324,10 +384,11 @@
             panel5.Controls.Add(TodaysApp);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(label11);
-            panel5.Location = new Point(23, 37);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(647, 4);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(237, 133);
+            panel5.Size = new Size(317, 186);
             panel5.TabIndex = 3;
             // 
             // pictureBox1
@@ -370,110 +431,71 @@
             label11.TabIndex = 4;
             label11.Text = "Today's ";
             // 
-            // panel7
+            // panel6
             // 
-            panel7.BackColor = SystemColors.ButtonHighlight;
-            panel7.Controls.Add(label9);
-            panel7.Controls.Add(label8);
-            panel7.Controls.Add(pictureBox2);
-            panel7.Location = new Point(582, 37);
-            panel7.Margin = new Padding(3, 4, 3, 4);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(229, 133);
-            panel7.TabIndex = 5;
+            panel6.BackColor = SystemColors.ButtonHighlight;
+            panel6.Controls.Add(pictureBox3);
+            panel6.Controls.Add(label6);
+            panel6.Controls.Add(label7);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(3, 4);
+            panel6.Margin = new Padding(3, 4, 3, 4);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(316, 186);
+            panel6.TabIndex = 4;
             // 
-            // label9
+            // pictureBox3
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(119, 83);
-            label9.Name = "label9";
-            label9.Size = new Size(90, 20);
-            label9.TabIndex = 2;
-            label9.Text = "Admissions";
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(27, 39);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(64, 64);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox3.TabIndex = 8;
+            pictureBox3.TabStop = false;
             // 
-            // label8
+            // label6
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(119, 35);
-            label8.Name = "label8";
-            label8.Size = new Size(28, 32);
-            label8.TabIndex = 1;
-            label8.Text = "0";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(103, 27);
+            label6.Name = "label6";
+            label6.Size = new Size(33, 37);
+            label6.TabIndex = 7;
+            label6.Text = "0";
             // 
-            // pictureBox2
+            // label7
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(33, 39);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(64, 64);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(103, 81);
+            label7.Name = "label7";
+            label7.Size = new Size(127, 20);
+            label7.TabIndex = 6;
+            label7.Text = "Waiting in queue";
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(222, 235, 245);
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(label4);
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(label1);
-            panel4.Location = new Point(0, 0);
+            panel4.BackColor = SystemColors.Control;
+            panel4.Controls.Add(lblWelcome);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(83, 4);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(888, 124);
+            panel4.Size = new Size(967, 92);
             panel4.TabIndex = 2;
             // 
-            // label5
+            // lblWelcome
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(656, 37);
-            label5.Name = "label5";
-            label5.Size = new Size(214, 41);
-            label5.TabIndex = 3;
-            label5.Text = "September 28";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Red;
-            label4.Location = new Point(666, 84);
-            label4.Name = "label4";
-            label4.Size = new Size(83, 23);
-            label4.TabIndex = 2;
-            label4.Text = "09:23Am";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(30, 84);
-            label3.Name = "label3";
-            label3.Size = new Size(145, 20);
-            label3.TabIndex = 1;
-            label3.Text = "Dr (name, surname)";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(30, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(265, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Welcome back Doctor";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(718, 60);
-            label2.Name = "label2";
-            label2.Size = new Size(0, 20);
-            label2.TabIndex = 1;
+            lblWelcome.BackColor = Color.White;
+            lblWelcome.Dock = DockStyle.Fill;
+            lblWelcome.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.Location = new Point(0, 0);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(967, 92);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Welcome back Doctor";
+            lblWelcome.TextAlign = ContentAlignment.BottomLeft;
             // 
             // Sidebar_Border
             // 
@@ -481,7 +503,7 @@
             Sidebar_Border.Dock = DockStyle.Left;
             Sidebar_Border.Location = new Point(199, 0);
             Sidebar_Border.Name = "Sidebar_Border";
-            Sidebar_Border.Size = new Size(2, 899);
+            Sidebar_Border.Size = new Size(2, 783);
             Sidebar_Border.TabIndex = 14;
             // 
             // SideBar
@@ -494,7 +516,7 @@
             SideBar.Location = new Point(0, 0);
             SideBar.Margin = new Padding(3, 4, 3, 4);
             SideBar.Name = "SideBar";
-            SideBar.Size = new Size(199, 899);
+            SideBar.Size = new Size(199, 783);
             SideBar.TabIndex = 13;
             // 
             // tableLayoutPanel1
@@ -527,7 +549,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(199, 787);
+            tableLayoutPanel1.Size = new Size(199, 671);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // btnDashboard
@@ -546,6 +568,7 @@
             btnDashboard.TabIndex = 20;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // Main
             // 
@@ -571,13 +594,14 @@
             btnLogout.ForeColor = Color.FromArgb(0, 0, 0, 0);
             btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(3, 736);
+            btnLogout.Location = new Point(3, 620);
             btnLogout.Margin = new Padding(3, 4, 0, 0);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(196, 51);
             btnLogout.TabIndex = 18;
             btnLogout.Text = "log out";
             btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnQueue
             // 
@@ -596,6 +620,7 @@
             btnQueue.TabIndex = 17;
             btnQueue.Text = "Queue";
             btnQueue.UseVisualStyleBackColor = false;
+            btnQueue.Click += btnQueue_Click;
             // 
             // btnAppointments
             // 
@@ -614,6 +639,7 @@
             btnAppointments.TabIndex = 15;
             btnAppointments.Text = "Appointments";
             btnAppointments.UseVisualStyleBackColor = false;
+            btnAppointments.Click += btnAppointments_Click;
             // 
             // Clinical
             // 
@@ -646,6 +672,7 @@
             btnEmployees.TabIndex = 13;
             btnEmployees.Text = "Employees";
             btnEmployees.UseVisualStyleBackColor = false;
+            btnEmployees.Click += btnEmployees_Click;
             // 
             // btnDoctors
             // 
@@ -664,6 +691,7 @@
             btnDoctors.TabIndex = 12;
             btnDoctors.Text = "Doctors";
             btnDoctors.UseVisualStyleBackColor = false;
+            btnDoctors.Click += btnDoctors_Click;
             // 
             // btnPatients
             // 
@@ -682,6 +710,7 @@
             btnPatients.TabIndex = 11;
             btnPatients.Text = "Patients";
             btnPatients.UseVisualStyleBackColor = false;
+            btnPatients.Click += btnPatients_Click;
             // 
             // Management
             // 
@@ -721,61 +750,50 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1141, 899);
-            Controls.Add(panel3);
+            BackColor = Color.FromArgb(245, 248, 251);
+            ClientSize = new Size(1334, 783);
+            Controls.Add(MainPanel);
             Controls.Add(Sidebar_Border);
             Controls.Add(SideBar);
             Margin = new Padding(3, 4, 3, 4);
             Name = "DR_Doctor";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Doctor";
+            WindowState = FormWindowState.Maximized;
             Load += DR_Doctor_Load;
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel9.ResumeLayout(false);
+            MainPanel.ResumeLayout(false);
+            ContainerMain.ResumeLayout(false);
+            TodaysAppointments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel10.ResumeLayout(false);
-            panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            groupBox1.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox2.ResumeLayout(false);
+            PatientQueue.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            LivePanels.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             SideBar.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             ResumeLayout(false);
-
-            btnDashboard.Click += btnDashboard_Click;
-            btnPatients.Click += btnPatients_Click;
-            btnDoctors.Click += btnDoctors_Click;
-            btnEmployees.Click += btnEmployees_Click;
-            btnAppointments.Click += btnAppointments_Click;
-            btnQueue.Click += btnQueue_Click;
-            btnLogout.Click += btnLogout_Click;
         }
 
         #endregion
-        private Panel panel3;
-        private Label label1;
+        private Panel MainPanel;
+        private Label lblWelcome;
         private Panel panel4;
-        private Label label2;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Panel panel9;
-        private Panel panel8;
+        private Panel TodaysAppointments;
         private Panel panel7;
         private Panel panel6;
         private Panel panel5;
@@ -787,14 +805,9 @@
         private Label label7;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private GroupBox groupBox1;
         private Label label9;
         private Label label8;
         private GroupBox groupBox2;
-        private Label label14;
-        private Label label13;
-        private Label label10;
-        private Button button1;
         private Panel panel10;
         private PictureBox pictureBox4;
         private Label label15;
@@ -818,5 +831,14 @@
         private Label Management;
         private PictureBox Logo;
         private Panel panel13;
+        private TableLayoutPanel ContainerMain;
+        private TableLayoutPanel LivePanels;
+        private TableLayoutPanel PatientQueue;
+        private Panel panel8;
+        private Button button1;
+        private Label label14;
+        private Label label13;
+        private Label label10;
+        private Button btnSkip;
     }
 }
