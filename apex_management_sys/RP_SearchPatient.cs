@@ -11,6 +11,7 @@ namespace apex_management_sys
 {
     public partial class RP_SearchPatient : Form
     {
+        bool isDoctor = Session.CurrentUser.HasPermission(Permission.AddConsultationNote);
         public RP_SearchPatient()
         {
             InitializeComponent();
@@ -82,7 +83,7 @@ namespace apex_management_sys
         {
             grid.RowHeadersVisible = false;
             grid.AllowUserToAddRows = false;
-            grid.ReadOnly = false; // was true
+            grid.ReadOnly = isDoctor; // was true
             grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid.EnableHeadersVisualStyles = false;
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(222, 235, 245);
@@ -114,11 +115,6 @@ namespace apex_management_sys
                 }
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -135,6 +131,14 @@ namespace apex_management_sys
             Main.Visible = Session.CurrentUser.HasPermission(Permission.ManageStaff);
 
             btnPatients.Enabled = false;
+
+            // Doctors can look patients up and review history, but shouldn't be
+            // adding new patients or checking people into today's queue.            
+            btnAddPatient.Visible = !isDoctor;
+            btnAddToQueue.Visible = !isDoctor;
+            btnSave.Visible = !isDoctor;
+            btnViewHistory.Visible = isDoctor; // change to `isDoctor || Session.CurrentUser.HasPermission(Permission.ManageStaff)` if admins should see it too
+
             BeginInvoke(new Action(() =>
             {
                 LoadPatients();
@@ -254,6 +258,26 @@ namespace apex_management_sys
             {
                 MessageBox.Show($"Database error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnViewHistory_Click(object sender, EventArgs e)
+        {
+            if (PatientGrid.CurrentRow == null)
+            {
+                MessageBox.Show("Select a patient first.");
+                return;
+            }
+
+            DataRowView selected = (DataRowView)PatientGrid.CurrentRow.DataBoundItem;
+            int patientId = Convert.ToInt32(selected["ID"]);
+
+            DR_PatientHistory history = new DR_PatientHistory(patientId, true);
+            history.ShowDialog();
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            LoadPatients();
         }
     }
 }

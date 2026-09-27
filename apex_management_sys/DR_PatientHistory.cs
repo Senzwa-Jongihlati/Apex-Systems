@@ -1,36 +1,49 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace apex_management_sys
 {
     public partial class DR_PatientHistory : Form
     {
-        private readonly int _queueId;
+        private int _patientId;
 
+        // Opened mid-consultation (from DR_addRecord_from) — has an active queue entry.
         public DR_PatientHistory(int queueId)
         {
             InitializeComponent();
-            _queueId = queueId;
-
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.MultiSelect = false;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.AllowUserToAddRows = false;   // <-- removes the blank placeholder row
-            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
-            btnClose.Click += btnClose_Click;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            LoadPatientHeader();
+            ConfigureGrid();
+            LoadPatientHeaderFromQueue(queueId);
             LoadPatientHistory();
         }
 
-        private void LoadPatientHeader()
+        // Opened from a general patient search — no active queue entry.
+        public DR_PatientHistory(int patientId, bool isPatientId)
+        {
+            InitializeComponent();
+            ConfigureGrid();
+            _patientId = patientId;
+            LoadPatientHeaderFromPatient(patientId);
+            LoadPatientHistory();
+        }
+
+        private void ConfigureGrid()
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            btnClose.Click += btnClose_Click;
+        }
+
+        private void LoadPatientHeaderFromQueue(int queueId)
         {
             const string sql = @"
                 SELECT q.QueueNumber, p.PatientID, p.FirstName, p.LastName, pl.LevelName
@@ -42,24 +55,48 @@ namespace apex_management_sys
             using (var conn = DatabaseHelper.GetConnection())
             using (var cmd = new MySqlCommand(sql, conn))
             {
-                cmd.Parameters.AddWithValue("@queueId", _queueId);
+                cmd.Parameters.AddWithValue("@queueId", queueId);
 
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (!reader.Read()) return;
 
                     int queueNumber = reader.GetInt32(0);
-                    int patientId = reader.GetInt32(1);
+                    _patientId = reader.GetInt32(1);
                     string firstName = reader.GetString(2);
                     string lastName = reader.GetString(3);
                     string priority = reader.GetString(4);
 
                     label2.Text = $"{firstName} {lastName}";
-                    label1.Text = $"Patient no. {patientId} \u00b7 queue no. {queueNumber:000}";
+                    label1.Text = $"Patient no. {_patientId} \u00b7 queue no. {queueNumber:000}";
                     label3.Text = priority;
+                    label3.Visible = true;
                     label3.ForeColor = priority == "Emergency" ? Color.Red
                                       : priority == "Urgent" ? Color.OrangeRed
                                       : Color.Black;
+                }
+            }
+        }
+
+        private void LoadPatientHeaderFromPatient(int patientId)
+        {
+            const string sql = "SELECT FirstName, LastName FROM Patient WHERE PatientID = @patientId";
+
+            using (var conn = DatabaseHelper.GetConnection())
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@patientId", patientId);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (!reader.Read()) return;
+
+                    string firstName = reader.GetString(0);
+                    string lastName = reader.GetString(1);
+
+                    label2.Text = $"{firstName} {lastName}";
+                    label1.Text = $"Patient no. {patientId}";
+                    label3.Visible = false; // no active queue/priority to show here
                 }
             }
         }
@@ -72,14 +109,14 @@ namespace apex_management_sys
                 FROM ConsultationNote cn
                 JOIN Queue q ON q.QueueID = cn.QueueID
                 JOIN Doctor d ON d.DoctorID = cn.DoctorID
-                WHERE q.PatientID = (SELECT PatientID FROM Queue WHERE QueueID = @queueId)
+                WHERE q.PatientID = @patientId
                 ORDER BY cn.CreatedTime DESC";
 
             var table = new DataTable();
             using (var conn = DatabaseHelper.GetConnection())
             using (var adapter = new MySqlDataAdapter(sql, conn))
             {
-                adapter.SelectCommand.Parameters.AddWithValue("@queueId", _queueId);
+                adapter.SelectCommand.Parameters.AddWithValue("@patientId", _patientId);
                 adapter.Fill(table);
             }
 
@@ -91,7 +128,6 @@ namespace apex_management_sys
                 dataGridView1.Columns["VisitDate"].HeaderText = "Date";
                 dataGridView1.Columns["VisitDate"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
             }
-            // Prescription/Notes are shown in the boxes below instead of as grid columns.
             if (dataGridView1.Columns["Prescription"] != null) dataGridView1.Columns["Prescription"].Visible = false;
             if (dataGridView1.Columns["Notes"] != null) dataGridView1.Columns["Notes"].Visible = false;
 

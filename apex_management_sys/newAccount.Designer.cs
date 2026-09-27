@@ -95,6 +95,8 @@
             Management = new Label();
             Logo = new PictureBox();
             panel13 = new Panel();
+            ContainerMain = new TableLayoutPanel();
+            Header = new TableLayoutPanel();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -105,14 +107,15 @@
             SideBar.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
+            ContainerMain.SuspendLayout();
+            Header.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
-            panel2.Controls.Add(panel5);
-            panel2.Controls.Add(panel4);
-            panel2.Controls.Add(panel3);
-            panel2.Controls.Add(label16);
+            panel2.BackColor = Color.FromArgb(245, 248, 251);
+            panel2.Controls.Add(ContainerMain);
+            panel2.Controls.Add(Header);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(201, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
@@ -124,10 +127,11 @@
             // 
             panel5.BackColor = SystemColors.ButtonHighlight;
             panel5.Controls.Add(groupBox3);
-            panel5.Location = new Point(863, 108);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(861, 4);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(386, 744);
+            panel5.Size = new Size(383, 738);
             panel5.TabIndex = 6;
             // 
             // groupBox3
@@ -353,10 +357,11 @@
             // 
             panel4.BackColor = SystemColors.ControlLightLight;
             panel4.Controls.Add(groupBox2);
-            panel4.Location = new Point(425, 108);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(472, 4);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(424, 744);
+            panel4.Size = new Size(383, 738);
             panel4.TabIndex = 5;
             // 
             // groupBox2
@@ -430,10 +435,11 @@
             // 
             panel3.BackColor = SystemColors.ButtonHighlight;
             panel3.Controls.Add(groupBox1);
-            panel3.Location = new Point(19, 108);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(83, 4);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(399, 744);
+            panel3.Size = new Size(383, 738);
             panel3.TabIndex = 4;
             // 
             // groupBox1
@@ -629,13 +635,14 @@
             // 
             // label16
             // 
-            label16.AutoSize = true;
+            label16.Dock = DockStyle.Right;
             label16.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(1106, 24);
+            label16.Location = new Point(1142, 0);
             label16.Name = "label16";
-            label16.Size = new Size(102, 37);
+            label16.Size = new Size(102, 125);
             label16.TabIndex = 3;
             label16.Text = "Admin";
+            label16.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Sidebar_Border
             // 
@@ -886,6 +893,42 @@
             panel13.Size = new Size(834, 79);
             panel13.TabIndex = 1;
             // 
+            // ContainerMain
+            // 
+            ContainerMain.ColumnCount = 5;
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.Controls.Add(panel3, 1, 0);
+            ContainerMain.Controls.Add(panel4, 2, 0);
+            ContainerMain.Controls.Add(panel5, 3, 0);
+            ContainerMain.Dock = DockStyle.Fill;
+            ContainerMain.Location = new Point(0, 125);
+            ContainerMain.Name = "ContainerMain";
+            ContainerMain.RowCount = 1;
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            ContainerMain.Size = new Size(1327, 746);
+            ContainerMain.TabIndex = 8;
+            // 
+            // Header
+            // 
+            Header.ColumnCount = 3;
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            Header.Controls.Add(label16, 1, 0);
+            Header.Dock = DockStyle.Top;
+            Header.Location = new Point(0, 0);
+            Header.Name = "Header";
+            Header.RowCount = 1;
+            Header.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Header.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Header.Size = new Size(1327, 125);
+            Header.TabIndex = 7;
+            // 
             // newAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -901,7 +944,6 @@
             WindowState = FormWindowState.Maximized;
             Load += newAccount_Load;
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel5.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -915,6 +957,8 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
+            ContainerMain.ResumeLayout(false);
+            Header.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -985,5 +1029,7 @@
         private Label Management;
         private PictureBox Logo;
         private Panel panel13;
+        private TableLayoutPanel ContainerMain;
+        private TableLayoutPanel Header;
     }
 }
