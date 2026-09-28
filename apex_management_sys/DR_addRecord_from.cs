@@ -130,5 +130,6 @@ namespace apex_management_sys
             DR_PatientHistory history = new DR_PatientHistory(_queueId);
             history.ShowDialog();
         }
+
     }
 }

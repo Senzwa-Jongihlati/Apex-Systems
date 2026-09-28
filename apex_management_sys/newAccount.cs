@@ -69,6 +69,7 @@ namespace apex_management_sys
             bool isDoctor = role.Equals("Doctor", StringComparison.OrdinalIgnoreCase);
             string table = isDoctor ? "doctor" : "receptionist";
             string storedRole = isDoctor ? "Doctor" : "Receptionist";
+            string hash = BCrypt.Net.BCrypt.HashPassword(password);
 
             try
             {
@@ -76,20 +77,20 @@ namespace apex_management_sys
                 using (MySqlTransaction tx = conn.BeginTransaction())
                 {
                     string insertAccount = $@"INSERT INTO {table} 
-                        (Username, Password, FirstName, LastName, ContactNumber, Experience, Role, Address, CreatedOn)
-                        VALUES (@Username, @Password, @FirstName, @LastName, @ContactNumber, @Experience, @Role, @Address, @CreatedOn)";
+                        (Username, PasswordHash, FirstName, LastName, ContactNumber, Experience, Role, Address, DateHired)
+                        VALUES (@Username, @PasswordHash, @FirstName, @LastName, @ContactNumber, @Experience, @Role, @Address, @DateHired)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertAccount, conn, tx))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
-                        cmd.Parameters.AddWithValue("@Password", password);
+                        cmd.Parameters.AddWithValue("@PasswordHash", hash);
                         cmd.Parameters.AddWithValue("@FirstName", firstname);
                         cmd.Parameters.AddWithValue("@LastName", lastname);
                         cmd.Parameters.AddWithValue("@ContactNumber", phone);
                         cmd.Parameters.AddWithValue("@Experience", string.IsNullOrEmpty(experience) ? (object)DBNull.Value : experience);
                         cmd.Parameters.AddWithValue("@Role", storedRole);
                         cmd.Parameters.AddWithValue("@Address", address);
-                        cmd.Parameters.AddWithValue("@CreatedOn", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@DateHired", DateTime.Now);
                         cmd.ExecuteNonQuery();
                     }
 

@@ -30,6 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newAccount));
             panel2 = new Panel();
+            ContainerMain = new TableLayoutPanel();
+            panel3 = new Panel();
+            groupBox1 = new GroupBox();
+            txtLastname = new TextBox();
+            label19 = new Label();
+            label18 = new Label();
+            txtPhone = new TextBox();
+            txtExperience = new TextBox();
+            label17 = new Label();
+            btnCreateAcc = new Button();
+            txtAddress = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            cbRole = new ComboBox();
+            label3 = new Label();
+            txtFirstName = new TextBox();
+            txtPassword = new TextBox();
+            txtUsername = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            panel4 = new Panel();
+            groupBox2 = new GroupBox();
+            btnSearchAcc = new Button();
+            bntViewAcc = new Button();
+            lstAccounts = new ListBox();
+            txtSearchAccount = new TextBox();
+            label6 = new Label();
             panel5 = new Panel();
             groupBox3 = new GroupBox();
             btnSave = new Button();
@@ -53,32 +80,7 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            panel4 = new Panel();
-            groupBox2 = new GroupBox();
-            btnSearchAcc = new Button();
-            bntViewAcc = new Button();
-            lstAccounts = new ListBox();
-            txtSearchAccount = new TextBox();
-            label6 = new Label();
-            panel3 = new Panel();
-            groupBox1 = new GroupBox();
-            txtLastname = new TextBox();
-            label19 = new Label();
-            label18 = new Label();
-            txtPhone = new TextBox();
-            txtExperience = new TextBox();
-            label17 = new Label();
-            btnCreateAcc = new Button();
-            txtAddress = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            cbRole = new ComboBox();
-            label3 = new Label();
-            txtFirstName = new TextBox();
-            txtPassword = new TextBox();
-            txtUsername = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
+            Header = new TableLayoutPanel();
             label16 = new Label();
             Sidebar_Border = new Panel();
             SideBar = new Panel();
@@ -95,20 +97,18 @@
             Management = new Label();
             Logo = new PictureBox();
             panel13 = new Panel();
-            ContainerMain = new TableLayoutPanel();
-            Header = new TableLayoutPanel();
             panel2.SuspendLayout();
-            panel5.SuspendLayout();
-            groupBox3.SuspendLayout();
-            panel4.SuspendLayout();
-            groupBox2.SuspendLayout();
+            ContainerMain.SuspendLayout();
             panel3.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel4.SuspendLayout();
+            groupBox2.SuspendLayout();
+            panel5.SuspendLayout();
+            groupBox3.SuspendLayout();
+            Header.SuspendLayout();
             SideBar.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
-            ContainerMain.SuspendLayout();
-            Header.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -123,313 +123,25 @@
             panel2.Size = new Size(1327, 871);
             panel2.TabIndex = 1;
             // 
-            // panel5
+            // ContainerMain
             // 
-            panel5.BackColor = SystemColors.ButtonHighlight;
-            panel5.Controls.Add(groupBox3);
-            panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(861, 4);
-            panel5.Margin = new Padding(3, 4, 3, 4);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(383, 738);
-            panel5.TabIndex = 6;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(btnSave);
-            groupBox3.Controls.Add(txtViewLastName);
-            groupBox3.Controls.Add(label20);
-            groupBox3.Controls.Add(btnDelete);
-            groupBox3.Controls.Add(txtViewCreatedOn);
-            groupBox3.Controls.Add(txtViewAddress);
-            groupBox3.Controls.Add(txtViewType);
-            groupBox3.Controls.Add(txtViewPhone);
-            groupBox3.Controls.Add(txtViewExperience);
-            groupBox3.Controls.Add(txtViewFirstName);
-            groupBox3.Controls.Add(txtViewUsername);
-            groupBox3.Controls.Add(txtViewAccountId);
-            groupBox3.Controls.Add(label15);
-            groupBox3.Controls.Add(label14);
-            groupBox3.Controls.Add(label13);
-            groupBox3.Controls.Add(label12);
-            groupBox3.Controls.Add(label11);
-            groupBox3.Controls.Add(label10);
-            groupBox3.Controls.Add(label9);
-            groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Location = new Point(3, 7);
-            groupBox3.Margin = new Padding(3, 4, 3, 4);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(379, 729);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "View Account";
-            // 
-            // btnSave
-            // 
-            btnSave.BackColor = Color.FromArgb(11, 61, 92);
-            btnSave.ForeColor = SystemColors.ControlLightLight;
-            btnSave.Location = new Point(39, 673);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(107, 37);
-            btnSave.TabIndex = 20;
-            btnSave.Text = "Save Chages";
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click;
-            // 
-            // txtViewLastName
-            // 
-            txtViewLastName.Location = new Point(122, 167);
-            txtViewLastName.Margin = new Padding(3, 4, 3, 4);
-            txtViewLastName.Name = "txtViewLastName";
-            txtViewLastName.Size = new Size(211, 27);
-            txtViewLastName.TabIndex = 19;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(27, 169);
-            label20.Name = "label20";
-            label20.Size = new Size(82, 20);
-            label20.TabIndex = 18;
-            label20.Text = "Last Name:";
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = SystemColors.ActiveCaption;
-            btnDelete.Location = new Point(197, 673);
-            btnDelete.Margin = new Padding(3, 4, 3, 4);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(157, 44);
-            btnDelete.TabIndex = 17;
-            btnDelete.Text = "Delete Account";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // txtViewCreatedOn
-            // 
-            txtViewCreatedOn.Location = new Point(125, 616);
-            txtViewCreatedOn.Margin = new Padding(3, 4, 3, 4);
-            txtViewCreatedOn.Name = "txtViewCreatedOn";
-            txtViewCreatedOn.Size = new Size(209, 27);
-            txtViewCreatedOn.TabIndex = 16;
-            // 
-            // txtViewAddress
-            // 
-            txtViewAddress.Location = new Point(122, 448);
-            txtViewAddress.Margin = new Padding(3, 4, 3, 4);
-            txtViewAddress.Multiline = true;
-            txtViewAddress.Name = "txtViewAddress";
-            txtViewAddress.Size = new Size(213, 143);
-            txtViewAddress.TabIndex = 15;
-            // 
-            // txtViewType
-            // 
-            txtViewType.Location = new Point(122, 384);
-            txtViewType.Margin = new Padding(3, 4, 3, 4);
-            txtViewType.Name = "txtViewType";
-            txtViewType.Size = new Size(211, 27);
-            txtViewType.TabIndex = 14;
-            // 
-            // txtViewPhone
-            // 
-            txtViewPhone.Location = new Point(122, 333);
-            txtViewPhone.Margin = new Padding(3, 4, 3, 4);
-            txtViewPhone.Name = "txtViewPhone";
-            txtViewPhone.Size = new Size(211, 27);
-            txtViewPhone.TabIndex = 13;
-            // 
-            // txtViewExperience
-            // 
-            txtViewExperience.Location = new Point(122, 267);
-            txtViewExperience.Margin = new Padding(3, 4, 3, 4);
-            txtViewExperience.Name = "txtViewExperience";
-            txtViewExperience.Size = new Size(211, 27);
-            txtViewExperience.TabIndex = 12;
-            // 
-            // txtViewFirstName
-            // 
-            txtViewFirstName.Location = new Point(122, 219);
-            txtViewFirstName.Margin = new Padding(3, 4, 3, 4);
-            txtViewFirstName.Name = "txtViewFirstName";
-            txtViewFirstName.Size = new Size(211, 27);
-            txtViewFirstName.TabIndex = 11;
-            // 
-            // txtViewUsername
-            // 
-            txtViewUsername.Location = new Point(122, 103);
-            txtViewUsername.Margin = new Padding(3, 4, 3, 4);
-            txtViewUsername.Name = "txtViewUsername";
-            txtViewUsername.Size = new Size(211, 27);
-            txtViewUsername.TabIndex = 10;
-            // 
-            // txtViewAccountId
-            // 
-            txtViewAccountId.Location = new Point(122, 55);
-            txtViewAccountId.Margin = new Padding(3, 4, 3, 4);
-            txtViewAccountId.Name = "txtViewAccountId";
-            txtViewAccountId.Size = new Size(211, 27);
-            txtViewAccountId.TabIndex = 9;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(26, 616);
-            label15.Name = "label15";
-            label15.Size = new Size(85, 20);
-            label15.TabIndex = 8;
-            label15.Text = "Created on:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(26, 448);
-            label14.Name = "label14";
-            label14.Size = new Size(65, 20);
-            label14.TabIndex = 7;
-            label14.Text = "Address:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(25, 388);
-            label13.Name = "label13";
-            label13.Size = new Size(43, 20);
-            label13.TabIndex = 6;
-            label13.Text = "Type:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(25, 331);
-            label12.Name = "label12";
-            label12.Size = new Size(53, 20);
-            label12.TabIndex = 5;
-            label12.Text = "Phone:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(25, 277);
-            label11.Name = "label11";
-            label11.Size = new Size(84, 20);
-            label11.TabIndex = 4;
-            label11.Text = "Experience:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(25, 219);
-            label10.Name = "label10";
-            label10.Size = new Size(52, 20);
-            label10.TabIndex = 3;
-            label10.Text = "Name:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(25, 113);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 20);
-            label9.TabIndex = 2;
-            label9.Text = "Username:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(25, 103);
-            label8.Name = "label8";
-            label8.Size = new Size(0, 20);
-            label8.TabIndex = 1;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(25, 60);
-            label7.Name = "label7";
-            label7.Size = new Size(78, 20);
-            label7.TabIndex = 0;
-            label7.Text = "Acount ID:";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = SystemColors.ControlLightLight;
-            panel4.Controls.Add(groupBox2);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(472, 4);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(383, 738);
-            panel4.TabIndex = 5;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(btnSearchAcc);
-            groupBox2.Controls.Add(bntViewAcc);
-            groupBox2.Controls.Add(lstAccounts);
-            groupBox2.Controls.Add(txtSearchAccount);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(3, 7);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(405, 729);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Find Account";
-            // 
-            // btnSearchAcc
-            // 
-            btnSearchAcc.BackColor = SystemColors.ActiveCaption;
-            btnSearchAcc.Image = Properties.Resources.refer;
-            btnSearchAcc.Location = new Point(312, 20);
-            btnSearchAcc.Margin = new Padding(3, 4, 3, 4);
-            btnSearchAcc.Name = "btnSearchAcc";
-            btnSearchAcc.Size = new Size(65, 53);
-            btnSearchAcc.TabIndex = 4;
-            btnSearchAcc.UseVisualStyleBackColor = false;
-            btnSearchAcc.Click += btnSearchAcc_Click;
-            // 
-            // bntViewAcc
-            // 
-            bntViewAcc.BackColor = Color.Silver;
-            bntViewAcc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bntViewAcc.Location = new Point(127, 677);
-            bntViewAcc.Margin = new Padding(3, 4, 3, 4);
-            bntViewAcc.Name = "bntViewAcc";
-            bntViewAcc.Size = new Size(146, 40);
-            bntViewAcc.TabIndex = 3;
-            bntViewAcc.Text = "View";
-            bntViewAcc.UseVisualStyleBackColor = false;
-            bntViewAcc.Click += button1_Click;
-            // 
-            // lstAccounts
-            // 
-            lstAccounts.FormattingEnabled = true;
-            lstAccounts.Location = new Point(24, 137);
-            lstAccounts.Margin = new Padding(3, 4, 3, 4);
-            lstAccounts.Name = "lstAccounts";
-            lstAccounts.Size = new Size(353, 524);
-            lstAccounts.TabIndex = 2;
-            // 
-            // txtSearchAccount
-            // 
-            txtSearchAccount.Location = new Point(151, 81);
-            txtSearchAccount.Margin = new Padding(3, 4, 3, 4);
-            txtSearchAccount.Name = "txtSearchAccount";
-            txtSearchAccount.Size = new Size(226, 27);
-            txtSearchAccount.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(24, 85);
-            label6.Name = "label6";
-            label6.Size = new Size(107, 20);
-            label6.TabIndex = 0;
-            label6.Text = "Name / Phone:";
+            ContainerMain.ColumnCount = 5;
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            ContainerMain.Controls.Add(panel3, 1, 0);
+            ContainerMain.Controls.Add(panel4, 2, 0);
+            ContainerMain.Controls.Add(panel5, 3, 0);
+            ContainerMain.Dock = DockStyle.Fill;
+            ContainerMain.Location = new Point(0, 125);
+            ContainerMain.Name = "ContainerMain";
+            ContainerMain.RowCount = 1;
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            ContainerMain.Size = new Size(1327, 746);
+            ContainerMain.TabIndex = 8;
             // 
             // panel3
             // 
@@ -632,6 +344,330 @@
             label1.Size = new Size(95, 20);
             label1.TabIndex = 0;
             label1.Text = "Username * ";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.ControlLightLight;
+            panel4.Controls.Add(groupBox2);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(472, 4);
+            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(383, 738);
+            panel4.TabIndex = 5;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(btnSearchAcc);
+            groupBox2.Controls.Add(bntViewAcc);
+            groupBox2.Controls.Add(lstAccounts);
+            groupBox2.Controls.Add(txtSearchAccount);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Location = new Point(3, 7);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(405, 729);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Find Account";
+            // 
+            // btnSearchAcc
+            // 
+            btnSearchAcc.BackColor = SystemColors.ActiveCaption;
+            btnSearchAcc.Image = Properties.Resources.refer;
+            btnSearchAcc.Location = new Point(312, 20);
+            btnSearchAcc.Margin = new Padding(3, 4, 3, 4);
+            btnSearchAcc.Name = "btnSearchAcc";
+            btnSearchAcc.Size = new Size(65, 53);
+            btnSearchAcc.TabIndex = 4;
+            btnSearchAcc.UseVisualStyleBackColor = false;
+            btnSearchAcc.Click += btnSearchAcc_Click;
+            // 
+            // bntViewAcc
+            // 
+            bntViewAcc.BackColor = Color.Silver;
+            bntViewAcc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bntViewAcc.Location = new Point(127, 677);
+            bntViewAcc.Margin = new Padding(3, 4, 3, 4);
+            bntViewAcc.Name = "bntViewAcc";
+            bntViewAcc.Size = new Size(146, 40);
+            bntViewAcc.TabIndex = 3;
+            bntViewAcc.Text = "View";
+            bntViewAcc.UseVisualStyleBackColor = false;
+            bntViewAcc.Click += button1_Click;
+            // 
+            // lstAccounts
+            // 
+            lstAccounts.FormattingEnabled = true;
+            lstAccounts.Location = new Point(24, 137);
+            lstAccounts.Margin = new Padding(3, 4, 3, 4);
+            lstAccounts.Name = "lstAccounts";
+            lstAccounts.Size = new Size(353, 524);
+            lstAccounts.TabIndex = 2;
+            // 
+            // txtSearchAccount
+            // 
+            txtSearchAccount.Location = new Point(151, 81);
+            txtSearchAccount.Margin = new Padding(3, 4, 3, 4);
+            txtSearchAccount.Name = "txtSearchAccount";
+            txtSearchAccount.Size = new Size(226, 27);
+            txtSearchAccount.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(24, 85);
+            label6.Name = "label6";
+            label6.Size = new Size(107, 20);
+            label6.TabIndex = 0;
+            label6.Text = "Name / Phone:";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.ButtonHighlight;
+            panel5.Controls.Add(groupBox3);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(861, 4);
+            panel5.Margin = new Padding(3, 4, 3, 4);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(383, 738);
+            panel5.TabIndex = 6;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(btnSave);
+            groupBox3.Controls.Add(txtViewLastName);
+            groupBox3.Controls.Add(label20);
+            groupBox3.Controls.Add(btnDelete);
+            groupBox3.Controls.Add(txtViewCreatedOn);
+            groupBox3.Controls.Add(txtViewAddress);
+            groupBox3.Controls.Add(txtViewType);
+            groupBox3.Controls.Add(txtViewPhone);
+            groupBox3.Controls.Add(txtViewExperience);
+            groupBox3.Controls.Add(txtViewFirstName);
+            groupBox3.Controls.Add(txtViewUsername);
+            groupBox3.Controls.Add(txtViewAccountId);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(label14);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Controls.Add(label12);
+            groupBox3.Controls.Add(label11);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Controls.Add(label9);
+            groupBox3.Controls.Add(label8);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Location = new Point(3, 7);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(379, 729);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "View Account";
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(11, 61, 92);
+            btnSave.ForeColor = SystemColors.ControlLightLight;
+            btnSave.Location = new Point(27, 673);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(133, 44);
+            btnSave.TabIndex = 20;
+            btnSave.Text = "Save Chages";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // txtViewLastName
+            // 
+            txtViewLastName.Location = new Point(122, 167);
+            txtViewLastName.Margin = new Padding(3, 4, 3, 4);
+            txtViewLastName.Name = "txtViewLastName";
+            txtViewLastName.Size = new Size(211, 27);
+            txtViewLastName.TabIndex = 19;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(27, 169);
+            label20.Name = "label20";
+            label20.Size = new Size(82, 20);
+            label20.TabIndex = 18;
+            label20.Text = "Last Name:";
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = SystemColors.ActiveCaption;
+            btnDelete.Location = new Point(197, 673);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(157, 44);
+            btnDelete.TabIndex = 17;
+            btnDelete.Text = "Delete Account";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // txtViewCreatedOn
+            // 
+            txtViewCreatedOn.Location = new Point(125, 616);
+            txtViewCreatedOn.Margin = new Padding(3, 4, 3, 4);
+            txtViewCreatedOn.Name = "txtViewCreatedOn";
+            txtViewCreatedOn.Size = new Size(209, 27);
+            txtViewCreatedOn.TabIndex = 16;
+            // 
+            // txtViewAddress
+            // 
+            txtViewAddress.Location = new Point(122, 448);
+            txtViewAddress.Margin = new Padding(3, 4, 3, 4);
+            txtViewAddress.Multiline = true;
+            txtViewAddress.Name = "txtViewAddress";
+            txtViewAddress.Size = new Size(213, 143);
+            txtViewAddress.TabIndex = 15;
+            // 
+            // txtViewType
+            // 
+            txtViewType.Location = new Point(122, 384);
+            txtViewType.Margin = new Padding(3, 4, 3, 4);
+            txtViewType.Name = "txtViewType";
+            txtViewType.Size = new Size(211, 27);
+            txtViewType.TabIndex = 14;
+            // 
+            // txtViewPhone
+            // 
+            txtViewPhone.Location = new Point(122, 333);
+            txtViewPhone.Margin = new Padding(3, 4, 3, 4);
+            txtViewPhone.Name = "txtViewPhone";
+            txtViewPhone.Size = new Size(211, 27);
+            txtViewPhone.TabIndex = 13;
+            // 
+            // txtViewExperience
+            // 
+            txtViewExperience.Location = new Point(122, 267);
+            txtViewExperience.Margin = new Padding(3, 4, 3, 4);
+            txtViewExperience.Name = "txtViewExperience";
+            txtViewExperience.Size = new Size(211, 27);
+            txtViewExperience.TabIndex = 12;
+            // 
+            // txtViewFirstName
+            // 
+            txtViewFirstName.Location = new Point(122, 219);
+            txtViewFirstName.Margin = new Padding(3, 4, 3, 4);
+            txtViewFirstName.Name = "txtViewFirstName";
+            txtViewFirstName.Size = new Size(211, 27);
+            txtViewFirstName.TabIndex = 11;
+            // 
+            // txtViewUsername
+            // 
+            txtViewUsername.Location = new Point(122, 103);
+            txtViewUsername.Margin = new Padding(3, 4, 3, 4);
+            txtViewUsername.Name = "txtViewUsername";
+            txtViewUsername.Size = new Size(211, 27);
+            txtViewUsername.TabIndex = 10;
+            // 
+            // txtViewAccountId
+            // 
+            txtViewAccountId.Location = new Point(122, 55);
+            txtViewAccountId.Margin = new Padding(3, 4, 3, 4);
+            txtViewAccountId.Name = "txtViewAccountId";
+            txtViewAccountId.Size = new Size(211, 27);
+            txtViewAccountId.TabIndex = 9;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(26, 616);
+            label15.Name = "label15";
+            label15.Size = new Size(85, 20);
+            label15.TabIndex = 8;
+            label15.Text = "Created on:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(26, 448);
+            label14.Name = "label14";
+            label14.Size = new Size(65, 20);
+            label14.TabIndex = 7;
+            label14.Text = "Address:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(25, 388);
+            label13.Name = "label13";
+            label13.Size = new Size(43, 20);
+            label13.TabIndex = 6;
+            label13.Text = "Type:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(25, 331);
+            label12.Name = "label12";
+            label12.Size = new Size(53, 20);
+            label12.TabIndex = 5;
+            label12.Text = "Phone:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(25, 277);
+            label11.Name = "label11";
+            label11.Size = new Size(84, 20);
+            label11.TabIndex = 4;
+            label11.Text = "Experience:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(25, 219);
+            label10.Name = "label10";
+            label10.Size = new Size(52, 20);
+            label10.TabIndex = 3;
+            label10.Text = "Name:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(25, 113);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 20);
+            label9.TabIndex = 2;
+            label9.Text = "Username:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(25, 103);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 20);
+            label8.TabIndex = 1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(25, 60);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 20);
+            label7.TabIndex = 0;
+            label7.Text = "Acount ID:";
+            // 
+            // Header
+            // 
+            Header.ColumnCount = 3;
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            Header.Controls.Add(label16, 1, 0);
+            Header.Dock = DockStyle.Top;
+            Header.Location = new Point(0, 0);
+            Header.Name = "Header";
+            Header.RowCount = 1;
+            Header.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Header.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            Header.Size = new Size(1327, 125);
+            Header.TabIndex = 7;
             // 
             // label16
             // 
@@ -893,42 +929,6 @@
             panel13.Size = new Size(834, 79);
             panel13.TabIndex = 1;
             // 
-            // ContainerMain
-            // 
-            ContainerMain.ColumnCount = 5;
-            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            ContainerMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            ContainerMain.Controls.Add(panel3, 1, 0);
-            ContainerMain.Controls.Add(panel4, 2, 0);
-            ContainerMain.Controls.Add(panel5, 3, 0);
-            ContainerMain.Dock = DockStyle.Fill;
-            ContainerMain.Location = new Point(0, 125);
-            ContainerMain.Name = "ContainerMain";
-            ContainerMain.RowCount = 1;
-            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            ContainerMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            ContainerMain.Size = new Size(1327, 746);
-            ContainerMain.TabIndex = 8;
-            // 
-            // Header
-            // 
-            Header.ColumnCount = 3;
-            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            Header.Controls.Add(label16, 1, 0);
-            Header.Dock = DockStyle.Top;
-            Header.Location = new Point(0, 0);
-            Header.Name = "Header";
-            Header.RowCount = 1;
-            Header.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Header.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Header.Size = new Size(1327, 125);
-            Header.TabIndex = 7;
-            // 
             // newAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -944,21 +944,21 @@
             WindowState = FormWindowState.Maximized;
             Load += newAccount_Load;
             panel2.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            panel4.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            ContainerMain.ResumeLayout(false);
             panel3.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel4.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            panel5.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            Header.ResumeLayout(false);
             SideBar.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
-            ContainerMain.ResumeLayout(false);
-            Header.ResumeLayout(false);
             ResumeLayout(false);
         }
 

@@ -43,6 +43,10 @@ namespace apex_management_sys
         {
             Header.Text = "Welcome Back";
 
+            RecentAppointmentGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            QueueGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            RecentPatientGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             LoadDashboardData();
             dashboardRefreshTimer.Start();
         }

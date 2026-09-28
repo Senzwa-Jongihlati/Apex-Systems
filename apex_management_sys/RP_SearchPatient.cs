@@ -83,7 +83,7 @@ namespace apex_management_sys
         {
             grid.RowHeadersVisible = false;
             grid.AllowUserToAddRows = false;
-            grid.ReadOnly = isDoctor; // was true
+            grid.ReadOnly = isDoctor;
             grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid.EnableHeadersVisualStyles = false;
             grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(222, 235, 245);
@@ -137,7 +137,9 @@ namespace apex_management_sys
             btnAddPatient.Visible = !isDoctor;
             btnAddToQueue.Visible = !isDoctor;
             btnSave.Visible = !isDoctor;
-            btnViewHistory.Visible = isDoctor; // change to `isDoctor || Session.CurrentUser.HasPermission(Permission.ManageStaff)` if admins should see it too
+            btnViewHistory.Visible = isDoctor;
+            btnReset.Visible = !isDoctor;
+            // change to `isDoctor || Session.CurrentUser.HasPermission(Permission.ManageStaff)` if admins should see it too
 
             BeginInvoke(new Action(() =>
             {
