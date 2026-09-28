@@ -25,7 +25,7 @@ namespace apex_management_sys
         {
             [UserRole.Receptionist] = new HashSet<Permission> { Permission.ManageQueue, Permission.BookAppointment, Permission.ViewPatientRecords },
             [UserRole.Doctor] = new HashSet<Permission> { Permission.ViewPatientRecords, Permission.AddConsultationNote, Permission.ViewPatientHistory },
-            [UserRole.Admin] = new HashSet<Permission> { Permission.ManageStaff, Permission.ViewReports, Permission.ManageQueue, Permission.ViewPatientRecords }
+            [UserRole.Admin] = new HashSet<Permission> { Permission.ManageStaff, Permission.ViewReports, Permission.ManageQueue, Permission.ViewPatientRecords, Permission.BookAppointment }
         };
         public bool VerifyPassword(string password)
         {

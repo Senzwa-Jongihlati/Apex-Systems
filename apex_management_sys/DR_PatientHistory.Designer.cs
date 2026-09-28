@@ -242,6 +242,7 @@
             txtNotes.Margin = new Padding(3, 4, 3, 4);
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
+            txtNotes.ReadOnly = true;
             txtNotes.Size = new Size(1042, 197);
             txtNotes.TabIndex = 6;
             // 
@@ -272,6 +273,7 @@
             txtPrescriptions.Margin = new Padding(3, 4, 3, 4);
             txtPrescriptions.Multiline = true;
             txtPrescriptions.Name = "txtPrescriptions";
+            txtPrescriptions.ReadOnly = true;
             txtPrescriptions.Size = new Size(1042, 100);
             txtPrescriptions.TabIndex = 7;
             // 

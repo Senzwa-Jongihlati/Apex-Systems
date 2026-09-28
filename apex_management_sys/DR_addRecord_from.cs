@@ -82,12 +82,27 @@ namespace apex_management_sys
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(txtNotes.Text))
+            {
+                MessageBox.Show("Please enter your notes", "Missing Notes",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show(
+                "Save this consultation note and mark the patient as completed?\nThis cannot be undone.",
+                "Confirm Save",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
 
             using (var conn = DatabaseHelper.GetConnection())
             {
                 using (var cmd = new MySqlCommand(
                     @"INSERT INTO ConsultationNote (QueueID, DoctorID, Diagnosis, Prescription, Notes, CreatedTime)
-                      VALUES (@queueId, @doctorId, @diagnosis, @prescription, @notes, NOW())", conn))
+              VALUES (@queueId, @doctorId, @diagnosis, @prescription, @notes, NOW())", conn))
                 {
                     cmd.Parameters.AddWithValue("@queueId", _queueId);
                     cmd.Parameters.AddWithValue("@doctorId", Session.CurrentUser.StaffId);
@@ -104,6 +119,9 @@ namespace apex_management_sys
                     cmd.ExecuteNonQuery();
                 }
             }
+
+            MessageBox.Show("Consultation note saved successfully.", "Saved",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             DialogResult = DialogResult.OK;
             Close();

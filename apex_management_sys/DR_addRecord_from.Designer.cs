@@ -377,7 +377,7 @@
             button2.Size = new Size(109, 45);
             button2.TabIndex = 1;
             button2.Text = "Save note";
-            button2.UseVisualStyleBackColor = false;
+            button2.UseVisualStyleBackColor = false;            
             // 
             // TopBar
             // 
