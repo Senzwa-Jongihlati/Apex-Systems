@@ -150,6 +150,15 @@ namespace apex_management_sys
         {
             if (_currentQueueId == null) return;
 
+            DialogResult confirm = MessageBox.Show(
+                "Are you sure you want to skip this patient?",
+                "Confirm Skip",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
             using (var conn = DatabaseHelper.GetConnection())
             using (var cmd = new MySqlCommand(
                 "UPDATE Queue SET Status = 'Cancelled' WHERE QueueID = @id", conn))
@@ -190,7 +199,7 @@ namespace apex_management_sys
 
             int queueId = GetOrCreateQueueEntryForAppointment(appointmentId);
 
-            DR_addRecord_from ar = new DR_addRecord_from(queueId);
+            DR_addRecord_from ar = new DR_addRecord_from(queueId, true);
             ar.ShowDialog();
 
             RefreshDashboard();

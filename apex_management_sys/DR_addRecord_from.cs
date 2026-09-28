@@ -12,6 +12,7 @@ namespace apex_management_sys
     public partial class DR_addRecord_from : Form
     {
         private readonly int _queueId;
+        private readonly bool _isAppointment;
 
         public DR_addRecord_from()
         {
@@ -22,6 +23,18 @@ namespace apex_management_sys
         {
             InitializeComponent();
             _queueId = queueId;
+
+            button1.Click += button1_Click_1;
+            button2.Click += button2_Click;
+
+            LoadPatientRecord();
+        }
+        public DR_addRecord_from(int queueId, bool isAppointment = false)
+        {
+            InitializeComponent();
+
+            _queueId = queueId;
+            _isAppointment = isAppointment;
 
             button1.Click += button1_Click_1;
             button2.Click += button2_Click;
@@ -118,10 +131,25 @@ namespace apex_management_sys
                     cmd.Parameters.AddWithValue("@queueId", _queueId);
                     cmd.ExecuteNonQuery();
                 }
+                if (_isAppointment)
+                {
+                    using (var cmd = new MySqlCommand(
+                        @"UPDATE Appointment a
+                      JOIN Queue q ON q.QueueID = @queueId
+                      SET a.Status = 'Completed'
+                      WHERE a.PatientID = q.PatientID
+                        AND DATE(a.AppointmentDateTime) = CURDATE()
+                        AND a.Status = 'Scheduled'", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@queueId", _queueId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
             }
 
             MessageBox.Show("Consultation note saved successfully.", "Saved",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             DialogResult = DialogResult.OK;
             Close();
@@ -129,6 +157,34 @@ namespace apex_management_sys
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                if (_isAppointment)
+                {
+                    // This Queue record was only created temporarily
+                    // for the appointment, so remove it.
+                    using (var cmd = new MySqlCommand(
+                        "DELETE FROM Queue WHERE QueueID = @queueId", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@queueId", _queueId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    // Normal queue patient, so return them to Waiting.
+                    using (var cmd = new MySqlCommand(
+                        @"UPDATE Queue
+                  SET Status = 'Waiting',
+                      DoctorID = NULL
+                  WHERE QueueID = @queueId", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@queueId", _queueId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
             DialogResult = DialogResult.Cancel;
             Close();
         }
