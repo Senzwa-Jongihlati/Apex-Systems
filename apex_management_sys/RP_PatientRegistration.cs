@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace apex_management_sys
@@ -38,6 +39,110 @@ namespace apex_management_sys
         {
             InitializeComponent();
 
+        }
+
+        // ---------- Validation helpers ----------
+
+        private bool Fail(Control field, string message, string title = "Invalid Input")
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            field.Focus();
+            return false;
+        }
+
+        private static bool IsValidName(string s) =>
+            Regex.IsMatch(s, @"^\p{L}[\p{L} '\-]{1,49}$");
+
+        private static bool IsValidPhone(string s) =>
+            Regex.IsMatch(s, @"^0\d{9}$");   // SA format: 10 digits starting with 0
+
+        private bool ValidatePatientDetails()
+        {
+            string firstName = txtName.Text.Trim();
+            string lastName = txtSurname.Text.Trim();
+            string idNumber = txtID.Text.Trim();
+            string phone = txtPhoneNo.Text.Trim();
+            string emergency = txtEmergancyContact.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(firstName))
+                return Fail(txtName, "First name is required.", "Missing Info");
+            if (!IsValidName(firstName))
+                return Fail(txtName, "First name can only contain letters, spaces, hyphens and apostrophes (2-50 characters).");
+
+            if (string.IsNullOrWhiteSpace(lastName))
+                return Fail(txtSurname, "Surname is required.", "Missing Info");
+            if (!IsValidName(lastName))
+                return Fail(txtSurname, "Surname can only contain letters, spaces, hyphens and apostrophes (2-50 characters).");
+
+            if (cbIDType.SelectedIndex == -1)
+                return Fail(cbIDType, "Please select an identification type.", "Missing Info");
+
+            if (string.IsNullOrEmpty(idNumber))
+                return Fail(txtID, "Identification number is required.", "Missing Info");
+
+            bool isPassport = cbIDType.Text.IndexOf("passport", StringComparison.OrdinalIgnoreCase) >= 0;
+            if (isPassport)
+            {
+                if (!Regex.IsMatch(idNumber, @"^[A-Za-z0-9]{6,15}$"))
+                    return Fail(txtID, "Passport number must be 6-15 letters/numbers with no spaces.");
+            }
+            else if (!Regex.IsMatch(idNumber, @"^\d{13}$"))
+            {
+                return Fail(txtID, "ID number must be exactly 13 digits.");
+            }
+
+            if (cbGender.SelectedIndex == -1)
+                return Fail(cbGender, "Please select a gender.", "Missing Info");
+
+            DateTime dob = dateTimePicker1.Value.Date;
+            if (dob > DateTime.Today)
+                return Fail(dateTimePicker1, "Date of birth cannot be in the future.");
+            if (dob < DateTime.Today.AddYears(-120))
+                return Fail(dateTimePicker1, "Please check the date of birth.");
+            if (dob == DateTime.Today &&
+                MessageBox.Show("The date of birth is set to today. Is this correct?", "Confirm Date of Birth",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                dateTimePicker1.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(phone))
+                return Fail(txtPhoneNo, "Phone number is required.", "Missing Info");
+            if (!IsValidPhone(phone))
+                return Fail(txtPhoneNo, "Phone number must be 10 digits and start with 0 (e.g. 0821234567).");
+
+            if (string.IsNullOrEmpty(emergency))
+                return Fail(txtEmergancyContact, "Emergency contact is required.", "Missing Info");
+            if (!IsValidPhone(emergency))
+                return Fail(txtEmergancyContact, "Emergency contact must be 10 digits and start with 0.");
+
+            if (string.IsNullOrWhiteSpace(txtAddress.Text))
+                return Fail(txtAddress, "Address is required.", "Missing Info");
+
+            return true;
+        }
+
+        private bool ValidateVisitDetails()
+        {
+            if (cbPriority.SelectedIndex == -1)
+                return Fail(cbPriority, "Please select a priority level.", "Missing Info");
+
+            if (string.IsNullOrWhiteSpace(txtReasonForVisit.Text))
+                return Fail(txtReasonForVisit, "Please enter the reason for the visit.", "Missing Info");
+
+            return true;
+        }
+
+        private bool PatientIdExists(string idNumber)
+        {
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            using (MySqlCommand cmd = new MySqlCommand(
+                "SELECT COUNT(*) FROM Patient WHERE IdentificationNumber = @IdNumber", conn))
+            {
+                cmd.Parameters.AddWithValue("@IdNumber", idNumber);
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -173,119 +278,93 @@ namespace apex_management_sys
 
         private void btnRegisterPatient_Click(object sender, EventArgs e)
         {
-            if (isQueueMode) { AddExistingPatientToQueue(); return; }
+            if (isQueueMode)
+            {
+                if (!ValidateVisitDetails()) return;
+                AddExistingPatientToQueue();
+                return;
+            }
+
+            if (!ValidatePatientDetails() || !ValidateVisitDetails()) return;
+
+            string idNumber = txtID.Text.Trim();
+
             try
             {
-                // Get values from the form
-                string patientid = txtID.Text;
-                string firstName = txtName.Text;
-                string lastName = txtSurname.Text;
-                DateTime dob = dateTimePicker1.Value;
-                string gender = cbGender.Text;
-                string contactNumber = txtPhoneNo.Text;
-                string address = txtAddress.Text;
-                string reasonForVisit = txtReasonForVisit.Text;
-                string emergencyContact = txtEmergancyContact.Text;
-                //string priority = cbPriority.Text;
-
-                // Connect to database
-                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                if (PatientIdExists(idNumber))
                 {
-                    string query = @"INSERT INTO Patient 
-                    (FirstName, LastName, DateOfBirth, Gender, 
-                     IdentificationType,IdentificationNumber,ContactNumber, Address,RegisteredDate, 
-                     EmergencyContact)
-                    VALUES 
-                    (@FirstName, @LastName, @DateOfBirth, @Gender,@IdentificationType,@IdentificationNumber,
-                     @ContactNumber, @Address, @RegisteredDate,
-                     @EmergencyContact)";
-                    string query2 = @"INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, ReasonForVisit)
-                    SELECT COALESCE(MAX(QueueNumber), 0) + 1,
-                           LAST_INSERT_ID(),
-                           (SELECT PriorityID FROM PriorityLevel WHERE LevelName = @Priority),
-                           @ReceptionistID,
-                           @ReasonForVisit
-                    FROM Queue
-                    WHERE DATE(CheckInTime) = CURDATE()";
-
-                    using (MySqlTransaction tx = conn.BeginTransaction())
-                    {
-                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                        {
-
-                            cmd.Parameters.AddWithValue("@FirstName", firstName);
-                            cmd.Parameters.AddWithValue("@LastName", lastName);
-                            cmd.Parameters.AddWithValue("@DateOfBirth", dob);
-                            cmd.Parameters.AddWithValue("@Gender", gender);
-                            cmd.Parameters.AddWithValue("@IdentificationType", cbIDType.Text); // Assuming txtID contains the identification type
-                            cmd.Parameters.AddWithValue("@IdentificationNumber", txtID.Text); // Assuming txtID contains the identification number
-                            cmd.Parameters.AddWithValue("@ContactNumber", contactNumber);
-                            cmd.Parameters.AddWithValue("@Address", address);
-                            cmd.Parameters.AddWithValue("@RegisteredDate", DateTime.Now);
-                            cmd.Parameters.AddWithValue("@EmergencyContact", emergencyContact);
-
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (MySqlCommand cmd2 = new MySqlCommand(query2, conn))
-                        {
-                            cmd2.Parameters.AddWithValue("@Priority", cbPriority.Text);
-                            cmd2.Parameters.AddWithValue("@ReceptionistID", Session.CurrentUser.StaffId);
-                            cmd2.Parameters.AddWithValue("@ReasonForVisit", reasonForVisit.Trim());
-                            cmd2.ExecuteNonQuery();
-                        }
-                        tx.Commit();
-                    }
+                    MessageBox.Show(
+                        "A patient with this identification number is already registered.\nUse Search Patient to add them to the queue.",
+                        "Duplicate Patient", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtID.Focus();
+                    return;
                 }
 
-                MessageBox.Show(
-                    "Patient registered successfully!",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                using (MySqlTransaction tx = conn.BeginTransaction())
+                {
+                    const string insertPatient = @"INSERT INTO Patient
+                (FirstName, LastName, DateOfBirth, Gender, IdentificationType, IdentificationNumber,
+                 ContactNumber, Address, RegisteredDate, EmergencyContact)
+                VALUES
+                (@FirstName, @LastName, @DateOfBirth, @Gender, @IdentificationType, @IdentificationNumber,
+                 @ContactNumber, @Address, @RegisteredDate, @EmergencyContact)";
 
-                // Optional: clear the form
-                txtID.Clear();
-                txtName.Clear();
-                txtSurname.Clear();
-                txtPhoneNo.Clear();
-                txtAddress.Clear();
-                txtReasonForVisit.Clear();
-                txtEmergancyContact.Clear();
+                    const string insertQueue = @"INSERT INTO Queue (QueueNumber, PatientID, PriorityID, ReceptionistID, ReasonForVisit)
+                SELECT COALESCE(MAX(QueueNumber), 0) + 1,
+                       LAST_INSERT_ID(),
+                       (SELECT PriorityID FROM PriorityLevel WHERE LevelName = @Priority),
+                       @ReceptionistID,
+                       @ReasonForVisit
+                FROM Queue
+                WHERE DATE(CheckInTime) = CURDATE()";
 
-                cbGender.SelectedIndex = -1;
-                cbPriority.SelectedIndex = -1;
+                    using (MySqlCommand cmd = new MySqlCommand(insertPatient, conn, tx))
+                    {
+                        cmd.Parameters.AddWithValue("@FirstName", txtName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@LastName", txtSurname.Text.Trim());
+                        cmd.Parameters.AddWithValue("@DateOfBirth", dateTimePicker1.Value.Date);
+                        cmd.Parameters.AddWithValue("@Gender", cbGender.Text);
+                        cmd.Parameters.AddWithValue("@IdentificationType", cbIDType.Text);
+                        cmd.Parameters.AddWithValue("@IdentificationNumber", idNumber);
+                        cmd.Parameters.AddWithValue("@ContactNumber", txtPhoneNo.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Address", txtAddress.Text.Trim());
+                        cmd.Parameters.AddWithValue("@RegisteredDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@EmergencyContact", txtEmergancyContact.Text.Trim());
+                        cmd.ExecuteNonQuery();
+                    }
 
-                //Refresh Search Patient Form
-                this.DialogResult = DialogResult.OK;
+                    using (MySqlCommand cmd2 = new MySqlCommand(insertQueue, conn, tx))
+                    {
+                        cmd2.Parameters.AddWithValue("@Priority", cbPriority.Text);
+                        cmd2.Parameters.AddWithValue("@ReceptionistID", Session.CurrentUser.StaffId);
+                        cmd2.Parameters.AddWithValue("@ReasonForVisit", txtReasonForVisit.Text.Trim());
+                        cmd2.ExecuteNonQuery();
+                    }
+
+                    tx.Commit();   // if anything above throws, disposing tx rolls both inserts back
+                }
+
+                MessageBox.Show("Patient registered successfully!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;   // refreshes Search Patient
                 this.Close();
             }
-            catch (FormatException)
+            catch (MySqlException ex) when (ex.Number == 1062)
             {
-                MessageBox.Show(
-                    "Please check that the Patient ID is a number and all required fields are entered correctly.",
-                    "Invalid Input",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show("This patient is already registered (duplicate identification number).",
+                    "Duplicate Patient", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(
-                    $"Database error: {ex.Message}",
-                    "Database Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show($"Database error: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Error registering patient: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show($"Error registering patient: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
