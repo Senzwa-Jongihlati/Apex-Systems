@@ -294,8 +294,9 @@
             // btnClose
             // 
             btnClose.AutoSize = true;
-            btnClose.BackColor = SystemColors.ActiveCaption;
+            btnClose.BackColor = Color.FromArgb(120, 130, 140);
             btnClose.Dock = DockStyle.Left;
+            btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Location = new Point(153, 589);
             btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";

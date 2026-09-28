@@ -273,6 +273,7 @@
             // 
             button1.BackColor = Color.FromArgb(11, 61, 92);
             button1.Dock = DockStyle.Right;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(785, 0);
             button1.Margin = new Padding(3, 4, 3, 4);
@@ -313,13 +314,16 @@
             // 
             // btnSkip
             // 
+            btnSkip.BackColor = Color.FromArgb(190, 110, 30);
             btnSkip.Dock = DockStyle.Left;
+            btnSkip.FlatStyle = FlatStyle.Flat;
+            btnSkip.ForeColor = Color.White;
             btnSkip.Location = new Point(3, 91);
             btnSkip.Name = "btnSkip";
             btnSkip.Size = new Size(177, 32);
             btnSkip.TabIndex = 7;
             btnSkip.Text = "Skip Patient";
-            btnSkip.UseVisualStyleBackColor = true;
+            btnSkip.UseVisualStyleBackColor = false;
             btnSkip.Click += btnSkip_Click_1;
             // 
             // LivePanels

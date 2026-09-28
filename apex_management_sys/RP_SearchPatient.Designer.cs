@@ -104,7 +104,10 @@
             // 
             // PatientGrid
             // 
-            PatientGrid.AllowUserToOrderColumns = true;
+            PatientGrid.AllowUserToAddRows = false;
+            PatientGrid.AllowUserToDeleteRows = false;
+            PatientGrid.AllowUserToResizeColumns = false;
+            PatientGrid.AllowUserToResizeRows = false;
             PatientGrid.BackgroundColor = Color.White;
             PatientGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PatientGrid.Dock = DockStyle.Fill;
@@ -151,13 +154,15 @@
             // 
             // btnAddToQueue
             // 
+            btnAddToQueue.BackColor = Color.FromArgb(52, 120, 180);
             btnAddToQueue.Dock = DockStyle.Left;
+            btnAddToQueue.FlatStyle = FlatStyle.Flat;
             btnAddToQueue.Location = new Point(362, 47);
             btnAddToQueue.Name = "btnAddToQueue";
             btnAddToQueue.Size = new Size(196, 39);
             btnAddToQueue.TabIndex = 20;
             btnAddToQueue.Text = "Add to Queue";
-            btnAddToQueue.UseVisualStyleBackColor = true;
+            btnAddToQueue.UseVisualStyleBackColor = false;
             btnAddToQueue.Click += btnAddToQueue_Click;
             // 
             // txtSearch
@@ -194,19 +199,22 @@
             // 
             // btnReset
             // 
+            btnReset.BackColor = Color.FromArgb(120, 130, 140);
             btnReset.Dock = DockStyle.Left;
+            btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.Location = new Point(0, 0);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(137, 39);
             btnReset.TabIndex = 19;
             btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
+            btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click_1;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(45, 140, 120);
             btnSave.Dock = DockStyle.Right;
+            btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Location = new Point(227, 0);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(180, 39);
@@ -217,19 +225,22 @@
             // 
             // btnViewHistory
             // 
+            btnViewHistory.BackColor = Color.FromArgb(52, 120, 180);
             btnViewHistory.Dock = DockStyle.Right;
+            btnViewHistory.FlatStyle = FlatStyle.Flat;
             btnViewHistory.Location = new Point(1002, 3);
             btnViewHistory.Name = "btnViewHistory";
             btnViewHistory.Size = new Size(180, 38);
             btnViewHistory.TabIndex = 21;
             btnViewHistory.Text = "View Patient History";
-            btnViewHistory.UseVisualStyleBackColor = true;
+            btnViewHistory.UseVisualStyleBackColor = false;
             btnViewHistory.Click += btnViewHistory_Click;
             // 
             // btnAddPatient
             // 
             btnAddPatient.BackColor = Color.FromArgb(11, 61, 92);
             btnAddPatient.Dock = DockStyle.Right;
+            btnAddPatient.FlatStyle = FlatStyle.Flat;
             btnAddPatient.ForeColor = SystemColors.ControlLightLight;
             btnAddPatient.Location = new Point(1006, 104);
             btnAddPatient.Margin = new Padding(3, 4, 3, 4);

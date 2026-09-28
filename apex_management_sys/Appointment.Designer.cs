@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
             MainPanel = new Panel();
             MainSection = new TableLayoutPanel();
@@ -157,6 +157,7 @@
             // 
             txtPatient.Location = new Point(18, 89);
             txtPatient.Name = "txtPatient";
+            txtPatient.PlaceholderText = "Enter patient ID number ";
             txtPatient.Size = new Size(377, 27);
             txtPatient.TabIndex = 10;
             // 
@@ -320,14 +321,14 @@
             AppointmentsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AppointmentsGrid.BackgroundColor = Color.White;
             AppointmentsGrid.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 235, 245);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(180, 205, 225);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(222, 235, 245);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 31.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(180, 205, 225);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            AppointmentsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             AppointmentsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             AppointmentsGrid.Dock = DockStyle.Fill;
             AppointmentsGrid.EnableHeadersVisualStyles = false;

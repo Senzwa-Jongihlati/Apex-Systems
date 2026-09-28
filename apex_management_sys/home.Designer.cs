@@ -308,6 +308,8 @@
             // 
             RecentPatientGrid.AllowUserToAddRows = false;
             RecentPatientGrid.AllowUserToDeleteRows = false;
+            RecentPatientGrid.AllowUserToResizeColumns = false;
+            RecentPatientGrid.AllowUserToResizeRows = false;
             RecentPatientGrid.BackgroundColor = Color.White;
             RecentPatientGrid.BorderStyle = BorderStyle.None;
             RecentPatientGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -434,6 +436,8 @@
             // QueueGrid
             // 
             QueueGrid.AllowUserToAddRows = false;
+            QueueGrid.AllowUserToResizeColumns = false;
+            QueueGrid.AllowUserToResizeRows = false;
             QueueGrid.BackgroundColor = Color.White;
             QueueGrid.BorderStyle = BorderStyle.None;
             QueueGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -843,6 +847,8 @@
             // 
             RecentAppointmentGrid.AllowUserToAddRows = false;
             RecentAppointmentGrid.AllowUserToDeleteRows = false;
+            RecentAppointmentGrid.AllowUserToResizeColumns = false;
+            RecentAppointmentGrid.AllowUserToResizeRows = false;
             RecentAppointmentGrid.BackgroundColor = Color.White;
             RecentAppointmentGrid.BorderStyle = BorderStyle.None;
             RecentAppointmentGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -34,6 +34,7 @@
             label5 = new Label();
             ServedGrid = new DataGridView();
             Components = new Panel();
+            btnCancel = new Button();
             Waiting = new Panel();
             WaitingGrid = new DataGridView();
             panel1 = new Panel();
@@ -57,7 +58,6 @@
             Management = new Label();
             Logo = new PictureBox();
             panel13 = new Panel();
-            btnCancel = new Button();
             ((System.ComponentModel.ISupportInitialize)ServedGrid).BeginInit();
             Components.SuspendLayout();
             Waiting.SuspendLayout();
@@ -112,6 +112,8 @@
             // 
             ServedGrid.AllowUserToAddRows = false;
             ServedGrid.AllowUserToDeleteRows = false;
+            ServedGrid.AllowUserToResizeColumns = false;
+            ServedGrid.AllowUserToResizeRows = false;
             ServedGrid.BackgroundColor = Color.White;
             ServedGrid.BorderStyle = BorderStyle.None;
             ServedGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,6 +141,19 @@
             Components.Size = new Size(1276, 1001);
             Components.TabIndex = 0;
             // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(120, 130, 140);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(1056, 527);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(190, 40);
+            btnCancel.TabIndex = 16;
+            btnCancel.Text = "Cancel Queue";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // Waiting
             // 
             Waiting.Controls.Add(WaitingGrid);
@@ -152,6 +167,8 @@
             // 
             WaitingGrid.AllowUserToAddRows = false;
             WaitingGrid.AllowUserToDeleteRows = false;
+            WaitingGrid.AllowUserToResizeColumns = false;
+            WaitingGrid.AllowUserToResizeRows = false;
             WaitingGrid.BackgroundColor = Color.White;
             WaitingGrid.BorderStyle = BorderStyle.None;
             WaitingGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -478,16 +495,6 @@
             panel13.Name = "panel13";
             panel13.Size = new Size(834, 79);
             panel13.TabIndex = 1;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Location = new Point(1056, 527);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(190, 40);
-            btnCancel.TabIndex = 16;
-            btnCancel.Text = "Cancel Queue";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
             // 
             // RP_Queue
             // 

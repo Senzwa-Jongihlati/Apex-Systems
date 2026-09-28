@@ -240,6 +240,7 @@
             // btnCreateAcc
             // 
             btnCreateAcc.BackColor = Color.FromArgb(11, 61, 92);
+            btnCreateAcc.FlatStyle = FlatStyle.Flat;
             btnCreateAcc.ForeColor = SystemColors.ButtonFace;
             btnCreateAcc.Location = new Point(119, 681);
             btnCreateAcc.Margin = new Padding(3, 4, 3, 4);
@@ -387,6 +388,7 @@
             // bntViewAcc
             // 
             bntViewAcc.BackColor = Color.Silver;
+            bntViewAcc.FlatStyle = FlatStyle.Flat;
             bntViewAcc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntViewAcc.Location = new Point(127, 677);
             bntViewAcc.Margin = new Padding(3, 4, 3, 4);
@@ -469,6 +471,7 @@
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(11, 61, 92);
+            btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = SystemColors.ControlLightLight;
             btnSave.Location = new Point(27, 673);
             btnSave.Margin = new Padding(3, 4, 3, 4);
@@ -499,6 +502,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = SystemColors.ActiveCaption;
+            btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Location = new Point(197, 673);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";

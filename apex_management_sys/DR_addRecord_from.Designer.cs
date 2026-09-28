@@ -236,14 +236,16 @@
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(52, 120, 180);
             button3.Cursor = Cursors.Hand;
             button3.Dock = DockStyle.Right;
+            button3.FlatStyle = FlatStyle.Popup;
             button3.Location = new Point(672, 49);
             button3.Name = "button3";
             button3.Size = new Size(140, 67);
             button3.TabIndex = 2;
             button3.Text = "View Patient History";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // label8
@@ -353,7 +355,7 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
+            button1.BackColor = Color.FromArgb(120, 130, 140);
             button1.Cursor = Cursors.Hand;
             button1.Dock = DockStyle.Left;
             button1.Location = new Point(0, 0);
@@ -377,7 +379,7 @@
             button2.Size = new Size(109, 45);
             button2.TabIndex = 1;
             button2.Text = "Save note";
-            button2.UseVisualStyleBackColor = false;            
+            button2.UseVisualStyleBackColor = false;
             // 
             // TopBar
             // 
