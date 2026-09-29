@@ -595,7 +595,7 @@
             btnLogout.TabIndex = 18;
             btnLogout.Text = "log out";
             btnLogout.UseVisualStyleBackColor = false;
-            btnLogout.Click += Logout_Click;
+            btnLogout.Click += btnLogout_Click_1;
             // 
             // btnQueue
             // 
@@ -919,8 +919,9 @@
             label1.Name = "label1";
             label1.Size = new Size(1338, 53);
             label1.TabIndex = 4;
-            label1.Text = "17 September 2026";
+            label1.Text = "28 September 2026";
             label1.TextAlign = ContentAlignment.BottomLeft;
+            label1.Click += label1_Click;
             // 
             // home
             // 

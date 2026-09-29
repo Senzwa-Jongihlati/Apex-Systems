@@ -272,17 +272,20 @@ namespace apex_management_sys
             string idColumn = isDoctor ? "DoctorID" : "ReceptionistID";
 
             string experience = txtViewExperience.Text.Trim();
+            string newPassword = txtNewPasword.Text.Trim();
+            bool changePassword = !string.IsNullOrEmpty(newPassword);
 
             using (MySqlConnection conn = DatabaseHelper.GetConnection())
             {
                 string updateQuery = $@"UPDATE {table} SET
-                    FirstName = @FirstName,
-                    LastName = @LastName,
-                    Username = @Username,
-                    ContactNumber = @ContactNumber,
-                    Experience = @Experience,
-                    Address = @Address
-                    WHERE {idColumn} = @AccountId";
+            FirstName = @FirstName,
+            LastName = @LastName,
+            Username = @Username,
+            ContactNumber = @ContactNumber,
+            Experience = @Experience,
+            Address = @Address"
+                    + (changePassword ? ", PasswordHash = @PasswordHash" : "")
+                    + $" WHERE {idColumn} = @AccountId";
 
                 using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
                 {
@@ -293,6 +296,11 @@ namespace apex_management_sys
                     cmd.Parameters.AddWithValue("@Experience", string.IsNullOrEmpty(experience) ? (object)DBNull.Value : experience);
                     cmd.Parameters.AddWithValue("@Address", txtViewAddress.Text.Trim());
                     cmd.Parameters.AddWithValue("@AccountId", currentlyViewedAccount.AccountId);
+
+                    if (changePassword)
+                    {
+                        cmd.Parameters.AddWithValue("@PasswordHash", BCrypt.Net.BCrypt.HashPassword(newPassword));
+                    }
 
                     return cmd.ExecuteNonQuery();
                 }
@@ -326,6 +334,7 @@ namespace apex_management_sys
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LoadAccounts();
+                ClearViewPanel();
                 currentlyViewedAccount = null;
             }
             catch (MySqlException ex)
@@ -371,6 +380,7 @@ namespace apex_management_sys
             txtViewType.Clear();
             txtViewAddress.Clear();
             txtViewCreatedOn.Clear();
+            txtNewPasword.Clear();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -464,9 +474,24 @@ namespace apex_management_sys
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Session.Logout();
-            Login.Instance.Show();
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                Session.Logout();
+                Login.Instance.Show();
+                this.Close();
+            }
+        }
+
+        private void SideBar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

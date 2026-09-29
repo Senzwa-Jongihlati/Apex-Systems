@@ -19,7 +19,7 @@ namespace apex_management_sys
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            progressBar.Increment(1);
+            progressBar.Increment(10);
             if (progressBar.Value == 100)
             {
 

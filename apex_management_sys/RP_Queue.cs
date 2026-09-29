@@ -203,9 +203,19 @@ namespace apex_management_sys
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Session.Logout();
-            Login.Instance.Show();
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                Session.Logout();
+                Login.Instance.Show();
+                this.Close();
+            }
         }
 
         private void WaitingGrid_SelectionChanged(object sender, EventArgs e)

@@ -202,12 +202,7 @@ namespace apex_management_sys
             this.Close();
         }
 
-        private void Logout_Click(object sender, EventArgs e)
-        {
-            Session.Logout();
-            Login.Instance.Show();
-            this.Close();
-        }
+
 
         private void Appointments_Click(object sender, EventArgs e)
         {
@@ -271,16 +266,32 @@ namespace apex_management_sys
             this.Close();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            Session.Logout();
-            Login.Instance.Show();
-            this.Close();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                Session.Logout();
+                Login.Instance.Show();
+                this.Close();
+            }
         }
     }
 }

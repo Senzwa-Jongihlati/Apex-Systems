@@ -97,6 +97,8 @@
             Management = new Label();
             Logo = new PictureBox();
             panel13 = new Panel();
+            label21 = new Label();
+            txtNewPasword = new TextBox();
             panel2.SuspendLayout();
             ContainerMain.SuspendLayout();
             panel3.SuspendLayout();
@@ -438,6 +440,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(txtNewPasword);
+            groupBox3.Controls.Add(label21);
             groupBox3.Controls.Add(btnSave);
             groupBox3.Controls.Add(txtViewLastName);
             groupBox3.Controls.Add(label20);
@@ -463,7 +467,7 @@
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(379, 729);
+            groupBox3.Size = new Size(379, 779);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "View Account";
@@ -493,7 +497,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(27, 169);
+            label20.Location = new Point(14, 171);
             label20.Name = "label20";
             label20.Size = new Size(82, 20);
             label20.TabIndex = 18;
@@ -514,7 +518,7 @@
             // 
             // txtViewCreatedOn
             // 
-            txtViewCreatedOn.Location = new Point(125, 616);
+            txtViewCreatedOn.Location = new Point(122, 618);
             txtViewCreatedOn.Margin = new Padding(3, 4, 3, 4);
             txtViewCreatedOn.Name = "txtViewCreatedOn";
             txtViewCreatedOn.Size = new Size(209, 27);
@@ -522,16 +526,16 @@
             // 
             // txtViewAddress
             // 
-            txtViewAddress.Location = new Point(122, 448);
+            txtViewAddress.Location = new Point(125, 468);
             txtViewAddress.Margin = new Padding(3, 4, 3, 4);
             txtViewAddress.Multiline = true;
             txtViewAddress.Name = "txtViewAddress";
-            txtViewAddress.Size = new Size(213, 143);
+            txtViewAddress.Size = new Size(213, 123);
             txtViewAddress.TabIndex = 15;
             // 
             // txtViewType
             // 
-            txtViewType.Location = new Point(122, 384);
+            txtViewType.Location = new Point(122, 419);
             txtViewType.Margin = new Padding(3, 4, 3, 4);
             txtViewType.Name = "txtViewType";
             txtViewType.Size = new Size(211, 27);
@@ -539,7 +543,7 @@
             // 
             // txtViewPhone
             // 
-            txtViewPhone.Location = new Point(122, 333);
+            txtViewPhone.Location = new Point(122, 372);
             txtViewPhone.Margin = new Padding(3, 4, 3, 4);
             txtViewPhone.Name = "txtViewPhone";
             txtViewPhone.Size = new Size(211, 27);
@@ -580,7 +584,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(26, 616);
+            label15.Location = new Point(11, 618);
             label15.Name = "label15";
             label15.Size = new Size(85, 20);
             label15.TabIndex = 8;
@@ -589,7 +593,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(26, 448);
+            label14.Location = new Point(14, 468);
             label14.Name = "label14";
             label14.Size = new Size(65, 20);
             label14.TabIndex = 7;
@@ -598,7 +602,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(25, 388);
+            label13.Location = new Point(12, 419);
             label13.Name = "label13";
             label13.Size = new Size(43, 20);
             label13.TabIndex = 6;
@@ -607,7 +611,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(25, 331);
+            label12.Location = new Point(12, 372);
             label12.Name = "label12";
             label12.Size = new Size(53, 20);
             label12.TabIndex = 5;
@@ -616,7 +620,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(25, 277);
+            label11.Location = new Point(12, 279);
             label11.Name = "label11";
             label11.Size = new Size(84, 20);
             label11.TabIndex = 4;
@@ -625,7 +629,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(25, 219);
+            label10.Location = new Point(12, 221);
             label10.Name = "label10";
             label10.Size = new Size(52, 20);
             label10.TabIndex = 3;
@@ -634,7 +638,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(25, 113);
+            label9.Location = new Point(12, 115);
             label9.Name = "label9";
             label9.Size = new Size(78, 20);
             label9.TabIndex = 2;
@@ -651,7 +655,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(25, 60);
+            label7.Location = new Point(12, 62);
             label7.Name = "label7";
             label7.Size = new Size(78, 20);
             label7.TabIndex = 0;
@@ -705,6 +709,7 @@
             SideBar.Name = "SideBar";
             SideBar.Size = new Size(199, 871);
             SideBar.TabIndex = 15;
+            SideBar.Paint += SideBar_Paint;
             // 
             // tableLayoutPanel1
             // 
@@ -933,6 +938,22 @@
             panel13.Size = new Size(834, 79);
             panel13.TabIndex = 1;
             // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(12, 329);
+            label21.Name = "label21";
+            label21.Size = new Size(107, 20);
+            label21.TabIndex = 21;
+            label21.Text = "New Password:";
+            // 
+            // txtNewPasword
+            // 
+            txtNewPasword.Location = new Point(125, 322);
+            txtNewPasword.Name = "txtNewPasword";
+            txtNewPasword.Size = new Size(208, 27);
+            txtNewPasword.TabIndex = 22;
+            // 
             // newAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1035,5 +1056,7 @@
         private Panel panel13;
         private TableLayoutPanel ContainerMain;
         private TableLayoutPanel Header;
+        private TextBox txtNewPasword;
+        private Label label21;
     }
 }
