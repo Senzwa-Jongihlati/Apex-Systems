@@ -6,7 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>apex.ico</ApplicationIcon>
+    <AssemblyName>Apex</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="apex.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
