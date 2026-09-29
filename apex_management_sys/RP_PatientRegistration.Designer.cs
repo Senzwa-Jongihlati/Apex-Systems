@@ -44,6 +44,7 @@
             label1 = new Label();
             label7 = new Label();
             groupBox1 = new GroupBox();
+            btnPrint = new Button();
             cbIDType = new ComboBox();
             cbPriority = new ComboBox();
             label13 = new Label();
@@ -215,6 +216,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(btnPrint);
             groupBox1.Controls.Add(cbIDType);
             groupBox1.Controls.Add(cbPriority);
             groupBox1.Controls.Add(label13);
@@ -248,6 +250,18 @@
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
             groupBox1.Text = "Personal information";
+            // 
+            // btnPrint
+            // 
+            btnPrint.BackColor = Color.FromArgb(120, 130, 140);
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Location = new Point(671, 681);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(143, 62);
+            btnPrint.TabIndex = 28;
+            btnPrint.Text = "Print";
+            btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnPrint_Click;
             // 
             // cbIDType
             // 
@@ -480,5 +494,6 @@
         private Panel Main;
         private TableLayoutPanel Container;
         private Panel ButtonContainer;
+        private Button btnPrint;
     }
 }
